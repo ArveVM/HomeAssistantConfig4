@@ -1,24 +1,4 @@
-
-#  AVM; todo - might want to move the system_monitor.yaml sensors here (as there is no config of the integration)
-
-# AVM: came over a tips here; https://community.home-assistant.io/t/lazy-mans-entity-count-something-screwy/174886
-
-
-
-#########  first a bit of 
-# __________________________________________________________________
-# stats of how many entities are in my HA-instance
-#til test i template-editor:
-#Automations =  {{ states.automation | count}}
-#-----------------------
-#{%- for domain in states | map(attribute='domain') | unique %}
-#{{ domain ~ 's : ' ~ states[domain] | count }}
-#{%- endfor %}
-#{{ '  Total: ' ~ states | count }}
-
-
-
-
+# https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/solutions/hastats.md
 
 sensor:
   # count number of enabled YAML-lines in my config,,
@@ -43,7 +23,6 @@ sensor:
     name: "HAstats YAML-line DefaultConfig count"
     #state_class: measurement  
     command: " find /config/avm_yaml/packages/test1 -name '*.yaml' | xargs cat | wc -l"
-
 
 
 template:

@@ -1,3 +1,5 @@
+# https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/solutions/hastats.md
+
 type: glance
 title: HA entities by domain - count
 entities:
