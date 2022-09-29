@@ -21,17 +21,16 @@ Focus so far have been on
 [Entities by domain](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/dashboard/cards/hastats_entities_by_domain.yaml)
 
 <img width="239" alt="image" src="https://user-images.githubusercontent.com/96014323/193137965-f7cf24ed-00c2-4362-a2ef-79efaee6e442.png">
-*click on 'sensors', and you will get pop-up with development-graph and details*
-
+_click on 'sensors', and you will get pop-up with development-graph and details_
 <img width="196" alt="image" src="https://user-images.githubusercontent.com/96014323/193138169-866d38a5-88a1-4882-9c95-cc464f0ef478.png">
-*click on other domains and you will get history/details*
+_click on other domains and you will get history/details_
 
 ---
 
 [YAML lines](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/dashboard/cards/hastats_yaml_lines_count.yaml)
 
 <img width="242" alt="image" src="https://user-images.githubusercontent.com/96014323/193139300-3259e7fe-1661-4acc-b3d6-ec6c7a55b10c.png">
- *unfortunately no statistic available on sensor,,, is on toDo-list  :(
+_unfortunately no statistic available on sensor,,, is on toDo-list  :(_
 
 # toDo/improvements planned:
 - might want to move the system_monitor.yaml sensors here (as there is no config of the integration)
