@@ -1,17 +1,14 @@
-###############################################################################
-#   @author       :   ArveVM 
-#   @date         :   14.march.2022
-#   @integration  :   Shelly -> https://www.home-assistant.io/integrations/shelly/
-#   @description  :   how to use Shelly-integration  
-#   @basic concept: 
-#      Add Shelly-devices, how to configure network etc
-#
-#   Disclaimer; this is my setup on my internal network and functionality
-#   is a bit trumphing security,, but to my reqirements this is sufficient.
-#
-#   No config in this file,, just explenation my setup and on how to reconfigure:
-#
-###############################################################################
+ArveVM, 14.march.2022
+** Shelly-integration
+[Official HA-documentation](https://www.home-assistant.io/integrations/shelly/)
+
+
+
+How I use Shelly-integration:  
+  - Add Shelly-devices, how to configure network etc
+  Disclaimer; this is my setup on my internal network and functionality
+  is a bit trumphing security,, but to my reqirements this is sufficient.
+  No config in this file,, just explenation my setup and on how to reconfigure:
 
 
 PRIMARY SETUP:
@@ -48,13 +45,15 @@ entities:
 
 
 ADD DEVICE TO HA:
-1. Power on Shelly-device
+1. Shelly-device; Power on
 
-2. Connect to Shelly-device   (see shelly-userguides, can use app or browser)
+2. PC/mobile: Connect to Shelly-device wifi 
+      (see shelly-userguides, can use app or browser)
       (shelly's publish their own SSID on startup, so you have to log
       on to that to re-configure, or use the app)
+      I prefer using mobile or pc and browser: http://192.168.33.1
 
-3. Include Shelly-device on NoT-network (must add the NoT-ssid and password) 
+3. PC/mobile; Configure wifi on Shelly-device -> NoT-network (must add the NoT-ssid and password) 
 
 4. Firewall/router-config; 
      Router:
@@ -63,10 +62,10 @@ ADD DEVICE TO HA:
      Firewall
        - Add IP to Firewall-group 'Shellys'
 
-5. Add a record for new Shelly-device in card 'Shelly web-interfaces'    
+5. HA; Add a record for new Shelly-device in card 'Shelly web-interfaces'    
      (se PrimarySetup #3)
 
-6. Log into Shelly-device web intercface and re-configure the generic stuff:
+6. PC/mobile; Log into Shelly-device web intercface and re-configure the generic stuff:
      WIFI:
        Connect to wifi; 'NoT'      (= no internet, only access to HA-server, no global NTP)
        Set static IP; xxx.xxx.30.deviceIP
