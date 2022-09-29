@@ -1,0 +1,67 @@
+# ArveVM;   ignore superduper secret files from upload to GitHub
+
+# make sure to ignore any of these files no matter where they are using double *
+**automations.yaml
+**google_calendars.yaml
+**secrets.yaml
+**scripts.yaml
+**scenes.yaml
+**lovelace_test3.yaml
+**mobile-lovelace1.yaml
+**harmony_12427489.conf
+**home-assistant.log
+**home-assistant.log.fault
+**home-assistant.log.1
+**home-assistant_v2.db
+**home-assistant_v2.db-wal
+**home-assistant_v2.db-shm
+
+
+#---------------------------------------------------------
+# ignore hidden folders
+/.cloud
+/.ssh
+/.storage
+
+# ignore unifinished part of my own code
+/avm_yaml/_templ
+/avm_yaml/dashboard
+/avm_yaml/entities
+/avm_yaml/packages/addon
+/avm_yaml/packages/solutions_draft
+/avm_yaml/packages/integrations_draft
+/esphome
+
+# ignore blueprints and components installed
+/blueprints
+/custom_components
+
+# ignore test-esp's
+**test1-esp32-38.yaml
+**test2022-09-11.yaml
+
+
+
+/node-red
+/themes
+/tts/
+/ui_lovelace_minimalist
+/www/
+/zigbee2mqtt/
+
+**.7z
+!.gitignore
+
+
+
+
+/config/.google.token
+
+
+secrets_google_assistant**
+
+
+
+
+
+
