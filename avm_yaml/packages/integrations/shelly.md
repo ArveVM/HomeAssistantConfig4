@@ -1,17 +1,16 @@
-ArveVM, 14.march.2022
-** Shelly-integration
+                                                  ArveVM, 14.march.2022
+# Shelly-integration
 [Official HA-documentation](https://www.home-assistant.io/integrations/shelly/)
 
 
-
-How I use Shelly-integration:  
+## How I use Shelly-integration:  
   - Add Shelly-devices, how to configure network etc
   Disclaimer; this is my setup on my internal network and functionality
   is a bit trumphing security,, but to my reqirements this is sufficient.
   No config in this file,, just explenation my setup and on how to reconfigure:
 
 
-PRIMARY SETUP:
+## PRIMARY SETUP:
 1. First setup Shelly integraton  ->  https://www.home-assistant.io/integrations/shelly/
 
 2. Setup NoT-network - so that Shelly's are isolated on "their own network"
@@ -44,7 +43,7 @@ entities:
 
 
 
-ADD DEVICE TO HA:
+## ADD DEVICE TO HA:
 1. Shelly-device; Power on
 
 2. PC/mobile: Connect to Shelly-device wifi 
