@@ -13,7 +13,8 @@ Focus so far have been on
 
 ## Solution-Yaml:
 [hastats.yaml](hastats.yaml)
-
+- a bunch of sensors created to track sum of entities pr domain, and some checksums
+- and some to count YAML-lines,, just because we can. Please note that YAML-count includes empty lines and comments,,, but I'll further invest in using .md and not yaml for comments,, so it will get realistic sometime in the future.
 
 
 ## Dashboard(s):
@@ -32,10 +33,14 @@ Focus so far have been on
 <img width="242" alt="image" src="https://user-images.githubusercontent.com/96014323/193139300-3259e7fe-1661-4acc-b3d6-ec6c7a55b10c.png">
  *unfortunately no statistic available on sensor,,, is on toDo-list  :(
 
+# toDo/improvements planned:
+- might want to move the system_monitor.yaml sensors here (as there is no config of the integration)
+- get some way to add yaml-sensors to statistics-graph (like the template-sensors with class measurement
+
 
 # Credits/inspiration:
 - https://community.home-assistant.io/t/lazy-mans-entity-count-something-screwy/174886
-- Erlend Sellie's notions of +10' lines config
+- Erlend Sellie's notions of +10' lines config - trigger "how big is mine" :)
 .
 
 # template-editor test-code:
