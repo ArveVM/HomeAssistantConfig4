@@ -1,13 +1,8 @@
 # Home-Assistant_config #4
 
 This repo contains (part of) the working Home Assistant configuration for our home. 
-Below you find an overview of the devices currently being used, blog/video posts, and other HA enthusists that provided inspiration and configs to help build this config. All of the code is free to use.
+Below you find an overview of the devices currently being used, blog/video posts, and other HA enthusists that provided inspiration and configs to help build this config. All of the code is free to use; I only ask that you Star this repo.
 
-### Disclaimer:
-- I consider myself on the bottom part of "list of greatest coder in the HA-community", but I might introduce a "how to see the big picture" approach that newbies like me might benefit from, both on understanding functionality and easy access to working solutions from others.
-- English is NOT my native language - so if in doubt of what I'm thinking, please ask ;). And in advance; please excuse any verbal abuse or bad language,, I somethimes forget that I don't controll who read what I post online :(
-- Please verify whatever you take away from my configuration compared to others,, there are so many good examples out theere (and a few of them are listed below).
-- "My config principles" might seem obvious to the experienced HA user,, but from my perspective it gives a good overview of some ground-rules that give me structure and ability to add solution-based "packages" or share with others.
 
 ### Current focus: 
 - Create 'Solutions' where things are of such a standard that it is valuable to share (or I need to share to get input for my improvements,, )
@@ -22,9 +17,11 @@ One last thing. Everything in this configuration is a combination of the things 
 To prove this point; I even stole this text from thejeffreystone :)
 
 
-
 ### If not yet bored,, check out more specs/principles:
  - [Config principles:](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/ReadMe_configPrinciples.md)
+ - [Config history:](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/ReadMe_configHistory.md)
+ - Fist round of Github-config is archived [HERE](https://github.com/ArveVM/Home-Assistant_config-packages-solutions-1)
+
 
 ### First phase Inspirators-extraordinare;
 - the HA-dev-team:  :  https://www.home-assistant.io/docs/configuration/
@@ -37,5 +34,13 @@ To prove this point; I even stole this text from thejeffreystone :)
 - mr ML and mr ØB   :  Home network setup guiding (and huge inspiration -> division shift upwards on how much cash to spend on network equipment :) )
 - mr KISS           :  longlived principle of simplicity of code, inspiration from 'back in the days' -> nolug hhelgesen  :)
 
-Further acknowlegement is added in code,, ,I've tried to add references to persons or sources whenever I've stolen something ;)
-.. fist round of Github-config is archived [HERE](https://github.com/ArveVM/Home-Assistant_config-packages-solutions-1)
+### Further acknowlegement is added in code,,
+### I've tried to add references to persons or sources whenever I've stolen something ;)
+
+
+### Disclaimer:
+- I consider myself on the bottom part of "list of greatest coder in the HA-community", but I might introduce a "how to see the big picture" approach that newbies like me might benefit from, both on understanding functionality and easy access to working solutions from others.
+- English is NOT my native language - so if in doubt of what I'm thinking, please ask ;). And in advance; please excuse any verbal abuse or bad language,, I somethimes forget that I don't controll who read what I post online :(
+- Please verify whatever you take away from my configuration compared to others,, there are so many good examples out theere (and a few of them are listed below).
+- "My config principles" might seem obvious to the experienced HA user,, but from my perspective it gives a good overview of some ground-rules that give me structure and ability to add solution-based "packages" or share with others.
+
