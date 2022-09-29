@@ -1,4 +1,6 @@
 # https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/solutions/hastats.md
+# card require Browser Mod v1.5.3
+
 
 type: glance
 title: HA entities by domain - count
