@@ -9,6 +9,14 @@
 - Disclaimer; this is my setup on my internal network and functionality is a bit trumphing security,, but to my reqirements this is sufficient.
 - No config in this file,, just explenation my setup and on how to reconfigure
 
+# my Shelly-devices:  
+- [Shelly1](https://shelly.cloud/products/shelly-1-smart-home-automation-relay/) - Lightswitches and Hotwater
+- [Shelly1-tempAddon](https://shop.shelly.cloud/temperature-sensor-addon-for-shelly-1-1pm-wifi-smart-home-automation) - Hotwater,, connected two dallas-sensors to report temp bottom and top of the tank
+- [Shelly+1](https://shelly.cloud/shelly-plus-1/)  -  ??
+- [Shelly+1pm](https://shelly.cloud/shelly-plus-1pm/) - Floor-heaters, Washingmachines
+- [Shelly RC snubber](https://shop.shelly.cloud/rc-snubber-wifi-smart-home-automation?search=snubber&description=true) - Washingmachines
+- [Shelly PlugS](https://shelly.cloud/products/shelly-plug-s-smart-home-automation-device/) - Dishwaser, Tumbledryer, Freezer, Heaters
+
 
 
 ## PRIMARY SETUP:
