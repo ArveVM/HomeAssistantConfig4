@@ -40,14 +40,14 @@ Focus so far have been on
 
 # Credits/inspiration:
 - https://community.home-assistant.io/t/lazy-mans-entity-count-something-screwy/174886
-- Erlend Sellie's notions of +10' lines config - trigger "how big is mine" :)
-.
+- Erlend Sellie's notions of "+10' lines config" - trigger "how big is mine?" 
+
 
 # template-editor test-code:
 (because HA-team is constantly adding new functionality/domains,, it is useful to get to check/verify that we actually got all configured with sensors,,,)
 ```ruby
-__________________________________________________________________
-Stats of how many entities pr domain are in my HA-instance, by ArveVM:
+_____________________________________________________________________
+Stats of how many entities pr domain are in my HA-instance, by ArveVM
 
 # check ONE specific domain:
    Automations =  {{ states.automation | count}}
