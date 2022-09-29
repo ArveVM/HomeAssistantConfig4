@@ -1,17 +1,12 @@
-###############################################################################
-#   @author       :   ArveVM 
-#   @date         :   14.march.2022
-#   @integration  :   Shelly -> https://www.home-assistant.io/integrations/shelly/
-#   @description  :   how to use Shelly-integration  
-#   @basic concept: 
-#      Add Shelly-devices, how to configure network etc
-#
-#   Disclaimer; this is my setup on my internal network and functionality
-#   is a bit trumphing security,, but to my reqirements this is sufficient.
-#
-#   No config in this file,, just explenation my setup and on how to reconfigure:
-#
-###############################################################################
+**[Shelly-integration](https://www.home-assistant.io/integrations/shelly/)
+ArveVM, 14.march.2022
+
+
+how to use Shelly-integration  
+  - Add Shelly-devices, how to configure network etc
+  Disclaimer; this is my setup on my internal network and functionality
+  is a bit trumphing security,, but to my reqirements this is sufficient.
+  No config in this file,, just explenation my setup and on how to reconfigure:
 
 
 PRIMARY SETUP:
