@@ -7,7 +7,7 @@
 #      EVA-han reader is plugged into our power-meters HAN-interface (Norwegian only solution?)
 #      Z2M/mosquitto integration provides data from to HA
 #
-#         sensors used:      
+#        sensors used:      
 #            sensor.evahan_power
 #
 #   AVM: stick in power-meter, integrated through Zigbee2mqtt and provides some 
