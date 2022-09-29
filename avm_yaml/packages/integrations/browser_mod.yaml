@@ -2,7 +2,6 @@
 # ArveVM: intro from  https://www.youtube.com/watch?v=atpIP2RYldA
 
 
-
 browser_mod:
   prefix: 'browser_mod_'
   devices:
