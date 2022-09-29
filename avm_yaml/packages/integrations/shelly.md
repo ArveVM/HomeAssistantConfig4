@@ -85,4 +85,10 @@ entities:
 8. Might configure/enable some entities according to usage,,,
 
 
+## Firmware upgrade:
+1. Enable firewall rule to allow NoT/Shellies internet access
+2. Log on to web-interface of each Shelly and check for updates
+      (could also enable the sensor 'OTA updates' but I prefer to disabe thoose not in use)
+3. Disable firewall rule to allow NoT/Shellies internet access
+
 
