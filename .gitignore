@@ -16,6 +16,7 @@
 **home-assistant_v2.db-wal
 **home-assistant_v2.db-shm
 
+view*
 
 #---------------------------------------------------------
 # ignore hidden folders
@@ -25,7 +26,15 @@
 
 # ignore unifinished part of my own code
 /avm_yaml/_templ
-/avm_yaml/dashboard
+#/avm_yaml/dashboard
+card_alert*
+card_room*
+chip*
+nordpool*
+price*
+room__*
+*view*
+dashboard_mob*
 /avm_yaml/entities
 /avm_yaml/packages/addon
 /avm_yaml/packages/solutions_draft
