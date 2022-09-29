@@ -34,6 +34,7 @@
     - Groups of functionality can be added in Entities-folder (sensors, templates and utilitymeters using !include - principles) 
     - still some cleanup for me there,, but will I get rid of this
 
+
 ## Why the need for "My config principles"?:
 I've worked quite a few hours trying to get my head around all different types/styles of config's and have concluded that I have to take a slightly different approach.
 My background is from financial/management and not that of code, so it is possible that I'm a bit slow on that department - but I for sure have a need for control and overview. I need to know that the sum of the parts =  the total,, so I need to see how stuff work - and how things cascades
