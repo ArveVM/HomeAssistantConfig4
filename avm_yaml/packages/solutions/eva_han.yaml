@@ -8,7 +8,7 @@
 #      Z2M/mosquitto integration provides data from to HA
 #
 #        sensors used:      
-#            sensor.evahan_power
+#           sensor.evahan_power
 #
 #   AVM: stick in power-meter, integrated through Zigbee2mqtt and provides some 
 #        sensors through that integration, and some more are added here;
