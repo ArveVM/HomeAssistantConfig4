@@ -23,7 +23,7 @@ To prove this point; I even stole this text from thejeffreystone :)
 
 
 
-If not yet bored,, check out more specs/principles:
+### If not yet bored,, check out more specs/principles:
  - [Config principles:](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/ReadMe_configPrinciples.md)
 
 ### First phase Inspirators-extraordinare;
@@ -40,87 +40,14 @@ If not yet bored,, check out more specs/principles:
 Further acknowlegement is added in code,, ,I've tried to add references to persons or sources whenever I've stolen something ;)
 
 
-### Current setup;
-HA-hardware:
-- HP Compaq dc7900 -> Proxmox7
-- ConbeeII zigbee-stick
-
-Devices:
-- Various Android Devices (phones, android-tablets)
-- Windows laptops
- 
-Networking:
-- Ubiquiti UniFi Dream Machine Pro
-- Ubiquiti UniFi USW Flex Mini
-- Ubiquiti UniFi 6 Lite
-- Deco M5
-- HP switch
-
-Media:
-- Google Chromecast (pending integration)
-- Google Mini (pending integration)
-- Lenovo Smartwatch (pending integration)
- 
-Switches/Plugs:
-- Shelly1
-- Shelly1pm
-- Shelly+1
-- ShellyS
-- ApexPlug (https://www.zigbee2mqtt.io/devices/HLU2909K.html#datek-hlu2909k)
-- Ikea E1603 (https://www.zigbee2mqtt.io/devices/E1603_E1702_E1708.html)
- 
-Lights:
-- Ikea styrbar
-- Ikea bulbs
-- Namron led-strip RGBW
-- Some RF-controlled "kubbelys"
-
-Sensors:
-- Aquara temp/humidity sensor
-- Reed-switch (wired to Shelly1)
-- Netatmo
-- Eva meeter-reader (https://www.zigbee2mqtt.io/devices/HSE2905E.html#datek-hse2905e)
-
-Integrations:
-- Supervisor
-- Logitec Harmony Hub
-- Meterologisk institutt
-- Mobile App
-- Mosquitto broker (MQTT)   (note that Mosquitto is both an add-on and an integration :))
-- Netatmo
-- Shelly
-- HACS:
-  - Nordpool
-  - Easee EV Charger
-  - Local Tuya (not working properly ;( )
-  - Min renovasjon
-
-
-Add-ons:
-- Chrony (NTP for Shellys on NoT)
-- File editor
-- Home Assistant Google Drive Backup
-- Mosquitto broker (MQTT)
-- Node-RED  (not used, had a plan, came up with other plans,,,, )
-- Samba share
-- SQLite web (not used, had a plan, came up with other plans,,,, )
-- Studio Code Server (started using, also using to share config)
-- Terminal & SSH
-- Zigbee2mqtt
-
-Blueprints:
-- Aquara qube: https://raw.githubusercontent.com/golles/Home-Assistant-Blueprints/main/zigbee2mqtt_aqara_magic_cube.yaml
-
-Frontend:
-- HACS:
-  - Custom button card: https://github.com/custom-cards/button-card
-  - Custom apexcharts-card: https://github.com/RomRider/apexcharts-card
-  - Custom charger-card: https://github.com/tmjo/charger-card
-
-
 ### config history:
 
 **v3:**
+
+  April 2022; new hardware-setup,, moving from Proxmox to unRaid
+  - HAOS as VM.
+  - Focus a bit on rooms
+
 
   March 2022; reconfigure all config to new principle - while building the actual principle (sound plan :))
   Start splitting/categorizing all config into Functionality vs Solutions.
