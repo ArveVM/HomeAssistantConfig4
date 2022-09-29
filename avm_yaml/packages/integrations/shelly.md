@@ -3,11 +3,12 @@
 [Official HA-documentation](https://www.home-assistant.io/integrations/shelly/)
 
 
+
 ## How I use Shelly-integration:  
-  - Add Shelly-devices, how to configure network etc
-  Disclaimer; this is my setup on my internal network and functionality
-  is a bit trumphing security,, but to my reqirements this is sufficient.
-  No config in this file,, just explenation my setup and on how to reconfigure:
+- Add Shelly-devices, how to configure network etc
+- Disclaimer; this is my setup on my internal network and functionality is a bit trumphing security,, but to my reqirements this is sufficient.
+- No config in this file,, just explenation my setup and on how to reconfigure
+
 
 
 ## PRIMARY SETUP:
@@ -24,22 +25,22 @@
    Setup Firewall-group 'ShellyAdm' to enable those deveices to access shellies from LAN
             - add my mobile phone and pc's IP to this group
 
-   Setup internal NTP-functionality if you don't already have that
+3. Setup internal NTP-functionality if you don't already have that
      I just added the Add-on Chrony in HA,, so i can use SNTP = my HA ip-adress
 
-3. Create card for Shelly-devices web-interface ; 
+4. Create card for Shelly-devices web-interface ; 
       add the code below to a card in a dashboard and you will get easy 
       access to your Shelly-devices web interfaces
       (and make a note that I consider my NoT to be "safe" so I don't bother 
       with any pin or other security measurements.)
----
+--
 type: entities
 title: 'Shelly web-interfaces'
 entities:
   - type: weblink
     name: Shelly+1 test-device  ->  web-interface
     url: http://xxx.xxx.30.deviceIP/
----
+--
 
 
 
@@ -62,7 +63,7 @@ entities:
        - Add IP to Firewall-group 'Shellys'
 
 5. HA; Add a record for new Shelly-device in card 'Shelly web-interfaces'    
-     (se PrimarySetup #3)
+     (se PrimarySetup #4)
 
 6. PC/mobile; Log into Shelly-device web intercface and re-configure the generic stuff:
      WIFI:
@@ -90,5 +91,4 @@ entities:
 2. Log on to web-interface of each Shelly and check for updates
       (could also enable the sensor 'OTA updates' but I prefer to disabe thoose not in use)
 3. Disable firewall rule to allow NoT/Shellies internet access
-
 
