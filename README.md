@@ -1,4 +1,4 @@
-# Home-Assistant_config #2
+# Home-Assistant_config #4
 
 This repo contains (part of) the working Home Assistant configuration for our home. 
 Below you find an overview of the devices currently being used, blog/video posts, and other HA enthusists that provided inspiration and configs to help build this config. All of the code is free to use.
