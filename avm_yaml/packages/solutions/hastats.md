@@ -21,10 +21,10 @@ Focus so far have been on
 [Entities by domain](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/dashboard/cards/hastats_entities_by_domain.yaml)
 
 <img width="239" alt="image" src="https://user-images.githubusercontent.com/96014323/193137965-f7cf24ed-00c2-4362-a2ef-79efaee6e442.png">
-*click on 'sensors', and you will get pop-up with development-graph and details
+*click on 'sensors', and you will get pop-up with development-graph and details*
 
 <img width="196" alt="image" src="https://user-images.githubusercontent.com/96014323/193138169-866d38a5-88a1-4882-9c95-cc464f0ef478.png">
-*click on other domains and you will get history/details
+*click on other domains and you will get history/details*
 
 ---
 
