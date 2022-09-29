@@ -8,7 +8,8 @@ Below you find an overview of the devices currently being used, blog/video posts
 - Create 'Solutions' where things are of such a standard that it is valuable to share (or I need to share to get input for my improvements,, )
 It is still work in progress, so I will only publish what is actually transformed into this new "principle".
 
-Have focused a lot this summer on home improvements outside the HA-sphere,, but used some time on UI minimalist and browser_mod popup,, to enable more info on/behind small chips/cards
+Have focused a lot this summer on home improvements outside the HA-sphere,, but used some time on UI minimalist and browser_mod popup,, to enable more info on/behind small chips/cards.
+Current concept is moving towards a solution beeing a ReadMe-file to present concept and show screenshots, with reference to a yaml-file with config and one or more yaml-files for dashboard/card/chips.
 
 
 ## Solutions: 
