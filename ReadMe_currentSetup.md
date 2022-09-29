@@ -20,12 +20,9 @@ Media:
 - Google Mini 
 - Lenovo Smartwatch
  
-Switches/Plugs:
-- Shelly1
-- Shelly1pm
-- Shelly+1
-- Shelly+1pm
-- ShellyS
+Pucks/Plugs:
+- [Shelly pucks](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/integrations/shelly.md) 
+- [Shelly plugs](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/integrations/shelly.md) 
 - ApexPlug (https://www.zigbee2mqtt.io/devices/HLU2909K.html#datek-hlu2909k)
 - Ikea E1603 (https://www.zigbee2mqtt.io/devices/E1603_E1702_E1708.html)
  
@@ -59,8 +56,7 @@ Integrations:
 - Mobile App
 - Mosquitto broker (MQTT)   (note that Mosquitto is both an add-on and an integration :))
 - Netatmo
-- Shelly
-- Sun
+- [Shelly](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/integrations/shelly.md) - Sun
 - Uptime
 - WLED
 - HACS:
