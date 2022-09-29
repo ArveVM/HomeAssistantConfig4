@@ -28,8 +28,8 @@
 #
 ###############################################################################
 
-
 # AVM; first add my own folder with lots of sub-folders 
 #   then sub-folders will add next levels of cascaded configuration 
+
 homeassistant:
   packages: !include_dir_named avm_yaml/packages
