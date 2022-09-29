@@ -13,13 +13,21 @@ Focus so far have been on
 I've created the sensors in an solutions-yaml,, and will look into moving dashboards to separate -yaml-files for easy sharing (whenever something get updated,,,
 
 
+.
+.
 
-
-
+# template-editor test-code:
+(because HA-team is constantly adding new functionality/domains,, it is useful to get to check/verify that we actually got all configured with sensors,,,)
 ```ruby
-puts "Hello World"
-  ddff
-  dfdf
-  dfdf
-     
+__________________________________________________________________
+Stats of how many entities pr domain are in my HA-instance, by ArveVM:
+
+# check ONE specific domain:
+   Automations =  {{ states.automation | count}}
+
+# check ALL domain:
+   {%- for domain in states | map(attribute='domain') | unique %}
+   {{ domain ~ 's : ' ~ states[domain] | count }}
+   {%- endfor %}
+   {{ '  Total: ' ~ states | count }}     
 ```
