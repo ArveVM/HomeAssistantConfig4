@@ -23,7 +23,10 @@ To prove this point; I even stole this text from thejeffreystone :)
 
 
 
-### Inspirators-extraordinare;
+If not yet bored,, check out more specs/principles:
+ - [Config principles:](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/ReadMe_configPrinciples.md)
+
+### First phase Inspirators-extraordinare;
 - the HA-dev-team:  :  https://www.home-assistant.io/docs/configuration/
 - Jeff @ SlackerLabs:  https://slacker-labs.com/  /  https://github.com/thejeffreystone/home-assistant-configuration
 - Franck Nijhof     :  https://github.com/frenck/home-assistant-config
@@ -34,6 +37,7 @@ To prove this point; I even stole this text from thejeffreystone :)
 - mr ML and mr ØB   :  Home network setup guiding (and huge inspiration -> division shift upwards on how much cash to spend on network equipment :) )
 - mr KISS           :  longlived principle of simplicity of code, inspiration from 'back in the days' -> nolug hhelgesen  :)
 
+Further acknowlegement is added in code,, ,I've tried to add references to persons or sources whenever I've stolen something ;)
 
 
 ### Current setup;
