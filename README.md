@@ -28,10 +28,11 @@ All listed, but only those with some level of config or interest for myself/othe
 
 | Type  | Description | Description/purpose |
 | ------------- | ------------- | ------------- |
-| [bluetooth](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/integrations/bluetooth.md)| "how do I use it" |
-| Browser mod  | v1.5.3 - used primarily for pop-up functionality |
-| [HA-stats](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/solutions/hastats.md)  | my HA-instance's stats of sensor-count and yaml-line-count development  |
-
+|Integration| [Bluetooth](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/integrations/bluetooth.md)| Enabler for BT-functionality |
+|HACS-int| Browser mod  | v1.5.3 - used primarily for pop-up functionality |
+|Integration| [BTHome](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/integrations/bt_home.md) | BTHome-firmware flashed sensors |
+|Integration| [Inkbird](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/integrations/inkbird.md) | BT-sensors from Inkbird |
+|Integration| [Shelly](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/integrations/shelly.md) | How/why do I use this integration? |
 
 
 ### Guidance for others:
