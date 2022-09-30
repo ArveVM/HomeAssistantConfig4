@@ -5,6 +5,7 @@
 
 ## How I use Bluetooth-integration:
 - Prereqs:
+  - Install integration: Bluetooth is part of 'default_config:' from 2022.8
   - Bluetooth-radio:
     - Use ESPHome with ESP32's as Bluetooth-proxies to get Bluetooth range of (soon) the entire house
 - Integration is used as platform for the following integrations
@@ -12,4 +13,3 @@
   - Inkbird
   See furthter documentation on each integration
 
-NB: Bluetooth is part of 'default_config:' from 2022.8
