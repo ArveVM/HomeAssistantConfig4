@@ -1,14 +1,5 @@
-
-
-# ArveVM; config to keep dashboards on UI, but enable the yaml-dashboards as well
-
-# Dashboards in UI:                 https://www.home-assistant.io/dashboards/
-# combine UI and yaml-dashboards;   https://www.home-assistant.io/dashboards/dashboards/
-
-# used everything-smart-home tutorial for setup of Minimalist UI (which is stored in AVM_yaml/dashboard)
-
-
-
+# ArveVM; follow link for further documentation and appraisals:
+# https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/integrations/lovelace_yaml_dashboards.md
 
 lovelace:
   # AVM; first enable the continous usage of the UI dashboards with "secret storage" :)
