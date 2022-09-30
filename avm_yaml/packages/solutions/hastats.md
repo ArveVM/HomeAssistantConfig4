@@ -35,6 +35,7 @@ _unfortunately no statistic available on sensor,,, is on toDo-list  :(_
 # toDo/improvements planned:
 - might want to move the system_monitor.yaml sensors here (as there is no config of the integration)
 - get some way to add yaml-sensors to statistics-graph (like the template-sensors with class measurement
+- change 'float(default=0)'  to 'float(0)'    - no reason to keep the default ?
 
 
 # Credits/inspiration:
