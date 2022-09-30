@@ -3,10 +3,15 @@
 [Official HA-documentation](https://www.home-assistant.io/integrations/bthome/)
 
 
+
+
 ## How I use BTHome-integration:  
-- Add Shelly-devices, how to configure network etc
-- Disclaimer; this is my setup on my internal network and functionality is a bit trumphing security,, but to my reqirements this is sufficient.
-- No config in this file,, just explenation my setup and on how to reconfigure
+- Prereqs:
+  - Bluetooth-integration (added through 'default_config:' in 2022.8)
+  - Bluetooth-radio:
+    - Use ESPHome with ESP32's as Bluetooth-proxies to get Bluetooth range of (soon) the entire house
+  - Flashing Mijia temp-sensors with BTHome firmware 
+
 
 # my BTHome-devices:  
 - Xiaomi Mijia Thermometer 2 Bluetooth   
@@ -17,16 +22,6 @@
   - Used as sensors for fridge and freezers
 - [Inkbird IBT-4XS](https://inkbird.com/products/bluetooth-grill-thermometer-ibt-4xs)
   - 4probe barbeque thermometer
-
-
-## PRIMARY SETUP:
-1. Install BT-dongle or ESP32 with BT-proxy
-
-2. Instal integraton 
-   - Require HA 2022.9 or above
-   - Require Bluetooth-integration (added through 'default_config:' in 2022.8)
-
-3. Make sure autodiscovery is on ??
 
 
 ## ADD DEVICE TO HA:
