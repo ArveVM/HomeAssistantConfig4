@@ -9,11 +9,31 @@ Below you find an overview of the devices currently being used, blog/video posts
 It is still work in progress, so I will only publish what is actually transformed into this new "principle".
 
 Have focused a lot this summer on home improvements outside the HA-sphere,, but used some time on UI minimalist and browser_mod popup,, to enable more info on/behind small chips/cards.
-Current concept is moving towards a solution beeing a ReadMe-file to present concept and show screenshots, with reference to a yaml-file with config and one or more yaml-files for dashboard/card/chips.
 
 
 ## Solutions: 
-- [HA-stats](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/solutions/hastats.md) - my HA-instance's stats of sensor-count and yaml-line-count development
+Current concept is moving towards a Solution beeing 
+- a ReadMe-file to present concept and show screenshots, with reference to 
+- a yaml-file with config and 
+- one or more yaml-files for dashboard/card/chips.
+
+| Solution  | Description/purpose |
+| ------------- | ------------- |
+| Content Cell  | Content Cell  |
+| [HA-stats](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/solutions/hastats.md)  | my HA-instance's stats of sensor-count and yaml-line-count development  |
+
+## Functionality: 
+As from my config-principles; addons and integrations are the enablers of functionality.
+All listed, but only those with some level of config or interest for myself/others are documented.
+
+| Type  | Name | Description/purpose |
+| ------------- | ------------- | ------------- |
+|Integration| [Bluetooth](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/integrations/bluetooth.md)| Enabler for BT-functionality |
+|HACS-int| Browser mod  | v1.5.3 - used primarily for pop-up functionality |
+|Integration| [BTHome](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/integrations/bt_home.md) | BTHome-firmware flashed sensors |
+|Integration| [Inkbird](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/integrations/inkbird.md) | BT-sensors from Inkbird |
+|Integration| [Shelly](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/integrations/shelly.md) | How/why do I use this integration? |
+
 
 ### Guidance for others:
 One last thing. Everything in this configuration is a combination of the things I want out of a home automation system flavored with the inspiration from others using Home Assistant. In some cases I took someone else's idea and made it my own, and in some I just completely stole it. So I would be remiss if I didn't acknowledge those that inpired this journey. If you like what you see here, please checkout their configs as well. I owe them thanks for sharing their work.
