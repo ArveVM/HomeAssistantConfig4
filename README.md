@@ -26,7 +26,7 @@ Current concept is moving towards a Solution beeing
 As from my config-principles; addons and integrations are the enablers of functionality.
 All listed, but only those with some level of config or interest for myself/others are documented.
 
-| Type  | Description | Description/purpose |
+| Type  | Name | Description/purpose |
 | ------------- | ------------- | ------------- |
 |Integration| [Bluetooth](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/integrations/bluetooth.md)| Enabler for BT-functionality |
 |HACS-int| Browser mod  | v1.5.3 - used primarily for pop-up functionality |
