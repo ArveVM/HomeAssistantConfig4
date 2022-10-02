@@ -12,10 +12,10 @@ Have focused a lot this summer on home improvements outside the HA-sphere,, but 
 
 
 ## Solutions: 
-Current concept is moving towards a Solution beeing 
-- a ReadMe-file to present concept and show screenshots, with reference to 
-- a yaml-file with config and 
-- one or more yaml-files for dashboard/card/chips.
+Current concept is moving towards a 'Solution' beeing: 
+1. ReadMe-file to present concept and show screenshots, with references 
+2. YAML-file with config  
+3. One or more yaml-files for dashboard/card/chips.
 
 | Area         | Solution      | Description/purpose |
 | ------------ | ------------- | ------------------- |
