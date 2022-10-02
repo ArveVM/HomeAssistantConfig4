@@ -102,24 +102,15 @@ entities:
 
 
 ## my Shelly web-interfaces:
-List of hyperlinks to local web-access to my Shelly-devices
+Using GitHub as CMDB for Shellies, and as a backup to get to the web-interfaces in case HA is ##cked up.
 
-
-<details><summary>CLICK ME</summary>
+<details><summary>List of hyperlinks to local web-access to my Shelly-devices</summary>
 <p>
 
-[Laundry heater puck - Shelly1   
   
 | Name	|Type  | Description/purpose |
 |-------|-------|----------| 
 | [Laundry heater puck](http://192.168.30.89/) | Shelly+1pm1 |
-Integration	Default config	Adding default HA-functionality,, ,se yaml-file for config/comments
-  
-#### We can hide anything, even code!
-
-```ruby
-   puts "Hello World"
-```
 
 </p>
 </details>
