@@ -100,3 +100,26 @@ entities:
       (could also enable the sensor 'OTA updates' but I prefer to disabe thoose not in use)
 3. Disable firewall rule to allow NoT/Shellies internet access
 
+
+## my Shelly web-interfaces:
+List of hyperlinks to local web-access to my Shelly-devices
+
+
+<details><summary>CLICK ME</summary>
+<p>
+
+[Laundry heater puck - Shelly1   
+  
+| Name	|Type  | Description/purpose |
+|-------|-------|----------| 
+| [Laundry heater puck](http://192.168.30.89/) | Shelly+1pm1 |
+Integration	Default config	Adding default HA-functionality,, ,se yaml-file for config/comments
+  
+#### We can hide anything, even code!
+
+```ruby
+   puts "Hello World"
+```
+
+</p>
+</details>
