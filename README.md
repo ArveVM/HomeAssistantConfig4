@@ -15,7 +15,7 @@ Have focused a lot this summer on home improvements outside the HA-sphere,, but 
 Current concept is moving towards a 'Solution' beeing: 
 1. ReadMe-file to present concept and show screenshots, with references 
 2. YAML-file with config  
-3. One or more yaml-files for dashboard/card/chips.
+3. One or more yaml-files for dashboard/card/chips
 
 | Area         | Solution      | Description/purpose |
 | ------------ | ------------- | ------------------- |
@@ -47,6 +47,7 @@ To prove this point; I even stole this text from thejeffreystone :)
 ### If not yet bored,, check out more specs/principles:
  - [Config principles:](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/ReadMe_configPrinciples.md)
  - [Config history:](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/ReadMe_configHistory.md)
+ - [Current setup](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/ReadMe_currentSetup.md)
  - Fist round of Github-config is archived [HERE](https://github.com/ArveVM/Home-Assistant_config-packages-solutions-1)
 
 
