@@ -29,7 +29,8 @@ view*
 #/avm_yaml/dashboard
 card_alert*
 card_room*
-chip*
+chip_todo*
+chip_ha*
 nordpool*
 price*
 room__*

@@ -1,0 +1,45 @@
+# https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/solutions/hastats.md
+# card require Browser Mod v1.5.3
+# works only in minimalist???  but can easily be re-worked to use other button-card template/method
+
+type: "custom:button-card"
+template: chip_icon_double_state
+variables:
+  ulm_chip_icon_double_state_icon: "🚰"
+  ulm_chip_icon_double_state_entity_1: sensor.hotwater_soc
+  ulm_chip_icon_double_state_entity_2: sensor.hotwater_temperature
+tap_action:
+  action: fire-dom-event
+  browser_mod:
+    command: popup
+    title: "Hotwater SoC:"
+    large: false
+    card:
+      type: entities
+      entities:
+        - entity: sensor.hotwater_temperature
+          type: custom:multiple-entity-row
+          name: Hotwater temp
+          state_header: current
+          secondary_info: last-changed
+          entities:
+            - entity: input_number.hotwater_soc_target_temp
+              name: Target temp
+        - type: divider
+        - entity: sensor.hotwater_soc
+        - entity: sensor.hotwater_soc_chargetime
+        - entity: sensor.hotwater_soc_chargetime_float
+        - type: divider
+        - entity: sensor.hotwater_soc_energy_chargable
+          type: custom:multiple-entity-row
+          name: Hotwater energy to charge
+          state_header: charge
+          secondary_info: last-changed
+          entities:
+            - entity: sensor.hotwater_soc_energy_max
+              name: Max state
+            - entity: sensor.hotwater_soc_energy_stored
+              name: Charged state
+hold_action:
+  action: navigate
+  navigation_path: Workshop

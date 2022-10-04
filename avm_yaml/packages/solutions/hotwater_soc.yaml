@@ -1,0 +1,134 @@
+# ArveVM; solution to calculate State of Charge for hotwater
+# idea intirely stolen from Asbjørn Bergsland on Facebook/Home Assistant Norge
+# re-worked as Solution and to new template format, and to my naming standards
+
+# My Input is (so you have to change theese within this file to adopt the 'Solution'):
+  # sensor.hotwater_temperature
+  # {% set l = 250 %}    (sice of hotwater-tank, mine is 200liters)
+  # {% set p = 2.8 %}    (sice of heater-element in hotwatertank, in kWh)   
+  # also you must set the input_number.hotwater_soc_target_temp (mine is 75)
+
+homeassistant:
+  customize:
+    input_number.hotwater_soc_target_temp:
+      device_class: temperature
+    #package.node_anchors:
+      # Add node-anchor for identification of code-location for created sensors
+    #  package_attribute_to_entity: &package_attribute
+
+
+
+
+input_number:
+  hotwater_soc_target_temp:
+    name: Hotwater SoC Target Temp
+    unit_of_measurement: °C
+    mode: box
+    initial: 75
+    min: 60
+    max: 85
+
+template:
+  - sensor:
+      # Asbjørn's comments:
+      # Beregner antall kWh det tar å varme bereder til settpunkt temperatur-
+      # l = tankstørrelse (200L)
+      # t1 = settpunkt temperatur
+      # t2 = temperatur bereder
+      # 4.186 = 4186 er konstanten for varmekapasiteten til vann
+      # 3600 = sekunder i en time
+
+      # ArveVM; change all instances of 'sensor.hotwater_temperature' to your sensor for temperature
+
+      - unique_id: sensor.hotwater_soc_energy_chargable
+        name: "Hotwater SoC energy chargable"
+        icon: "mdi:lightning-bolt-outline"
+        unit_of_measurement: "kWh"
+        state: >
+          {% set l = 250 %}
+          {% set t1 = states('input_number.hotwater_soc_target_temp') | float %}
+          {% set t2 = states('sensor.hotwater_temperature') | float %}
+          {% set k = 4.186 %}
+          {% set kt = 3600 %}
+          {{ (k * l * (t1 - t2) /kt) | round(1) }}
+
+      # Asbjørn's comments:
+      # Energi lagret i bereder
+      # kx = 40 graders varmtvann
+      - unique_id: hotwater_soc_energy_stored
+        name: "Hotwater SoC energy Stored"
+        icon: "mdi:lightning-bolt-outline"
+        unit_of_measurement: "kWh"
+        state: >-
+          {% set l = 250 %}
+          {% set t2 = states('sensor.hotwater_temperature') | float %}
+          {% set k = 4.186 %}
+          {% set kt = 3600 %}
+          {% set kx = 40 %}
+          {{ (k * l * (t2 - kx) /kt) | round(1) }}
+
+      # Asbjørn's comments:
+      # Beregning av hvor mye energi som kan lagres ved satt temperatur
+      - unique_id: hotwater_soc_energy_max
+        name: "Hotwater SoC energy max"
+        icon: "mdi:lightning-bolt-outline"
+        unit_of_measurement: "kWh"
+        state: >
+          {% set l = 250 %}
+          {% set tx = states('input_number.hotwater_soc_target_temp') | float %}       
+          {% set k = 4.186 %}
+          {% set kt = 3600 %}
+          {% set kx = 40 %}
+          {{ (k * l * (tx - kx) /kt) | round(1) }}
+
+      # Asbjørn's comments:
+      # Beregner tid det tar for å varme bereder til settpunkt temperatur-
+      # p = bereder element i kW                                          #ArveVM:        her må folk være våkne  ;)
+      # kWh = energi for å verme til settpunkt
+      - unique_id: hotwater_soc_chargetime_float
+        name: "Hotwater SoC chargetime float"
+        icon: "mdi:lightning-bolt-outline"
+        unit_of_measurement: "t"
+        state: >
+          {% set p = 2.8 %}
+          {% set kwh = states('sensor.hotwater_soc_energy_chargable') | float %}
+          {{ (kwh / p) | round(2) }}
+
+      - unique_id: hotwater_soc_chargetime
+        name: "Hotwater SoC chargetime"
+        icon: "mdi:store-24-hour"
+        unit_of_measurement: "t"
+        state: >
+          {% set m = states('sensor.hotwater_soc_chargetime_float') | float %}
+          {{ '%02i:%02i'%(m/60,(60*m)%60) }}
+
+      # Asbjørn's comments:
+      # Fyllingsgrad i bereder avhangig av setpunkt temperatur
+      - unique_id: hotwater_soc
+        name: "Hotwater SoC"
+        icon: "mdi:lightning-bolt-outline"
+        unit_of_measurement: "%"
+        state: >
+          {% set l = 250 %}
+          {% set kwha = states('sensor.hotwater_soc_energy_stored') | float %}       
+          {% set kwhs = states('sensor.hotwater_soc_energy_max') | float %}
+          {% set k = 4.186 %}
+          {% set kt = 3600 %}
+          {% set kx = 40 %}
+          {{ 100-(((kwhs-kwha)*100))*10/100 | round(2) }}
+
+      # Asbjørn's comments:
+      # Beregner kostnad for å varme bereder til settpunkt temperatur-
+      # kr = spotpris og nettleie uten strømstøtte
+      # kWh = energi for å verme til settpunkt
+
+      #- platform: template
+      #  sensors:
+      #    kostnad_settpunkt_bereder:
+      #      friendly_name: "Kostnad varme til settpunkt"
+      #     icon_template: "mdi:lightning-bolt-outline"
+      #      unit_of_measurement: "kr"
+      #      value_template: >-
+      #      {% set kwh = states('sensor.temp_diff_bereder') | float %}
+      #      {% set kr = states('sensor.sum_nettleie_og_tibber_kwh') | float %}
+      #      {{ (kwh * kr) | round(2) }}
