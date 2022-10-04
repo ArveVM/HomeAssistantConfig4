@@ -100,3 +100,21 @@ entities:
       (could also enable the sensor 'OTA updates' but I prefer to disabe thoose not in use)
 3. Disable firewall rule to allow NoT/Shellies internet access
 
+
+## my Shelly web-interfaces:
+Using GitHub as CMDB for Shellies, and as a backup to get to the web-interfaces in case HA is ##cked up.
+
+<details><summary>List of hyperlinks to local web-access to my Shelly-devices</summary>
+<p>
+
+  
+| Name	|Type  | Description/purpose |
+|-------|-------|----------| 
+| [Laundry heater puck](http://192.168.30.89/) | Shelly+1pm | Solution = Laundry Heater |
+| [Laundry washer puck](http://192.168.30.188/)  | Shelly+1pm | Solution = Laundry Washer |
+| [Laundry light puck](http://192.168.30.51/)  | Shelly+1 | Solution = Laundry |
+| [Laundry dryer](http://192.168.30.14/)  | Shelly Plug S | Solution = Laundry Dryer |
+  
+
+</p>
+</details>

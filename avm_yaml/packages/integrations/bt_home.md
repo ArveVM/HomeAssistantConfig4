@@ -5,7 +5,7 @@
 
 
 
-## How I use BTHome-integration:  
+## How I use this integration:  
 - Prereqs:
   - Bluetooth-integration installed
   - Bluetooth-radio:
@@ -14,7 +14,7 @@
     - Add devices through integration and get sensors/entities
 
 
-# my BTHome-devices:  
+## my BTHome-devices:  
 - Xiaomi Mijia Thermometer 2 Bluetooth   
   - Indor temp/humidity sensor with display
   - Used as room sensors i misc. rooms

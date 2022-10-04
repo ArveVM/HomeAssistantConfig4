@@ -12,28 +12,31 @@ Have focused a lot this summer on home improvements outside the HA-sphere,, but 
 
 
 ## Solutions: 
-Current concept is moving towards a Solution beeing 
-- a ReadMe-file to present concept and show screenshots, with reference to 
-- a yaml-file with config and 
-- one or more yaml-files for dashboard/card/chips.
+Current concept is moving towards a 'Solution' beeing: 
+1. ReadMe-file to present concept and show screenshots, with references 
+2. YAML-file with config  
+3. One or more yaml-files for dashboard/card/chips
 
-| Solution  | Description/purpose |
-| ------------- | ------------- |
-| Content Cell  | Content Cell  |
-| [HA-stats](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/solutions/hastats.md)  | my HA-instance's stats of sensor-count and yaml-line-count development  |
+| Area         | Solution      | Description/purpose |
+| ------------ | ------------- | ------------------- |
+| PowerControl | Eva HAN  | Instant power usage, estimate full hour |
+| Server/HA    | [HA-stats](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/solutions/hastats.md)  | my HA-instance's stats of sensor-count and yaml-line-count development  |
 
 ## Functionality: 
 As from my config-principles; addons and integrations are the enablers of functionality.
 All listed, but only those with some level of config or interest for myself/others are documented.
 
-| Type  | Name | Description/purpose |
-| ------------- | ------------- | ------------- |
+| Type      | Name                                       | Description/purpose |
+| ----------| ------------------------------------------ | ------------------- |
 |Integration| [Bluetooth](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/integrations/bluetooth.md)| Enabler for BT-functionality |
-|HACS-int| Browser mod  | v1.5.3 - used primarily for pop-up functionality |
+|HACS-int   | Browser mod  | v1.5.3 - used primarily for pop-up functionality |
 |Integration| [BTHome](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/integrations/bt_home.md) | BTHome-firmware flashed sensors |
+|Integration| [Default config](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/integrations/default_config.yaml) | Adding default HA-functionality,, ,se yaml-file for config/comments |
 |Integration| [Inkbird](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/integrations/inkbird.md) | BT-sensors from Inkbird |
+|Integration| [Logitech Harmony Hub](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/integrations/logitech_harmony_hub.md) | Hub for remote-control |
+|Dashboard  | [UI-/YAML-dashboards](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/integrations/lovelace_yaml_dashboards.md) | Enable both UI- and YAML-dashboards |
+|HACS-int   | [PowerCalc](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/integrations/powercalc.yaml) | Add power-sensors and power-aggregation (mostly used on lights) |
 |Integration| [Shelly](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/integrations/shelly.md) | How/why do I use this integration? |
-
 
 ### Guidance for others:
 One last thing. Everything in this configuration is a combination of the things I want out of a home automation system flavored with the inspiration from others using Home Assistant. In some cases I took someone else's idea and made it my own, and in some I just completely stole it. So I would be remiss if I didn't acknowledge those that inpired this journey. If you like what you see here, please checkout their configs as well. I owe them thanks for sharing their work.
@@ -44,6 +47,7 @@ To prove this point; I even stole this text from thejeffreystone :)
 ### If not yet bored,, check out more specs/principles:
  - [Config principles:](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/ReadMe_configPrinciples.md)
  - [Config history:](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/ReadMe_configHistory.md)
+ - [Current setup](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/ReadMe_currentSetup.md)
  - Fist round of Github-config is archived [HERE](https://github.com/ArveVM/Home-Assistant_config-packages-solutions-1)
 
 

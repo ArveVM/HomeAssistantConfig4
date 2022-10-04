@@ -13,18 +13,22 @@
   - Add devices with discovery/add 
 
 
-# my devices:  
+# my devices: 
+---
 - [Inkbird IBS TH2](https://inkbird.com/products/hygrometer-ibs-th2)
   - Temperature and humidity Hygrometer 
   - Used as sensors for fridge and freezers
+<img width="497" alt="image" src="https://user-images.githubusercontent.com/96014323/193264158-8f60b39a-b637-4ea4-8800-c2b83fce2b3f.png">
+---
+
 - [Inkbird IBT-4XS](https://inkbird.com/products/bluetooth-grill-thermometer-ibt-4xs)
   - 4probe barbeque thermometer
 
+---
 
 ## ADD DEVICE TO HA:
 1. Put BT-device within BT-range of dongle/esp32
    - Make sure BT-device is compatible with installed integrations
-   - If possible, flash with BTHome to have as much as possible through that integration
 
 2. Power on BT-device
 
