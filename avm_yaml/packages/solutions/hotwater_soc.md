@@ -39,16 +39,11 @@ Created dashboard-chip:
 ## Dashboard(s):
 [Chip Hotwater SoC](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/dashboard/cards/chip_hotwater_soc.yaml)
 
-<img width="239" alt="image" src="https://user-images.githubusercontent.com/96014323/193137965-f7cf24ed-00c2-4362-a2ef-79efaee6e442.png">
-_click on 'sensors', and you will get pop-up with development-graph and details_
-<img width="196" alt="image" src="https://user-images.githubusercontent.com/96014323/193138169-866d38a5-88a1-4882-9c95-cc464f0ef478.png">
-_click on other domains and you will get history/details_
+<img width="88" alt="image" src="https://user-images.githubusercontent.com/96014323/193773226-887a50c5-87e2-4641-93d8-b29f8be2b8e9.png">
+_click - and you will get pop-up with more details_
 
 ---
-
-[YAML lines](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/dashboard/cards/hastats_yaml_lines_count.yaml)
-
-<img width="242" alt="image" src="https://user-images.githubusercontent.com/96014323/193139300-3259e7fe-1661-4acc-b3d6-ec6c7a55b10c.png">
+<img width="235" alt="image" src="https://user-images.githubusercontent.com/96014323/193773471-53f1f846-4f87-4724-b5fe-627840d78eca.png">
 _unfortunately no statistic available on sensor,,, is on toDo-list  :(_
 
 # toDo/improvements planned:
@@ -61,6 +56,9 @@ _unfortunately no statistic available on sensor,,, is on toDo-list  :(_
 - Asbjørn Bergsland, Facebook-group; Home Assistant Norge
  
 
+# prereq:
+- browser mod - for popup-functionality
+- custom:multiple-entity-row - for multiple entities in one row in a card
 
 # template-editor test-code:
 nah,,
