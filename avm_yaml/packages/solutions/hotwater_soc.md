@@ -40,11 +40,11 @@ Created dashboard-chip:
 [Chip Hotwater SoC](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/dashboard/cards/chip_hotwater_soc.yaml)
 
 <img width="88" alt="image" src="https://user-images.githubusercontent.com/96014323/193773226-887a50c5-87e2-4641-93d8-b29f8be2b8e9.png">
-_click - and you will get pop-up with more details_
+click - and you will get pop-up with more details:
 
 ---
 <img width="235" alt="image" src="https://user-images.githubusercontent.com/96014323/193773471-53f1f846-4f87-4724-b5fe-627840d78eca.png">
-_unfortunately no statistic available on sensor,,, is on toDo-list  :(_
+will add history graph,,, see toDo-list
 
 # toDo/improvements planned:
 - Check with Asbjørn,, is my re-naming of formulas #¤%&-ing something up??   soc 40% when 55degrees out of 76 ??
