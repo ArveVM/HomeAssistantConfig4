@@ -9,9 +9,7 @@
 
 
 
-# Debug logging
-# Add the following to configuration.yaml:
-
+# # # Debug logging:
 #logger:
 #  default: warning
 #  logs:

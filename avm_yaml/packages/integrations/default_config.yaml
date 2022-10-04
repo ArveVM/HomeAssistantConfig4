@@ -25,7 +25,7 @@ default_config:
 # add automations-file that is enabled in GUI:
 automation: !include ../../../automations.yaml
 # copied from mrRRs config,, own folder for functionality-view Yaml-editable-only-automations:
-automation yaml_editable: !include_dir_list ../../entities/automation_yaml
+#automation yaml_editable: !include_dir_list ../../entities/automation_yaml
 
 #backup:       #AVM; added in 22.4 
 #bluetooth:    #AVM: added in 2022.8

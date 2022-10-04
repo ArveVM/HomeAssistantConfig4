@@ -1,11 +1,6 @@
-# Example configuration.yaml entry
-#tts:
-#  - platform: google_translate
 
-
-
-    # Example configuration.yaml entry for Google Translate TTS service
-    #    https://www.home-assistant.io/integrations/tts
+# Example configuration.yaml entry for Google Translate TTS service
+#    https://www.home-assistant.io/integrations/tts
 tts:
   - platform: google_translate
 #    cache: true
