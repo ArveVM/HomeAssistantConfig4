@@ -3,10 +3,10 @@
 
 
 ## Why Hotwater SoC??  
-- Splitting hotwater-control in several packages,, and this particular looks at the State of Charge
+Splitting hotwater-control in several packages,, and this particular looks at the State of Charge
+- State of Charge in %
+- Time to charge full
 
-State of Charge in %
-Time to charge full
 
 Shamelessly copied code from Asbjørn Bergsland, re-named to my naming convention, and created my 'Solution'
 - changed to my tank sice and heating-element sixe
@@ -21,7 +21,7 @@ Created dashboard-chip:
 
 
 ## Solution-Yaml:
-[hastats.yaml](hastats.yaml)
+[hotwater_soc.yaml](hotwater_soc.yaml)
 - input-value for target temp
 - input-definition of tank-sice
 - input-definition of heater-element sice
@@ -37,7 +37,7 @@ Created dashboard-chip:
 
 
 ## Dashboard(s):
-[Entities by domain](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/dashboard/cards/hastats_entities_by_domain.yaml)
+[Chip Hotwater SoC](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/dashboard/cards/chip_hotwater_soc.yaml)
 
 <img width="239" alt="image" src="https://user-images.githubusercontent.com/96014323/193137965-f7cf24ed-00c2-4362-a2ef-79efaee6e442.png">
 _click on 'sensors', and you will get pop-up with development-graph and details_
