@@ -1,12 +1,10 @@
 # ArveVM; solution to calculate State of Charge for hotwater
 # idea intirely stolen from Asbjørn Bergsland on Facebook/Home Assistant Norge
 # re-worked as Solution and to new template format, and to my naming standards
+# also moved input-data to be UI-settings,, added as a line in the card
 
-# My Input is (so you have to change theese within this file to adopt the 'Solution'):
-# sensor.hotwater_temperature
-# {% set l = 250 %}    (sice of hotwater-tank, mine is 200liters)
-# {% set p = 2.8 %}    (sice of heater-element in hotwatertank, in kWh)
-# also you must set the input_number.hotwater_soc_target_temp (mine is 75)
+# for more info: https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/solutions/hotwater_soc.md
+
 
 homeassistant:
   customize:
