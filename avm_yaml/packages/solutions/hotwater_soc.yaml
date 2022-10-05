@@ -3,23 +3,27 @@
 # re-worked as Solution and to new template format, and to my naming standards
 
 # My Input is (so you have to change theese within this file to adopt the 'Solution'):
-  # sensor.hotwater_temperature
-  # {% set l = 250 %}    (sice of hotwater-tank, mine is 200liters)
-  # {% set p = 2.8 %}    (sice of heater-element in hotwatertank, in kWh)   
-  # also you must set the input_number.hotwater_soc_target_temp (mine is 75)
+# sensor.hotwater_temperature
+# {% set l = 250 %}    (sice of hotwater-tank, mine is 200liters)
+# {% set p = 2.8 %}    (sice of heater-element in hotwatertank, in kWh)
+# also you must set the input_number.hotwater_soc_target_temp (mine is 75)
 
 homeassistant:
   customize:
     input_number.hotwater_soc_target_temp:
       device_class: temperature
+    input_number.hotwater_soc_min_temp:
+      device_class: temperature
+    input_number.hotwater_soc_input_temp:
+      device_class: temperature
+
     #package.node_anchors:
-      # Add node-anchor for identification of code-location for created sensors
+    # Add node-anchor for identification of code-location for created sensors
     #  package_attribute_to_entity: &package_attribute
 
-
-
-
 input_number:
+  # Set value for what you considered 100% charged hotwater-tank.
+  # It can be supressed, so you can fill 120% if you boost water above this limit
   hotwater_soc_target_temp:
     name: Hotwater SoC Target Temp
     unit_of_measurement: °C
@@ -27,12 +31,50 @@ input_number:
     initial: 75
     min: 60
     max: 85
+  # Set value for what you considered 0% charged hotwater-tank.
+  # It can be supressed, so you can get to -40% if you get colder water than this in your tank
+  # (but then it is not considered "hotwater anymore")
+  hotwater_soc_min_temp:
+    name: Hotwater SoC Min Temp
+    unit_of_measurement: °C
+    mode: box
+    initial: 40
+    min: 10
+    max: 85
+
+  # Set value for temperature of water flowing into the tank.
+  hotwater_soc_input_temp:
+    name: Hotwater SoC Input Temp
+    unit_of_measurement: °C
+    mode: box
+    initial: 5
+    min: 0
+    max: 10
+
+  # Set value for temperature of water flowing into the tank.
+  hotwater_soc_tanksize:
+    name: Hotwater SoC TankSize
+    unit_of_measurement: L
+    mode: box
+    initial: 250
+    min: 50
+    max: 500
+
+  # Set value for element-sice of water flowing into the tank.
+  hotwater_soc_elementsize:
+    name: Hotwater SoC ElementSize
+    unit_of_measurement: kWh
+    mode: box
+    initial: 2.8
+    min: 0.1
+    max: 5
+
 
 template:
   - sensor:
       # Asbjørn's comments:
       # Beregner antall kWh det tar å varme bereder til settpunkt temperatur-
-      # l = tankstørrelse (200L)
+      # l = tankstørrelse (250L)    - ArveVM; moved to input-number for easy-adoptation.
       # t1 = settpunkt temperatur
       # t2 = temperatur bereder
       # 4.186 = 4186 er konstanten for varmekapasiteten til vann
@@ -45,7 +87,7 @@ template:
         icon: "mdi:lightning-bolt-outline"
         unit_of_measurement: "kWh"
         state: >
-          {% set l = 250 %}
+          {% set l = states('input_number.hotwater_soc_tanksize') | float %}
           {% set t1 = states('input_number.hotwater_soc_target_temp') | float %}
           {% set t2 = states('sensor.hotwater_temperature') | float %}
           {% set k = 4.186 %}
@@ -60,11 +102,11 @@ template:
         icon: "mdi:lightning-bolt-outline"
         unit_of_measurement: "kWh"
         state: >-
-          {% set l = 250 %}
+          {% set l = states('input_number.hotwater_soc_tanksize') | float %}
           {% set t2 = states('sensor.hotwater_temperature') | float %}
           {% set k = 4.186 %}
           {% set kt = 3600 %}
-          {% set kx = 40 %}
+          {% set kx = states('input_number.hotwater_soc_input_temp') | float %}
           {{ (k * l * (t2 - kx) /kt) | round(1) }}
 
       # Asbjørn's comments:
@@ -74,11 +116,11 @@ template:
         icon: "mdi:lightning-bolt-outline"
         unit_of_measurement: "kWh"
         state: >
-          {% set l = 250 %}
+          {% set l = states('input_number.hotwater_soc_tanksize') | float %}
           {% set tx = states('input_number.hotwater_soc_target_temp') | float %}       
           {% set k = 4.186 %}
           {% set kt = 3600 %}
-          {% set kx = 40 %}
+          {% set kx = states('input_number.hotwater_soc_input_temp') | float %}
           {{ (k * l * (tx - kx) /kt) | round(1) }}
 
       # Asbjørn's comments:
@@ -90,7 +132,7 @@ template:
         icon: "mdi:lightning-bolt-outline"
         unit_of_measurement: "t"
         state: >
-          {% set p = 2.8 %}
+          {% set p = states('input_number.hotwater_soc_elementsize') | float %}
           {% set kwh = states('sensor.hotwater_soc_energy_chargable') | float %}
           {{ (kwh / p) | round(2) }}
 
@@ -99,8 +141,10 @@ template:
         icon: "mdi:store-24-hour"
         unit_of_measurement: "t"
         state: >
-          {% set m = states('sensor.hotwater_soc_chargetime_float') | float %}
-          {{ '%02i:%02i'%(m/60,(60*m)%60) }}
+          {% set hours = states('sensor.hotwater_soc_chargetime_float') | float %}
+          {% set minutes = ((hours % 1) * 60) | int %}
+          {% set hours = (hours - (hours % 1)) | int %}
+          {{ '%02i:%02i'%(hours, minutes) }}
 
       # Asbjørn's comments:
       # Fyllingsgrad i bereder avhangig av setpunkt temperatur
@@ -109,12 +153,12 @@ template:
         icon: "mdi:lightning-bolt-outline"
         unit_of_measurement: "%"
         state: >
-          {% set l = 250 %}
+          {% set l = states('input_number.hotwater_soc_tanksize') | float %}
           {% set kwha = states('sensor.hotwater_soc_energy_stored') | float %}       
           {% set kwhs = states('sensor.hotwater_soc_energy_max') | float %}
           {% set k = 4.186 %}
           {% set kt = 3600 %}
-          {% set kx = 40 %}
+          {% set kx = states('input_number.hotwater_soc_min_temp') | float %}
           {{ 100-(((kwhs-kwha)*100))*10/100 | round(2) }}
 
       # Asbjørn's comments:
