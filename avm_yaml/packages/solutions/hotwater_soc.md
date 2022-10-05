@@ -79,4 +79,7 @@ with all lines expanded:
 
 # template-editor test-code:
 nah,,
-
+you can contact Asbjørn  :)
+- or google formulas,,
+- or check this calculator; https://bloglocation.com/art/water-heating-calculator-for-time-energy-power
+- 
