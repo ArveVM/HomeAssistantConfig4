@@ -53,8 +53,13 @@ Created dashboard-chip:
 click - and you will get pop-up with more details:
 
 ---
-<img width="235" alt="image" src="https://user-images.githubusercontent.com/96014323/193773471-53f1f846-4f87-4724-b5fe-627840d78eca.png">
-will add history graph,,, see toDo-list
+<img width="237" alt="image" src="https://user-images.githubusercontent.com/96014323/194163431-6e819073-f961-4de4-abe7-53352f2ce04c.png">
+---
+with all lines expanded:
+<img width="236" alt="image" src="https://user-images.githubusercontent.com/96014323/194163560-e9ab8e04-e2a7-42c1-83b5-f3cedf8823dc.png">
+
+---
+
 
 # toDo/improvements planned:
 - Check with Asbjørn,, is my re-naming of formulas #¤%&-ing something up??   soc 40% when 55degrees out of 76 ??
