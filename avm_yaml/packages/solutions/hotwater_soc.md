@@ -15,16 +15,26 @@ Created dashboard-chip:
 - to see SoC% and currentTemp
 - with popup-functionality:
   - Target-temp/current
-  - chargetime
-  - energy max/charged/toBeCharged
-  - (will add history grap??)
+  - chargetime to SoC-target
+  - energy toBeCharged 
+    - EnergyMax, 100% charged tank
+    - Charged (energy used to charge tank to current status) 
+    - toBeCharged 
+  - SoC-settings:
+    - SoC-target
+    - SoC-min (consider temp when hotwater is not actually defined as hotwater)
+    - intake-temp (water temp into hotwater-tank
+    - Tank size
+    - Tank emement size  
+  - History grap
 
 
 ## Solution-Yaml:
 [hotwater_soc.yaml](hotwater_soc.yaml)
-- input-value for target temp
-- input-definition of tank-sice
-- input-definition of heater-element sice
+- input-number for target temp 
+- input-number for min temp
+- input-number of tank-sice
+- input-number of heater-element sice
 - a bunch of sensors created to track: 
   - max capacity of kWh chargable to the tank
   - current state kWh
