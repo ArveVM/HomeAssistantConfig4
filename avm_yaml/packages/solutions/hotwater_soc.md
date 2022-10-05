@@ -9,7 +9,7 @@ Splitting hotwater-control in several packages,, and this particular looks at th
 
 
 Shamelessly copied code from Asbjørn Bergsland, re-named to my naming convention, and created my 'Solution'
-- changed to my tank sice and heating-element sixe
+- Created inpust for temps, tank sice and heating-element sixe
 
 Created dashboard-chip:
 - to see SoC% and currentTemp
@@ -26,7 +26,7 @@ Created dashboard-chip:
     - intake-temp (water temp into hotwater-tank
     - Tank size
     - Tank emement size  
-  - History grap
+  - History grap  (first version,, enough today,,)
 
 
 ## Solution-Yaml:
