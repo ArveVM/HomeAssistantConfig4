@@ -62,9 +62,9 @@ with all lines expanded:
 
 
 # toDo/improvements planned:
-- Check with Asbjørn,, is my re-naming of formulas #¤%&-ing something up??   soc 40% when 55degrees out of 76 ??
 - new average temp, must check differance between temp-sensor on mixer and the one in the bottom of the tank
-- add history graph to popup
+- add acceptable quality on history graph to popup,,,
+- must also create legionella warning
 
 
 # Credits/inspiration:
@@ -74,6 +74,8 @@ with all lines expanded:
 # prereq:
 - browser mod - for popup-functionality
 - custom:multiple-entity-row - for multiple entities in one row in a card
+- custom:fold-entity-row     - for fold-entity-rows
+- UI minimalist - for templates (on chip),, should be easy to remove/adopt to your own themes
 
 # template-editor test-code:
 nah,,
