@@ -9,7 +9,7 @@ Splitting hotwater-control in several packages,, and this particular looks at th
 
 
 Shamelessly copied code from Asbjørn Bergsland, re-named to my naming convention, and created my 'Solution'
-- changed to my tank sice and heating-element sixe
+- Created inpust for temps, tank sice and heating-element sixe
 
 Created dashboard-chip:
 - to see SoC% and currentTemp
@@ -26,7 +26,7 @@ Created dashboard-chip:
     - intake-temp (water temp into hotwater-tank
     - Tank size
     - Tank emement size  
-  - History grap
+  - History grap  (first version,, enough today,,)
 
 
 ## Solution-Yaml:
@@ -62,9 +62,9 @@ with all lines expanded:
 
 
 # toDo/improvements planned:
-- Check with Asbjørn,, is my re-naming of formulas #¤%&-ing something up??   soc 40% when 55degrees out of 76 ??
 - new average temp, must check differance between temp-sensor on mixer and the one in the bottom of the tank
-- add history graph to popup
+- add acceptable quality on history graph to popup,,,
+- must also create legionella warning
 
 
 # Credits/inspiration:
@@ -74,7 +74,12 @@ with all lines expanded:
 # prereq:
 - browser mod - for popup-functionality
 - custom:multiple-entity-row - for multiple entities in one row in a card
+- custom:fold-entity-row     - for fold-entity-rows
+- UI minimalist - for templates (on chip),, should be easy to remove/adopt to your own themes
 
 # template-editor test-code:
 nah,,
-
+you can contact Asbjørn  :)
+- or google formulas,,
+- or check this calculator; https://bloglocation.com/art/water-heating-calculator-for-time-energy-power
+- 
