@@ -20,5 +20,5 @@ powercalc:
   enable_autodiscovery: false      # AVM: added myself, want manual control of structure and config
   force_update_frequency: 00:01:00 #Each minute
 #  power_sensor_naming: "{} Powersensor"
-  create_energy_sensors: false     # AVM: want manual control of structure and config
+  create_energy_sensors: false       # AVM: want manual control of structure and config
 
