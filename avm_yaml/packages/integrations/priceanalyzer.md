@@ -45,7 +45,7 @@ Then of-course there will be added the usual value added tax upon them all, but 
 | hour_start_night   | 22                | Night-tariff start at 22:00 (and last until 05:59)
 | hour_start_day     | 6                 | Day-tariff start at 06:00 (until 21:59)
 
-To use this,, copy the code below - and update the 7 first lines to your correct data for your agreement with your power supplier, and add to 
+To use this,, copy the code below - and update the 7 first lines to your correct data for your agreement with your power supplier (amounts in KR, even if you use Øre), and add to this section when creating new sensor/entity/integration: 
 <img width="203" alt="image" src="https://user-images.githubusercontent.com/96014323/194400572-639798f1-80e4-415c-970c-ec1284a628a0.png">
 
 
