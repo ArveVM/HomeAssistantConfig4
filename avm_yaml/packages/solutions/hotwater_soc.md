@@ -56,7 +56,7 @@ click - and you will get pop-up with more details:
 <img width="237" alt="image" src="https://user-images.githubusercontent.com/96014323/194163431-6e819073-f961-4de4-abe7-53352f2ce04c.png">
 ---
 with all lines expanded:
-<img width="236" alt="image" src="https://user-images.githubusercontent.com/96014323/194163560-e9ab8e04-e2a7-42c1-83b5-f3cedf8823dc.png">
+<img width="235" alt="image" src="https://user-images.githubusercontent.com/96014323/195613384-1c3a8885-a3bc-406f-8072-02e1f058e487.png">
 
 ---
 
