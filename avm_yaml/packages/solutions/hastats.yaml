@@ -1,30 +1,53 @@
 # ArveVM; follow link for further documentation and appraisals:
 # https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/solutions/hastats.md
 
+homeassistant:
+  customize:
+    sensor.hastats_yaml-line_total_count:
+      #device_class: temperature
+      state_class: measurement
+    sensor.hastats_yaml-line_avm_yaml_count:
+      #device_class: temperature
+      state_class: measurement
+    sensor.hastats_yaml-line_dashboard_count:
+      #device_class: temperature
+      state_class: measurement
+    sensor.hastats_yaml-line_packages_count:
+      #device_class: temperature
+      state_class: measurement
+    sensor.hastats_yaml-line_customcomponents_count:
+      #device_class: temperature
+      state_class: measurement
+
 sensor:
   # count number of enabled YAML-lines in my config,,
   # idea nipped from;  https://www.youtube.com/watch?v=OFky6pYj1KE
-  - platform: command_line
-    name: "HAstats YAML-line TOTAL count"
-    #state_class: measurement  
+  - name: "HAstats YAML-line TOTAL count"
+    unique_id: hastats_yaml-line_total_count
+    platform: command_line
+    unit_of_measurement: "lines"
+    #state_class: measurement
     command: " find /config/ -name '*.yaml' | xargs cat | wc -l"
   - platform: command_line
     name: "HAstats YAML-line AVM_yaml count"
-    #state_class: measurement  
+    unique_id: hastats_yaml-line_avm_yaml_count
+    unit_of_measurement: "lines"
     command: " find /config/avm_yaml -name '*.yaml' | xargs cat | wc -l"
   - platform: command_line
     name: "HAstats YAML-line Dashboard count"
-    #state_class: measurement  
+    unique_id: hastats_yaml-line_dashboard_count
+    unit_of_measurement: "lines"
     command: " find /config/avm_yaml/dashboard -name '*.yaml' | xargs cat | wc -l"
   - platform: command_line
     name: "HAstats YAML-line Packages count"
-    #state_class: measurement  
+    unique_id: hastats_yaml-line_packages_count
+    unit_of_measurement: "lines"
     command: " find /config/avm_yaml/packages -name '*.yaml' | xargs cat | wc -l"
   - platform: command_line
-    name: "HAstats YAML-line DefaultConfig count"
-    #state_class: measurement  
-    command: " find /config/avm_yaml/packages/test1 -name '*.yaml' | xargs cat | wc -l"
-
+    name: "HAstats YAML-line CustomComponents count"
+    unique_id: hastats_yaml-line_customcomponents_count
+    unit_of_measurement: "lines"
+    command: " find /config/custom_components -name '*.yaml' | xargs cat | wc -l"
 
 template:
   #  ebd = Enteties by Domain  :)
@@ -32,7 +55,7 @@ template:
       # some groups to get right level reporting:
       - unique_id: "hastats_ebd_sum_sensors"
         name: HAstats EBD sum sensors
-        state_class: measurement  
+        state_class: measurement
         state: >
           {{ states('sensor.hastats_ebd_sensors') | float(default=0)
           + states('sensor.hastats_ebd_binary_sensors') | float(default=0)
@@ -40,7 +63,7 @@ template:
         icon: mdi:case-sensitive-alt
       - unique_id: hastats_ebd_sum_inputs2
         name: HAstats EBD sum inputs
-        state_class: measurement  
+        state_class: measurement
         state: >
           {{ states('sensor.hastats_ebd_input_booleans') | float(default=0)
           + states('sensor.hastats_ebd_input_datetimes') | float(default=0)
@@ -53,11 +76,11 @@ template:
       # then total and checksum:
       - unique_id: hastats_ebd_total
         name: HAstats EBD total
-        state_class: measurement  
+        state_class: measurement
         state: "{{'' ~ states | count }}"
         icon: mdi:sigma
       - name: hastats_ebd_total_checksum
-        state_class: measurement  
+        state_class: measurement
         state: >-
           {{states('sensor.hastats_ebd_total') | float(default=0)
           - states('sensor.hastats_ebd_automations') | float(default=0)
@@ -66,6 +89,7 @@ template:
           - states('sensor.hastats_ebd_calendars') | float(default=0)
           - states('sensor.hastats_ebd_climates') | float(default=0)
           - states('sensor.hastats_ebd_counters') | float(default=0)
+          - states('sensor.hastats_ebd_covers') | float(default=0) 
           - states('sensor.hastats_ebd_device_trackers') | float(default=0)
           - states('sensor.hastats_ebd_groups') | float(default=0)
           - states('sensor.hastats_ebd_input_booleans') | float(default=0)
@@ -94,96 +118,101 @@ template:
 
       # then counters for the actual domains:
       - name: hastats_ebd_automations
-        state_class: measurement  
+        state_class: measurement
         icon: mdi:play
         state: "{{states.automation | count}}"
       - name: hastats_ebd_binary_sensors
-        state_class: measurement  
+        state_class: measurement
         state: "{{states.binary_sensor | count}}"
       - name: hastats_ebd_buttons
-        state_class: measurement  
+        state_class: measurement
         state: "{{states.button | count}}"
       - name: hastats_ebd_calendars
-        state_class: measurement  
+        state_class: measurement
         state: "{{states.calendar | count}}"
       - name: hastats_ebd_climates
-        state_class: measurement  
+        state_class: measurement
         state: "{{states.climate | count}}"
       - name: hastats_ebd_counters
-        state_class: measurement  
+        state_class: measurement
         state: "{{states.counter | count}}"
+      - unique_id: hastats_ebd_covers
+        name: HAstats EBD Covers
+        state_class: measurement
+        state: "{{states.cover | count}}"
       - name: hastats_ebd_device_trackers
-        state_class: measurement  
+        state_class: measurement
         state: "{{states.device_tracker | count}}"
-      - name: hastats_ebd_groups
-        state_class: measurement  
+      - unique_id: hastats_ebd_groups
+        name: HAstats EbD Groups
+        state_class: measurement
         state: "{{states.group | count}}"
       - name: hastats_ebd_input_booleans
-        state_class: measurement  
+        state_class: measurement
         state: "{{states.input_boolean | count}}"
       - name: hastats_ebd_input_datetimes
-        state_class: measurement  
+        state_class: measurement
         state: "{{states.input_datetime | count}}"
       - name: hastats_ebd_input_numbers
-        state_class: measurement  
+        state_class: measurement
         state: "{{states.input_number | count}}"
       - name: hastats_ebd_input_selects
-        state_class: measurement  
+        state_class: measurement
         state: "{{states.input_select | count}}"
       - name: hastats_ebd_input_texts
-        state_class: measurement  
+        state_class: measurement
         state: "{{states.input_text | count}}"
       - name: hastats_ebd_lights
-        state_class: measurement  
+        state_class: measurement
         icon: mdi:lightbulb
         state: "{{states.light | count}}"
       - name: hastats_ebd_media_players
-        state_class: measurement  
+        state_class: measurement
         state: "{{states.media_player | count}}"
       - name: hastats_ebd_numbers
-        state_class: measurement  
+        state_class: measurement
         state: "{{states.number | count}}"
       - name: hastats_ebd_persistent_notifications
-        state_class: measurement  
+        state_class: measurement
         state: "{{states.persistent_notification | count}}"
       - name: hastats_ebd_persons
-        state_class: measurement  
+        state_class: measurement
         state: "{{states.person | count}}"
       - name: hastats_ebd_remotes
-        state_class: measurement  
+        state_class: measurement
         state: "{{states.remote | count}}"
       - name: hastats_ebd_scenes
-        state_class: measurement  
+        state_class: measurement
         state: "{{states.scene | count}}"
       - name: hastats_ebd_scripts
         icon: mdi:script
-        state_class: measurement  
+        state_class: measurement
         state: "{{states.script | count}}"
       - name: hastats_ebd_selects
-        state_class: measurement  
+        state_class: measurement
         state: "{{states.select | count}}"
       - name: hastats_ebd_sensors
-        state_class: measurement  
+        state_class: measurement
         icon: mdi:case-sensitive-alt
         state: "{{states.sensor | count}}"
       - name: hastats_ebd_sun
-        state_class: measurement  
+        state_class: measurement
         state: "{{states.sun | count}}"
       - name: hastats_ebd_switches
-        state_class: measurement  
+        state_class: measurement
         state: "{{states.switch | count}}"
       - name: hastats_ebd_timers
-        state_class: measurement  
+        state_class: measurement
         state: "{{states.timer | count}}"
       - name: hastats_ebd_updates
-        state_class: measurement  
+        state_class: measurement
         state: "{{states.update | count}}"
       - name: hastats_ebd_weathers
-        state_class: measurement  
+        state_class: measurement
         state: "{{states.weather | count}}"
       - name: hastats_ebd_zones
-        state_class: measurement  
+        state_class: measurement
         state: "{{states.zone | count}}"
       - name: hastats_ebd_zwaves
-        state_class: measurement  
+        state_class: measurement
         state: "{{states.zwave | count}}"
