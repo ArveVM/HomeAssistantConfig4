@@ -14,7 +14,7 @@ homeassistant:
       state_class: measurement
     sensor.hastats_yaml-line_packages_count:
       #device_class: temperature
-      state_class: measurement
+      state_class: measurement  
     sensor.hastats_yaml-line_customcomponents_count:
       #device_class: temperature
       state_class: measurement

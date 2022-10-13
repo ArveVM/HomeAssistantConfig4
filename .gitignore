@@ -32,7 +32,7 @@ card_room*
 chip_todo*
 chip_ha*
 nordpool*
-price*
+priceanalyzer_01*
 room__*
 *view*
 dashboard_mob*
@@ -75,3 +75,4 @@ secrets_google_assistant**
 
 
 
+avm_yaml/dashboard/cards/card_hotwater_soc.yaml

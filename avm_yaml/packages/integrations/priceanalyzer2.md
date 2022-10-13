@@ -1,0 +1,76 @@
+                                                  ArveVM, 11.sept.2022
+# PriceAnalyzer-integration
+[Official Erlend-documentation](https://github.com/erlendsellie/priceanalyzer)
+
+
+
+
+## How I use this integration:  
+- Prereqs:
+  - Add entity for Noorpool (north eurpoa spot market for electrical power)
+    - Adding additional cost (se code-example below)
+      - Including day/night tarriffs
+- Use it in hotwater, 
+- Use it in LaundryHeater, with blueprint to adjust thermostat-temp according to ricing/falling prices
+
+
+## Code sample to add additional cost (add when creating entity):  
+
+Using some variables in the start of the code,, to easily adopt new values when adding a new sensor/entity:
+
+The Total cost of electricity is divided in Energy-cost, and Transportation cost
+- Energy cost is for me:
+  - Nordpool spot
+  - Power company markup upon Nordpool spot
+- Transportation cost:
+  - Enova-fee, pr kWh (energy-efficiensy/savings-fund)
+  - Transport_fixed, pr kWh (Forbruksavgift)  
+  - Transport_night, pr kWh (Energiledd Natt)
+  - Transport_day, pr kWh (Energiledd dag)
+- Then a capacity-fee based upon how much you have spent on max three-day-average-max  (will not be part of this pricing,,, will have to be set up in different solution)
+Then of-course there will be added the usual value added tax upon them all
+
+
+| Variable           | My value          | Description/purpose |
+| ----------         | ----------------- | ------------------- |
+| spot               | hourly spot       | PriceAnalyzer get the Nordpool hourly spot-price
+| spot_markup        | 0,029             | My supplier adds 2,9 cents (øre) on top of the Nordpool hourly spot-price
+| ------------------ |-----------------  | -----------
+| enova_fee          | 0.0125            | All customers contribute to fund for energy-efficiency (www.enova.no) 
+| transport_base     | 0.1926            | We have to add another 19,26 cents (øre) to the Enova fund for 'base-transport-cost'
+| transport_night    | 0.1250            | In addition to 'base-transport-cost' we add a day- or night-fee
+| transport_day      | 0.2000            | In addition to 'base-transport-cost' we add a day- or night-fee
+| hour_start_night   | 22                | Night-tariff start at 22:00 - 05:59
+| hour_start_day     | 6                 | Day-tariff start at 06:00 (until 21:59)
+
+To use this,, copy the code below - and update the 7 first lines to your correct data for your agreement with your power supplier, and add to 
+
+mark: the 'transport_base' is wrong definition, it is actually the state fee/tax on electrical consumption (in addition to value-added-taxes)
+```ruby
+
+{% set spot_markup      = 0.029 %}
+{% set enova_fee        = 0.0125 %}
+{% set transport_base   = 0.1926 %}
+{% set transport_night  = 0.1250 %}
+{% set transport_day    = 0.2000 %}
+{% set hour_start_night = 22 %}
+{% set hour_start_day   = 6 %}
+
+{% set price = spot_markup %}
+{% set price = price + enova_fee %}
+{% set price = price + transport_base %}
+
+{%set hour = now().hour%}
+{% if hour >= hour_start_night or hour < hour_start_day %}
+  {% set price = price + transport_night %}
+{% else%}
+  {% set price = price + transport_day %}
+{% endif %}
+{{ price | round(4)}}
+
+```
+
+## toDo / plans ahead:
+- warnings??
+- for each solution, pick price-profile (lowest 5, lowest-10)
+- Append to solution for average highes three hours,,, to add the actual monthly capacity-fee
