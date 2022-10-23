@@ -64,7 +64,7 @@ template:
           {{ (k * l * (t2 - kx) /kt) | round(1) }}
 
       - name: "Hotwater SoC energy chargable"
-        unique_id: sensor.hotwater_soc_energy_chargable
+        unique_id: hotwater_soc_energy_chargable
         icon: "mdi:lightning-bolt-outline"
         unit_of_measurement: "kWh"
         state: >

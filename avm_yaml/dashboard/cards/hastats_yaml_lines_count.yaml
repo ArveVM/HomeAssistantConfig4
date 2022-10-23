@@ -21,7 +21,7 @@ entities:
               title: Monthly development
               chart_type: bar
               #period: month
-              period: 5minute
+              period: day
               days_to_show: 365
               entities:
                 - entity: sensor.hastats_yaml_line_total_count
@@ -46,7 +46,7 @@ entities:
               title: Monthly development
               chart_type: bar
               #period: month
-              period: 5minute
+              period: day
               days_to_show: 365
               entities:
                 - entity: sensor.hastats_yaml_line_packages_count
@@ -71,7 +71,7 @@ entities:
               title: Monthly development
               chart_type: bar
               #period: month
-              period: 5minute
+              period: day
               days_to_show: 365
               entities:
                 - entity: sensor.hastats_yaml_line_dashboard_count

@@ -47,6 +47,24 @@ sensor:
     unit_of_measurement: "lines"
 
 template:
+  #  Count number of loaded Integrations
+  - sensor:
+      - name: HAstats integrations count
+        unique_id: hastats_integrations_count
+        state_class:
+          measurement
+          #{{ ns.count }} - {{attr}} {{states.sensor.start_time.attributes [attr] }}
+        state: >
+          {% set ns = namespace(count = 0) %}
+          {% for attr in states.sensor.start_time.attributes %}
+          {%- if not attr=="friendly_name" 
+              and not attr=="unit_of_measurement"     
+              and not attr=="icon" -%}
+          {%- set ns.count = ns.count+1 %}
+          {%- endif %}
+          {%- endfor %}
+          {{ns.count}}
+
   #  EbD = Enteties by Domain  :)
   - sensor:
       # some groups to get right level reporting:
@@ -76,6 +94,7 @@ template:
         state_class: measurement
         state: "{{'' ~ states | count }}"
         icon: mdi:sigma
+      # Checksum to be able to verify of total = sum of defined domains ("are there new domains added?")
       - name: HAstats EbD total checksum
         unique_id: hastats_ebd_total_checksum
         state_class: measurement
@@ -114,7 +133,7 @@ template:
           - states('sensor.hastats_ebd_zwaves') | float(default=0)
           }}
 
-      # then counters for the actual domains:
+      # then counters for each of the the actual domains:
       - name: HAstats EbD automations
         unique_id: hastats_ebd_automations
         state_class: measurement
@@ -201,7 +220,7 @@ template:
         unique_id: hastats_ebd_scenes
         state_class: measurement
         state: "{{states.scene | count}}"
-      - name: hHAstats EbD scripts
+      - name: HAstats EbD scripts
         unique_id: hastats_ebd_scripts
         icon: mdi:script
         state_class: measurement

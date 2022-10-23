@@ -1,0 +1,43 @@
+# https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/solutions/hastats.md
+# card require Browser Mod v1.5.3
+
+type: glance
+title: HA integration - count
+entities:
+  # Total:
+  - entity: sensor.hastats_integrations_count
+    name: total
+    hold_action: more_info
+    tap_action:
+      action: fire-dom-event
+      browser_mod:
+        command: popup
+        title: "Integrations - count:"
+        large: false
+        card:
+          type: vertical-stack
+          cards:
+            - type: statistics-graph
+              title: Daily development
+              chart_type: bar
+              period: day
+              days_to_show: 365
+              entities:
+                - entity: sensor.hastats_integrations_count
+                  name: "max total/days"
+              stat_types:
+                - max
+
+            - type: markdown
+              content: |
+                Integrations sort by last startup-time:
+                  {% set ns = namespace(count = 0) %}
+                  {% for attr in states.sensor.start_time.attributes %}
+                  {%- if not attr=="friendly_name" 
+                      and not attr=="unit_of_measurement"     
+                      and not attr=="icon" -%}
+                  {%- set ns.count = ns.count+1 %}
+                  #{{ ns.count }} - {{attr}} {{states.sensor.start_time.attributes [attr] }}
+                  {%- endif %}
+                  {%- endfor %}
+                Total count: {{ns.count}}

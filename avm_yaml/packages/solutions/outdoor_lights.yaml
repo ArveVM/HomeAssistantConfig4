@@ -56,5 +56,6 @@ automation:
     action:
     - service: "switch.turn_{{ 'on' if is_state('binary_sensor.tod_for_outdoor_lights', 'on') else 'off' }}"
       target: 
-        entity_id: switch.outdoor_light1
+        entity_id: switch.outside_light1
+
 
