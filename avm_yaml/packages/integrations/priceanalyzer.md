@@ -39,9 +39,10 @@ Then of-course there will be added the usual value added tax upon them all, but 
 | spot_markup        | 0,029             | My supplier adds 2,9 cents (øre) on top of the Nordpool hourly spot-price
 | ------------------ |-----------------  | -----------
 | enova_fee          | 0.0125            | All customers contribute to fund for energy-efficiency (www.enova.no) 
-| transport_base     | 0.1926            | We have to add another 19,26 cents (øre) for 'base-transport-cost'
+| state_fee          | 0.1926            | Add another 19,26 cents (øre) to government for 'statleg elavgift/forbruksavgift'
 | transport_night    | 0.1250            | In addition to 'base-transport-cost' we add a day- or night-fee
 | transport_day      | 0.2000            | In addition to 'base-transport-cost' we add a day- or night-fee
+| ------------------ |-----------------  | -----------
 | hour_start_night   | 22                | Night-tariff start at 22:00 (and last until 05:59)
 | hour_start_day     | 6                 | Day-tariff start at 06:00 (until 21:59)
 
@@ -53,7 +54,7 @@ To use this,, copy the code below - and update the 7 first lines to your correct
 
 {% set spot_markup      = 0.029 %}
 {% set enova_fee        = 0.0125 %}
-{% set transport_base   = 0.1926 %}
+{% set state_fee        = 0.1926 %}
 {% set transport_night  = 0.1250 %}
 {% set transport_day    = 0.2000 %}
 {% set hour_start_night = 22 %}
@@ -61,7 +62,7 @@ To use this,, copy the code below - and update the 7 first lines to your correct
 
 {% set price = spot_markup %}
 {% set price = price + enova_fee %}
-{% set price = price + transport_base %}
+{% set price = price + state_fee %}
 
 {%set hour = now().hour%}
 {% if hour >= hour_start_night or hour < hour_start_day %}
