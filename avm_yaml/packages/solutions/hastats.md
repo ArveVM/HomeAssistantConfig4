@@ -32,6 +32,16 @@ _click on other domains and you will get history/details_
 <img width="242" alt="image" src="https://user-images.githubusercontent.com/96014323/193139300-3259e7fe-1661-4acc-b3d6-ec6c7a55b10c.png">
 _unfortunately no statistic available on sensor,,, is on toDo-list  :(_
 
+---
+
+[Integrations](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/dashboard/cards/hastats_integrations_count.yaml)
+
+<img width="264" alt="image" src="https://user-images.githubusercontent.com/96014323/197417452-368af287-9082-4ed0-822e-e917f7dff499.png">
+_click on 'total', and you will get pop-up with development-graph and details_
+<img width="230" alt="image" src="https://user-images.githubusercontent.com/96014323/197417579-260b77ce-74cb-41c2-95b2-aba8b3dd0169.png">
+
+
+
 # toDo/improvements planned:
 - might want to move the system_monitor.yaml sensors here (as there is no config of the integration)
 - get some way to add yaml-sensors to statistics-graph (like the template-sensors with class measurement
