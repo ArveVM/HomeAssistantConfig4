@@ -59,6 +59,7 @@ _click on 'total', and you will get pop-up with development-graph and details_
 _____________________________________________________________________
 Stats of how many entities pr domain are in my HA-instance, by ArveVM
 
+
 # check ONE specific domain:
    Automations =  {{ states.automation | count}}
 
