@@ -52,7 +52,7 @@ PS; the card has no UI,, so you have to configure in YAML (but good guides on th
 
 
 # Credits/inspiration:
-- ThomasH - co-proofing concept
+- ThomasH 
 - Author(s) of HACS-integrations 
 
 
