@@ -24,6 +24,8 @@ Focus so far have been on
 ## Dashboard(s):
 PS; the card has no UI,, so you have to configure in YAML (but good guides on the github)
 
+<img width="237" alt="image" src="https://user-images.githubusercontent.com/96014323/199611333-dd8b233b-e725-45be-a5af-b119aa97d8f6.png">
+
 
 ---
 
@@ -51,22 +53,5 @@ PS; the card has no UI,, so you have to configure in YAML (but good guides on th
 - ThomasH - co-proofing concept
 - Author(s) of HACS-integrations 
 
-
-# template-editor test-code:
-(because HA-team is constantly adding new functionality/domains,, it is useful to get to check/verify that we actually got all configured with sensors,,,)
-```ruby
-_____________________________________________________________________
-Stats of how many entities pr domain are in my HA-instance, by ArveVM
-
-
-# check ONE specific domain:
-   Automations =  {{ states.automation | count}}
-
-# check ALL domain:
-   {%- for domain in states | map(attribute='domain') | unique %}
-   {{ domain ~ 's : ' ~ states[domain] | count }}
-   {%- endfor %}
-   {{ '  Total: ' ~ states | count }}     
-```
 
 
