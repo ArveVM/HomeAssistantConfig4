@@ -1,16 +1,16 @@
 ###############################################################################
-#   @author       :   ArveVM 
+#   @author       :   ArveVM
 #   @date         :   09.march.2022
 #   @solution     :   Eva_HAN
-#   @description  :   Measure power consumed by our house.  
-#   @basic concept: 
+#   @description  :   Measure power consumed by our house.
+#   @basic concept:
 #      EVA-han reader is plugged into our power-meters HAN-interface (Norwegian only solution?)
 #      Z2M/mosquitto integration provides data from to HA
 #
-#        sensors used:      
+#        sensors used:
 #           sensor.evahan_power
 #
-#   AVM: stick in power-meter, integrated through Zigbee2mqtt and provides some 
+#   AVM: stick in power-meter, integrated through Zigbee2mqtt and provides some
 #        sensors through that integration, and some more are added here;
 #        https://www.zigbee2mqtt.io/devices/HSE2905E.html
 #
@@ -19,19 +19,21 @@
 #            (which disables in-hour adjusting of power-consumption to hourly-tariff)
 ###############################################################################
 
-
 # First add some customizations:
 homeassistant:
   customize:
     package.node_anchors:
       # Add node-anchor for identification of code-location for created sensors
       package_attribute_to_entity: &package_attribute
-        package: 'Eva HAN'
+        package: "Eva HAN"
       # Add node-anchor(s) for input-sensors to use as variables   - (theese are sensors from other integrations/solutions)
       energy: &energy sensor.evahan_inst_energy
       power: &power sensor.evahan_power
 
-  # Add node-anchor as attribute on created entities:
+    # Add node-anchor as attribute on created entities:
+    sensor.evahan_power:
+      integration: MQTT
+      <<: *package_attribute
     sensor.evahan_inst_energy:
       <<: *package_attribute
     sensor.evahan_filtered_power:
@@ -44,7 +46,6 @@ homeassistant:
       <<: *package_attribute
     utility_meter.evahan_energy_monthly:
       <<: *package_attribute
-
 
 sensor:
   # first convert from W to kWh   - need this to get values throughout the hour, as Eva is only reporting accumulated until next hours
@@ -70,14 +71,14 @@ sensor:
         time_constant: 10
 
 template:
-  # ArveVM; original template from mrKim, but adjusted with trigger and startup-value 
+  # ArveVM; original template from mrKim, but adjusted with trigger and startup-value
   - trigger:
       - platform: time_pattern
-        minutes: '/10'          # ArveVM; trigger only every 10 minutes
+        minutes: "/10" # ArveVM; trigger only every 10 minutes
       - platform: homeassistant
-        event: start                          # AVM; trigger at restart HA
+        event: start # AVM; trigger at restart HA
       - platform: event
-        event_type: event_template_reloaded   # AVM; trigger at reload Template entities
+        event_type: event_template_reloaded # AVM; trigger at reload Template entities
     sensor:
       - name: EvaHAN Energy full hour estimate
         unique_id: evahan_energy_full_hourl_estimate
@@ -97,7 +98,7 @@ template:
           {% endif %}
         # ArveVM; setting 3,14 before 10 minutes; if not you might see a
         # peak that triggers unwanted actions before pattern is established
-        # PS; the middle part is code from mrKim, and I just wrapped the 
+        # PS; the middle part is code from mrKim, and I just wrapped the
         #     'PI-idea' around it to avoid peaks above 5kwh
 
       - name: EvaHAN Energy hourly estimate pi
@@ -118,7 +119,7 @@ template:
           {% endif %}
         # ArveVM; setting 3,14 before 5 minutes; if not you might see a
         # peak that triggers unwanted actions before pattern is established
-        # PS; the middle part is code from mrKim, and I just wrapped the 
+        # PS; the middle part is code from mrKim, and I just wrapped the
         #     PI-idea around it to avoid peaks above 5kwh
 
       - name: EvaHAN Energy hourly estimate pi2
@@ -157,20 +158,20 @@ template:
 
 utility_meter:
   # log usage in periods
-  #   cycle string-> How often to reset the counter. 
+  #   cycle string-> How often to reset the counter.
   #       Valid values: quarter-hourly, hourly, daily, weekly, monthly, bimonthly, quarterly and yearly
 
-  evahan_energy_hourly: 
+  evahan_energy_hourly:
     source: *energy
     name: evaHAN Energy hourly
     cycle: hourly
 
-  evahan_energy_daily: 
+  evahan_energy_daily:
     source: *energy
     name: evaHAN Energy daily
     cycle: daily
-  
-  evahan_energy_monthly: 
+
+  evahan_energy_monthly:
     source: *energy
     name: evaHAN Energy monthly
     cycle: monthly
