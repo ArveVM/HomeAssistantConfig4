@@ -118,7 +118,9 @@ template:
           - states('sensor.hastats_ebd_media_players') | float(default=0)
           - states('sensor.hastats_ebd_numbers') | float(default=0)
           - states('sensor.hastats_ebd_persistent_notifications') | float(default=0)
+          - states('sensor.hastats_ebd_openplantbooks') | float(default=0)
           - states('sensor.hastats_ebd_persons') | float(default=0)
+          - states('sensor.hastats_ebd_plants') | float(default=0)
           - states('sensor.hastats_ebd_remotes') | float(default=0)
           - states('sensor.hastats_ebd_scenes') | float(default=0)
           - states('sensor.hastats_ebd_scripts') | float(default=0)
@@ -147,8 +149,8 @@ template:
         unique_id: hastats_ebd_buttons
         state_class: measurement
         state: "{{states.button | count}}"
-      - name: hastats_ebd_calendars
-        unique_id: HAstats EbD calendars
+      - name: HAstats EbD calendars
+        unique_id: hastats_ebd_calendars
         state_class: measurement
         state: "{{states.calendar | count}}"
       - name: HAstats EbD climates
@@ -208,10 +210,18 @@ template:
         unique_id: hastats_ebd_persistent_notifications
         state_class: measurement
         state: "{{states.persistent_notification | count}}"
+      - name: HAstats EbD openplantbooks
+        unique_id: hastats_ebd_openplantbooks
+        state_class: measurement
+        state: "{{states.openplantbook | count}}"
       - name: HAstats EbD persons
         unique_id: hastats_ebd_persons
         state_class: measurement
         state: "{{states.person | count}}"
+      - name: HAstats EbD plants
+        unique_id: hastats_ebd_plants
+        state_class: measurement
+        state: "{{states.plant | count}}"
       - name: HAstats EbD remotes
         unique_id: hastats_ebd_remotes
         state_class: measurement
