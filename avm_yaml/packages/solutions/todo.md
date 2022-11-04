@@ -5,6 +5,7 @@
 ## Why ToDo in HA? 
 - Just to gather all the "chores" or active tasks one should do, I created the ToDo
 - idea from app with chores, and from Remi's dashboard
+- so now i can automate things to do, or schedules,, and makes sure that they are done  ;)
 
 Focus so far have been on: 
 - Getting one place to see if there are tasks that should have been done
@@ -27,30 +28,33 @@ Focus so far have been on:
 
 
 ## Dashboard(s):
-PS; the card has no UI,, so you have to configure in YAML (but good guides on the github)
+[chip_todo.yaml](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/dashboard/cards/chip_todo.yaml)
 
-<img width="237" alt="image" src="https://user-images.githubusercontent.com/96014323/199611333-dd8b233b-e725-45be-a5af-b119aa97d8f6.png">
+First a little "chip",, it is conditional, so not showing if not
 
-
----
-
+<img width="34" alt="image" src="https://user-images.githubusercontent.com/96014323/200069238-fc690ec6-0906-4e30-97ac-4ed030c75cba.png">
 
 ---
+on click:
 
-## Functionality:
+<img width="224" alt="image" src="https://user-images.githubusercontent.com/96014323/200069443-af889bbc-06ce-4e61-b2ad-f76de935487d.png">
 
-
-
-
-
+and if you click one of the entities,, the task is completed and it disapears,,
 
 
-# improvements planned/project que:
+
+
+
+
+
+
+# improvements planned/project queue:
 - might want to add link to 
 - battery-status on mi-sensors??
+- enable conditional chip to be anywhere on the swipe card?  must currently be at the end, because if conditions are not met - the rest of the cards are also filtered :(
 
 
 # Credits/inspiration:
-- Remi, theawsomegarage
+- Remi, [theawsomegarage](https://theawesomegarage.com/)
 
 
