@@ -14,11 +14,14 @@ Focus so far have been on:
 
 
 ## How it works (for me):
-- Set up template sensor counting all Input Boolean's with name that ends on _todo
-- Card that filters on Input Boolean's with name that ends on _todo, showing only them
-  - using entity filter - to show only those sensors that are ON
-  - using conditional, so if count of tasks ON = 0,, then don't show icon at all
-
+- Initial setup:
+  - Set up template sensor counting all Input Boolean's with name that ends on _todo
+  - Card that filters on Input Boolean's with name that ends on _todo, showing only them
+    - using entity filter - to show only those sensors that are ON
+    - using conditional, so if count of tasks ON = 0,, then don't show icon at all
+- Add todo-task:
+  - For new solution, create a Input Boolean named _todo as last part of name
+  - Add automation or other conditions to tick the Boolean to ON, ant it will be counted by the todo-counter, and show on the todo-list
 
 
 ## Solution-Yaml:
