@@ -2,15 +2,8 @@
 #         active toDo-tasks,, and create option to a chip/button/card to show that there
 #         are in fact tasks that need dooing  ;)
 
-homeassistant:
-  customize:
-    package.node_anchors:
-      customize: &customize
-        solution: "toDo"
-
-    # tag package specific entities with package name
-    sensor.todo_counter:
-      <<: *customize
+# ArveVM; follow link for further documentation and appraisals:
+# https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/solutions/todo.md
 
 template:
   - sensor:
@@ -21,3 +14,5 @@ template:
           {{ states.input_boolean
             |selectattr('entity_id', 'search', '_todo$')
             |selectattr('state', 'eq', 'on') | list | count }}
+        attributes:
+          solution: ToDo

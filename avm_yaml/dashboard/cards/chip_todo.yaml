@@ -1,5 +1,7 @@
 # ArveVM: chip to show count of tasks to do, and on-click popup a list of the tasks
-# see package 'todo' for template-sensor for counting todo-tasks.
+
+# https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/solutions/todo.md
+
 # Each todo-task should be created in respective solutions packages  ;)
 
 type: conditional
