@@ -1,0 +1,32 @@
+# ArveVM: chip to show count of tasks to do, and on-click popup a list of the tasks
+# see package 'todo' for template-sensor for counting todo-tasks.
+# Each todo-task should be created in respective solutions packages  ;)
+
+type: conditional
+conditions:
+  - entity: sensor.todo_counter
+    state_not: "0"
+card:
+  type: "custom:button-card"
+  template: chip_mdi_icon_state
+  variables:
+    ulm_chip_mdi_icon_state_entity: sensor.todo_counter
+    ulm_chip_mdi_icon_state_icon: mdi:format-list-checks
+  tap_action:
+    #  action: more-info
+    #  entity: sensor.strom_i_w
+    action: fire-dom-event
+    browser_mod:
+      command: popup
+      title: "Active toDo tasks:"
+      large: false
+      card:
+        type: custom:auto-entities
+        card:
+          type: entities
+        #        title: 'toDo:'
+        filter:
+          include:
+            - entity_id: "*todo"
+          exclude:
+            - state: "off"
