@@ -4,9 +4,31 @@
 # also moved input-data to be UI-settings,, added as a line in the card
 # and adding new "input-sensor" at the top,, to get the average tank-temp from temp-sensors
 
+# ArveVM; follow link for further documentation and appraisals:
 # for more info: https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/solutions/hotwater_soc.md
 
-# ##############################################################################
+# First add some customizations:
+homeassistant:
+  customize:
+    package.node_anchors:
+      # Add node-anchor for identification of code-location for created sensors
+      solution_attribute_to_entity: &solution_attribute
+        solution: "Hotwater SoC"
+
+    input_number.hotwater_soc_target_temp:
+      device_class: temperature
+      <<: *solution_attribute
+    input_number.hotwater_soc_min_temp:
+      device_class: temperature
+      <<: *solution_attribute
+    input_number.hotwater_soc_input_temp:
+      device_class: temperature
+      <<: *solution_attribute
+    input_number.hotwater_soc_tanksize:
+      <<: *solution_attribute
+    input_number.hotwater_soc_elementsize:
+      <<: *solution_attribute
+
 # First set some required input's to the solution
 template:
   - sensor:
@@ -19,6 +41,8 @@ template:
           {% set temp1 = states('sensor.hotwater_puck_bottom_temperature') | float %}
           {% set temp2 = states('sensor.hotwater_puck_mixscrew_temperature') | float %}
           {{ (temp1 + temp2) /2| round(1) }}
+        attributes:
+          <<: *solution_attribute
 
       # Input completed,,, rest of yaml-lines are configurable through UI when you have added the 'solution-dashboard'
       # ##############################################################################
@@ -47,6 +71,8 @@ template:
           {% set kt = 3600 %}
           {% set kx = states('input_number.hotwater_soc_input_temp') | float %}
           {{ (k * l * (tx - kx) /kt) | round(1) }}
+        attributes:
+          <<: *solution_attribute
 
       # Asbjørn's comments:
       # Energi lagret i bereder
@@ -62,6 +88,8 @@ template:
           {% set kt = 3600 %}
           {% set kx = states('input_number.hotwater_soc_input_temp') | float %}
           {{ (k * l * (t2 - kx) /kt) | round(1) }}
+        attributes:
+          <<: *solution_attribute
 
       - name: "Hotwater SoC energy chargable"
         unique_id: hotwater_soc_energy_chargable
@@ -74,6 +102,8 @@ template:
           {% set k = 4.186 %}
           {% set kt = 3600 %}
           {{ (k * l * (t1 - t2) /kt) | round(1) }}
+        attributes:
+          <<: *solution_attribute
         # ArveVM; this could be simplified by taking max-stored ?
 
       # Asbjørn's comments:
@@ -88,6 +118,8 @@ template:
           {% set p = states('input_number.hotwater_soc_elementsize') | float %}
           {% set kwh = states('sensor.hotwater_soc_energy_chargable') | float %}
           {{ (kwh / p) | round(2) }}
+        attributes:
+          <<: *solution_attribute
 
       - name: "Hotwater SoC chargetime"
         unique_id: hotwater_soc_chargetime
@@ -98,6 +130,8 @@ template:
           {% set minutes = ((hours % 1) * 60) | int %}
           {% set hours = (hours - (hours % 1)) | int %}
           {{ '%02i:%02i'%(hours, minutes) }}
+        attributes:
+          <<: *solution_attribute
 
       # Asbjørn's comments:
       # Fyllingsgrad i bereder avhangig av setpunkt temperatur
@@ -113,6 +147,8 @@ template:
           {% set kt = 3600 %}
           {% set kx = states('input_number.hotwater_soc_min_temp') | float %}
           {{ 100-(((kwhs-kwha)*100))*10/100 | round(2) }}
+        attributes:
+          <<: *solution_attribute
 
 input_number:
   # Set value for what you considered 100% charged hotwater-tank.
@@ -157,12 +193,3 @@ input_number:
     min: 0.1
     max: 5
     step: 0.1
-
-homeassistant:
-  customize:
-    input_number.hotwater_soc_target_temp:
-      device_class: temperature
-    input_number.hotwater_soc_min_temp:
-      device_class: temperature
-    input_number.hotwater_soc_input_temp:
-      device_class: temperature
