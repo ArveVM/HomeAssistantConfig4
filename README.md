@@ -23,6 +23,7 @@ Current concept is moving towards a 'Solution' beeing:
 | PowerControl | Eva HAN  | Instant power usage, estimate full hour |
 | Hotwater     | [Hotwater SoC](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/solutions/hotwater_soc.md)  | Calculate hotwater-tank SoC, including charge-time and show stats  |
 | Server/HA    | [HA-stats](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/solutions/hastats.md)  | my HA-instance's stats of sensor-count and yaml-line-count development  |
+| Plants       | [Plants](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/solutions/plant.md)  | Get standard settings for each plant, and report thresholds - and present usefull info in cards |
 
 ## Functionality: 
 As from my config-principles; addons and integrations are the enablers of functionality.
@@ -51,11 +52,10 @@ One last thing. Everything in this configuration is a combination of the things 
 
 To prove this point; I even stole this text from thejeffreystone :)
 
-https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/blablabla/ReadMe_configHistory.md
 ### If not yet bored,, check out more specs/principles:
- - [Config principles:](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/blablabla/ReadMe_configPrinciples.md)
- - [Config history:](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/blablabla/ReadMe_configHistory.md)
- - [Current setup](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/blablabla/ReadMe_currentSetup.md)
+ - [Config principles:](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/blablabla/config_principles.md)
+ - [Config history:](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/blablabla/config_history.md)
+ - [Current setup](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/blablabla/current_setup.md)
  - Fist round of Github-config is archived [HERE](https://github.com/ArveVM/Home-Assistant_config-packages-solutions-1)
 
 
