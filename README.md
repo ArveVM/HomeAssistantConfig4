@@ -51,11 +51,11 @@ One last thing. Everything in this configuration is a combination of the things 
 
 To prove this point; I even stole this text from thejeffreystone :)
 
-
+https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/blablabla/ReadMe_configHistory.md
 ### If not yet bored,, check out more specs/principles:
- - [Config principles:](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/ReadMe_configPrinciples.md)
- - [Config history:](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/ReadMe_configHistory.md)
- - [Current setup](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/ReadMe_currentSetup.md)
+ - [Config principles:](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/blablabla/ReadMe_configPrinciples.md)
+ - [Config history:](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/blablabla/ReadMe_configHistory.md)
+ - [Current setup](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/blablabla/ReadMe_currentSetup.md)
  - Fist round of Github-config is archived [HERE](https://github.com/ArveVM/Home-Assistant_config-packages-solutions-1)
 
 

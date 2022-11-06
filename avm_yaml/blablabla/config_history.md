@@ -3,6 +3,14 @@
 
 **v4:**
 
+  Nov ;
+  - Adding ToDo as solution,, presentation of how to collect all other solutions "todo-tasks" in one place.
+  
+  Oct ;
+  - Adding 'GUI-input' to to 'solutions-concept. Will enable easily adoptation of solutions for new users
+  - Hotwater SoC was the conecpt, with settings on tank size, temps etc
+  - setup z2m in container outside HA - Sonoff3p as coordinator, start moving devices (renaming and set bindings etc)
+  
   Sept ;
   - Cleanup in 'solutions concept',, starting to re-write code to match concept-trinity of yaml/dashboard/readMe
   - re-posting to new GitHub-repo
