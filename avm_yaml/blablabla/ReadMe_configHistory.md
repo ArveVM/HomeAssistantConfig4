@@ -4,7 +4,7 @@
 **v4:**
 
   Nov ;
-  - Adding ToDo as solution,, presentation of how to  
+  - Adding ToDo as solution,, presentation of how to collect all other solutions "todo-tasks" in one place.
   
   Oct ;
   - Adding 'GUI-input' to to 'solutions-concept. Will enable easily adoptation of solutions for new users
