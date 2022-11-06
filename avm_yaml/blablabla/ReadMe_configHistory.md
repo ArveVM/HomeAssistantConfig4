@@ -3,6 +3,10 @@
 
 **v4:**
 
+  Oct ;
+  - Adding 'GUI-input' to to 'solutions-concept. Will enable easily adoptation of solutions for new users
+  - Hotwater SoC was the conecpt, with settings on tank size, temps etc
+  
   Sept ;
   - Cleanup in 'solutions concept',, starting to re-write code to match concept-trinity of yaml/dashboard/readMe
   - re-posting to new GitHub-repo
