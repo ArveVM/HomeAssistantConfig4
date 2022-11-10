@@ -1,0 +1,42 @@
+# ArveVM: card to show data/settings for reminder of changing bed-linen
+# see readme - when I get to post it  :)
+# must also have the ToDo-solution to show toDo-warnings
+
+#  must create ReadME
+#  must reference the actual solution-yaml
+
+type: entities
+entities:
+  - type: custom:fold-entity-row
+    head:
+      entity: sensor.kids_linen_days_until_change
+    open: false
+    entities:
+      - entity: input_boolean.kids_linen_todo
+        entities:
+          - entity: input_number.kids_linen_todo_interval
+            name: Day's before
+      - type: custom:fold-entity-row
+        head:
+          type: section
+          label: "Settings:"
+        open: false
+        entities:
+          - entity: input_datetime.kids_linen_changed
+            type: custom:multiple-entity-row
+            name: "Change interval/last:"
+            state_header: Last changed
+            entities:
+              - entity: input_number.kids_linen_change_interval
+                name: Interval
+          - type: section
+          - entity: input_boolean.kids_linen_todo_setting
+            type: custom:multiple-entity-row
+            name: "Create toDo-task:"
+            state_header: ToDo
+            toggle: true
+            entities:
+              - entity: input_number.kids_linen_todo_interval
+                name: Day's before
+          - entity: input_boolean.kids_linen_create_alert
+            name: "Create alert if overdue:"
