@@ -62,18 +62,8 @@ dashboard_mob*
 **.7z
 !.gitignore
 
-
-
-
 /config/.google.token
-
 
 secrets_google_assistant**
 
-
-
-
-
-
 avm_yaml/dashboard/cards/card_hotwater_soc.yaml
-#avm_yaml/dashboard/cards/kids_linen.yaml
