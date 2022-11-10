@@ -20,7 +20,7 @@ Current concept is moving towards a 'Solution' beeing:
 | Area         | Solution      | Description/purpose |
 | ------------ | ------------- | ------------------- |
 | General      | [ToDo](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/solutions/todo.md) | create todo-list (and let other solutions poulate with tasks and status)
-| General      | [Kid S - linen](https://github.com/ArveVM/HomeAssistantConfig4/tree/master/avm_yaml/packages/solutions)
+| General      | [Kid S - linen](https://github.com/ArveVM/HomeAssistantConfig4/tree/master/avm_yaml/packages/solutions/kids_linen.md)
 | PowerControl | Eva HAN  | Instant power usage, estimate full hour |
 | Hotwater     | [Hotwater SoC](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/solutions/hotwater_soc.md)  | Calculate hotwater-tank SoC, including charge-time and show stats  |
 | Server/HA    | [HA-stats](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/solutions/hastats.md)  | my HA-instance's stats of sensor-count and yaml-line-count development  |
