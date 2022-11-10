@@ -1,0 +1,32 @@
+# ArveVM: chip to show count of tasks to do, and on-click popup a list of the tasks
+
+# https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/solutions/todo.md
+
+# Each todo-task should be created in respective solutions packages  ;)
+
+type: "custom:button-card"
+template: chip_mdi_icon_state
+variables:
+  ulm_chip_mdi_icon_state_entity: switch.adguard_home_filtering
+  ulm_chip_mdi_icon_state_icon: mdi:shield-alert
+tap_action:
+  #  action: more-info
+  #  entity: sensor.strom_i_w
+  action: fire-dom-event
+  browser_mod:
+    command: popup
+    title: "Adguard Home:"
+    large: false
+    card:
+      type: custom:auto-entities
+      card:
+        type: entities
+      filter:
+        include:
+          - entity_id: "*adguard_home_*"
+        #exclude:
+        #  - state: "off"
+      sort:
+        method: entity_id
+        #count: 5
+        reverse: true
