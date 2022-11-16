@@ -15,6 +15,7 @@ Need a way for the wife to control AdGuard (read; disable ad-blocking), so integ
   <summary> Click to unfold list of booring requirements, tips etc </summary>
   
   #### Functionality required (other than what is builtin in my version of HA):
+  - https://www.home-assistant.io/integrations/adguard/
   - HACS: browser mod - for popup-functionality (now updated to browser_mod v2)
   - HACS: custom:button-card
   - HACS: custom:auto-entities
