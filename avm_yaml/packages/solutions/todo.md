@@ -1,6 +1,7 @@
                                                   ArveVM, November.2022
 # my ToDo
 
+<br />
 
 ## Intro:
 ### Why ToDo in HA? 
@@ -16,11 +17,11 @@ Focus so far have been on:
 ### Credits/inspiration:
 - Remi, [theawsomegarage](https://theawesomegarage.com/)  - the article on dashboard with popups - it also had a version of todo ;)
 
-### Requirements/install tips
+### Requirements/install tips:
 <details>
-  <summary> Click to unfold list of booring requirements </summary>
-  Functionality required:
-
+  <summary> Click to unfold list of booring requirements, tips etc </summary>
+  
+  #### Functionality required (other than what is builtin in my version of HA):
   - HACS: browser mod - for popup-functionality (now updated to browser_mod v2)
   - HACS: custom:button-card
   - HACS: custom:auto-entities
@@ -28,11 +29,24 @@ Focus so far have been on:
   - Dashboard:
     * yaml-dashboard (but you can copy dashboard-code to UI-dashboard/card 
   
-  to install you should:
+  <br />
+ 
+  #### To install you should:
   - first set up packages/solutions as specified elsewhere in my brilliant documentation. 
   - then copy the 'solutions.yaml'-file specified below into a folder where it will be loaded as part of packages at next restart
   - copy and insert code for card whereever suitable for your installation
   - redo/change to your naming standards  :)
+  
+  <br />
+  
+  #### template-editor test-code:
+  nah,,
+  
+  <br />
+
+  #### Other info:
+  nah,,
+  
   
 </details>
 
@@ -59,7 +73,7 @@ Focus so far have been on:
 <br />
 <br />
 
-### Dashboard(s):
+### Solution-Dashboard(s):
 [chip_todo.yaml](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/dashboard/cards/chip_todo.yaml)
 
 First a little "chip",, it is conditional, so not showing if not
