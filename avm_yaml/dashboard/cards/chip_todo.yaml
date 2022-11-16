@@ -15,20 +15,17 @@ card:
     ulm_chip_mdi_icon_state_entity: sensor.todo_counter
     ulm_chip_mdi_icon_state_icon: mdi:format-list-checks
   tap_action:
-    #  action: more-info
-    #  entity: sensor.strom_i_w
     action: fire-dom-event
     browser_mod:
-      command: popup
-      title: "Active toDo tasks:"
-      large: false
-      card:
-        type: custom:auto-entities
-        card:
-          type: entities
-        #        title: 'toDo:'
-        filter:
-          include:
-            - entity_id: "*todo"
-          exclude:
-            - state: "off"
+      service: browser_mod.popup
+      data:
+        content:
+          type: custom:auto-entities
+          card:
+            type: entities
+            title: "ToDo-tasks:"
+          filter:
+            include:
+              - entity_id: "*todo"
+            exclude:
+              - state: "off"
