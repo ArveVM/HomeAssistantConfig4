@@ -18,8 +18,6 @@ Need a way for the wife to control AdGuard (read; disable ad-blocking), so integ
   - HACS: browser mod - for popup-functionality (now updated to browser_mod v2)
   - HACS: custom:button-card
   - HACS: custom:auto-entities
-  - HACS: custom:fold-entity-row
-  - HACS: custom:multiple-entity-row
   Optional
   - Dashboard:
     * yaml-dashboard (but you can copy dashboard-code to UI-dashboard/card 
@@ -39,12 +37,11 @@ Need a way for the wife to control AdGuard (read; disable ad-blocking), so integ
   
   #### template-editor test-code:
   nah,,
-  you can contact Asbjørn  :)
 
   <br />
 
   #### Other info:
-  check this calculator; https://bloglocation.com/art/water-heating-calculator-for-time-energy-power
+  maybe someday I will document the docker-setup and adguard-config  ;),, just maybe,,,
   
   
 </details>
@@ -66,21 +63,16 @@ n/a
 <br />
 
 ### Solution-Dashboard(s):
-[Chip Hotwater SoC](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/dashboard/cards/chip_hotwater_soc.yaml)
+[Chip AdGuard](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/dashboard/cards/chip_adguard.yaml)
 
-<img width="88" alt="image" src="https://user-images.githubusercontent.com/96014323/193773226-887a50c5-87e2-4641-93d8-b29f8be2b8e9.png">
+<img width="52" alt="image" src="https://user-images.githubusercontent.com/96014323/202316060-4355f8e4-2415-4e9a-bd31-b2625bf7e1d2.png">
 click - and you will get pop-up with more details:
-
-<br />
-
-<img width="237" alt="image" src="https://user-images.githubusercontent.com/96014323/194163431-6e819073-f961-4de4-abe7-53352f2ce04c.png">
 
 <br />
 
 with all lines expanded:
 
-<img width="235" alt="image" src="https://user-images.githubusercontent.com/96014323/195613384-1c3a8885-a3bc-406f-8072-02e1f058e487.png">
-
+<img width="320" alt="image" src="https://user-images.githubusercontent.com/96014323/202316452-2ee10fb4-5bd9-46b1-aeb9-6b6dba271877.png">
 
 <br />
 <br />

@@ -19,6 +19,7 @@ Current concept is moving towards a 'Solution' beeing:
 
 | Area         | Solution      | Description/purpose |
 | ------------ | ------------- | ------------------- |
+| General      | [AdGuard](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/solutions/adguard.md) | Enable HA-control of AdGuard |
 | General      | [ToDo](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/solutions/todo.md) | create todo-list (and let other solutions poulate with tasks and status)
 | General      | [Kid S - linen](https://github.com/ArveVM/HomeAssistantConfig4/tree/master/avm_yaml/packages/solutions/kids_linen.md) | Settings of last changed linen, length until next, length until warning, create and complete todo 
 | PowerControl | Eva HAN  | Instant power usage, estimate full hour |
@@ -33,6 +34,7 @@ All listed, but only those with some level of config or interest for myself/othe
 
 | Type      | Name                                       | Description/purpose |
 | ----------| ------------------------------------------ | ------------------- |
+|Integration| [AdGuard](https://www.home-assistant.io/integrations/adguard/)| Integration to AdGuard docker in unRaid |
 |Integration| [Bluetooth](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/integrations/bluetooth.md)| Enabler for BT-functionality |
 |HACS-int   | Browser mod (https://github.com/thomasloven/hass-browser_mod) | v2.x - used primarily for pop-up functionality |
 |Integration| [BTHome](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/integrations/bt_home.md) | BTHome-firmware flashed sensors |
