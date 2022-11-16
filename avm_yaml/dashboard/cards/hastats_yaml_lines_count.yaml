@@ -1,6 +1,6 @@
 # https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/solutions/hastats.md
-# card require Browser Mod v1.5.3
 
+# First Total count of lines:
 type: glance
 title: YAML-lines - count
 entities:
@@ -11,23 +11,22 @@ entities:
     tap_action:
       action: fire-dom-event
       browser_mod:
-        command: popup
-        title: "YAML-line count:"
-        large: false
-        card:
-          type: vertical-stack
-          cards:
-            - type: statistics-graph
-              title: Monthly development
-              chart_type: bar
-              #period: month
-              period: day
-              days_to_show: 365
-              entities:
-                - entity: sensor.hastats_yaml_line_total_count
-                  name: "max total/month"
-              stat_types:
-                - max
+        service: browser_mod.popup
+        data:
+          content:
+            type: vertical-stack
+            cards:
+              - type: statistics-graph
+                title: Monthly development
+                chart_type: bar
+                #period: month
+                period: day
+                days_to_show: 365
+                entities:
+                  - entity: sensor.hastats_yaml_line_total_count
+                    name: "max total/month"
+                stat_types:
+                  - max
 
   # Packages:
   - entity: sensor.hastats_yaml_line_packages_count
@@ -36,23 +35,22 @@ entities:
     tap_action:
       action: fire-dom-event
       browser_mod:
-        command: popup
-        title: "YAML-line packages count:"
-        large: false
-        card:
-          type: vertical-stack
-          cards:
-            - type: statistics-graph
-              title: Monthly development
-              chart_type: bar
-              #period: month
-              period: day
-              days_to_show: 365
-              entities:
-                - entity: sensor.hastats_yaml_line_packages_count
-                  name: "max total/month"
-              stat_types:
-                - max
+        service: browser_mod.popup
+        data:
+          content:
+            type: vertical-stack
+            cards:
+              - type: statistics-graph
+                title: Monthly development
+                chart_type: bar
+                #period: month
+                period: day
+                days_to_show: 365
+                entities:
+                  - entity: sensor.hastats_yaml_line_packages_count
+                    name: "max total/month"
+                stat_types:
+                  - max
 
   # Dashboard:
   - entity: sensor.hastats_yaml_line_dashboard_count
@@ -61,20 +59,20 @@ entities:
     tap_action:
       action: fire-dom-event
       browser_mod:
-        command: popup
-        title: "YAML-line dashbords count:"
-        large: false
-        card:
-          type: vertical-stack
-          cards:
-            - type: statistics-graph
-              title: Monthly development
-              chart_type: bar
-              #period: month
-              period: day
-              days_to_show: 365
-              entities:
-                - entity: sensor.hastats_yaml_line_dashboard_count
-                  name: "max total/month"
-              stat_types:
-                - max
+        service: browser_mod.popup
+        data:
+          content:
+            card:
+            type: vertical-stack
+            cards:
+              - type: statistics-graph
+                title: Monthly development
+                chart_type: bar
+                #period: month
+                period: day
+                days_to_show: 365
+                entities:
+                  - entity: sensor.hastats_yaml_line_dashboard_count
+                    name: "max total/month"
+                stat_types:
+                  - max

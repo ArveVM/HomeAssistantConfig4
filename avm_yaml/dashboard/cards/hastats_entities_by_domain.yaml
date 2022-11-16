@@ -1,7 +1,6 @@
 # https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/solutions/hastats.md
 # card require Browser Mod v1.5.3
 
-
 type: glance
 title: HA entities by domain - count
 entities:
@@ -12,73 +11,73 @@ entities:
     tap_action:
       action: fire-dom-event
       browser_mod:
-        command: popup
-        title: 'Entities by domain:'
-        large: false
-        card:
-          type: vertical-stack
-          cards:
-          - type: statistics-graph
-            title: Monthly development
-            chart_type: bar
-            period: month
-            days_to_show: 365
-            entities:
-              - entity: sensor.hastats_ebd_total
-                name: 'max total/month'
-            stat_types:
-              - max
-          - type: entities
-            entities:
-              - type: custom:fold-entity-row
-                head:
-                  type: section
-                  label: 'Count Entities By Domain as of NOW:' 
-                open: false
+        service: browser_mod.popup
+        data:
+          content:
+            type: vertical-stack
+            cards:
+              - type: statistics-graph
+                title: Monthly development
+                chart_type: bar
+                period: month
+                days_to_show: 365
                 entities:
-                  - type: custom:auto-entities
-                    card:
-                      type: entities
-                    filter:
-                      include:
-                        - entity_id: '*ebd*'
-                      exclude:
-                        - entity_id: '*ebd_sum*'
-  # Sensors:              
+                  - entity: sensor.hastats_ebd_total
+                    name: "max total/month"
+                stat_types:
+                  - max
+              - type: entities
+                entities:
+                  - type: custom:fold-entity-row
+                    head:
+                      type: section
+                      label: "Count Entities By Domain as of NOW:"
+                    open: false
+                    entities:
+                      - type: custom:auto-entities
+                        card:
+                          type: entities
+                        filter:
+                          include:
+                            - entity_id: "*ebd*"
+                          exclude:
+                            - entity_id: "*ebd_sum*"
+
+  # Sensors:
   - entity: sensor.hastats_ebd_sum_sensors
     name: sensors
     hold_action: more_info
     tap_action:
       action: fire-dom-event
       browser_mod:
-        command: popup
-        title: 'Entities by domain:'
-        large: false
-        card:
-          type: vertical-stack
-          cards:
-          - type: statistics-graph
-            title: Monthly development
-            chart_type: bar
-            period: month
-            stat_types:
-              - max
-            days_to_show: 365
-            entities:
-              - entity: sensor.hastats_ebd_sum_sensors
-                name: 'Sum'
-              - entity: sensor.hastats_ebd_binary_sensors
-                name: 'Binary'
-              - entity: sensor.hastats_ebd_sensors
-                name: 'Sensors'
-          - type: custom:auto-entities
-            card:
-              type: entities
-            filter:
-              include:
-                - entity_id: '*sensors*'
-              #exclude:
-              #  - entity_id: '*ebd_sum*'
+        service: browser_mod.popup
+        data:
+          content:
+            type: vertical-stack
+            cards:
+              - type: statistics-graph
+                title: Monthly development
+                chart_type: bar
+                period: month
+                stat_types:
+                  - max
+                days_to_show: 365
+                entities:
+                  - entity: sensor.hastats_ebd_sum_sensors
+                    name: "Sum"
+                  - entity: sensor.hastats_ebd_binary_sensors
+                    name: "Binary"
+                  - entity: sensor.hastats_ebd_sensors
+                    name: "Sensors"
+              - type: custom:auto-entities
+                card:
+                  type: entities
+                filter:
+                  include:
+                    - entity_id: "*sensors*"
+                  #exclude:
+                  #  - entity_id: '*ebd_sum*'
+
   # Automations:
   - entity: sensor.hastats_ebd_automations
     name: automations
@@ -86,22 +85,22 @@ entities:
     tap_action:
       action: fire-dom-event
       browser_mod:
-        command: popup
-        title: 'Entities by domain:'
-        large: false
-        card:
-          type: vertical-stack
-          cards:
-          - type: statistics-graph
-            title: Monthly development
-            chart_type: bar
-            period: month
-            stat_types:
-              - max
-            days_to_show: 365
-            entities:
-              - entity: sensor.hastats_ebd_automations
-                #name: 'Sum'
+        service: browser_mod.popup
+        data:
+          content:
+            type: vertical-stack
+            cards:
+              - type: statistics-graph
+                title: Monthly development
+                chart_type: bar
+                period: month
+                stat_types:
+                  - max
+                days_to_show: 365
+                entities:
+                  - entity: sensor.hastats_ebd_automations
+                    #name: 'Sum'
+
   # Scripts:
   - entity: sensor.hastats_ebd_scripts
     name: scripts
@@ -109,22 +108,22 @@ entities:
     tap_action:
       action: fire-dom-event
       browser_mod:
-        command: popup
-        title: 'Entities by domain:'
-        large: false
-        card:
-          type: vertical-stack
-          cards:
-          - type: statistics-graph
-            title: Monthly development
-            chart_type: bar
-            period: month
-            stat_types:
-              - max
-            days_to_show: 365
-            entities:
-              - entity: sensor.hastats_ebd_scripts
-                #name: 'Sum'
+        service: browser_mod.popup
+        data:
+          content:
+            type: vertical-stack
+            cards:
+              - type: statistics-graph
+                title: Monthly development
+                chart_type: bar
+                period: month
+                stat_types:
+                  - max
+                days_to_show: 365
+                entities:
+                  - entity: sensor.hastats_ebd_scripts
+                    #name: 'Sum'
+
   # Lights:
   - entity: sensor.hastats_ebd_lights
     name: lights
@@ -132,28 +131,26 @@ entities:
     tap_action:
       action: fire-dom-event
       browser_mod:
-        command: popup
-        title: 'Entities by domain:'
-        large: false
-        card:
-          type: vertical-stack
-          cards:
-          - type: statistics-graph
-            title: Monthly development
-            chart_type: bar
-            period: month
-            stat_types:
-              - max
-            days_to_show: 365
-            entities:
-              - entity: sensor.hastats_ebd_lights
-                #name: 'Sum'
-  
+        service: browser_mod.popup
+        data:
+          content:
+            type: vertical-stack
+            cards:
+              - type: statistics-graph
+                title: Monthly development
+                chart_type: bar
+                period: month
+                stat_types:
+                  - max
+                days_to_show: 365
+                entities:
+                  - entity: sensor.hastats_ebd_lights
+
   # Checksum:
   - entity: sensor.hastats_ebd_total_checksum
     name: checksum
     hold_action: more_info
-    #tap_action: 
+    #tap_action:
     #  action: fire-dom-event
     #  browser_mod:
     #    command: popup
@@ -171,9 +168,4 @@ entities:
     #        days_to_show: 365
     #        entities:
     #          - entity: sensor.hastats_ebd_lights
-                #name: 'Sum'
-
-
-
-
-
+    #name: 'Sum'
