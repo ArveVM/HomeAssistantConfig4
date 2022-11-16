@@ -14,19 +14,35 @@ tap_action:
   #  entity: sensor.strom_i_w
   action: fire-dom-event
   browser_mod:
-    command: popup
-    title: "Adguard Home:"
-    large: false
-    card:
-      type: custom:auto-entities
-      card:
-        type: entities
-      filter:
-        include:
-          - entity_id: "*adguard_home_*"
-        #exclude:
-        #  - state: "off"
-      sort:
-        method: entity_id
-        #count: 5
-        reverse: true
+    service: browser_mod.popup
+    data:
+      content:
+        type: vertical-stack
+        cards:
+          - type: markdown
+            content: |
+              AdGuard filter 
+
+              Active filter for ALL devices on home network.
+              Home Assistant can turn off ad-filter  
+              if needed - turn off Home Filtering, 
+              and note exact time and device where issues occured 
+              and report to the administrator
+              more info on AdGuard: https://adguard.com/en/welcome.html
+          - type: entities
+            entities:
+              - entity: switch.adguard_home_filtering
+                #name:
+              - type: divider
+
+          - type: custom:auto-entities
+            card:
+              type: entities
+            filter:
+              include:
+                - entity_id: "*adguard_home_*"
+              exclude:
+                - entity_id: switch.adguard_home_filtering
+            sort:
+              method: entity_id
+              reverse: true
