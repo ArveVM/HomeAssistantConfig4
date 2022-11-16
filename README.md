@@ -19,7 +19,7 @@ Current concept is moving towards a 'Solution' beeing:
 
 | Area         | Solution      | Description/purpose |
 | ------------ | ------------- | ------------------- |
-| General      | [AdGuard](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/solutions/adguard.md) | create todo-list (and let other solutions |
+| General      | [AdGuard](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/solutions/adguard.md) | Enable HA-control of AdGuard |
 | General      | [ToDo](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/solutions/todo.md) | create todo-list (and let other solutions poulate with tasks and status)
 | General      | [Kid S - linen](https://github.com/ArveVM/HomeAssistantConfig4/tree/master/avm_yaml/packages/solutions/kids_linen.md) | Settings of last changed linen, length until next, length until warning, create and complete todo 
 | PowerControl | Eva HAN  | Instant power usage, estimate full hour |
