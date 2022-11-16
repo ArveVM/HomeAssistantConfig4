@@ -25,7 +25,8 @@ Focus so far have been on:
   - HACS: browser mod - for popup-functionality (now updated to browser_mod v2)
   - HACS: custom:button-card
   - HACS: custom:auto-entities
-  Optional
+  
+  #### Optional:
   - Dashboard:
     * yaml-dashboard (but you can copy dashboard-code to UI-dashboard/card 
   
