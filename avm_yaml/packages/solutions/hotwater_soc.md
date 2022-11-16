@@ -9,7 +9,7 @@ Splitting hotwater-control in several packages,, and this particular looks at th
 
 
 Shamelessly copied code from Asbjørn Bergsland, re-named to my naming convention, and created my 'Solution'
-- Created inpust for temps, tank sice and heating-element sixe
+- Created inpust for temps, tank sice and heating-element sixe which now are editable from UI
 
 Created dashboard-chip:
 - to see SoC% and currentTemp
@@ -27,6 +27,27 @@ Created dashboard-chip:
     - Tank size
     - Tank emement size  
   - History grap  (first version,, enough today,,)
+
+## Prereq:
+<details>
+  <summary>Click me</summary>
+  
+  ### Functionality required:
+  1. HACS browser mod - for popup-functionality
+  4. Dashboard:
+     * yaml-dashboard (but you can copy dashboard-code to UI-dashboard/card
+     * UI minimalist - for templates (on chip),, should be easy to remove/adopt to your own themes
+     * custom:button-card
+     * custom:fold-entity-row
+     * custom:multiple-entity-row
+     * history-graph  
+  5. Basic HA functionality
+     * Customize: package.node_anchors
+     * Input_number
+     * Template: sensor
+  
+  
+</details>
 
 
 ## Solution-Yaml:
@@ -46,7 +67,7 @@ Created dashboard-chip:
 
 
 
-## Dashboard(s):
+## Solution-Dashboard(s):
 [Chip Hotwater SoC](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/dashboard/cards/chip_hotwater_soc.yaml)
 
 <img width="88" alt="image" src="https://user-images.githubusercontent.com/96014323/193773226-887a50c5-87e2-4641-93d8-b29f8be2b8e9.png">
@@ -70,12 +91,6 @@ with all lines expanded:
 # Credits/inspiration:
 - Asbjørn Bergsland, Facebook-group; Home Assistant Norge
  
-
-# prereq:
-- browser mod - for popup-functionality
-- custom:multiple-entity-row - for multiple entities in one row in a card
-- custom:fold-entity-row     - for fold-entity-rows
-- UI minimalist - for templates (on chip),, should be easy to remove/adopt to your own themes
 
 # template-editor test-code:
 nah,,

@@ -26,11 +26,30 @@ Todo-principle copied code from Remi theawsomegarage
 
 
 ## Dashboard(s):
-[Card Kid S linen](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/dashboard/cards/chip_hotwater_soc.yaml)
+Normal usage through the ToDo-solution,, with a chip that indicates there are tasks todo.
+<img width="31" alt="image" src="https://user-images.githubusercontent.com/96014323/201039131-ed88de20-0a06-4af2-9f71-80f726025204.png">
+
+click the chip, and you will get the todo-list,, which you can "tick off" when comleted (and they will disappear)
+
+<img width="220" alt="image" src="https://user-images.githubusercontent.com/96014323/201039409-f4dd73f1-7875-4c3f-b0fd-65c2f8bff4f9.png">
 
 
 ---
+
+Settings:
+[Card Kid S linen](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/dashboard/cards/kids_linen.yaml)
+
+<img width="260" alt="image" src="https://user-images.githubusercontent.com/96014323/201038585-95717b70-9814-4c52-b4c7-455594875438.png">
+
 ---
+Dropdown1 - complete task (same as from todo-list):
+
+<img width="262" alt="image" src="https://user-images.githubusercontent.com/96014323/201038747-e2a58756-64c7-4670-9d53-4ba393039469.png">
+
+---
+Dropdown2 - change settings:
+
+<img width="261" alt="image" src="https://user-images.githubusercontent.com/96014323/201038979-085aa7b6-02b2-424f-b2d5-990678c6c677.png">
 
 ---
 
@@ -38,7 +57,7 @@ Todo-principle copied code from Remi theawsomegarage
 # project queue - improvements planned:
 - fix alert side of things
 - node anchors and general prefix-text (hastely pulished as input to Remi :) )
-- 
+- quality check on prereq,, change to new std for folded-prereqs
 
 
 # Credits/inspiration:
