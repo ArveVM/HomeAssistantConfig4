@@ -34,7 +34,7 @@ All listed, but only those with some level of config or interest for myself/othe
 | Type      | Name                                       | Description/purpose |
 | ----------| ------------------------------------------ | ------------------- |
 |Integration| [Bluetooth](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/integrations/bluetooth.md)| Enabler for BT-functionality |
-|HACS-int   | Browser mod  | v2.x - used primarily for pop-up functionality |
+|HACS-int   | Browser mod (https://github.com/thomasloven/hass-browser_mod) | v2.x - used primarily for pop-up functionality |
 |Integration| [BTHome](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/integrations/bt_home.md) | BTHome-firmware flashed sensors |
 |Integration| [Default config](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/integrations/default_config.yaml) | Adding default HA-functionality,, ,se yaml-file for config/comments |
 |Integration| [Inkbird](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/integrations/inkbird.md) | BT-sensors from Inkbird |
