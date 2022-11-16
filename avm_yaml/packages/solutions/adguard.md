@@ -37,12 +37,11 @@ Need a way for the wife to control AdGuard (read; disable ad-blocking), so integ
   
   #### template-editor test-code:
   nah,,
-  you can contact Asbjørn  :)
 
   <br />
 
   #### Other info:
-  check this calculator; https://bloglocation.com/art/water-heating-calculator-for-time-energy-power
+  maybe someday I will document the docker-setup and adguard-config  ;),, just maybe,,,
   
   
 </details>
@@ -73,7 +72,7 @@ click - and you will get pop-up with more details:
 
 with all lines expanded:
 
-<img width="52" alt="image" src="https://user-images.githubusercontent.com/96014323/202316321-3dbf1a68-a079-4255-8ffe-dc17d2c42713.png">
+<img width="320" alt="image" src="https://user-images.githubusercontent.com/96014323/202316452-2ee10fb4-5bd9-46b1-aeb9-6b6dba271877.png">
 
 <br />
 <br />
