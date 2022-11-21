@@ -4,7 +4,7 @@
 type: vertical-stack
 cards:
   - type: entities
-    title: "Hotwater SoC:"
+    #title: "Hotwater SoC:"
     entities:
       - type: custom:fold-entity-row
         head:
