@@ -70,3 +70,4 @@ avm_yaml/dashboard/cards/card_hotwater_soc.yaml
 avm_yaml/blablabla/project_queue.md
 avm_yaml/dashboard/cards/chip_cameras.yaml
 .vscode/settings.json
+avm_yaml/dashboard/cards/chip_heater_about.yaml
