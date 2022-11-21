@@ -89,10 +89,13 @@ Created dashboard-chip:
 <br />
 
 ### Solution-Dashboard(s):
-[Chip Hotwater SoC](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/dashboard/cards/chip_hotwater_soc.yaml)
+[Hotwater SoC chip](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/dashboard/cards/hotwater_soc_chip.yaml)
 
 <img width="88" alt="image" src="https://user-images.githubusercontent.com/96014323/193773226-887a50c5-87e2-4641-93d8-b29f8be2b8e9.png">
-click - and you will get pop-up with more details:
+
+click on the chip - and you will get pop-up-card with more details:
+
+[Hotwater SoC card](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/dashboard/cards/hotwater_soc_card.yaml)
 
 <br />
 
