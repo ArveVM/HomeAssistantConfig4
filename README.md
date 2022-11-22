@@ -17,15 +17,15 @@ Current concept is moving towards a 'Solution' beeing:
 2. YAML-file with config  
 3. One or more yaml-files for dashboard/card/chips
 
-| Area         | Solution      | Description/purpose |
-| ------------ | ------------- | ------------------- |
-| General      | [AdGuard](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/solutions/adguard.md) | Enable HA-control of AdGuard |
-| General      | [ToDo](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/solutions/todo.md) | create todo-list (and let other solutions poulate with tasks and status)
-| General      | [Kid S - linen](https://github.com/ArveVM/HomeAssistantConfig4/tree/master/avm_yaml/packages/solutions/kids_linen.md) | Settings of last changed linen, length until next, length until warning, create and complete todo 
-| PowerControl | Eva HAN  | Instant power usage, estimate full hour |
-| Hotwater     | [Hotwater SoC](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/solutions/hotwater_soc.md)  | Calculate hotwater-tank SoC, including charge-time and show stats  |
-| Server/HA    | [HA-stats](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/solutions/hastats.md)  | my HA-instance's stats of sensor-count and yaml-line-count development  |
-| Plants       | [Plants](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/solutions/plant.md)  | Get standard settings for each plant, and report thresholds - and present usefull info in cards |
+| Area              | Solution      | Description/purpose |
+| ----------------- | ------------- | ------------------- |
+| General           | [ToDo](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/solutions/todo.md) | create todo-list (and let other solutions poulate with tasks and status)
+| General           | [Kid S - linen](https://github.com/ArveVM/HomeAssistantConfig4/tree/master/avm_yaml/packages/solutions/kids_linen.md) | Settings of last changed linen, length until next, length until warning, create and complete todo 
+| PowerControl      | Eva HAN  | Instant power usage, estimate full hour |
+| Hotwater          | [Hotwater SoC](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/solutions/hotwater_soc.md)  | Calculate hotwater-tank SoC, including charge-time and show stats  |
+| Plants            | [Plants](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/solutions/plant.md)  | Get standard settings for each plant, and report thresholds - and present usefull info in cards |
+| Server/HA         | [HA-stats](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/solutions/hastats.md)  | my HA-instance's stats of sensor-count and yaml-line-count development  |
+| Server/HA/backend | [AdGuard](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/solutions/adguard.md) | Enable HA-control of AdGuard |
 
 
 ## Functionality: 
