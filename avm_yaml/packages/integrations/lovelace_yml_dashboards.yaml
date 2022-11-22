@@ -6,10 +6,9 @@ lovelace:
   mode: storage
 
   # then add yaml dashboards
-  # AVM; make note of the requirement for a '-' in the 'dashboard-definition' - or you will get the error; 
+  # AVM; make note of the requirement for a '-' in the 'dashboard-definition' - or you will get the error;
   #        Invalid config for [lovelace]: Url path needs to contain a hyphen (-) for dictionary value when checking configuration
   dashboards:
-
     minimalist-mobile1:
       mode: yaml
       title: Mobile
@@ -17,3 +16,9 @@ lovelace:
       show_in_sidebar: true
       filename: avm_yaml/dashboard/dashboard_mobile.yaml
 
+    avm-mobile:
+      mode: yaml
+      title: AVM Mobile
+      icon: mdi:hammer
+      show_in_sidebar: true
+      filename: avm_yaml/dashboard/mob_dashboard.yaml
