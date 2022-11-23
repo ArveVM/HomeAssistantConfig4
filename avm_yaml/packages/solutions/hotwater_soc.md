@@ -16,8 +16,7 @@ From me:
   - Created inpust for temps, tank sice and heating-element sixe which now are editable from UI, but all intelligence and calculations come from Asbjørn: so hjuge thanks ;)
 
 To me:
-- If you find this Solution/info just the slightest bit of usefull, if you copy it or learn something from it, please give me "a pat on the back" in the form of adding to my Github-scoring:
-  - go to my Github-repo and press the STAR    
+- If you find this Solution/info just the slightest bit of usefull, if you copy it or learn something from it, please give me "a pat on the back" in the form of adding to my Github-scoring, by pressin the STAR in the top right corner of my Github-repo (top right on this page)
   - and if the solution is built on other peoples ideas (see above) - they are most likely wort a STAR as well :=) )
 
 
