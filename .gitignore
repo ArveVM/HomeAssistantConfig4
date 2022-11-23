@@ -72,3 +72,4 @@ avm_yaml/dashboard/cards/chip_cameras.yaml
 .vscode/settings.json
 avm_yaml/dashboard/cards/chip_heater_about.yaml
 avm_yaml/dashboard/cards/hotwater_temp_card.yaml
+avm_yaml/dashboard/cards/laundry_heater_card.yaml

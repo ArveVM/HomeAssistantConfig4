@@ -9,9 +9,18 @@ Splitting hotwater-control in several packages,, and this particular looks at th
 - State of Charge in %
 - Time to charge full
 
-### Credits/inspiration:
-Shamelessly copied code from Asbjørn Bergsland, re-named to my naming convention, and created my 'Solution'
-- Created inpust for temps, tank sice and heating-element sixe which now are editable from UI, but all intelligence and calculations come from Asbjørn: so hjuge thanks ;)
+### Credits/inspiration/appraisal:
+From me:
+- Asbjørn Bergsland have shared a lot of formulas/code/screenshots 
+  - Which i shamelessly copied, re-named to my naming convention, and created my 'Solution'
+  - Created inpust for temps, tank sice and heating-element sixe which now are editable from UI, but all intelligence and calculations come from Asbjørn: so hjuge thanks ;)
+
+To me:
+- If you find this Solution/info just the slightest bit of usefull, if you copy it or learn something from it, please give me "a pat on the back" in the form of adding to my Github-scoring:
+  - go to my Github-repo and press the STAR    
+  - and if the solution is built on other peoples ideas (see above) - they are most likely wort a STAR as well :=) )
+
+
 
 ### Requirements/install tips/troubleshooting:
 <details>
