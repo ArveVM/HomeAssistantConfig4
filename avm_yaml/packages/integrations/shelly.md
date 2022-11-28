@@ -100,6 +100,8 @@ entities:
       (could also enable the sensor 'OTA updates' but I prefer to disabe thoose not in use)
 3. Disable firewall rule to allow NoT/Shellies internet access
 
+optional -   use this tool to select which firmware to up/downgrade to   http://archive.shelly-tools.de/
+
 
 ## my Shelly web-interfaces:
 Using GitHub as CMDB for Shellies, and as a backup to get to the web-interfaces in case HA is ##cked up.
@@ -107,13 +109,18 @@ Using GitHub as CMDB for Shellies, and as a backup to get to the web-interfaces 
 <details><summary>List of hyperlinks to local web-access to my Shelly-devices</summary>
 <p>
 
-  
 | Name	|Type  | Description/purpose |
 |-------|-------|----------| 
+| [Laundry dryer]           (http://192.168.30.14/)  | ShellyPlug S | Solution = Laundry Dryer |
+| [Bathroom2 heater puck]   (http://192.168.30.19/) | Shelly+1pm | Solution = Bathroom2 Heater |
+| [Hotwater]                (http://192.168.30.20/) | Shelly1 | Solution = Hotwater temp |
+| [Office heater]           (http://192.168.30.22/)  | ShellyPlug S | Solution = Office heater |
+| [Kitchen heater](http://192.168.30.24/)  | ShellyPlug S | Solution = Office heater |
+| [Laundry light puck](http://192.168.30.51/)  | Shelly+1 | Solution = Laundry |
 | [Laundry heater puck](http://192.168.30.89/) | Shelly+1pm | Solution = Laundry Heater |
 | [Laundry washer puck](http://192.168.30.188/)  | Shelly+1pm | Solution = Laundry Washer |
-| [Laundry light puck](http://192.168.30.51/)  | Shelly+1 | Solution = Laundry |
-| [Laundry dryer](http://192.168.30.14/)  | Shelly Plug S | Solution = Laundry Dryer |
+| [Livingroom switch S2](http://192.168.30.248/)  | ShellyPlug S | Solution = Livingroom |
+| [Dishwasher](http://192.168.30.252/)  | ShellyPlug S | Solution = Dishwasher |
   
 
 </p>
