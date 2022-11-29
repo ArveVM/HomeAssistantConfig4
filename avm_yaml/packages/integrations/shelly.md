@@ -111,12 +111,16 @@ Using GitHub as CMDB for Shellies, and as a backup to get to the web-interfaces 
 
 | Name	|Type  | Description/purpose |
 |-------|-------|----------| 
-| [Laundry dryer]           (http://192.168.30.14/)  | ShellyPlug S | Solution = Laundry Dryer |
-| [Bathroom2 heater puck]   (http://192.168.30.19/) | Shelly+1pm | Solution = Bathroom2 Heater |
-| [Hotwater]                (http://192.168.30.20/) | Shelly1 | Solution = Hotwater temp |
-| [Office heater]           (http://192.168.30.22/)  | ShellyPlug S | Solution = Office heater |
+| [Laundry dryer](http://192.168.30.14/)  | ShellyPlug S | Solution = Laundry Dryer |
+| [Bathroom2 heater puck](http://192.168.30.19/) | Shelly+1pm | Solution = Bathroom2 Heater |
+| [Hotwater](http://192.168.30.20/) | Shelly1 | Solution = Hotwater temp |
+| [Office heater](http://192.168.30.22/)  | ShellyPlug S | Solution = Office heater |
 | [Kitchen heater](http://192.168.30.24/)  | ShellyPlug S | Solution = Office heater |
+| [Kitchen switch1](http://192.168.30.38/)  | Shelly1 | Solution = Kitchen |
+| [Shelly EM](http://192.168.30.39/)  | ShellyEM | Solution = ?? |
+| [Hallway switch2](http://192.168.30.43/)  | Shelly2pm | Solution = Hallway |
 | [Laundry light puck](http://192.168.30.51/)  | Shelly+1 | Solution = Laundry |
+| [Livingroom light puck1](http://192.168.30.81/)  | Shelly1 | Solution = Livingroom |
 | [Laundry heater puck](http://192.168.30.89/) | Shelly+1pm | Solution = Laundry Heater |
 | [Laundry washer puck](http://192.168.30.188/)  | Shelly+1pm | Solution = Laundry Washer |
 | [Livingroom switch S2](http://192.168.30.248/)  | ShellyPlug S | Solution = Livingroom |
