@@ -23,6 +23,7 @@ Current concept is moving towards a 'Solution' beeing:
 | General           | [Kid S - linen](https://github.com/ArveVM/HomeAssistantConfig4/tree/master/avm_yaml/packages/solutions/kids_linen.md) | Settings of last changed linen, length until next, length until warning, create and complete todo 
 | PowerControl      | Eva HAN  | Instant power usage, estimate full hour |
 | Hotwater          | [Hotwater SoC](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/solutions/hotwater_soc.md)  | Calculate hotwater-tank SoC, including charge-time and show stats  |
+| Hotwater          | [Hotwater Temp](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/solutions/hotwater_temp.md)  | Adjust hotwater-tank HA-thermostat according to price  |
 | Plants            | [Plants](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/solutions/plant.md)  | Get standard settings for each plant, and report thresholds - and present usefull info in cards |
 | Server/HA         | [HA-stats](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/solutions/hastats.md)  | my HA-instance's stats of sensor-count and yaml-line-count development  |
 | Server/HA/backend | [AdGuard](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/solutions/adguard.md) | Enable HA-control of AdGuard |
