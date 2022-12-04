@@ -45,19 +45,23 @@ To me:
   nah,,
  
   <br />
-
+  <br />
+  
   #### Other info:
   Mix- screw temp:
   
   <img width="482" alt="image" src="https://user-images.githubusercontent.com/96014323/205517869-71947bc4-9ae0-4f60-859d-e8aca934ac24.png">
 
   <br />
-
+  <br />
+  
   Pipe-out temp:
   
   <img width="851" alt="image" src="https://user-images.githubusercontent.com/96014323/205517898-eb2a5ed1-af07-470b-94c5-203b66527f60.png">
 
   <br />
+  <br />
+  
   Bottom temp:
   
   <img width="288" alt="image" src="https://user-images.githubusercontent.com/96014323/205518063-edaefe4b-dc82-4f98-871b-f48d11100cfc.png">
@@ -71,36 +75,13 @@ To me:
 
 ## How it works (for me):
 Created dashboard-chip:
-- to see SoC% and currentTemp
-- with popup-functionality:
-  - Target-temp/current
-  - chargetime to SoC-target
-  - energy toBeCharged 
-    - EnergyMax, 100% charged tank
-    - Charged (energy used to charge tank to current status) 
-    - toBeCharged 
-  - SoC-settings:
-    - SoC-target
-    - SoC-min (consider temp when hotwater is not actually defined as hotwater)
-    - intake-temp (water temp into hotwater-tank
-    - Tank size
-    - Tank emement size  
-  - History grap  (first version,, enough today,,)
+-
 
 <br />
 <br />
 
 ### Solution-Yaml:
-[hotwater_soc.yaml](hotwater_soc.yaml)
-- input-number for target temp 
-- input-number for min temp
-- input-number of tank-sice
-- input-number of heater-element sice
-- a bunch of sensors created to track: 
-  - max capacity of kWh chargable to the tank
-  - current state kWh
-  - kWh that can be charged
-  - SoC in %
+
 
 <br />
 <br />
@@ -130,6 +111,6 @@ with all lines expanded:
 
 
 ## improvements planned/project queue:
-- new average temp, must check differance between temp-sensor on mixer and the one in the bottom of the tank
+- better dashboard
 - add acceptable quality on history graph to popup,,,
 - must also create legionella warning
