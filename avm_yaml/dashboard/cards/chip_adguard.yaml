@@ -7,7 +7,7 @@
 type: "custom:button-card"
 template: chip_mdi_icon_state
 variables:
-  ulm_chip_mdi_icon_state_entity: switch.adguard_home_filtering
+  ulm_chip_mdi_icon_state_entity: switch.adguard_home_protection
   ulm_chip_mdi_icon_state_icon: mdi:shield-alert
 tap_action:
   action: fire-dom-event
@@ -29,7 +29,7 @@ tap_action:
               more info on AdGuard: https://adguard.com/en/welcome.html
           - type: entities
             entities:
-              - entity: switch.adguard_home_filtering
+              - entity: switch.adguard_home_protection
                 #name:
               - type: divider
 
@@ -40,7 +40,7 @@ tap_action:
               include:
                 - entity_id: "*adguard_home_*"
               exclude:
-                - entity_id: switch.adguard_home_filtering
+                - entity_id: switch.adguard_home_protection
             sort:
               method: entity_id
               reverse: true
