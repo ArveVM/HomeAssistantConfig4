@@ -1,0 +1,130 @@
+# Card for camera-solution,, using Frigate card now
+# https://github.com/blakeblackshear/frigate/issues/2606
+#     look at comment from mattkasa commented on Jan 19  for an card-update within lovelace card-config!!
+
+type: vertical-stack
+cards:
+  - type: markdown
+    content: >-
+      # Video-overvåking #
+
+      Live-kameraer fra heimen
+
+      **Klikk** for større bilde.
+
+  - type: custom:tabbed-card
+    styles:
+      "--mdc-theme-primary": orange
+      "--mdc-tab-text-label-color-default": white
+      "--mdc-typography-button-font-size": 10px
+    tabs:
+      - attributes:
+          label: Birdseye
+          icon: mdi:eye
+        card:
+          type: custom:frigate-card
+          view:
+            default: live
+          live:
+            preload: false
+          menu:
+            buttons:
+              frigate:
+                enabled: false
+              live:
+                enabled: false
+              clips:
+                enabled: false
+              snapshots:
+                enabled: false
+              frigate_ui:
+                enabled: false
+              fullscreen:
+                enabled: true
+            style: outside
+            position: bottom
+          cameras:
+            - camera_entity: camera.back
+              live_provider: frigate-jsmpeg
+              frigate:
+                camera_name: birdseye
+          media_viewer:
+            controls:
+              next_previous:
+                style: none
+
+      - attributes:
+          label: Camera
+          icon: mdi:video
+        card:
+          type: custom:frigate-card
+          cameras:
+            - camera_entity: camera.entry_camera1
+              live_provider: frigate-jsmpeg
+            - camera_entity: camera.outside_west_camera1
+          view:
+            default: live
+          live:
+            preload: false
+          media_viewer:
+            auto_play: all
+          image:
+            mode: camera
+          timeline:
+            media: all
+
+      - attributes:
+          label: Frigate
+          icon: mdi:hammer
+        card:
+          type: custom:auto-entities
+          card:
+            type: entities
+          filter:
+            include:
+              - entity_id: "*frigate*"
+            exclude:
+              #- entity_id: "*entry_thp*"
+
+      #show stream/pictures of generic-cameras (Will be removed once comfortable with Frigate)
+      - attributes:
+          label: Glance
+          icon: mdi:video
+        card:
+          type: vertical-stack
+          cards:
+            - type: picture-glance
+              camera_view: live
+              title: Entry
+              entities: []
+              camera_image: camera.entry_generic
+              entity: camera.entry_generic
+
+            - type: picture-glance
+              camera_view: live
+              title: Stove
+              entities: []
+              camera_image: camera.outside_west_generic
+              entity: camera.outside_west_generic
+
+            # Add both picture and video of cabled D-link DCS-930LB
+            - type: horizontal-stack
+              cards:
+                - camera_view: live
+                  type: picture-glance
+                  title: Heime - bilde
+                  image: http://192.168.40.163/image.jpg
+                  tap_action:
+                    action: url
+                    # could/should mask username:passord,, but it is only used for this camera - so breach is not critical, so leave it in there for sample-usage
+                    url_path: http://HaCams:HaCams@192.168.40.163/image.jpg
+                  entities: []
+                - type: picture-glance
+                  camera_view: live
+                  title: Heime - video
+                  image: http://192.168.40.163/MJPEG.CGI
+                  tap_action:
+                    action: url
+                    # could/should mask username:passord,, but it is only used for this camera - so breach is not critical, so leave it in there for sample-usage
+                    url_path: http://HaCams:HaCams@192.168.40.163/MJPEG.CGI
+                  entities: []
