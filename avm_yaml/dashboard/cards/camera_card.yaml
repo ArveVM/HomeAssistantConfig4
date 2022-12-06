@@ -1,17 +1,12 @@
+# ArveVM: https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/solutions/cameras.md
+
 # Card for camera-solution,, using Frigate card now
 # https://github.com/blakeblackshear/frigate/issues/2606
 #     look at comment from mattkasa commented on Jan 19  for an card-update within lovelace card-config!!
 
 type: vertical-stack
 cards:
-  - type: markdown
-    content: >-
-      # Video-overvåking #
-
-      Live-kameraer fra heimen
-
-      **Klikk** for større bilde.
-
+  # ArveVM; some mushroom-styles - have no idea what it means ;)
   - type: custom:tabbed-card
     styles:
       "--mdc-theme-primary": orange
@@ -19,7 +14,7 @@ cards:
       "--mdc-typography-button-font-size": 10px
     tabs:
       - attributes:
-          label: Birdseye
+          label: Bird
           icon: mdi:eye
         card:
           type: custom:frigate-card
@@ -74,17 +69,25 @@ cards:
             media: all
 
       - attributes:
-          label: Frigate
+          label: Data
           icon: mdi:hammer
         card:
-          type: custom:auto-entities
-          card:
-            type: entities
-          filter:
-            include:
-              - entity_id: "*frigate*"
-            exclude:
-              #- entity_id: "*entry_thp*"
+          type: vertical-stack
+          cards:
+            - type: markdown
+              content: >-
+                # Video-overvåking #
+
+                Status frå Frigate
+
+            - type: custom:auto-entities
+              card:
+                type: entities
+              filter:
+                include:
+                  - entity_id: "*frigate*"
+                exclude:
+                  #- entity_id: "*entry_thp*"
 
       #show stream/pictures of generic-cameras (Will be removed once comfortable with Frigate)
       - attributes:
