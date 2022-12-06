@@ -37,7 +37,8 @@ All listed, but only those with some level of config or interest for myself/othe
 | ----------| ------------------------------------------ | ------------------- |
 |Integration| [AdGuard](https://www.home-assistant.io/integrations/adguard/)| Integration to AdGuard docker in unRaid |
 |Integration| [Bluetooth](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/integrations/bluetooth.md)| Enabler for BT-functionality |
-|HACS-int   | Browser mod (https://github.com/thomasloven/hass-browser_mod) | v2.x - used primarily for pop-up functionality |
+|HACS-int   | [Browser mod](https://github.com/thomasloven/hass-browser_mod) | v2.x - used primarily for pop-up functionality |
+|HACS-int   | [PriceAnalyzer](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/integrations/priceanalyzer.md) | Nordpool-spot prices with a bunch of analytical input - including blueprints etc for easy adoptation |
 |Integration| [BTHome](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/integrations/bt_home.md) | BTHome-firmware flashed sensors |
 |Integration| [Default config](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/integrations/default_config.yaml) | Adding default HA-functionality,, ,se yaml-file for config/comments |
 |Integration| [Inkbird](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/integrations/inkbird.md) | BT-sensors from Inkbird |
