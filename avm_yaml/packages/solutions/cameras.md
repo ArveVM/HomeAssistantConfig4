@@ -1,5 +1,5 @@
                                                   ArveVM, December.2022
-# Camears
+# Camearas
 
 <br />
 
@@ -27,12 +27,12 @@ Need a way for record when people come visit (warnings), recording in case of th
   <br />
  
   #### To install you should:
-  - Installed Frigate docker
+  - Install Frigate docker
   - add config to Frigate-docker (config-file need to be created, verify in Frigate web-ui that you have connection to camera(s)) 
   - Installed HA frigate-integration (ensure you get in the frigate-cameras)
 
   - copy and insert code for card whereever suitable for your installation
-  - redo/change to your naming standards  :)
+  - redo/change to your naming standards/cameras/entities  :)
 
   <br />
   
@@ -43,6 +43,10 @@ Need a way for record when people come visit (warnings), recording in case of th
 
   #### Other info:
   maybe someday I will document the docker-setup and -config  ;),, just maybe,,,
+
+  for birdseye-view:
+  https://github.com/blakeblackshear/frigate/issues/2606
+  look at comment from mattkasa commented on Jan 19  for an card-update within lovelace card-config!!
   
   
 </details>
@@ -51,7 +55,7 @@ Need a way for record when people come visit (warnings), recording in case of th
 <br />
 
 ## How it works (for me):
-- created chip/popup to view tabbed card with cameras from Frigate
+- created chip/popup to view tabbed card with cameras from Frigate, birseye, cameras, frigate entities etc
 
 
 <br />
@@ -66,19 +70,34 @@ n/a
 ### Solution-Dashboard(s):
 [Camera card](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/dashboard/cards/camera_card.yaml)
 
-<img width="52" alt="image" src="https://user-images.githubusercontent.com/96014323/202316060-4355f8e4-2415-4e9a-bd31-b2625bf7e1d2.png">
-click - and you will get pop-up with more details:
+First tab (no action/triggers,, but they will show up):
+
+![image](https://user-images.githubusercontent.com/96014323/205927784-703bac11-cab7-4fca-b54c-d06f74fd28b2.png)
+
 
 <br />
 
-with all lines expanded:
+Second tab:
 
-<img width="320" alt="image" src="https://user-images.githubusercontent.com/96014323/202316452-2ee10fb4-5bd9-46b1-aeb9-6b6dba271877.png">
+![image](https://user-images.githubusercontent.com/96014323/205928128-76472a75-c081-41ec-bfa8-bf2198b1fd57.png)
 
 <br />
+
+Third tab:
+
+![image](https://user-images.githubusercontent.com/96014323/205928299-1e5a1a95-8f80-4479-b779-5c9603584df4.png)
+
+<br />
+
+Last tab (collection of old camera(s) as picture glance:
+
+![image](https://user-images.githubusercontent.com/96014323/205928498-4146efd8-2054-423f-8092-bcf8a8a08c3f.png)
+
+
 <br />
 
 
 ## improvements planned/project queue:
 - Better documentation of server/docker setup
-- might do something with history/graphs  etc?
+- might do something with history/graphs  etc?  counter on how often ?
+- warning/popup when person detected (and a pause-function?)
