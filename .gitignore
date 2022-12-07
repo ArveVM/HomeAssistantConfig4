@@ -75,3 +75,4 @@ avm_yaml/dashboard/cards/hotwater_temp_card.yaml
 avm_yaml/dashboard/cards/laundry_heater_card.yaml
 avm_yaml/dashboard/cards/hotwater_temp2_card.yaml
 avm_yaml/dashboard/cards/power_usage_card.yaml
+avm_yaml/dashboard/cards/kitchen_room_card.yaml

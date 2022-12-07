@@ -23,7 +23,7 @@ views:
 
   - !include view_bathroom.yaml
   - !include view_bathroom2.yaml
-  - !include view_workshop.yaml
+  - !include views/workshop_view.yaml
 
   - !include view_kid_l.yaml
 

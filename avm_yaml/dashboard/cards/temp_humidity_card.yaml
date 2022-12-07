@@ -1,0 +1,39 @@
+# credits to Tommy Welle Jacobsson - HA-Norge-FacebookGroup
+
+type: custom:stack-in-card
+cards:
+  - type: grid
+    square: false
+    columns: 2
+    cards:
+      - type: custom:mushroom-entity-card
+        entity: sensor.livingroom_netatmo_temperature # <-- Din sensor
+        primary_info: state
+        secondary_info: name
+        name: Temperatur
+        icon_color: green
+      - type: custom:mushroom-entity-card
+        entity: sensor.livingroom_netatmo_humidity # <-- Din sensor
+        primary_info: state
+        secondary_info: name
+        name: Fuktighet
+        icon_color: blue
+  - type: custom:mini-graph-card
+    entities:
+      - entity: sensor.livingroom_netatmo_temperature # <-- Din sensor
+        name: Tempratur
+        color: "#00bb33"
+      - entity: sensor.livingroom_netatmo_humidity # <-- Din sensor
+        name: Fuktighet
+        color: "#2196f3"
+        y_axis: secondary
+    hours_to_show: 24
+    line_width: 3
+    font_size: 50
+    animate: true
+    show:
+      name: false
+      icon: false
+      state: false
+      legend: false
+      fill: fade
