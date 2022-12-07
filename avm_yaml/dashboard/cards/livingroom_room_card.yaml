@@ -1,3 +1,5 @@
+# room card, inspiration from 'rhysb Rhys' https://community.home-assistant.io/t/mushroom-cards-build-a-beautiful-dashboard-easily/388590/1157
+
 type: custom:stack-in-card
 cards:
   - type: custom:mushroom-template-card
