@@ -5,7 +5,7 @@
 # and the brilliant ThomasLoven for lovelace_gen
 # use the following code to trigger card with whatever variables you would like (for me; for each area)
 #      - !include
-#        - ../../cards/temp_humidity_card2.yaml
+#        - ../../cards/temp_humidity_minigraph_card.yaml.yaml
 #        - entity: *temp1
 #          humidity_entity: *humidity1
 
