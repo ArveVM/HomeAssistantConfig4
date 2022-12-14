@@ -29,13 +29,9 @@ cards:
         icon_color: blue
   - type: custom:mini-graph-card
     entities:
-      #- entity: sensor.livingroom_netatmo_temperature # <-- Din sensor
-      #- entity: sensor.outside_netatmo_temperature # <-- Din sensor
       - entity: {{ entity }}
         name: Tempratur
         color: "#00bb33"
-      #- entity: sensor.livingroom_netatmo_humidity # <-- Din sensor
-      #- entity: sensor.outside_netatmo_humidity # <-- Din sensor
       - entity: {{ humidity_entity }}
         name: Fuktighet
         color: "#2196f3"
