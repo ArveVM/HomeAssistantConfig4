@@ -1,0 +1,169 @@
+# lovelace_gen
+
+type: custom:tabbed-card
+options: {}
+styles:
+  "--mdc-theme-primary": orange
+  "--mdc-tab-text-label-color-default": white
+  "--mdc-typography-button-font-size": 10px
+tabs:
+  - attributes:
+      label: status
+      icon: mdi:radiator
+    card:
+      type: vertical-stack
+      cards:
+        - entity: switch.loft_heater_plug
+          type: custom:multiple-entity-row
+          name: "Heating:"
+          toggle: true
+          state_header: Heating
+          entities:
+            - entity: sensor.loft_heater_plug_power
+              name: Power
+              #toggle: true
+        - !include
+          - ../../cards/temp_humidity_minigraph_card.yaml
+          - entity: sensor.loft_thp_temperature
+            humidity_entity: sensor.loft_thp_humidity
+        #          - entity: { { entity } }
+        #            humidity_entity: { { humidity_entity } }
+
+  - attributes:
+      label: Settings
+      icon: mdi:wrench
+    card:
+      type: vertical-stack
+      cards:
+        - type: entities
+          entities:
+            - entity: sensor.loft_thp_temperature
+              type: custom:multiple-entity-row
+              name: "Local input:"
+              toggle: false
+              state_header: Room temp
+              #entities:
+              #- entity: binary_sensor.laundry_heater_puck_input
+              #  name: Room
+            - type: divider
+            - entity: input_boolean.loft_heater_powerauto
+            - entity: sensor.loft_heater_thermostat_target
+              type: custom:multiple-entity-row
+              name: "Auto-settings:"
+              state_header: ShortTarget
+              entities:
+                - entity: input_number.loft_heater_longterm_target
+                  name: LongTarget
+                - entity: sensor.priceanalyzer
+                  name: Priceanalyzer
+            - entity: input_boolean.loft_heater_powersave
+              type: custom:multiple-entity-row
+              name: "Override:"
+              toggle: true
+              state_header: PowerSave
+              entities:
+                - entity: input_boolean.loft_heater_powerhoursave
+                  name: PowerHourSave
+                  toggle: true
+            - type: divider
+            - entity: sensor.loft_heater_plug_power
+              type: custom:multiple-entity-row
+              name: "Heating:"
+              toggle: false
+              state_header: Power
+              entities:
+                - entity: switch.loft_heater_plug
+                  name: Heating
+                  toggle: true
+            - type: divider
+
+        # chips-part:
+        - type: custom:mushroom-chips-card
+          alignment: end
+          card_mod:
+            style: |
+              ha-card {
+                --chip-box-shadow: none;
+                --chip-background: none;
+                --chip-spacing: 0;
+              }
+          chips:
+            - type: template
+              icon: mdi:help
+              tap_action:
+                action: fire-dom-event
+                browser_mod:
+                  service: browser_mod.popup
+                  data:
+                    content:
+                      type: markdown
+                      content: |
+                        **Chips:**
+                        Bar-graph; 
+                          'click' -> for overview of historic usage
+                        Line-graph:
+                          'click' -> for Laundry Heater temp history 1h:
+                          'double-click' -> for Laundry Heater temp history 24h:
+                          'hold' -> for 'mich test history-grap'':
+                        Wand:
+                          'click' -> to toggle heater auto (on/off)  (blue = ON)
+                          'hold' -> view list of entities controlling/overriding the heater-auto:
+                        W:
+                          info on current consumption of heater
+                        ---
+
+                        **About Heater AUTO:**
+                        If auto is OFF, heater is controlled by local thermostat
+                        If auto is ON, heater is controlled by Generic Thermostat, 
+                        but can be overturned if PowerSave or PowerHourSave is turned ON
+                          - Generic thermostat is controlled by scenes/automations 
+                            changing both temperature and preset-modes
+                          - Input-temp in generic thermostat is room-sensor (Aquara THP)
+                          - PowerSave can be used to cap high-price hours, 
+                            or focus on only heat during lowest-price
+                          - PowerHoursave is to control total consumption during one hour
+                            to make sure one do not overstep hour-tariffs
+
+  - attributes:
+      label: History
+      icon: mdi:chart-line
+    card:
+      type: vertical-stack
+      cards:
+        - type: custom:history-explorer-card
+          cardName: history-card-5
+          header: hide # The hide option will remove the header entirely
+          uiLayout:
+            toolbar: top
+            selector: hide #bottom
+          stateColors:
+            binary_sensor.off: red
+            binary_sensor.on: green
+          graphs:
+            - type: line
+              entities:
+                - entity: sensor.loft_thp_temperature
+                  name: Room temp
+                  color: red
+                  fill: rgba(151,187,205,0.15)
+                  lineMode: curves
+                - type: attribute
+                  entity: sensor.loft_heater_thermostat_target
+                  name: Termostat Target
+                  suffix: °C
+                  lineMode: stepped
+            - type: timeline
+              title: Non-numerical sensors
+              entities:
+                #- entity: binary_sensor.loft_heater_puck_input
+                #  name: Local Th
+                - entity: input_boolean.loft_heater_thermostat_output
+                  name: Gen Th
+                - entity: input_boolean.loft_heater_powerauto
+                  name: Auto
+                - entity: input_boolean.loft_heater_powersave
+                  name: P-save
+                - entity: input_boolean.loft_heater_powerhoursave
+                  name: PH-save
+                - entity: switch.loft_heater_plug
+                  name: Heat

@@ -115,6 +115,7 @@ template:
           - states('sensor.hastats_ebd_binary_sensors') | float(default=0)
           - states('sensor.hastats_ebd_buttons') | float(default=0)
           - states('sensor.hastats_ebd_calendars') | float(default=0)
+          - states('sensor.hastats_ebd_cameras') | float(default=0)
           - states('sensor.hastats_ebd_climates') | float(default=0)
           - states('sensor.hastats_ebd_counters') | float(default=0)
           - states('sensor.hastats_ebd_covers') | float(default=0) 
@@ -173,12 +174,18 @@ template:
         attributes:
           <<: *solution_attribute
         state: "{{states.button | count}}"
-      - name: HAstats EbD calendars
+      - name: HAstats EbD calendar
         unique_id: hastats_ebd_calendars
         state_class: measurement
         attributes:
           <<: *solution_attribute
         state: "{{states.calendar | count}}"
+      - name: HAstats EbD cameras
+        unique_id: hastats_ebd_cameras
+        state_class: measurement
+        attributes:
+          <<: *solution_attribute
+        state: "{{states.camera | count}}"
       - name: HAstats EbD climates
         unique_id: hastats_ebd_climates
         state_class: measurement
