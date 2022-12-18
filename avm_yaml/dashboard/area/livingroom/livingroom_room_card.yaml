@@ -91,7 +91,7 @@ cards:
                 cards:
                   #- !include livingroom_light_card.yaml
                   - !include
-                    - ../../cards/temp_humidity_card3.yaml
+                    - ../../cards/temp_humidity_minigraph_card.yaml
                     - entity: *temp1
                       humidity_entity: *humidity1
 

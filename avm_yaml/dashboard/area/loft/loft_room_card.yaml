@@ -112,8 +112,9 @@ cards:
               content:
                 type: vertical-stack
                 cards:
+                  #- ../../cards/temp_humidity_card3.yaml
                   - !include
-                    - ../../cards/temp_humidity_card3.yaml
+                    - ../../cards/temp_humidity_minigraph_card.yaml
                     - entity: *temp1
                       humidity_entity: *humidity1
 
