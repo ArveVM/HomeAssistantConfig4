@@ -5,7 +5,7 @@
 # and the brilliant ThomasLoven for lovelace_gen
 # use the following code to trigger card with whatever variables you would like (for me; for each area)
 #      - !include
-#        - ../../cards/temp_humidity_card2.yaml
+#        - ../../cards/temp_humidity_minigraph_card.yaml.yaml
 #        - entity: *temp1
 #          humidity_entity: *humidity1
 
@@ -29,13 +29,9 @@ cards:
         icon_color: blue
   - type: custom:mini-graph-card
     entities:
-      #- entity: sensor.livingroom_netatmo_temperature # <-- Din sensor
-      #- entity: sensor.outside_netatmo_temperature # <-- Din sensor
       - entity: {{ entity }}
         name: Tempratur
         color: "#00bb33"
-      #- entity: sensor.livingroom_netatmo_humidity # <-- Din sensor
-      #- entity: sensor.outside_netatmo_humidity # <-- Din sensor
       - entity: {{ humidity_entity }}
         name: Fuktighet
         color: "#2196f3"
