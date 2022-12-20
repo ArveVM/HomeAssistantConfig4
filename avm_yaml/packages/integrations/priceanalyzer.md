@@ -32,7 +32,7 @@ The Total cost of electricity is divided in Energy-cost, and Transportation cost
 - Then a capacity-fee based upon how much you have spent on max three-day-average-max  (will not be part of this pricing,,, will have to be set up in different solution)
 Then of-course there will be added the usual value added tax upon them all, but for that i use the "include VAT" in Priceanalyzer-setup
 
-
+(this table is not updated with prices for 2023,, should be considered an example and explenation of how things are connected)
 | Variable           | My value          | Description/purpose |
 | ----------         | ----------------- | ------------------- |
 | spot               | hourly spot       | PriceAnalyzer get the Nordpool hourly spot-price
@@ -46,10 +46,57 @@ Then of-course there will be added the usual value added tax upon them all, but 
 | hour_start_night   | 22                | Night-tariff start at 22:00 (and last until 05:59)
 | hour_start_day     | 6                 | Day-tariff start at 06:00 (until 21:59)
 
-To use this,, copy the code below - and update the 7 first lines to your correct data for your agreement with your power supplier (amounts in KR, even if you use Øre), and add to this section when creating new sensor/entity/integration: 
+To use this,, copy the code below - and update the spot markup to correct data for your agreement with your power supplier (amounts in KR, even if you use Øre), and add to this section when creating new sensor/entity/integration: 
 <img width="203" alt="image" src="https://user-images.githubusercontent.com/96014323/194400572-639798f1-80e4-415c-970c-ec1284a628a0.png">
 
 
+Kode for 2022/2023:
+```ruby
+
+{% set hour = now().hour %}
+{% set month = now().month %}
+{% set year = now().year %}
+
+{% set hour_start_night = 22 %}
+{% set hour_start_day   = 6 %}
+
+{% set spot_markup      = 0.029%}
+{% set enova_fee        = 0.0125 %}
+
+{% if year == 2022 %}
+    {% set state_fee        = 0.1926 %}
+    {% set transport_night  = 0.1250 %}
+    {% set transport_day    = 0.2000 %}
+{% else %}
+      {% set transport_night  = 0.1500 %}
+      {% set transport_day    = 0.2250 %}
+      {% if month <= 3  %}
+        {% set state_fee      = 0.1145 %}
+      {%else%}
+        {% set state_fee      = 0.1980 %}
+    {% endif %}
+{% endif %}
+
+{% set price =         spot_markup %}
+{% set price = price + enova_fee %}
+{% set price = price + state_fee %}
+
+{% if hour >= hour_start_night or hour < hour_start_day %}
+  {% set price = price + transport_night %}
+{% else%}
+  {% set price = price + transport_day %}
+{% endif %}
+{{ price | round(4)}}
+
+```
+source: https://www.morenett.no/informasjon/nettleie-privat
+test-tip: 
+- copy&paste code in Dev.tools/template
+- change top three lines to accomodate different dates/times by removing "now().hour" and put 23,, and you will get data for the last hour (same goes for month/year to test new tarrifs
+
+
+
+Gammel kode for 2022
 ```ruby
 
 {% set spot_markup      = 0.029 %}
