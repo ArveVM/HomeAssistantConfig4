@@ -3,13 +3,21 @@
 
 **v4:**
 
+  Des ;
+  - Starting re-use of cards, (combining passing variables in lovelace-yaml and include files (cards))
+
   Nov ;
   - Adding ToDo as solution,, presentation of how to collect all other solutions "todo-tasks" in one place.
+  - Starting to move out Add-ons to unRaid-dockers; 
+    - Adguard, for DNS and adblocking (thanks ThomasH :) )
+    - Mosquitto, for mqtt
+  - adding Frigate and a couple of cameras, using Coral usb for person detection
   
   Oct ;
   - Adding 'GUI-input' to to 'solutions-concept. Will enable easily adoptation of solutions for new users
   - Hotwater SoC was the conecpt, with settings on tank size, temps etc
   - setup z2m in container outside HA - Sonoff3p as coordinator, start moving devices (renaming and set bindings etc)
+  - change remote connection to use Nginx proxy manager (thanks ThomasH :) )
   
   Sept ;
   - Cleanup in 'solutions concept',, starting to re-write code to match concept-trinity of yaml/dashboard/readMe
