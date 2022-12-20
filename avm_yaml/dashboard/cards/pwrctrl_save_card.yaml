@@ -46,44 +46,59 @@ tabs:
       cards:
         - type: entities
           entities:
-            - entity: sensor.loft_thp_temperature
+            - entity: input_boolean.pwrctrl_limit_auto
+              name: PowerHourSave Auto
+            - entity: input_boolean.pwrctrl_limit_auto
               type: custom:multiple-entity-row
-              name: "Local input:"
-              toggle: false
-              state_header: Room temp
-              #entities:
-              #- entity: binary_sensor.laundry_heater_puck_input
-              #  name: Room
-            - type: divider
-            - entity: input_boolean.loft_heater_powerauto
-            - entity: sensor.loft_heater_thermostat_target
-              type: custom:multiple-entity-row
-              name: "Auto-settings:"
-              state_header: ShortTarget
-              entities:
-                - entity: input_number.loft_heater_longterm_target
-                  name: LongTarget
-                - entity: sensor.priceanalyzer
-                  name: Priceanalyzer
-            - entity: input_boolean.loft_heater_powersave
-              type: custom:multiple-entity-row
-              name: "Override:"
+              name: "PowerHourSave:"
               toggle: true
-              state_header: PowerSave
+              state_header: Auto
               entities:
-                - entity: input_boolean.loft_heater_powerhoursave
-                  name: PowerHourSave
-                  toggle: true
+                - entity: sensor.pwrctrl_limit_powerhoursave_counter
+                  name: Active
             - type: divider
-            - entity: sensor.loft_heater_plug_power
+            - entity: input_number.pwrctrl_limit_level
+
+            - type: divider
+            - entity: input_number.pwrctrl_limit_level
               type: custom:multiple-entity-row
-              name: "Heating:"
-              toggle: false
-              state_header: Power
+              name: "Level now:"
+              toggle: true
+              state_header: Level
               entities:
-                - entity: switch.loft_heater_plug
-                  name: Heating
-                  toggle: true
+                - entity: sensor.pwrctrl_limit_powerhoursave_counter
+                  name: Active Saves
+            - type: divider
+            - entity: input_number.pwrctrl_limit_level
+              type: custom:multiple-entity-row
+              name: "Set level:"
+              toggle: false
+              state_header: Current
+              entities:
+                - type: button
+                  name: Level0
+                  icon: mdi:power-plug-off
+                  tap_action:
+                    action: call-service
+                    confirmation:
+                      text: Are you sure you want to reset all PowerHourSave's?
+                    service: script.pwrctrl_limit_level0
+                - type: button
+                  name: Level1
+                  icon: mdi:power-plug-off
+                  tap_action:
+                    action: call-service
+                    confirmation:
+                      text: Are you sure you want to set PowerHourSave level1?
+                    service: script.pwrctrl_limit_level1
+                - type: button
+                  name: Level2
+                  icon: mdi:power-plug-off
+                  tap_action:
+                    action: call-service
+                    confirmation:
+                      text: Are you sure you want to set PowerHourSave level2?
+                    service: script.pwrctrl_limit_level2
             - type: divider
 
         # chips-part:

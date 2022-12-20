@@ -12,7 +12,10 @@ template:
         icon: mdi:list-status
         state: >-
           {{ states.input_boolean
-            |selectattr('entity_id', 'search', '_todo$')
-            |selectattr('state', 'eq', 'on') | list | count }}
+          | selectattr('entity_id', 'search', '_todo$')
+          | selectattr('state', 'eq', 'on') 
+          | list 
+          | count 
+          }}
         attributes:
           solution: ToDo
