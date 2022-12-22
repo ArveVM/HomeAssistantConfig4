@@ -78,6 +78,17 @@ cards:
         tap_action:
           action: more-info
 
+      - type: template
+        entity: light.christmas_tree
+        icon: mdi:pine-tree
+        icon_color: "{{ 'green' if is_state(entity, 'on') else 'grey' }}"
+        tap_action:
+          action: call-service
+          service: light.toggle
+          data: {}
+          target:
+            entity_id: light.christmas_tree
+
       - type: action
         icon_color: yellow
         icon: mdi:thermometer

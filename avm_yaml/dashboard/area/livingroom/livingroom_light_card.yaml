@@ -66,5 +66,42 @@ tabs:
       label: Scenes
       icon: mdi:movie
     card:
-      type: entity
-      entity: sensor.aroid_palm_ppfd_mol
+      type: vertical-stack
+      cards:
+        - type: horizontal-stack
+          cards:
+            - type: horizontal-stack
+              cards:
+                - type: custom:mushroom-template-card
+                  primary: Mom's favourite
+                  secondary: ""
+                  icon: mdi:led-strip-variant
+                  tap_action:
+                    action: call-service
+                    service: light.turn_on
+                    target:
+                      entity_id: light.livingroom_light_windowstrip
+                    data:
+                      transition: 2
+                      brightness: 154
+                      rgb_color:
+                        - 255
+                        - 204
+                        - 101
+
+                - type: custom:mushroom-template-card
+                  primary: Dad's favourite
+                  secondary: ""
+                  icon: mdi:led-strip-variant
+                  tap_action:
+                    action: call-service
+                    service: light.turn_on
+                    target:
+                      entity_id: light.livingroom_light_windowstrip
+                    data:
+                      transition: 2
+                      brightness: 84
+                      rgb_color:
+                        - 255
+                        - 29
+                        - 11
