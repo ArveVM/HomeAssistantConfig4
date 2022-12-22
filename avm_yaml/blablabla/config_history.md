@@ -5,6 +5,13 @@
 
   Des ;
   - Starting re-use of cards, (combining passing variables in lovelace-yaml and include files (cards))
+  - Starting with Mushrom (planning to replace UI minimalist
+  - Changing from a clear room-focus to area (rooms/outside/garage/backyard), general (power, hotwater, plants, cameras), backend (server/codelinecount/adguard/restore etc)
+  - 12month summary:
+    - +6200 lines of yaml in all kinds of packages, +10000 lines of yaml dashboard (mostly UI minimalist)  
+    - 3 'levels' of hardware: Pi3b, oldPC with Proxmox, notsooldPc with unRaid
+    - +130 integrations
+    - far more plans than ability to execute; HA is great FUN!!
 
   Nov ;
   - Adding ToDo as solution,, presentation of how to collect all other solutions "todo-tasks" in one place.
