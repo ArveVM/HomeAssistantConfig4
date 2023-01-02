@@ -27,7 +27,51 @@ Current concept is moving towards a 'Solution' beeing:
 - Hotwater:
   - [Hotwater SoC](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/solutions/hotwater_soc.md) Calculate hotwater-tank SoC, including charge-time and show stats  
   - [Hotwater Temp](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/solutions/hotwater_temp.md) Adjust hotwater-tank HA-thermostat according to price  
-- PowerControl
+- PowerControl (PwrCtrl)
+  - PwrCtrl Use:  Sum total, Grouped consumption, utility-meters  
+    <details>
+      <summary>Click me for details</summary>
+  
+    ### Functionality required:
+    1. HACS PowerCalc integration - for easy grouping energy- and utility-meter-sensors
+    4. Dashboard:
+      * yaml-dashboard (but you can copy dashboard-code to UI-dashboard/card    
+      
+    ### how it works:
+    Create total usage based upon reading from power-meter (EvaHan - Zigbee - Mqtt)
+    grouping what is under control (power-metering), calculating some fixed, and using PowerCalc on the rest that is possible to estimate based upon states.
+    Will try to calculate ungrouped
+    
+  - PwrCtrl Limit:  (powerHourSave) - Define capacity-limit, calculate trend and adjust consumption to not overrun the capacity-limit
+                    (Might be a Norwegian speciality to limit usage within a clock-hour, with tarrif on max hourly usage throughout the month.  
+    <details>
+      <summary>Click me for details</summary>
+  
+    ### Functionality required:
+    1. Utility meter for hourly consumption
+    2. Lots of power-entities to be able to turn of to reduce consumption
+    4. Dashboard:
+      * yaml-dashboard (but you can copy dashboard-code to UI-dashboard/card    
+      
+    ### how it works:
+    Create input-number as capacity-limit, and security treshold - to give an actionable limit
+    
+    Calculate full hour trend, and current percentage towards trend (deducted security-treshold)
+    
+    Create groups of power-entities to turn off (powerhoursave) to get under the target for hourly usage
+    
+    create action to turn off first group when hourly trend get above security treshold
+    
+    create action to turn off next group when hourly trend is above security treshold for 10minutes (or go below treshold and then above again)  - and repeat
+    
+    create action to turn off last group when power get below 80% of security treshold (to use power wanted)
+    
+  
+    <br />
+    
+    </details>
+
+    
   - Eva HAN Instant power usage, estimate full hour 
 - [Plants](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/solutions/plant.md) Get standard settings for each plant, and report thresholds - and present usefull info in cards 
 - Cameras
