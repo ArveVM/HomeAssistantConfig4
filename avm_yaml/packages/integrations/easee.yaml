@@ -44,3 +44,4 @@ utility_meter:
     source: sensor.easee1_lifetime_energy
     name: Easee1 Energy Monthly
     cycle: monthly
+

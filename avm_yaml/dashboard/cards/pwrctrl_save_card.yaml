@@ -16,25 +16,27 @@ tabs:
             type: entities
           filter:
             include:
-              - entity_id: "*powersave*"
-            #exclude:
-            #  - entity_id: "*entry_thp*"
-            #  - entity_id: "*entry_door*"
-        - type: custom:auto-entities
-          card:
-            type: entities
-          filter:
-            include:
               - entity_id: "*powerhoursave*"
             #exclude:
             #  - entity_id: "*entry_thp*"
             #  - entity_id: "*entry_door*"
+
         - type: custom:auto-entities
           card:
             type: entities
           filter:
             include:
               - entity_id: "*powerauto*"
+            #exclude:
+            #  - entity_id: "*entry_thp*"
+            #  - entity_id: "*entry_door*"
+
+        - type: custom:auto-entities
+          card:
+            type: entities
+          filter:
+            include:
+              - entity_id: "*powersave*"
             #exclude:
             #  - entity_id: "*entry_thp*"
             #  - entity_id: "*entry_door*"
@@ -46,16 +48,25 @@ tabs:
       cards:
         - type: entities
           entities:
-            - entity: input_boolean.pwrctrl_limit_auto
-              name: PowerHourSave Auto
-            - entity: input_boolean.pwrctrl_limit_auto
+            - entity: input_number.pwrctrl_limit_capacity_limit
               type: custom:multiple-entity-row
-              name: "PowerHourSave:"
-              toggle: true
-              state_header: Auto
+              name: "CapacityLimit:"
+              #toggle: true
+              state_header: Limit
+              entities:
+                - entity: sensor.pwrctrl_limit_usage_percent
+                  name: Usage now
+
+            - type: divider
+            - entity: input_number.pwrctrl_limit_level
+              type: custom:multiple-entity-row
+              name: "Save-Level now:"
+              #toggle: true
+              state_header: Level
               entities:
                 - entity: sensor.pwrctrl_limit_powerhoursave_counter
-                  name: Active
+                  name: Active Saves
+
             - type: divider
             - entity: input_number.pwrctrl_limit_level
 

@@ -13,37 +13,38 @@ type: custom:stack-in-card
 cards:
   - type: grid
     square: false
-    columns: 3
+    columns: 2
     cards:
+      
       - type: custom:mushroom-entity-card
         entity: {{ entity }}
         primary_info: state
         secondary_info: name
-        name: Temperatur
-        icon_color: green
+        name: Humidity this area
+        icon_color: blue
       - type: custom:mushroom-entity-card
-        entity: sensor.house_average_temperature
+        entity: sensor.house_average_humidity
         primary_info: state
         secondary_info: name
         name: House average
         icon_color: orange
-      - type: custom:mushroom-entity-card
-        entity: {{ humidity_entity }}
-        primary_info: state
-        secondary_info: name
-        name: Fuktighet
-        icon_color: blue
+
   - type: custom:mini-graph-card
     entities:
-      - entity: {{ entity }}
-        name: Tempratur
-        color: "#00bb33"
-      - entity: sensor.house_average_temperature
-        name: Tempratur
+      - entity: sensor.house_average_humidity
+        name: House avg
         color: orange
-      - entity: {{ humidity_entity }}
-        name: Fuktighet
+      - entity: {{ entity }}
+        name: This room
         color: "#2196f3"
+        #y_axis: secondary
+      - color: yellow
+        entity: sun.sun
+        name: Sun
+        show_line: false
+        show_fill: true
+        show_points: false
+        show_legend: false
         y_axis: secondary
     hours_to_show: 24
     line_width: 3
@@ -55,3 +56,8 @@ cards:
       state: false
       legend: false
       fill: fade
+    state_map:
+      - value: below_horizon
+        label: Night
+      - value: above_horizon
+        label: Day

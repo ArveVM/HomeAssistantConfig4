@@ -1,0 +1,135 @@
+# lovelace_gen
+
+type: custom:tabbed-card
+options: {}
+styles:
+  "--mdc-theme-primary": orange
+  "--mdc-tab-text-label-color-default": white
+  "--mdc-typography-button-font-size": 10px
+tabs:
+  - attributes:
+      label: status
+      icon: mdi:radiator
+    card:
+      type: vertical-stack
+      cards:
+        - entity: {{ powerboost }}
+          type: custom:multiple-entity-row
+          name: "Heating:"
+          toggle: true
+          state_header: Boost
+          entities:
+            - entity: {{ power }}
+              name: Power
+        - !include
+          - temperature_compare_card.yaml
+          - entity: {{ room_temp }}
+            humidity_entity: {{ room_humidity }}
+        - !include
+          - humidity_compare_card.yaml
+          - entity: {{ room_humidity }}
+            humidity_entity: {{ room_humidity }}
+
+  - attributes:
+      label: Settings
+      icon: mdi:wrench
+    card:
+      type: vertical-stack
+      cards:
+        - type: entities
+          entities:
+            - entity: {{ room_temp }}
+              type: custom:multiple-entity-row
+              name: "Local input:"
+              toggle: false
+              state_header: Room temp
+            - type: divider
+            - entity: {{ powerauto }}
+            - entity: {{ thermostat_target }}
+              type: custom:multiple-entity-row
+              name: "Auto-settings:"
+              state_header: ShortTarget
+              entities:
+                - entity: {{ longterm_target }}
+                  name: LongTarget
+                - entity: sensor.priceanalyzer
+                  name: Priceanalyzer
+            - entity: {{ powersave }}
+              type: custom:multiple-entity-row
+              name: "Override:"
+              toggle: true
+              state_header: PowerSave
+              entities:
+                - entity: {{ powerboost }}
+                  name: Boost
+                  toggle: true
+                - entity: {{ powerhoursave }}
+                  name: PowerHourSave
+                  toggle: true
+            - type: divider
+            - entity: {{ power }}
+              type: custom:multiple-entity-row
+              name: "Heating:"
+              toggle: false
+              state_header: Power
+              entities:
+                - entity: {{ powerswitch }}
+                  name: Heating
+                  toggle: true
+            - type: divider
+
+  - attributes:
+      label: History
+      icon: mdi:chart-line
+    card:
+      type: vertical-stack
+      cards:
+        - type: custom:history-explorer-card
+          cardName: history-heaters
+          header: hide # The hide option will remove the header entirely
+          uiLayout:
+            toolbar: top
+            selector: hide #bottom
+          stateColors:
+            binary_sensor.off: red
+            binary_sensor.on: green
+          graphs:
+            - type: line
+              entities:
+                - entity: {{ room_temp }}
+                  name: Room temp
+                  color: red
+                  fill: rgba(151,187,205,0.15)
+                  lineMode: curves
+                - entity: {{ thermostat_target }}
+                  name: Short Target
+                  suffix: °C
+                  color: lime
+                  lineMode: stepped
+                - entity: {{ longterm_target }}
+                  name: Long Target
+                  suffix: °C
+                  color: green
+                  lineMode: stepped
+                - entity: sensor.house_average_temperature
+                  name: House average
+                  suffix: °C
+                  color: orange
+                  lineMode: curves
+            - type: timeline
+              title: Non-numerical sensors
+              entities:
+                #- entity: binary_sensor.loft_heater_puck_input
+                #  name: Local Th
+                - entity: {{ thermostat_output }}
+                  name: Gen Th
+                - entity: {{ powerauto }}
+                  name: Auto
+                - entity: {{ powerboost }}
+                  name: Boost
+                - entity: {{ powersave }}
+                  name: P-save
+                - entity: {{ powerhoursave }}
+                  name: PH-save
+                - entity: {{ powerswitch }}
+                  name: Heat
