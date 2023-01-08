@@ -6,40 +6,21 @@ styles:
   "--mdc-typography-button-font-size": 10px
 tabs:
   - attributes:
-      label: status
+      label: Use
+      icon: mdi:flash
+    card:
+      type: vertical-stack
+      cards:
+        - !include pwrctrl_use_card.yaml
+
+  - attributes:
+      label: Limit
       icon: mdi:radiator
     card:
       type: vertical-stack
       cards:
-        - type: custom:auto-entities
-          card:
-            type: entities
-          filter:
-            include:
-              - entity_id: "*powerhoursave*"
-            #exclude:
-            #  - entity_id: "*entry_thp*"
-            #  - entity_id: "*entry_door*"
+        - !include pwrctrl_limit_card.yaml
 
-        - type: custom:auto-entities
-          card:
-            type: entities
-          filter:
-            include:
-              - entity_id: "*powerauto*"
-            #exclude:
-            #  - entity_id: "*entry_thp*"
-            #  - entity_id: "*entry_door*"
-
-        - type: custom:auto-entities
-          card:
-            type: entities
-          filter:
-            include:
-              - entity_id: "*powersave*"
-            #exclude:
-            #  - entity_id: "*entry_thp*"
-            #  - entity_id: "*entry_door*"
   - attributes:
       label: Settings
       icon: mdi:wrench

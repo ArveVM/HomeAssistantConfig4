@@ -118,6 +118,7 @@ cards:
                 type: vertical-stack
                 cards:
                   - !include livingroom_light_card.yaml
+                  
       - type: action
         icon_color: yellow
         icon: mdi:window-shutter

@@ -11,6 +11,20 @@ tabs:
     card:
       type: vertical-stack
       cards:
+        - type: markdown
+          content: |
+            Room Status checkpoints:
+              {% set ns = namespace(count = 0) %}
+              {% for attr in states.binary_sensor.loft_room_status.attributes %}
+              {%- if not attr=="friendly_name" 
+                  and not attr=="unit_of_measurement"     
+                  and not attr=="icon" -%}
+              {%- set ns.count = ns.count+1 %}
+              #{{ ns.count }} - {{attr}}      = {{states.binary_sensor.loft_room_status.attributes [attr] }}
+              {%- endif %}
+              {%- endfor %}
+            Total count: {{ns.count}}
+
         - type: entities
           #title: Entities card sample
           #show_header_toggle: true

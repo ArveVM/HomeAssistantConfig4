@@ -68,17 +68,17 @@ cards:
                 name: SoC-github readme
                 url: https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/solutions/hotwater_soc.md
 
-  - type: history-graph
-    entities:
-      - entity: input_number.hotwater_soc_target_temp
-        name: SoC-Max
-      - entity: input_number.hotwater_soc_min_temp
-        name: SoC-Min
-      - entity: sensor.hotwater_thermostat_target
-        name: Therm.target
-      - entity: sensor.hotwater_soc_average_temperature
-        name: "TempAverage"
-      - entity: sensor.hotwater_puck_bottom_temperature
-        name: "Temp-bottom"
-      - entity: sensor.hotwater_puck_bottom_temperature
-        name: "Temp-bottom"
+  #- type: history-graph
+  #  entities:
+  #    - entity: input_number.hotwater_soc_target_temp
+  #      name: SoC-Max
+  #    - entity: input_number.hotwater_soc_min_temp
+  #      name: SoC-Min
+  #    - entity: sensor.hotwater_thermostat_target
+  #      name: Therm.target
+  #    - entity: sensor.hotwater_soc_average_temperature
+  #      name: "TempAverage"
+  #    - entity: sensor.hotwater_puck_bottom_temperature
+  #      name: "Temp-bottom"
+  #    - entity: sensor.hotwater_puck_bottom_temperature
+  #      name: "Temp-bottom"
