@@ -13,7 +13,7 @@
 
 
 ## Configuration:
-[lovelace_yaml_dashboards.yaml](lovelace_yaml_dashboards.yaml)
+[lovelace_yml_dashboards.yaml](lovelace_yml_dashboards.yaml)
 - enable both UI and YAML dashboards
 - Enable minimalist dashboard, and sidebar-entry
 
