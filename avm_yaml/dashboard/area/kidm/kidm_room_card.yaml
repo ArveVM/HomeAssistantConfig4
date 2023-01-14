@@ -20,7 +20,7 @@ card_mod:
   style: |
     ha-card {
       height: 102px;
-      {% if is_state('kidm_lightbulb', 'on') %}
+      {% if is_state('light.kidm_lightbulb', 'on') %}
         background: rgba(255, 152, 0, 0.1);
       {% endif %}
     }
@@ -58,7 +58,6 @@ cards:
           --chip-spacing: 0;
         }
     chips:
-      
       - type: action
         <<: *card_mod_chip
         icon_color: yellow

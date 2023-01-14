@@ -31,11 +31,19 @@ cards:
       {{states('sensor.kitchen_thp_humidity') | int}}%
     icon: mdi:knife
     entity: light.kitchen_light1_z2m
-    tap_action:
-      action: navigate
-      navigation_path: Kitchen
     hold_action:
       action: toggle
+
+    tap_action:
+      action: fire-dom-event
+      browser_mod:
+        service: browser_mod.popup
+        data:
+          content:
+            type: vertical-stack
+            cards:
+              - !include kitchen_light_card.yaml
+
     icon_color: "{{ 'orange' if is_state(entity, 'on') else 'disabled' }}"
     fill_container: true
     layout: horizontal
@@ -62,18 +70,7 @@ cards:
     chips:
       - type: action
         <<: *card_mod_chip
-        icon_color: yellow
-        icon: mdi:lightbulb
-        tap_action:
-          action: call-service
-          service: light.toggle
-          data: {}
-          target:
-            entity_id: light.kitchen_light1_z2m
-
-      - type: action
-        <<: *card_mod_chip
-        icon_color: yellow
+        icon_color: disabled
         icon: mdi:thermometer
         tap_action:
           action: fire-dom-event
@@ -87,7 +84,15 @@ cards:
                     - ../../cards/temp_humidity_card3.yaml
                     - entity: *temp1
                       humidity_entity: *humidity1
-
+        hold_action:
+          action: fire-dom-event
+          browser_mod:
+            service: browser_mod.popup
+            data:
+              content:
+                type: vertical-stack
+                cards:
+                  - !include kitchen_light_card.yaml
       - type: template
         <<: *card_mod_chip
         entity: sensor.dishwasher_status
@@ -124,7 +129,7 @@ cards:
         <<: *card_mod_chip
         entity: plant.rubber_plant
         icon: mdi:flower-outline
-        icon_color: "{{ 'red' if is_state(entity, 'problem') else 'disabled' }}"
+        icon_color: "{{ 'orange' if is_state(entity, 'problem') else 'disabled' }}"
         tap_action:
           action: fire-dom-event
           browser_mod:

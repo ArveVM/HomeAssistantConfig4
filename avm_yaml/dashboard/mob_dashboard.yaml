@@ -14,24 +14,24 @@ views:
   - !include views/home_mob_view.yaml
   - !include view_energy_usage.yaml
   - !include views/test.yaml
-  - !include view_alarm.yaml
+  #- !include view_alarm.yaml
 
   # 'Rooms'
-  - !include view_livingroom.yaml
-  - !include view_kitchen.yaml
+  #- !include view_livingroom.yaml
+  #- !include view_kitchen.yaml
   - !include view_laundry.yaml
 
   - !include view_bathroom.yaml
   - !include view_bathroom2.yaml
-  - !include views/workshop_view.yaml
+  #- !include views/workshop_view.yaml
 
   - !include view_kid_l.yaml
 
   - !include view_garage.yaml
-  - !include view_entry.yaml
+  #- !include view_entry.yaml
   - !include view_server.yaml
 
-  - !include view_icehouse.yaml
+  #- !include view_icehouse.yaml
 
   #- !include views/office_view.yaml
   #- !include views/loft_view.yaml

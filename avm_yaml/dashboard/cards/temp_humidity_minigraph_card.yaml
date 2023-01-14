@@ -19,30 +19,30 @@ cards:
         entity: {{ entity }}
         primary_info: state
         secondary_info: name
-        name: Temperatur
+        name: Temperature
         icon_color: green
       - type: custom:mushroom-entity-card
         entity: sensor.house_average_temperature
         primary_info: state
         secondary_info: name
-        name: House average
+        name: Compare average
         icon_color: orange
       - type: custom:mushroom-entity-card
         entity: {{ humidity_entity }}
         primary_info: state
         secondary_info: name
-        name: Fuktighet
+        name: Humidity
         icon_color: blue
   - type: custom:mini-graph-card
     entities:
       - entity: {{ entity }}
-        name: Tempratur
+        name: Temprature
         color: "#00bb33"
       - entity: sensor.house_average_temperature
-        name: Tempratur
+        name: Temprature
         color: orange
       - entity: {{ humidity_entity }}
-        name: Fuktighet
+        name: Humidity
         color: "#2196f3"
         y_axis: secondary
     hours_to_show: 24

@@ -3,7 +3,7 @@
 
 # Hirarki of power consumption
 # tracking major consumption-devices, and calculate "others" so that;
-# Total = CarCharger + Heating + HotWater + Lights + Appliances + Other
+# Total = CarCharger + HotWater + Heating + Lights + Appliances + Mulitimedia + Other
 
 #  NB,, ,in a process of re-writing this to use PowerCalc to group/create power-sensors,,
 #        still a bit of cleanup left (as most solutions I have :))
@@ -105,8 +105,6 @@ sensor:
         create_utility_meters: true
         ignore_unavailable_state: true
         entities:
-          - entity_id: sensor.pwrctrl_entity_on
-            power_sensor_id: sensor.easee1_power
           - entity_id: sensor.dummy
             fixed:
               power: "{{ states('sensor.easee1_power') * 1000 }}"

@@ -6,14 +6,6 @@ homeassistant:
     package.node_anchors:
       temp1: &temp1 sensor.livingroom_netatmo_temperature
       humidity1: &humidity1 sensor.livingroom_netatmo_humidity
-      card_mod_chip: &card_mod_chip
-        card_mod:
-          style: |
-            ha-card {
-              --chip-box-shadow: none;
-              --chip-background: none;
-              --chip-spacing: 0;
-              margin-left: -10px;
 
 # Then build the card-code:
 type: custom:stack-in-card
@@ -63,22 +55,16 @@ cards:
           --chip-spacing: 0;
         }
     chips:
-      - type: template
-        entity: light.christmas_tree
-        icon: mdi:pine-tree
-        icon_color: "{{ 'green' if is_state(entity, 'on') else 'grey' }}"
-        <<: *card_mod_chip
-        tap_action:
-          action: call-service
-          service: light.toggle
-          data: {}
-          target:
-            entity_id: light.christmas_tree
-
       - type: action
         icon_color: yellow
         icon: mdi:thermometer
-        <<: *card_mod_chip
+        card_mod: &card_mod_chip
+          style: |
+            ha-card {
+              --chip-box-shadow: none;
+              --chip-background: none;
+              --chip-spacing: 0;
+              margin-left: -10px;
         tap_action:
           action: fire-dom-event
           browser_mod:
@@ -96,7 +82,7 @@ cards:
       - type: action
         icon_color: yellow
         icon: mdi:lightbulb
-        <<: *card_mod_chip
+        card_mod: *card_mod_chip
         tap_action:
           action: fire-dom-event
           browser_mod:
@@ -108,10 +94,48 @@ cards:
                   - !include livingroom_light_card.yaml
 
       - type: template
+        entity: plant.avocado
+        icon: mdi:flower-outline
+        icon_color: >
+          {{ 'orange' if 
+            (is_state(entity, 'problem') or 
+            is_state('plant.aroid_palm', 'problem')) 
+          else
+            'disabled'
+          }}
+        card_mod: *card_mod_chip
+        tap_action:
+          action: fire-dom-event
+          browser_mod:
+            service: browser_mod.popup
+            data:
+              content:
+                type: vertical-stack
+                cards:
+                  - type: custom:flower-card
+                    entity: plant.avocado
+                    show_bars:
+                      - illumination
+                      - humidity
+                      - moisture
+                      - conductivity
+                      - temperature
+                      - dli
+                  - type: custom:flower-card
+                    entity: plant.aroid_palm
+                    show_bars:
+                      - illumination
+                      - humidity
+                      - moisture
+                      - conductivity
+                      - temperature
+                      - dli
+
+      - type: template
         entity: cover.livingroom_all_covers
         icon_color: "{{ 'disabled' if is_state(entity, 'open') else 'orange' }}"
         icon: mdi:window-shutter
-        <<: *card_mod_chip
+        card_mod: *card_mod_chip
         tap_action:
           action: fire-dom-event
           browser_mod:
@@ -122,16 +146,6 @@ cards:
                 cards:
                   - !include livingroom_blinds_card.yaml
 
-      # entry-door,, parking here until I create a area-card for Entry
-      - type: template
-        entity: binary_sensor.entry_door_contact
-        #icon: mdi:door-closed
-        icon: "{{ 'mdi:door-closed' if is_state(entity, 'off') else 'mdi:door-open' }}"
-        icon_color: "{{ 'green' if is_state(entity, 'off') else 'red' }}"
-        <<: *card_mod_chip
-        tap_action:
-          action: more-info
-
       - type: conditional
         conditions:
           - entity: binary_sensor.master_bedroom_motion_occupancy
@@ -140,7 +154,8 @@ cards:
           type: template
           icon_color: disabled
           icon: mdi:motion-sensor
-          <<: *card_mod_chip
+          card_mod: *card_mod_chip
+
       - type: conditional
         conditions:
           - entity: climate.bedroom_air_conditioner
@@ -188,7 +203,8 @@ cards:
           type: template
           icon_color: disabled
           icon: mdi:door-open
-          <<: *card_mod_chip
+          card_mod: *card_mod_chip
+
       - type: conditional
         conditions:
           - entity: group.master_bedroom_windows
@@ -197,14 +213,13 @@ cards:
           type: template
           icon_color: disabled
           icon: mdi:window-open
-          <<: *card_mod_chip
+          card_mod: *card_mod_chip
 
       - type: template
-        <<: *card_mod_chip
         entity: binary_sensor.livingroom_room_status
         icon: mdi:hospital
         icon_color: "{{ 'disabled' if is_state(entity, 'on') else 'red' }}"
-        <<: *card_mod_chip
+        card_mod: *card_mod_chip
         tap_action:
           action: fire-dom-event
           browser_mod:
