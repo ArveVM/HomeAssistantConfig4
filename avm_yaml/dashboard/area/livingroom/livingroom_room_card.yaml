@@ -13,7 +13,7 @@ homeassistant:
               --chip-box-shadow: none;
               --chip-background: none;
               --chip-spacing: 0;
-              margin-left: -14px;
+              margin-left: -10px;
 
 # Then build the card-code:
 type: custom:stack-in-card
@@ -64,24 +64,10 @@ cards:
         }
     chips:
       - type: template
-        <<: *card_mod_chip
-        entity: binary_sensor.livingroom_room_status
-        icon: mdi:hospital-box-outline
-        icon_color: "{{ 'green' if is_state(entity, 'off') else 'red' }}"
-        #icon_color: |-
-        #  {% set state=is_state(entity) %}
-        #  {% if state=='ok' %}
-        #    grey
-        #  {% else %}
-        #    red
-        #  {% endif %}
-        tap_action:
-          action: more-info
-
-      - type: template
         entity: light.christmas_tree
         icon: mdi:pine-tree
         icon_color: "{{ 'green' if is_state(entity, 'on') else 'grey' }}"
+        <<: *card_mod_chip
         tap_action:
           action: call-service
           service: light.toggle
@@ -92,6 +78,7 @@ cards:
       - type: action
         icon_color: yellow
         icon: mdi:thermometer
+        <<: *card_mod_chip
         tap_action:
           action: fire-dom-event
           browser_mod:
@@ -109,6 +96,7 @@ cards:
       - type: action
         icon_color: yellow
         icon: mdi:lightbulb
+        <<: *card_mod_chip
         tap_action:
           action: fire-dom-event
           browser_mod:
@@ -118,10 +106,12 @@ cards:
                 type: vertical-stack
                 cards:
                   - !include livingroom_light_card.yaml
-                  
-      - type: action
-        icon_color: yellow
+
+      - type: template
+        entity: cover.livingroom_all_covers
+        icon_color: "{{ 'disabled' if is_state(entity, 'open') else 'orange' }}"
         icon: mdi:window-shutter
+        <<: *card_mod_chip
         tap_action:
           action: fire-dom-event
           browser_mod:
@@ -131,34 +121,17 @@ cards:
                 type: vertical-stack
                 cards:
                   - !include livingroom_blinds_card.yaml
+
       # entry-door,, parking here until I create a area-card for Entry
       - type: template
         entity: binary_sensor.entry_door_contact
         #icon: mdi:door-closed
         icon: "{{ 'mdi:door-closed' if is_state(entity, 'off') else 'mdi:door-open' }}"
         icon_color: "{{ 'green' if is_state(entity, 'off') else 'red' }}"
+        <<: *card_mod_chip
         tap_action:
           action: more-info
-      #- type: template
-      #icon_color: '{{ ''orange'' if is_state(entity, ''on'') else ''disabled'' }}'
-      #  icon_color: |-
-      #    {% set state=states('sensor.dishwasher_status') %}
-      #    {% if state=='Running' %}
-      #      blue
-      #    {% elif state=='Finished' %}
-      #      red
-      #    {% else %}
-      #      grey
-      #    {% endif %}
-      #  icon: mdi:door
-      #  card_mod:
-      #    style: |
-      #      ha-card {
-      #        animation: blink 1s linear infinite;
-      #      }
-      #      @keyframes blink {
-      #        50% {opacity: 0;}
-      #      }
+
       - type: conditional
         conditions:
           - entity: binary_sensor.master_bedroom_motion_occupancy
@@ -167,6 +140,7 @@ cards:
           type: template
           icon_color: disabled
           icon: mdi:motion-sensor
+          <<: *card_mod_chip
       - type: conditional
         conditions:
           - entity: climate.bedroom_air_conditioner
@@ -203,7 +177,7 @@ cards:
               ha-card {
                 animation: rotation linear infinite;
                 {% if is_state(config.entity, 'fan_only') %}
-                   animation-duration: 2s;
+                  animation-duration: 2s;
                 {% endif %}
               }
       - type: conditional
@@ -214,6 +188,7 @@ cards:
           type: template
           icon_color: disabled
           icon: mdi:door-open
+          <<: *card_mod_chip
       - type: conditional
         conditions:
           - entity: group.master_bedroom_windows
@@ -222,8 +197,24 @@ cards:
           type: template
           icon_color: disabled
           icon: mdi:window-open
-      - type: action
+          <<: *card_mod_chip
+
+      - type: template
+        <<: *card_mod_chip
+        entity: binary_sensor.livingroom_room_status
+        icon: mdi:hospital
+        icon_color: "{{ 'disabled' if is_state(entity, 'on') else 'red' }}"
+        <<: *card_mod_chip
         tap_action:
-          action: navigate
-          navigation_path: /config/areas/area/livingroom
-        icon: mdi:devices
+          action: fire-dom-event
+          browser_mod:
+            service: browser_mod.popup
+            data:
+              content:
+                type: vertical-stack
+                cards:
+                  #                    - ../../area/loft/loft_status_card.yaml
+                  - !include
+                    - ../../area/livingroom/livingroom_status_card.yaml
+                    - entity: *temp1
+                      humidity_entity: *humidity1

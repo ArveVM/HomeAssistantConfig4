@@ -81,7 +81,9 @@ cards:
                   powerswitch: switch.loft_heater_plug
                   power: sensor.loft_heater_plug_power
                   room_temp: sensor.loft_thp_temperature
+                  room_temp_compare: sensor.house_average_temperature
                   room_humidity: sensor.loft_thp_humidity
+                  room_humidity_compare: sensor.house_average_humidity
                   longterm_target: input_number.loft_heater_longterm_target
                   thermostat_target: sensor.loft_heater_thermostat_target
                   thermostat_output: input_boolean.loft_heater_thermostat_output

@@ -7,7 +7,7 @@
 #      - !include
 #        - ../../cards/temp_humidity_minigraph_card.yaml.yaml
 #        - entity: *temp1
-
+#          room_temp_compare: sensor.house_average_temperature       #change to whatever you want to compare with
 
 type: custom:stack-in-card
 cards:
@@ -16,13 +16,13 @@ cards:
     columns: 2
     cards:
       - type: custom:mushroom-entity-card
-        entity: {{ entity }}
+        entity: "{{ entity }}"
         primary_info: state
         secondary_info: name
         name: Temp this area
         icon_color: green
       - type: custom:mushroom-entity-card
-        entity: sensor.house_average_temperature
+        entity: "{{ room_temp_compare }}"
         primary_info: state
         secondary_info: name
         name: Average temp
@@ -30,10 +30,10 @@ cards:
 
   - type: custom:mini-graph-card
     entities:
-      - entity: {{ entity }}
+      - entity: "{{ entity }}"
         name: Temp this area
         color: "#00bb33"
-      - entity: sensor.house_average_temperature
+      - entity: "{{ room_temp_compare }}"
         name: Average temp
         color: orange
       - color: yellow

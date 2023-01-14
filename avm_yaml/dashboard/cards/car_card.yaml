@@ -28,11 +28,15 @@ tabs:
     card:
       type: vertical-stack
       cards:
-        - type: custom:charger-card
-          entity: sensor.easee1_status
-          image: default
-          compact_view: false
-          chargerImage: Red
+        - type: vertical-stack
+          cards:
+            - !include ../cards/easee_card.yaml
+
+            - type: custom:charger-card
+              entity: sensor.easee1_status
+              image: default
+              compact_view: false
+              chargerImage: Red
 
   - attributes:
       label: History

@@ -1,3 +1,5 @@
+# source for auto-populate the fold-entity-rows:  https://community.home-assistant.io/t/powercalc-virtual-power-sensors/318515/665
+
 type: entities
 entities:
   - type: custom:fold-entity-row
@@ -20,61 +22,59 @@ entities:
         head: sensor.pwrctrl_use_heating_power
         entities:
           - !include laundry_heater_card.yaml
-          - entity: sensor.kitchen_heater_power
-            name: Kitchen
-          - entity: sensor.kitchen_heatpump_power
-            name: Kitchen heatpump
-          - entity: sensor.evaplug_power
-            name: Livingroom
-          - entity: sensor.bathroom_heater_puck_power
-            name: Bathroom
-          - entity: sensor.bathroom2_heater_puck_power
-            name: Bathroom2
-          - entity: sensor.office_heater_plug_power
-            name: Office
-          - entity: sensor.kidl_floor_heater_power
-            name: Kid L
-          - entity: sensor.entry_heater_puck_power
-            name: Entry
+          - type: custom:auto-entities
+            card:
+              type: entities
+            filter:
+              template: >
+                {{state_attr("sensor.pwrctrl_use_heating_power", "entities") }}
+            sort:
+              method: state
+              reverse: true
+              numeric: true
 
       - type: custom:fold-entity-row
         head: sensor.pwrctrl_use_lights_power
         name: Lights
         entities:
-          - entity: sensor.laundry_lights_all_power
-            name: Laundry
-          - entity: sensor.kitchen_lights_all_power
-            name: Kitchen
-          - entity: sensor.hallway_lights_all_power
-            name: Hallway
-          - entity: sensor.loft_lights_all_power
-            name: Loft
-          - entity: sensor.kidm_lights_all_power
-            name: Kid M
-          - entity: sensor.kidl_lights_all_power
-            name: Kid L
+          - type: custom:auto-entities
+            card:
+              type: entities
+            filter:
+              template: >
+                {{state_attr("sensor.pwrctrl_use_lights_power", "entities") }}
+            sort:
+              method: state
+              reverse: true
+              numeric: true
 
       - type: custom:fold-entity-row
         head: sensor.pwrctrl_use_appliances_power
         entities:
-          - entity: sensor.dishwasher_plug_power
-            name: Dishwasher
-          - entity: sensor.laundry_washer_puck_power
-            name: Laundry Washer
-          - entity: sensor.laundry_dryer_plug_power
-            name: Laundry Dryer
-          - entity: sensor.workshop_washer_power
-            name: Workshop Washer
-          - entity: sensor.laundry_freezer_power
-            name: Laundry Freezer
-          - entity: sensor.freezerdownstairs_power
-            name: Downstairs Freezer
+          - type: custom:auto-entities
+            card:
+              type: entities
+            filter:
+              template: >
+                {{state_attr("sensor.pwrctrl_use_appliances_power", "entities") }}
+            sort:
+              method: state
+              reverse: true
+              numeric: true
 
       - type: custom:fold-entity-row
         head: sensor.pwrctrl_use_multimedia_power
         entities:
-          - entity: sensor.server_rack_plug_power
-            name: Server rack
+          - type: custom:auto-entities
+            card:
+              type: entities
+            filter:
+              template: >
+                {{state_attr("sensor.pwrctrl_use_multimedia_power", "entities") }}
+            sort:
+              method: state
+              reverse: true
+              numeric: true
 
       - entity: sensor.pwrctrl_use_ungrouped
         name: unGrouped
@@ -101,10 +101,15 @@ entities:
             name: CarCharger
           - entity_id: sensor.pwrctrl_use_hotwater_power
             name: Hotwater
-          - sensor.pwrctrl_use_heating_power
-          - sensor.pwrctrl_use_lights_power
-          - sensor.pwrctrl_use_appliances_power
-          - sensor.pwrctrl_use_multimedia_power
-          - sensor.pwrctrl_use_ungrouped
+          - entity_id: sensor.pwrctrl_use_heating_power
+            name: Heating
+          - entity_id: sensor.pwrctrl_use_lights_power
+            name: Lights
+          - entity_id: sensor.pwrctrl_use_appliances_power
+            name: Appliances
+          - entity_id: sensor.pwrctrl_use_multimedia_power
+            name: Multimedia
+          - entity_id: sensor.pwrctrl_use_ungrouped
+            name: unGrouped
 
   - !include nordpool_4.yaml

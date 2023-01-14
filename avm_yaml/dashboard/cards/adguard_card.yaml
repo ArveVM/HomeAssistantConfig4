@@ -1,0 +1,36 @@
+# ArveVM: chip to show count of tasks to do, and on-click popup a list of the tasks
+
+# https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/solutions/adguard.md
+
+# Each todo-task should be created in respective solutions packages  ;)
+
+type: vertical-stack
+cards:
+  - type: markdown
+    content: |
+      AdGuard filter 
+
+      Active filter for ALL devices on home network.
+      Home Assistant can turn off ad-filter  
+      if needed - turn off Home Filtering, 
+      and note exact time and device where issues occured 
+      and report to the administrator
+      more info on AdGuard: https://adguard.com/en/welcome.html
+  - type: entities
+    entities:
+      - entity: switch.adguard_home_protection
+      - type: divider
+
+  - type: custom:auto-entities
+    card:
+      type: entities
+    filter:
+      include:
+        - entity_id: "*adguard_home_*"
+      exclude:
+        - entity_id: switch.adguard_home_protection
+    sort:
+      method: entity_id
+      reverse: true
+
+

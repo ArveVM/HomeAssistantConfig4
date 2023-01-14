@@ -24,7 +24,7 @@ tabs:
         - !include
           - temperature_compare_card.yaml
           - entity: "{{ room_temp }}"
-            humidity_entity: "{{ room_humidity }}"
+            room_temp_compare: "{{ room_temp_compare }}"
         - !include
           - humidity_compare_card.yaml
           - entity: "{{ room_humidity }}"

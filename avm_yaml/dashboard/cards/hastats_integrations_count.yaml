@@ -15,6 +15,26 @@ entities:
           content:
             type: vertical-stack
             cards:
+              - type: custom:history-explorer-card
+                cardName: 5a37dc34-9043-4090-9b65-b4acd8262ff0
+                defaultTimeRange: 6o
+                header: hide
+                statistics:
+                  enabled: true
+                  mode: mean
+                  period: hour
+                uiLayout:
+                  toolbar: top
+                  selector: hide
+                graphs:
+                  - type: line
+                    options:
+                      interval: daily
+                    entities:
+                      - entity: sensor.hastats_integrations_count
+                        name: Integrations count
+                        lineMode: curves
+
               - type: statistics-graph
                 title: Daily development
                 chart_type: bar

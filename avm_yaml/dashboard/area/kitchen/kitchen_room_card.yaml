@@ -11,7 +11,7 @@ homeassistant:
               --chip-box-shadow: none;
               --chip-background: none;
               --chip-spacing: 0;
-              margin-left: -14px;
+              margin-left: -10px;
 
 type: custom:stack-in-card
 card_mod:
@@ -60,21 +60,6 @@ cards:
           --chip-spacing: 0;
         }
     chips:
-      - type: template
-        <<: *card_mod_chip
-        entity: binary_sensor.kitchen_room_status
-        icon: mdi:hospital-box-outline
-        icon_color: "{{ 'green' if is_state(entity, 'off') else 'red' }}"
-        #icon_color: |-
-        #  {% set state=is_state(entity) %}
-        #  {% if state=='ok' %}
-        #    grey
-        #  {% else %}
-        #    red
-        #  {% endif %}
-        tap_action:
-          action: more-info
-
       - type: action
         <<: *card_mod_chip
         icon_color: yellow
@@ -108,10 +93,10 @@ cards:
         entity: sensor.dishwasher_status
         icon: mdi:dishwasher
         icon_color: |-
-          {% set state=is_state(entity) %}
-          {% if state=='Running' %}
+          {% set t=states(entity) %}
+          {% if t == 'Running' %}
             blue
-          {% elif state=='Finished' %}
+          {% elif t == 'Finished' %}
             red
           {% else %}
             grey
@@ -124,13 +109,13 @@ cards:
         entity: sensor.kitchen_fridge_temperature
         icon: mdi:fridge
         icon_color: |-
-          {% set state=is_state(entity) %}
-          {% if state==>4 %}
+          {% set t=states(entity) %}
+          {% if t >= '4' %}
             red
-          {% elif state==>3 %}
+          {% elif t >= '3' %}
             orange
           {% else %}
-            green
+            disabled
           {% endif %}
         tap_action:
           action: more-info
@@ -139,13 +124,7 @@ cards:
         <<: *card_mod_chip
         entity: plant.rubber_plant
         icon: mdi:flower-outline
-        icon_color: |-
-          {% set state=is_state(entity) %}
-          {% if state=='problem' %}
-            red
-          {% else %}
-            grey
-          {% endif %}
+        icon_color: "{{ 'red' if is_state(entity, 'problem') else 'disabled' }}"
         tap_action:
           action: fire-dom-event
           browser_mod:
@@ -162,14 +141,17 @@ cards:
                   - temperature
                   - dli
 
-      - type: action
-        <<: *card_mod_chip
-        icon_color: grey
-        icon: mdi:radiator
+      #- type: action
+      #  <<: *card_mod_chip
+      #  icon: mdi:devices
+      #  tap_action:
+      #    action: navigate
+      #    navigation_path: /config/areas/area/kitchen
 
-      - type: action
+      - type: template
         <<: *card_mod_chip
-        icon: mdi:devices
+        entity: binary_sensor.kitchen_room_status
+        icon: mdi:hospital
+        icon_color: "{{ 'disabled' if is_state(entity, 'on') else 'red' }}"
         tap_action:
-          action: navigate
-          navigation_path: /config/areas/area/kitchen
+          action: more-info

@@ -31,8 +31,7 @@ views:
   - !include view_entry.yaml
   - !include view_server.yaml
 
-  - !include view_hallway.yaml
   - !include view_icehouse.yaml
 
-  - !include views/office_view.yaml
-  - !include views/loft_view.yaml
+  #- !include views/office_view.yaml
+  #- !include views/loft_view.yaml

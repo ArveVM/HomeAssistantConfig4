@@ -21,6 +21,9 @@ homeassistant:
     sensor.hastats_yaml_line_packages_count:
       state_class: measurement
       <<: *solution_attribute
+    sensor.hastats_db_size:
+      state_class: measurement
+      <<: *solution_attribute
 
 sensor:
   # count number of enabled YAML-lines in my config,,
@@ -45,6 +48,15 @@ sensor:
     platform: command_line
     command: " find /config/avm_yaml/packages -name '*.yaml' | xargs cat | wc -l"
     unit_of_measurement: "lines"
+
+  - platform: sql
+    scan_interval: 30000
+    queries:
+      - name: "HAstats DB size"
+        # source: Moonbase59 -  https://community.home-assistant.io/t/calculate-home-assistant-v2-db-size-without-whitelisting-entire-config-dir/195808/2
+        query: "SELECT ROUND(page_count * page_size / 1024 / 1024, 1) as size FROM pragma_page_count(), pragma_page_size();"
+        column: "size"
+        unit_of_measurement: "MiB"
 
 template:
   #  Count number of loaded Integrations

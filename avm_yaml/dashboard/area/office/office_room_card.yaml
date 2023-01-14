@@ -72,8 +72,7 @@ cards:
           browser_mod:
             service: browser_mod.popup
             data:
-              content:
-                !include
+              content: !include
                 - ../../cards/heater_card.yaml
                 - entity: input_boolean.office_heater_powerboost
                   powerauto: input_boolean.office_heater_powerauto
@@ -82,7 +81,8 @@ cards:
                   powerhoursave: input_boolean.office_heater_powerhoursave
                   powerswitch: switch.office_heater_plug
                   power: sensor.office_heater_plug_power
-                  room_temp: *temp1 
+                  room_temp: *temp1
+                  room_temp_compare: sensor.house_average_temperature
                   room_humidity: *humidity1
                   longterm_target: input_number.office_heater_longterm_target
                   thermostat_target: sensor.office_heater_thermostat_target
