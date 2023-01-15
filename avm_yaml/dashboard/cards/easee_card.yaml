@@ -23,8 +23,8 @@ details:
     - 10
     - 16
     - 20
-    - 25
-    - 32
+    #- 25
+    #- 32
   statetext:
     disconnected: disconnected
     awaiting_start: awaiting_start

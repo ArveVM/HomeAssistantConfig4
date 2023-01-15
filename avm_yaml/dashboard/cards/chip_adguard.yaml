@@ -4,6 +4,12 @@
 
 # Each todo-task should be created in respective solutions packages  ;)
 
+
+#  ArveVM - january cleanup :
+#  OUT OF PRODUCTION,, SEE ADGUARD_CARD.YAML  !!!!
+
+
+
 type: "custom:button-card"
 template: chip_mdi_icon_state
 variables:

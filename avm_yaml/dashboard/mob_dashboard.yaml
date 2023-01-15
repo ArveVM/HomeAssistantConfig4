@@ -20,7 +20,7 @@ views:
   # 'Rooms'
   #- !include view_livingroom.yaml
   #- !include view_kitchen.yaml
-  - !include view_laundry.yaml
+  #- !include view_laundry.yaml
 
   #- !include view_bathroom.yaml
   #- !include view_bathroom2.yaml
