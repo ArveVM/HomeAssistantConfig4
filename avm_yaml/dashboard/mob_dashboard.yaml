@@ -14,6 +14,7 @@ views:
   - !include views/home_mob_view.yaml
   - !include view_energy_usage.yaml
   - !include views/test.yaml
+  - !include views/server_view.yaml
   #- !include view_alarm.yaml
 
   # 'Rooms'
@@ -21,15 +22,15 @@ views:
   #- !include view_kitchen.yaml
   - !include view_laundry.yaml
 
-  - !include view_bathroom.yaml
-  - !include view_bathroom2.yaml
+  #- !include view_bathroom.yaml
+  #- !include view_bathroom2.yaml
   #- !include views/workshop_view.yaml
 
   - !include view_kid_l.yaml
 
   - !include view_garage.yaml
   #- !include view_entry.yaml
-  - !include view_server.yaml
+ 
 
   #- !include view_icehouse.yaml
 

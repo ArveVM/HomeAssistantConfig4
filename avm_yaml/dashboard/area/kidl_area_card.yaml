@@ -4,7 +4,7 @@
 homeassistant:
   customize:
     package.node_anchors:
-      temp1: &temp1 sensor.hallway_thp_temperature
+      temp1: &temp1 sensor.kidl_floor_heater_local_temperature
       humidity1: &humidity1 sensor.hallway_thp_humidity
       card_mod_chip: &card_mod_chip
         card_mod:
@@ -20,19 +20,19 @@ card_mod:
   style: |
     ha-card {
       height: 102px;
-      {% if is_state('light.kidm_lightbulb', 'on') %}
+      {% if is_state('light.kidl_lightbulb', 'on') %}
         background: rgba(255, 152, 0, 0.1);
       {% endif %}
     }
 cards:
   # First the main-card:
   - type: custom:mushroom-template-card
-    primary: KidM
+    primary: KidL
     secondary: >-
-      {{states('sensor.hallway_thp_temperature') | round(1)}}°C -
+      {{states('sensor.kidl_floor_heater_local_temperature') | round(1)}}°C -
       {{states('sensor.hallway_thp_humidity') | int}}%
-    icon: mdi:soccer
-    entity: light.kidm_lightbulb
+    icon: mdi:google-downasaur
+    entity: light.kidl_light_puck
     tap_action:
       action: toggle
     icon_color: "{{ 'orange' if is_state(entity, 'on') else 'disabled' }}"
@@ -59,7 +59,13 @@ cards:
         }
     chips:
       - type: action
-        <<: *card_mod_chip
+        card_mod: &card_mod_chip_style
+          style: |
+            ha-card {
+              --chip-box-shadow: none;
+              --chip-background: none;
+              --chip-spacing: 0;
+              margin-left: -10px;
         icon_color: yellow
         icon: mdi:thermometer
         tap_action:
@@ -71,16 +77,32 @@ cards:
                 type: vertical-stack
                 cards:
                   - !include
-                    - ../../cards/temperature_compare_card.yaml
+                    - ../cards/temperature_compare_card.yaml
                     - entity: *temp1
                       room_temp_compare: sensor.house_average_temperature
                   - !include
-                    - ../../cards/humidity_compare_card.yaml
+                    - ../cards/humidity_compare_card.yaml
                     - entity: *humidity1
 
-      - entity: media_player.smartclock_kid_m
+      - type: template
+        card_mod: *card_mod_chip_style
+        icon: mdi:watch
+        entity: binary_sensor.kidl_xplora_safezone
+        # Off = in safezone
+        icon_color: "{{ 'green' if is_state(entity, 'off') else 'orange' }}"
+        tap_action:
+          action: fire-dom-event
+          browser_mod:
+            service: browser_mod.popup
+            data:
+              content:
+                type: vertical-stack
+                cards:
+                  - !include kidl_xplora_card.yaml
+
+      - entity: media_player.smartclock_kidl
         type: template
-        <<: *card_mod_chip
+        card_mod: *card_mod_chip_style
         icon: mdi:cast
         icon_color: |-
           {% set state=states(entity) %}
@@ -112,10 +134,8 @@ cards:
                     card:
                       type: vertical-stack
                       cards:
-                        - type: horizontal-stack
-                          cards:
                         - type: custom:mushroom-media-player-card
-                          entity: media_player.smartclock_kid_m
+                          entity: media_player.smartclock_kidl
                           volume_controls:
                             - volume_mute
                             - volume_set
@@ -133,14 +153,13 @@ cards:
                       type: vertical-stack
                       cards:
                         - type: custom:mushroom-media-player-card
-                          entity: media_player.smartclock_kid_m
+                          entity: media_player.smartclock_kidl
                           volume_controls:
                             - volume_mute
                             - volume_set
 
-      - entity: light.kidm_lightbulb
-        type: template
-        <<: *card_mod_chip
+      - entity: light.kidl_light_puck
+        card_mod: *card_mod_chip_style
         icon: mdi:lightbulb
         icon_color: "{{ 'yellow' if is_state(entity, 'on') else 'grey' }}"
         tap_action:
@@ -153,8 +172,15 @@ cards:
                 cards:
                   - !include kidm_light_card.yaml
 
+      - type: action
+        icon: mdi:devices
+        card_mod: *card_mod_chip_style
+        tap_action:
+          action: navigate
+          navigation_path: /config/areas/area/icehouse
+
       - type: template
-        <<: *card_mod_chip
+        card_mod: *card_mod_chip_style
         entity: binary_sensor.loft_room_status
         icon: mdi:hospital
         icon_color: "{{ 'green' if is_state(entity, 'off') else 'red' }}"
@@ -169,6 +195,6 @@ cards:
                 type: vertical-stack
                 cards:
                   - !include
-                    - ../../area/loft/loft_status_card.yaml
+                    - ../area/loft/loft_status_card.yaml
                     - entity: *temp1
                       humidity_entity: *humidity1

@@ -81,7 +81,7 @@ cards:
                 type: vertical-stack
                 cards:
                   - !include
-                    - ../../cards/temp_humidity_card3.yaml
+                    - ../cards/temp_humidity_card3.yaml
                     - entity: *temp1
                       humidity_entity: *humidity1
         hold_action:

@@ -1,0 +1,33 @@
+
+# https://github.com/knudsvik/EnergyScore?fbclid=IwAR0sDxRk0DDS0S6Yb2ILpTC-h1WlutbjB_rSRLebt-HAqJadYiEbzQFMcAI
+#sensor:
+#  - platform: energyscore
+#    name: Heater Energy Score
+#    energy_entity: sensor.heater_energy
+#    price_entity: sensor.nordpool_electricity_price
+
+sensor:
+  - platform: energyscore
+    name: PwrCtrl EnergyScore total
+    energy_entity: sensor.pwrctrl_use_total_energy
+    price_entity: sensor.priceanalyzer_price
+  - platform: energyscore
+    name: PwrCtrl EnergyScore carCharge
+    energy_entity: sensor.pwrctrl_use_carcharger_energy
+    price_entity: sensor.priceanalyzer_price
+  - platform: energyscore
+    name: PwrCtrl EnergyScore heating
+    energy_entity: sensor.pwrctrl_use_heating_energy
+    price_entity: sensor.priceanalyzer_price
+  - platform: energyscore
+    name: PwrCtrl EnergyScore lights
+    energy_entity: sensor.pwrctrl_use_lights_energy
+    price_entity: sensor.priceanalyzer_price
+  - platform: energyscore
+    name: PwrCtrl EnergyScore appliances
+    energy_entity: sensor.pwrctrl_use_appliances_energy
+    price_entity: sensor.priceanalyzer_price
+  - platform: energyscore
+    name: PwrCtrl EnergyScore multimedia
+    energy_entity: sensor.pwrctrl_use_multimedia_energy
+    price_entity: sensor.priceanalyzer_price

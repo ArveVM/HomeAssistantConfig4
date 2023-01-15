@@ -73,7 +73,7 @@ cards:
             service: browser_mod.popup
             data:
               content: !include
-                - ../../cards/heater_card.yaml
+                - ../cards/heater_card.yaml
                 - entity: input_boolean.office_heater_powerboost
                   powerauto: input_boolean.office_heater_powerauto
                   powerboost: input_boolean.office_heater_powerboost
@@ -104,6 +104,6 @@ cards:
                 type: vertical-stack
                 cards:
                   - !include
-                    - ../../area/loft/loft_status_card.yaml
+                    - ../area/loft/loft_status_card.yaml
                     - entity: *temp1
                       humidity_entity: *humidity1

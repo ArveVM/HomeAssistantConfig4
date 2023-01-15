@@ -71,15 +71,15 @@ cards:
                 cards:
                   #- ../../cards/temp_humidity_card3.yaml
                   - !include
-                    - ../../cards/temp_humidity_minigraph_card.yaml
+                    - ../cards/temp_humidity_minigraph_card.yaml
                     - entity: *temp1
                       humidity_entity: *humidity1
 
                   - !include
-                    - ../../cards/temperature_compare_card.yaml
+                    - ../cards/temperature_compare_card.yaml
                     - entity: *temp1
                   - !include
-                    - ../../cards/humidity_compare_card.yaml
+                    - ../cards/humidity_compare_card.yaml
                     - entity: *humidity1
 
       - entity: media_player.googlehub_hallway
@@ -174,7 +174,7 @@ cards:
         <<: *card_mod_chip
         tap_action:
           action: navigate
-          navigation_path: /config/areas/area/loft
+          navigation_path: /config/areas/area/hallway
         icon: mdi:devices
 
       - type: template
@@ -193,6 +193,6 @@ cards:
                 type: vertical-stack
                 cards:
                   - !include
-                    - ../../area/loft/loft_status_card.yaml
+                    - ../area/loft/loft_status_card.yaml
                     - entity: *temp1
                       humidity_entity: *humidity1
