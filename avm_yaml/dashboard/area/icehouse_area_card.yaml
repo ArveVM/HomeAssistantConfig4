@@ -5,7 +5,7 @@ card_mod:
   style: |
     ha-card {
       height: 102px;
-      {% if is_state('light.outside_light1', 'on') %}
+      {% if is_state('light.icehouse_light_bulbs', 'on') %}
         background: rgba(255, 152, 0, 0.1);
       {% endif %}
     }

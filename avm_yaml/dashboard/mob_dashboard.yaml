@@ -26,11 +26,10 @@ views:
   #- !include view_bathroom2.yaml
   #- !include views/workshop_view.yaml
 
-  - !include view_kid_l.yaml
+  #- !include view_kid_l.yaml
 
   - !include view_garage.yaml
   #- !include view_entry.yaml
- 
 
   #- !include view_icehouse.yaml
 
