@@ -39,6 +39,10 @@ To me:
   - copy and insert code for card whereever suitable for your installation
   - redo/change to your naming standards  :)
 
+  - setup Priceanalyzer-integration with following "Settings for custom degrees for HotWater sensor":
+  ```ruby
+  {"default_temp": 75, "five_most_expensive": 40, "is_falling": 50, "five_cheapest": 65, "ten_cheapest": 50, "low_price": 60, "not_cheap_not_expensive": 50, "min_price_for_day": 80}
+  ```
   <br />
   
   #### template-editor test-code:
@@ -74,37 +78,27 @@ To me:
 <br />
 
 ## How it works (for me):
-Created dashboard-chip:
--
+- The Priceanalyzer integration get hourly Nordpool-spot prices for electricity 
+In the configuration of Priceanalyzer I've set some guiding for VVB-temp, so PriceAnalyzer_VVB will create target temperatures according to prices
+- Option of turning Auto OFF - which means that local control should be managed by VVB
+- Option of PowerHoursave, cut heating for rest of hour to stay within hourly limit (tarrif-limit)
+- etc
+
 
 <br />
 <br />
 
 ### Solution-Yaml:
-
+[Hotwater temp](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/solutions/hotwater_temp.yaml)
 
 <br />
 <br />
 
 ### Solution-Dashboard(s):
-[Hotwater SoC chip](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/dashboard/cards/hotwater_soc_chip.yaml)
+[Hotwater card](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/dashboard/cards/hotwater_card.yaml))
 
-<img width="88" alt="image" src="https://user-images.githubusercontent.com/96014323/193773226-887a50c5-87e2-4641-93d8-b29f8be2b8e9.png">
-
+<img width="287" alt="image" src="https://user-images.githubusercontent.com/96014323/212564221-410bb893-91ee-452d-8904-f2b59298876c.png">
 click on the chip - and you will get pop-up-card with more details:
-
-[Hotwater SoC card](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/dashboard/cards/hotwater_soc_card.yaml)
-
-<br />
-
-<img width="237" alt="image" src="https://user-images.githubusercontent.com/96014323/194163431-6e819073-f961-4de4-abe7-53352f2ce04c.png">
-
-<br />
-
-with all lines expanded:
-
-<img width="235" alt="image" src="https://user-images.githubusercontent.com/96014323/195613384-1c3a8885-a3bc-406f-8072-02e1f058e487.png">
-
 
 <br />
 <br />
