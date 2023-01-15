@@ -11,39 +11,7 @@ tabs:
     card:
       type: vertical-stack
       cards:
-        - type: custom:history-explorer-card
-          cardName: 5a37dc34-9043-4090-9b65-b4acd8262ff0
-          defaultTimeRange: 6o
-          header: hide
-          statistics:
-            enabled: true
-            mode: max
-            period: day
-          uiLayout:
-            toolbar: top
-            selector: hide
-          graphs:
-            - type: line
-              options:
-                interval: daily
-              entities:
-                - entity: sensor.hastats_integrations_count
-                  name: Integrations count
-                  lineMode: curves
-
-        - type: markdown
-          content: |
-            All integrations, sort by last startup-time:
-              {% set ns = namespace(count = 0) %}
-              {% for attr in states.sensor.start_time.attributes %}
-              {%- if not attr=="friendly_name" 
-                  and not attr=="unit_of_measurement"     
-                  and not attr=="icon" -%}
-              {%- set ns.count = ns.count+1 %}
-              #{{ ns.count }} - {{attr}} {{states.sensor.start_time.attributes [attr] }}
-              {%- endif %}
-              {%- endfor %}
-            Total count: {{ns.count}}
+        - !include hastats_integrations_count.yaml
 
   - attributes:
       label: EbD
@@ -52,37 +20,22 @@ tabs:
       type: vertical-stack
       axisAddMarginMin: false
       cards:
-        - type: custom:history-explorer-card
-          cardName: 1b701d20-a87c-425f-8989-bd8d05cd6147
-          entityOptions:
-            sensor: # Apply these settings to all other entities in the sensor domain
-              ymin: 00
-          defaultTimeRange: 1y
-          header: hide
-          statistics:
-            enabled: true
-            mode: max
-            period: day
-          uiLayout:
-            toolbar: top
-            selector: hide
-          graphs:
-            - type: line
-              options:
-                interval: daily
-              entities:
-                - entity: sensor.hastats_ebd_total
-                  name: "total entities"
-                  lineMode: curves
-                - entity: sensor.hastats_ebd_sum_sensors
-                  name: Sum sensors
-                - entity: sensor.hastats_ebd_binary_sensors
-                  name: "Binary sensors"
-                - entity: sensor.hastats_ebd_sensors
-                  name: "Sensor sensors"
-                - entity: sensor.hastats_ebd_automations
-                  name: Automations
-                - entity: sensor.hastats_ebd_scripts
-                  name: scripts
-                - entity: sensor.hastats_ebd_lights
-                  name: lights
+        - !include hastats_entities_by_domain.yaml
+
+  - attributes:
+      label: Lines count
+      icon: mdi:land-rows-horizontal
+    card:
+      type: vertical-stack
+      axisAddMarginMin: false
+      cards:
+        - !include hastats_yaml_lines_count.yaml
+
+  - attributes:
+      label: DB size
+      icon: mdi:database
+    card:
+      type: vertical-stack
+      axisAddMarginMin: false
+      cards:
+        - !include hastats_db_size.yaml

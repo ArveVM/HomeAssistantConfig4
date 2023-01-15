@@ -1,0 +1,28 @@
+type: vertical-stack
+title: HA integration - count
+cards:
+  # Total:
+  - type: custom:mushroom-entity-card
+    entity: sensor.hastats_db_size
+    icon: mdi:home-assistant
+    primary_info: state
+    secondary_info: name
+  - type: custom:history-explorer-card
+    cardName: 5a37dc34-9043-4090-9b65-b4acd8262ff0
+    defaultTimeRange: 6o
+    header: hide
+    statistics:
+      enabled: true
+      mode: max
+      period: day
+    uiLayout:
+      toolbar: top
+      selector: hide
+    graphs:
+      - type: line
+        options:
+          interval: daily
+        entities:
+          - entity: sensor.hastats_db_size
+            name: Recorder database size
+            lineMode: curves
