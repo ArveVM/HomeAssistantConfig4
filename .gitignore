@@ -27,7 +27,7 @@ view*
 # ignore unifinished part of my own code
 /avm_yaml/_templ
 #/avm_yaml/dashboard
-card_alert*
+
 card_room*
 
 chip_ha*
@@ -85,3 +85,4 @@ avm_yaml/dashboard/cards/priceanalyzer_02_copy.yaml
 avm_yaml/dashboard/cards/priceanalyzer_02.yaml
 avm_yaml/dashboard/cards/priceanalyzer_03.yaml
 avm_yaml/dashboard/cards/heater_card_OLD.yaml
+avm_yaml/dashboard/cards/alert_card.yaml

@@ -2,9 +2,9 @@
 
 # First Total count of lines:
 type: vertical-stack
+title: YAML-lines - count
 cards:
   - type: glance
-    title: YAML-lines - count
     entities:
       # Total:
       - entity: sensor.hastats_yaml_line_total_count

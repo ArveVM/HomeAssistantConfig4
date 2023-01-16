@@ -114,10 +114,10 @@ cards:
         entity: sensor.kitchen_fridge_temperature
         icon: mdi:fridge
         icon_color: |-
-          {% set t=states(entity) %}
-          {% if t >= '4' %}
+          {% set t=states(entity) | float(default=3) %}
+          {% if t >= 4 %}
             red
-          {% elif t >= '3' %}
+          {% elif t >= 3.2 %}
             orange
           {% else %}
             disabled

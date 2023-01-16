@@ -1,5 +1,5 @@
 type: vertical-stack
-title: HA integration - count
+title: Recorder DB size
 cards:
   # Total:
   - type: custom:mushroom-entity-card

@@ -6,7 +6,7 @@ styles:
   "--mdc-typography-button-font-size": 10px
 tabs:
   - attributes:
-      label: integrations
+      label: integr.
       icon: mdi:hammer-screwdriver
     card:
       type: vertical-stack
@@ -23,7 +23,7 @@ tabs:
         - !include hastats_entities_by_domain.yaml
 
   - attributes:
-      label: Lines count
+      label: Yaml
       icon: mdi:land-rows-horizontal
     card:
       type: vertical-stack
@@ -32,7 +32,7 @@ tabs:
         - !include hastats_yaml_lines_count.yaml
 
   - attributes:
-      label: DB size
+      label: DB
       icon: mdi:database
     card:
       type: vertical-stack
