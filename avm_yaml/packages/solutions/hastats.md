@@ -24,6 +24,8 @@ Focus so far have been on
   - HACS: browser mod - for popup-functionality (now updated to browser_mod v2)
   - HACS: custom:button-card
   - HACS: custom:auto-entities
+  - HACS: history-explorer-card
+  - HACS: tabbed-card
     
   #### Optional:
   - Dashboard:
@@ -78,29 +80,30 @@ Stats of how many entities pr domain are in my HA-instance, by ArveVM
 <br />
 
 ### Solution-Dashboard(s):
-[Entities by domain](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/dashboard/cards/hastats_entities_by_domain.yaml)
 
-<img width="239" alt="image" src="https://user-images.githubusercontent.com/96014323/193137965-f7cf24ed-00c2-4362-a2ef-79efaee6e442.png">
+[HA stats](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/dashboard/cards/hastats_card.yaml)
+
+<img width="290" alt="image" src="https://user-images.githubusercontent.com/96014323/212763037-65024e79-de02-4fc2-a211-772464c05a5c.png">
+
+_click on 'tab: EbD', and you will get the next stats-area
+
+<img width="287" alt="image" src="https://user-images.githubusercontent.com/96014323/212763211-892299bb-b552-477e-a017-4f099764615b.png">
+
 _click on 'sensors', and you will get pop-up with development-graph and details_
-<img width="196" alt="image" src="https://user-images.githubusercontent.com/96014323/193138169-866d38a5-88a1-4882-9c95-cc464f0ef478.png">
+
+<img width="225" alt="image" src="https://user-images.githubusercontent.com/96014323/212763444-7ce08199-a52e-45c5-afd2-dd3c30e331af.png">
+
 _click on other domains and you will get history/details_
 
 <br />
 
-[YAML lines](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/dashboard/cards/hastats_yaml_lines_count.yaml)
 
-<img width="242" alt="image" src="https://user-images.githubusercontent.com/96014323/193139300-3259e7fe-1661-4acc-b3d6-ec6c7a55b10c.png">
-_unfortunately no statistic available on sensor,,, is on toDo-list  :(_
+_click on 'tab: YAML', and you will get the next stats-area
+
+<img width="284" alt="image" src="https://user-images.githubusercontent.com/96014323/212763792-a8e898a8-2b7e-48e4-a377-168798827c8c.png">
 
 <br />
-
-[Integrations](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/dashboard/cards/hastats_integrations_count.yaml)
-
-<img width="264" alt="image" src="https://user-images.githubusercontent.com/96014323/197417452-368af287-9082-4ed0-822e-e917f7dff499.png">
-_click on 'total', and you will get pop-up with development-graph and details_
-<img width="230" alt="image" src="https://user-images.githubusercontent.com/96014323/197417579-260b77ce-74cb-41c2-95b2-aba8b3dd0169.png">
-
-
+<img width="290" alt="image" src="https://user-images.githubusercontent.com/96014323/212763881-7dc45256-7139-4f4c-8bcd-8947768b2139.png">
 
 <br />
 <br />
@@ -110,4 +113,4 @@ _click on 'total', and you will get pop-up with development-graph and details_
 - might want to move the system_monitor.yaml sensors here (as there is no config of the integration)
 - get some way to add yaml-sensors to statistics-graph (like the template-sensors with class measurement
 - change 'float(default=0)'  to 'float(0)'    - no reason to keep the default ?
-- change to monthly graphs when I get several months of data
+- change to monthly graphs when I get several months of data   (or just keep floating line?? )
