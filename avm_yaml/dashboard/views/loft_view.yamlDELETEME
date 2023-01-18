@@ -1,0 +1,85 @@
+# Add node-ancors as variables internally in this yaml-file
+homeassistant:
+  customize:
+    package.node_anchors:
+      temp1: &temp1 sensor.loft_thp_temperature
+      humidity1: &humidity1 sensor.loft_thp_humidity
+      temp2: &temp2 sensor.laundry_thp_temperature
+      title: &title1 "Loft"
+title: *title1
+path: *title1
+
+cards:
+  # # # ----------  Stack of stacks  (default) -----------
+  - type: vertical-stack
+    cards:
+      #### -----  Chip-row at the top
+      - type: custom:mushroom-chips-card
+        alignment: justify
+        chips:
+          - type: back
+          - type: entity
+            entity: person.admin220
+          - type: conditional
+            conditions:
+              - entity: sensor.todo_counter
+                state_not: "0"
+            chip:
+              type: entity
+              entity: sensor.todo_counter
+          - type: entity
+            entity: *temp1
+          - type: action
+            tap_action:
+              action: navigate
+              navigation_path: /config/areas/area/loft
+            icon: mdi:devices
+
+      #### -----  Lights
+      - type: custom:mushroom-light-card
+        entity: light.loft
+        fill_container: false
+      #entity: *temp1
+
+      - !include
+        - ../cards/heater_card.yaml
+        - entity: input_boolean.loft_heater_powerboost
+          powerauto: input_boolean.loft_heater_powerauto
+          powerboost: input_boolean.loft_heater_powerboost
+          powersave: input_boolean.loft_heater_powersave
+          powerhoursave: input_boolean.loft_heater_powerhoursave
+          powerswitch: switch.loft_heater_plug
+          power: sensor.loft_heater_plug_power
+          room_temp: sensor.loft_thp_temperature
+          room_humidity: sensor.loft_thp_humidity
+          longterm_target: input_number.loft_heater_longterm_target
+          thermostat_target: sensor.loft_heater_thermostat_target
+          thermostat_output: input_boolean.loft_heater_thermostat_output
+
+      #          - entity: { { entity } }
+      #            humidity_entity: { { humidity_entity } }
+
+      #- !include ../cards/camera_card.yaml
+
+      - type: custom:mushroom-title-card
+        title: Media
+
+      - type: custom:mushroom-media-player-card
+        entity: media_player.kitchen_media_players
+        use_media_info: true
+        media_controls:
+          - on_off
+          - previous
+          - play_pause_stop
+          - next
+        volume_controls:
+          - volume_set
+        show_volume_level: true
+        layout: vertical
+
+      - type: custom:mushroom-media-player-card
+        entity: media_player.kitchen_media_players
+        layout: horizontal
+        primary_info: name
+        fill_container: false
+        secondary_info: last-changed

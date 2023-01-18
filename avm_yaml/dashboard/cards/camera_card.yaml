@@ -57,6 +57,7 @@ cards:
             - camera_entity: camera.entry_camera1
               live_provider: frigate-jsmpeg
             - camera_entity: camera.outside_west_camera1
+            - camera_entity: camera.entry_camera2
           view:
             default: live
           live:

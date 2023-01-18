@@ -3,6 +3,13 @@
 
 **v4:**
 
+  Jan ;
+  - Remove UI-minimalist, new dashboard using mostly Mushroom and custom "area-card"
+  - Adding Frigate-docker and a few cameras (Reolink and D-link)
+  - Starting internal code-review,,, aim to publish most of config when cleaned :)
+    - need to purify the "solutions-definitions" and do some re-naming.
+
+
   Des ;
   - Starting re-use of cards, (combining passing variables in lovelace-yaml and include files (cards))
   - Starting with Mushrom (planning to replace UI minimalist

@@ -4,6 +4,32 @@
 type: vertical-stack
 title: YAML-lines - count
 cards:
+  - type: custom:history-explorer-card
+    cardName: 1b701d20-a87c-425f-8989-bd8d05cd6147
+    entityOptions:
+      sensor: # Apply these settings to all other entities in the sensor domain
+        ymin: 00
+    defaultTimeRange: 1y
+    header: hide
+    statistics:
+      enabled: true
+      mode: max
+      period: day
+    uiLayout:
+      toolbar: top
+      selector: hide
+    graphs:
+      - type: line
+        options:
+          interval: daily
+        entities:
+          - entity: sensor.hastats_yaml_line_total_count
+            name: Total
+          - entity: sensor.hastats_yaml_line_packages_count
+            name: Packages
+          - entity: sensor.hastats_yaml_line_dashboard_count
+            name: Dashboard
+
   - type: glance
     entities:
       # Total:
@@ -78,29 +104,3 @@ cards:
                         name: "max total/month"
                     stat_types:
                       - max
-
-  - type: custom:history-explorer-card
-    cardName: 1b701d20-a87c-425f-8989-bd8d05cd6147
-    entityOptions:
-      sensor: # Apply these settings to all other entities in the sensor domain
-        ymin: 00
-    defaultTimeRange: 1y
-    header: hide
-    statistics:
-      enabled: true
-      mode: max
-      period: day
-    uiLayout:
-      toolbar: top
-      selector: hide
-    graphs:
-      - type: line
-        options:
-          interval: daily
-        entities:
-          - entity: sensor.hastats_yaml_line_total_count
-            name: Total
-          - entity: sensor.hastats_yaml_line_packages_count
-            name: Packages
-          - entity: sensor.hastats_yaml_line_dashboard_count
-            name: Dashboard

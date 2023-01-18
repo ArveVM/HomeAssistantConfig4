@@ -20,7 +20,7 @@ tabs:
           state_header: Boost
           entities:
             - entity: "{{ power }}"
-              name: Power
+              name: Heating
         - !include
           - temperature_compare_card.yaml
           - entity: "{{ room_temp }}"
@@ -111,8 +111,8 @@ tabs:
                   suffix: °C
                   color: green
                   lineMode: stepped
-                - entity: sensor.house_average_temperature
-                  name: House average
+                - entity: "{{ room_temp_compare }}"
+                  name: ComparableAverage
                   suffix: °C
                   color: orange
                   lineMode: curves

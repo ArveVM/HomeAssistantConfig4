@@ -16,7 +16,7 @@
 **home-assistant_v2.db-wal
 **home-assistant_v2.db-shm
 
-view*
+#view*
 
 #---------------------------------------------------------
 # ignore hidden folders
@@ -34,7 +34,7 @@ chip_ha*
 nordpool*
 priceanalyzer_01*
 room__*
-*view*
+*view_*
 dashboard_mob*
 /avm_yaml/entities
 /avm_yaml/packages/addon
@@ -86,3 +86,8 @@ avm_yaml/dashboard/cards/priceanalyzer_02.yaml
 avm_yaml/dashboard/cards/priceanalyzer_03.yaml
 avm_yaml/dashboard/cards/heater_card_OLD.yaml
 avm_yaml/dashboard/cards/alert_card.yaml
+avm_yaml/dashboard/views/test_two.yaml
+avm_yaml/dashboard/views/test.yaml
+avm_yaml/dashboard/views/workshop_view.yamlDELETEME
+avm_yaml/dashboard/views/server_view.yaml
+avm_yaml/dashboard/views/office_view.yamlDELETEME

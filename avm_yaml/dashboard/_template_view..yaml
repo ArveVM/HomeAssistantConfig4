@@ -1,0 +1,185 @@
+---
+# include UI Minimalist templates - see https://ui-lovelace-minimalist.github.io/UI/ for guidance
+button_card_templates: !include_dir_merge_named "../../custom_components/ui_lovelace_minimalist/__ui_minimalist__/ulm_templates/"
+
+
+# Add node-ancors as variables internally in this yaml-file
+homeassistant:
+  customize:
+    package.node_anchors:
+      temp1: &temp1 sensor.laundry_thp_temperature
+      humidity1: &humidity1 sensor.laundry_thp_humidity
+      temp2: &temp2 sensor.outside_netatmo_temperature
+      humidity2: &humidity2 sensor.outside_netatmo_humidity
+      title: &title1 "templ"
+
+title: *title1
+path: *title1
+
+
+cards:
+
+# # # ----------  Stack of stacks  (default) ----------- 
+  - type: vertical-stack
+    cards:
+
+
+# # # ----------  Header-Back-Title  (default) ----------- 
+    - type: horizontal-stack
+      cards:
+
+      - type: 'custom:button-card'
+        template: chip_back
+        variables:
+          ulm_chip_back_path: Home_mobile
+
+      - type: 'custom:button-card'
+        template: card_title
+        name: *title1
+
+      - type: "custom:button-card"
+        color_type: blank-card
+
+      - type: 'custom:button-card'
+        template: chip_icon_double_state
+        variables:
+          ulm_chip_icon_double_state_icon: '🌡️'
+          ulm_chip_icon_double_state_entity_1: *temp1
+          ulm_chip_icon_double_state_entity_2: *humidity1
+          #ulm_chip_navigate_path: /lovelace-minimalist-ui/0
+          
+
+# # # ----------  Light-section   ----------- 
+  # # ---------   header   ----------- 
+    - type: horizontal-stack
+      cards:
+
+      - type: 'custom:button-card'
+        template: card_title
+        name: Light
+        # label: Lys
+
+      - type: "custom:button-card"
+        color_type: blank-card
+
+      - type: "custom:button-card"
+        template: chip_mdi_icon_state
+        label: Bryter
+        variables:
+          ulm_chip_mdi_icon_state_entity: binary_sensor.laundry_lights_input
+          ulm_chip_mdi_icon_state_icon: mdi:lightbulb
+
+      - type: 'custom:button-card'
+        template: chip_power_consumption
+        variables:
+          ulm_chip_electric_consumption: sensor.laundry_lights_all_power
+          ulm_chip_electric_price: false #sensor.my_electric_power_pric
+
+  # # ---------   lights   ----------- 
+    - type: "custom:button-card"
+      template: card_light
+      entity: light.laundry_lights
+      variables:
+        ulm_card_light_enable_color: true
+        ulm_card_light_force_background_color: true
+
+
+# # # ----------   Garage doors   ----------- 
+  # # ---------   header   ----------- 
+    - type: horizontal-stack
+      cards:
+      - type: 'custom:button-card'
+        template: card_input_boolean
+        entity: binary_sensor.garage_dad_closed
+        name: Garage Dad closed
+
+
+# # # ----------   Temperature and humidity-graphs (default; only inside)  ----------- 
+  # # ---------    Header   ----------- 
+    - type: horizontal-stack
+      cards:
+
+      - type: 'custom:button-card'
+        template: card_title
+        name: Temp&humidity
+        # label: Lys
+
+      - type: "custom:button-card"
+        color_type: blank-card
+
+      - type: "custom:button-card"
+        color_type: blank-card
+
+
+  # ---------    Graphs   ----------- 
+    - type: horizontal-stack
+      cards:
+        
+      - type: 'custom:button-card'
+        template: card_graph
+        variables:
+          ulm_card_graph_color: "var(--google-red)"
+          ulm_card_graph_name: "Temp, 24h"
+          ulm_card_graph_entity: *temp1
+          # ulm_card_graph_color2: "var(--google-blue)"
+          # ulm_card_graph_entity2: *temp2
+          ulm_card_graph_type: fill
+          ulm_card_graph_hours: 24        
+
+      - type: 'custom:button-card'
+        template: card_graph
+        variables:
+          ulm_card_graph_color: "var(--google-blue)"
+          ulm_card_graph_name: "Humidity, 24h"
+          ulm_card_graph_entity: *humidity1
+          # ulm_card_graph_color2: "var(--google-green)"
+          # ulm_card_graph_entity2: *humidity2
+          ulm_card_graph_type: fill
+          ulm_card_graph_hours: 24
+
+
+# # # ----------   Temperature and humidity-graphs (default; inside/outside)  ----------- 
+  # # ---------    Header   ----------- 
+    - type: horizontal-stack
+      cards:
+
+      - type: 'custom:button-card'
+        template: card_title
+        name: Temp&humidity
+        # label: Lys
+
+      - type: "custom:button-card"
+        color_type: blank-card
+
+      - type: 'custom:button-card'
+        template: card_title
+        #name: Temp&humidity
+        label: (Red inside, blue outside)
+
+
+  # ---------    Graphs   ----------- 
+    - type: horizontal-stack
+      cards:
+        
+      - type: 'custom:button-card'
+        template: card_graph
+        entity: *temp1
+        variables:
+          ulm_card_graph_color: "var(--google-red)"
+          ulm_card_graph_name: "Temp, 24h"
+          ulm_card_graph_entity: *temp1
+          ulm_card_graph_color2: "var(--google-blue)"
+          ulm_card_graph_entity2: *temp2
+          ulm_card_graph_type: fill
+          ulm_card_graph_hours: 24        
+
+      - type: 'custom:button-card'
+        template: card_graph
+        variables:
+          ulm_card_graph_color: "var(--google-red)"
+          ulm_card_graph_name: "Humidity, 24h"
+          ulm_card_graph_entity: *humidity1
+          ulm_card_graph_color2: "var(--google-blue)"
+          ulm_card_graph_entity2: *humidity2
+          ulm_card_graph_type: fill
+          ulm_card_graph_hours: 24           
