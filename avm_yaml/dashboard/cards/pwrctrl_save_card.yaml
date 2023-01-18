@@ -128,7 +128,7 @@ tabs:
                           info on current consumption of heater
                         ---
 
-                        **About Heater AUTO:**
+                        **About Heater AUTO:**history-explorerh
                         If auto is OFF, heater is controlled by local thermostat
                         If auto is ON, heater is controlled by Generic Thermostat, 
                         but can be overturned if PowerSave or PowerHourSave is turned ON
@@ -147,7 +147,7 @@ tabs:
       type: vertical-stack
       cards:
         - type: custom:history-explorer-card
-          cardName: history-card-5
+          cardName: 8403a520-f4c8-46b0-bafc-9df3d7789658
           header: hide # The hide option will remove the header entirely
           uiLayout:
             toolbar: top

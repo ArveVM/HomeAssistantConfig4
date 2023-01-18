@@ -9,13 +9,6 @@ lovelace:
   # AVM; make note of the requirement for a '-' in the 'dashboard-definition' - or you will get the error;
   #        Invalid config for [lovelace]: Url path needs to contain a hyphen (-) for dictionary value when checking configuration
   dashboards:
-    #minimalist-mobile1:
-    #  mode: yaml
-    #  title: Mobile
-    #  icon: mdi:flower
-    #  show_in_sidebar: true
-    #  filename: avm_yaml/dashboard/dashboard_mobile.yaml
-
     avm-mobile:
       mode: yaml
       title: AVM Mobile

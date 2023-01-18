@@ -1,5 +1,3 @@
-# include UI Minimalist templates - see https://ui-lovelace-minimalist.github.io/UI/ for guidance
-button_card_templates: !include_dir_merge_named "../../../custom_components/ui_lovelace_minimalist/__ui_minimalist__/ulm_templates/"
 
 title: "Home"
 path: "Home_mobile"
