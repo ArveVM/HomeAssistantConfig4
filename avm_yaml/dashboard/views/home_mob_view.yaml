@@ -23,7 +23,7 @@ cards:
               content:
                 type: vertical-stack
                 cards:
-                  - !include ../cards/weather_card.yaml
+                  - !include ../solutions/weather_card.yaml
 
       - type: template
         content: >-
