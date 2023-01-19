@@ -1,7 +1,9 @@
 # Home-Assistant_config #4
 
 This repo contains (part of) the working Home Assistant configuration for our home. 
-Below you find an overview of the devices currently being used, blog/video posts, and other HA enthusists that provided inspiration and configs to help build this config. All of the code is free to use; I only ask that you Star this repo.
+Below you find an overview of the devices currently being used, blog/video posts, and other HA enthusists that provided inspiration and configs to help build this config. 
+<br />
+All of the code is free to use; I only ask that you Star this repo.
 
 ## Current focus: 
 - Create 'Solutions' where things are of such a standard that it is valuable to share (or I need to share to get input for my improvements,, )
@@ -24,12 +26,22 @@ My configuration - [lovelace.yaml](https://github.com/ArveVM/HomeAssistantConfig
 <br />
 </details>      
 
+<details><summary>YAML-guide: Card include, node-anchors, entity-inject   -  (expand for details) </summary>
+  YAML-tutorials:
+  
+  - Beguinner:	http://thomasloven.com/blog/2018/08/YAML-For-Nonprogrammers/
+  - Normal:	https://spacelift.io/blog/yaml
+  - Advanced: 	https://yaml.org/spec/1.2.2/
+  
+  How I use it:
+  - Including dashboard-files see example
+  - node_anchors:
+    - to avoid duplicate code on card-mod 
+    - to declare entities as variables in solution-yaml-files (so it can be referrred to in several automations/climates/sensors
+  - Re-use dashboard-files, see example heater_card.yaml which is used by several room-cards by calling card
+  - (this requires Lovelace_gen,, #thanksThomasLoven)
+  HACS;  [Lovelace_gen](https://github.com/thomasloven/hass-lovelace_gen) 
 <br />
-<details><summary>Yaml-dashboard; Easy sharing, include one card severan places, entity-inject in cards   -  (expand for details) </summary>
-
-Lovelace - Official documentation:  [Integration - dashboard (lovelace)](https://www.home-assistant.io/dashboards/dashboards/) 
-<br />
-My configuration - [lovelace.yaml](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/integrations/lovelace.yaml)  Enable both GUI and YAML-dashboard, and add menu-item
 <br />
 </details>      
   
