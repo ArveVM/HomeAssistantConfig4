@@ -6,14 +6,6 @@ homeassistant:
     package.node_anchors:
       temp1: &temp1 sensor.bad2_kontor_temperature
       humidity1: &humidity1 sensor.bad2_kontor_humidity
-      card_mod_chip: &card_mod_chip
-        card_mod:
-          style: |
-            ha-card {
-              --chip-box-shadow: none;
-              --chip-background: none;
-              --chip-spacing: 0;
-              margin-left: -10px;
 
 type: custom:stack-in-card
 card_mod:
@@ -63,7 +55,6 @@ cards:
         }
     chips:
       - type: template
-        <<: *card_mod_chip
         entity: sensor.serverroom_freezer_temperature
         icon: mdi:snowflake-thermometer
         # Red if above -18, organge between -18 and  -20, grey if below 20
@@ -76,21 +67,28 @@ cards:
           {% else %}
             disabled
           {% endif %}
+        card_mod: &card_mod_chip_style
+          style: |
+            ha-card {
+              --chip-box-shadow: none;
+              --chip-background: none;
+              --chip-spacing: 0;
+              margin-left: -10px;
         tap_action:
           action: more-info
 
       - type: action
-        <<: *card_mod_chip
+        card_mod: *card_mod_chip_style
         tap_action:
           action: navigate
           navigation_path: /config/areas/area/serverroom
         icon: mdi:devices
 
       - type: template
-        <<: *card_mod_chip
         entity: binary_sensor.laundry_room_status
         icon: mdi:hospital
         icon_color: "{{ 'green' if is_state(entity, 'off') else 'red' }}"
+        card_mod: *card_mod_chip_style
         hold_action:
           action: more-info
         tap_action:

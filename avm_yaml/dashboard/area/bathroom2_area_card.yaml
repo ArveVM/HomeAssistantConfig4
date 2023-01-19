@@ -1,4 +1,4 @@
-# room card, inspiration from 'rhysb Rhys' https://community.home-assistant.io/t/mushroom-cards-build-a-beautiful-dashboard-easily/388590/1157
+# area/room card, inspiration from 'rhysb Rhys' https://community.home-assistant.io/t/mushroom-cards-build-a-beautiful-dashboard-easily/388590/1157
 
 # Add node-ancors as variables internally in this yaml-file
 homeassistant:
@@ -6,14 +6,6 @@ homeassistant:
     package.node_anchors:
       temp1: &temp1 sensor.bathroom2_thp_temperature
       humidity1: &humidity1 sensor.bathroom2_thp_humidity
-      card_mod_chip: &card_mod_chip
-        card_mod:
-          style: |
-            ha-card {
-              --chip-box-shadow: none;
-              --chip-background: none;
-              --chip-spacing: 0;
-              margin-left: -10px;
 
 type: custom:stack-in-card
 card_mod:
@@ -63,7 +55,13 @@ cards:
         }
     chips:
       - type: template
-        <<: *card_mod_chip
+        card_mod: &card_mod_chip_style
+          style: |
+            ha-card {
+              --chip-box-shadow: none;
+              --chip-background: none;
+              --chip-spacing: 0;
+              margin-left: -10px;
         entity: switch.bathroom2_heater_puck
         icon: mdi:radiator
         icon_color: "{{ 'blue' if is_state(entity, 'on') else 'grey' }}"
@@ -89,7 +87,7 @@ cards:
                   thermostat_output: input_boolean.bathroom2_heater_thermostat_output
 
       - type: template
-        <<: *card_mod_chip
+        card_mod: *card_mod_chip_style
         entity: binary_sensor.bathroom2_room_status
         icon: mdi:hospital
         icon_color: "{{ 'green' if is_state(entity, 'off') else 'red' }}"

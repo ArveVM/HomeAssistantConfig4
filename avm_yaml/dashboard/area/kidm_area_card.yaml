@@ -1,4 +1,4 @@
-# room card, inspiration from 'rhysb Rhys' https://community.home-assistant.io/t/mushroom-cards-build-a-beautiful-dashboard-easily/388590/1157
+# area/room card, inspiration from 'rhysb Rhys' https://community.home-assistant.io/t/mushroom-cards-build-a-beautiful-dashboard-easily/388590/1157
 
 # Add node-ancors as variables internally in this yaml-file
 homeassistant:
@@ -6,14 +6,6 @@ homeassistant:
     package.node_anchors:
       temp1: &temp1 sensor.hallway_thp_temperature
       humidity1: &humidity1 sensor.hallway_thp_humidity
-      card_mod_chip: &card_mod_chip
-        card_mod:
-          style: |
-            ha-card {
-              --chip-box-shadow: none;
-              --chip-background: none;
-              --chip-spacing: 0;
-              margin-left: -10px;
 
 type: custom:stack-in-card
 card_mod:
@@ -59,9 +51,15 @@ cards:
         }
     chips:
       - type: action
-        <<: *card_mod_chip
         icon_color: yellow
         icon: mdi:thermometer
+        card_mod: &card_mod_chip_style
+          style: |
+            ha-card {
+              --chip-box-shadow: none;
+              --chip-background: none;
+              --chip-spacing: 0;
+              margin-left: -10px;
         tap_action:
           action: fire-dom-event
           browser_mod:
@@ -80,7 +78,6 @@ cards:
 
       - entity: media_player.smartclock_kid_m
         type: template
-        <<: *card_mod_chip
         icon: mdi:cast
         icon_color: |-
           {% set state=states(entity) %}
@@ -93,6 +90,7 @@ cards:
           {% else %}
           grey
           {% endif %}
+        card_mod: *card_mod_chip_style
         tap_action:
           action: fire-dom-event
           browser_mod:
@@ -138,9 +136,9 @@ cards:
 
       - entity: light.kidm_lightbulb
         type: template
-        <<: *card_mod_chip
         icon: mdi:lightbulb
         icon_color: "{{ 'yellow' if is_state(entity, 'on') else 'grey' }}"
+        card_mod: *card_mod_chip_style
         tap_action:
           action: fire-dom-event
           browser_mod:
@@ -152,10 +150,10 @@ cards:
                   - !include kidm_light_card.yaml
 
       - type: template
-        <<: *card_mod_chip
         entity: binary_sensor.loft_room_status
         icon: mdi:hospital
         icon_color: "{{ 'green' if is_state(entity, 'off') else 'red' }}"
+        card_mod: *card_mod_chip_style
         hold_action:
           action: more-info
         tap_action:

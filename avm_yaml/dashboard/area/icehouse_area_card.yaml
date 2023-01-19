@@ -1,4 +1,4 @@
-# room card, inspiration from 'rhysb Rhys' https://community.home-assistant.io/t/mushroom-cards-build-a-beautiful-dashboard-easily/388590/1157
+# area/room card, inspiration from 'rhysb Rhys' https://community.home-assistant.io/t/mushroom-cards-build-a-beautiful-dashboard-easily/388590/1157
 
 type: custom:stack-in-card
 card_mod:
@@ -48,10 +48,10 @@ cards:
           action: toggle
 
       - type: template
-        card_mod: *card_mod_chip_style
         entity: switch.icehouse_heater
         icon: mdi:radiator
         icon_color: "{{ 'blue' if is_state(entity, 'on') else 'disabled' }}"
+        card_mod: *card_mod_chip_style
         tap_action:
           action: toggle
 

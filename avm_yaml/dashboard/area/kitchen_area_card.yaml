@@ -1,17 +1,11 @@
+# area/room card, inspiration from 'rhysb Rhys' https://community.home-assistant.io/t/mushroom-cards-build-a-beautiful-dashboard-easily/388590/1157
+
 # Add node-ancors as variables internally in this yaml-file
 homeassistant:
   customize:
     package.node_anchors:
       temp1: &temp1 sensor.kitchen_thp_temperature
       humidity1: &humidity1 sensor.kitchen_thp_humidity
-      card_mod_chip: &card_mod_chip
-        card_mod:
-          style: |
-            ha-card {
-              --chip-box-shadow: none;
-              --chip-background: none;
-              --chip-spacing: 0;
-              margin-left: -10px;
 
 type: custom:stack-in-card
 card_mod:
@@ -69,7 +63,6 @@ cards:
         }
     chips:
       - type: action
-        <<: *card_mod_chip
         icon_color: disabled
         icon: mdi:thermometer
         tap_action:
@@ -84,6 +77,13 @@ cards:
                     - ../cards/temp_humidity_card3.yaml
                     - entity: *temp1
                       humidity_entity: *humidity1
+        card_mod: &card_mod_chip_style
+          style: |
+            ha-card {
+              --chip-box-shadow: none;
+              --chip-background: none;
+              --chip-spacing: 0;
+              margin-left: -10px;
         hold_action:
           action: fire-dom-event
           browser_mod:
@@ -93,8 +93,8 @@ cards:
                 type: vertical-stack
                 cards:
                   - !include kitchen_light_card.yaml
+
       - type: template
-        <<: *card_mod_chip
         entity: sensor.dishwasher_status
         icon: mdi:dishwasher
         icon_color: |-
@@ -106,11 +106,11 @@ cards:
           {% else %}
             grey
           {% endif %}
+        card_mod: *card_mod_chip_style
         tap_action:
           action: more-info
 
       - type: template
-        <<: *card_mod_chip
         entity: sensor.kitchen_fridge_temperature
         icon: mdi:fridge
         icon_color: |-
@@ -122,14 +122,15 @@ cards:
           {% else %}
             disabled
           {% endif %}
+        card_mod: *card_mod_chip_style
         tap_action:
           action: more-info
 
       - type: template
-        <<: *card_mod_chip
         entity: plant.rubber_plant
         icon: mdi:flower-outline
         icon_color: "{{ 'orange' if is_state(entity, 'problem') else 'disabled' }}"
+        card_mod: *card_mod_chip_style
         tap_action:
           action: fire-dom-event
           browser_mod:
@@ -154,9 +155,9 @@ cards:
       #    navigation_path: /config/areas/area/kitchen
 
       - type: template
-        <<: *card_mod_chip
         entity: binary_sensor.kitchen_room_status
         icon: mdi:hospital
         icon_color: "{{ 'disabled' if is_state(entity, 'on') else 'red' }}"
+        card_mod: *card_mod_chip_style
         tap_action:
           action: more-info
