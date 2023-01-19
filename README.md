@@ -24,9 +24,19 @@ Current concept is moving towards a 'Solution' beeing:
   - [Kid S - linen](https://github.com/ArveVM/HomeAssistantConfig4/tree/master/avm_yaml/packages/solutions/kids_linen.md): Settings of last changed linen, length until next, length until warning, create and complete todo 
 #### 2. General solutions:
 - [ToDo](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/solutions/todo.md)  create todo-list (and let other solutions poulate with tasks and status)
-- Hotwater:
+  <br />
+  <details>
+    <summary>Hotwater; SoC, Price-adjusted heating, Salmonella-warning   -     _(expand for details)_</summary>
+    test on how it might look like
+     
+    temp
   - [Hotwater SoC](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/solutions/hotwater_soc.md) Calculate hotwater-tank SoC, including charge-time and show stats  
   - [Hotwater Temp](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/solutions/hotwater_temp.md) Adjust hotwater-tank HA-thermostat according to price  
+  -  salmonella - pending,,,
+  <br />
+  </details>      
+  
+- Hotwater:
 - PowerControl (PwrCtrl)
   - PwrCtrl Use:  Sum total, Grouped consumption, utility-meters  
     <details>
