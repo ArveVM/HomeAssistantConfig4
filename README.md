@@ -5,7 +5,21 @@ Below you find an overview of the devices currently being used, blog/video posts
 <br />
 All of the code is free to use; I only ask that you Star this repo.
 
-## Current focus: 
+
+
+## Config overview:
+
+## 1. Config; Packages -> Functionality -> Solutions, Compartmentalized Solutions:
+<br />
+<details><summary>Packages; Core structure</summary>
+<br />
+Packages; [Official documentation](https://www.home-assistant.io/docs/configuration/packages/)
+
+I have moved ALL configuration into packages,, so it is easier to separate the two config-princpiles/types:
+<br />
+Functionality; which are Integrations/addons
+Solutions; 
+
 - Create 'Solutions' where things are of such a standard that it is valuable to share (or I need to share to get input for my improvements,, )
 It is still work in progress, so I will only publish what is actually transformed into this new "principle".
 Current concept is moving towards a 'Solution' beeing: 
@@ -13,7 +27,30 @@ Current concept is moving towards a 'Solution' beeing:
 2. YAML-file with config  
 3. One or more yaml-files for dashboard/card/chips
 
-## Solutions overview:
+<br />
+ - [Config principles:](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/blablabla/config_principles.md)
+<br />
+  
+</details>      
+<details><summary>YAML-guide: Card include, node-anchors, entity-inject   -  (expand for details) </summary>
+  YAML-tutorials:
+  
+  - Beguinner:	http://thomasloven.com/blog/2018/08/YAML-For-Nonprogrammers/
+  - Normal:	    https://spacelift.io/blog/yaml
+  - Advanced: 	https://yaml.org/spec/1.2.2/
+  
+  How I use it
+  
+  - Including dashboard-files see example [mobile dashboard include view-files](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/dashboard/mob_dashboard.yaml)
+  - node_anchors:
+    - to avoid duplicate code on card-mod 
+    - to declare entities as variables in solution-yaml-files (so it can be referrred to in several automations/climates/sensors
+  - Re-use dashboard-files, see example heater_card.yaml which is used by several room-cards by calling card
+  - (this requires Lovelace_gen,, #thanksThomasLoven)
+  HACS;  [Lovelace_gen](https://github.com/thomasloven/hass-lovelace_gen) 
+<br />
+</details>      
+*******************************************
 
 ## 1. YAML-dashboard/Mushroom/popup's:
 A bit of a stretch to call std-functionality a solution, but I'm combining Yaml-dashboard with include and re-use of cards with push-entitites to card. So I'm a bit bold and calling it a Solution:
