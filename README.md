@@ -1,7 +1,9 @@
 # Home-Assistant_config #4
 
 This repo contains (part of) the working Home Assistant configuration for our home. 
-Below you find an overview of the devices currently being used, blog/video posts, and other HA enthusists that provided inspiration and configs to help build this config. All of the code is free to use; I only ask that you Star this repo.
+Below you find an overview of the devices currently being used, blog/video posts, and other HA enthusists that provided inspiration and configs to help build this config. 
+<br />
+All of the code is free to use; I only ask that you Star this repo.
 
 ## Current focus: 
 - Create 'Solutions' where things are of such a standard that it is valuable to share (or I need to share to get input for my improvements,, )
@@ -13,12 +15,48 @@ Current concept is moving towards a 'Solution' beeing:
 
 ## Solutions overview:
 
-## 1. Yaml-dashboar/Mushroom:
+## 1. YAML-dashboard/Mushroom/popup's:
 A bit of a stretch to call std-functionality a solution, but I'm combining Yaml-dashboard with include and re-use of cards with push-entitites to card. So I'm a bit bold and calling it a Solution:
 <br />
-<details>
-  <summary>Yaml-dashboard; Easy sharing, include one card severan places, entity-inject in cards   -  (expand for details) </summary>
-[Integration - dashboard (lovelace)](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/solutions/todo.md)  create todo-list (and let other solutions poulate with tasks and status)
+<details><summary>YAML-dashboard; Easy sharing, include one card severan places, entity-inject in cards</summary>
+<br />
+Lovelace - Official documentation:  [Integration - dashboard (lovelace)](https://www.home-assistant.io/dashboards/dashboards/) 
+<br />
+My configuration - [lovelace.yaml](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/integrations/lovelace.yaml)  Enable both GUI and YAML-dashboard, and add menu-item
+</details>      
+<details><summary>YAML-guide: Card include, node-anchors, entity-inject   -  (expand for details) </summary>
+  YAML-tutorials:
+  
+  - Beguinner:	http://thomasloven.com/blog/2018/08/YAML-For-Nonprogrammers/
+  - Normal:	    https://spacelift.io/blog/yaml
+  - Advanced: 	https://yaml.org/spec/1.2.2/
+  
+  How I use it
+  
+  - Including dashboard-files see example [mobile dashboard include view-files](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/dashboard/mob_dashboard.yaml)
+  - node_anchors:
+    - to avoid duplicate code on card-mod 
+    - to declare entities as variables in solution-yaml-files (so it can be referrred to in several automations/climates/sensors
+  - Re-use dashboard-files, see example heater_card.yaml which is used by several room-cards by calling card
+  - (this requires Lovelace_gen,, #thanksThomasLoven)
+  HACS;  [Lovelace_gen](https://github.com/thomasloven/hass-lovelace_gen) 
+<br />
+<br />
+</details>      
+<details><summary>Mushroom/popup's: Card-in-card, templating colours, popups, tabbed-card </summary>
+  Trying to make one card pr "Solution", so there is one tab for status, one for config and one for histori
+  see example on heater_card.yaml
+  
+  How I use it
+  
+  - Including dashboard-files see example [mobile dashboard include view-files](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/dashboard/mob_dashboard.yaml)
+  - node_anchors:
+    - to avoid duplicate code on card-mod 
+    - to declare entities as variables in solution-yaml-files (so it can be referrred to in several automations/climates/sensors
+  - Popup, on most chips in room-cards,, the
+  - (this requires BrowserMod2,, #thanksThomasLoven)
+  HACS;  [Browser_mod2](https://github.com/thomasloven/hass-browser_mod) 
+<br />
 <br />
 </details>      
   
@@ -85,7 +123,7 @@ A bit of a stretch to call std-functionality a solution, but I'm combining Yaml-
     create action to turn off last group when power get below 80% of security treshold (to use power wanted)
     <br /> 
     </details>    
-    
+  </details>        
   - Eva HAN Instant power usage, estimate full hour 
       
 
