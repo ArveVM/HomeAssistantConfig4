@@ -58,6 +58,7 @@ cards:
               --chip-background: none;
               --chip-spacing: 0;
               margin-left: -10px;
+            }
         icon_color: yellow
         icon: mdi:thermometer
         tap_action:

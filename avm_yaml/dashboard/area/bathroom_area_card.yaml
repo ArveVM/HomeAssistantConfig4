@@ -56,6 +56,9 @@ cards:
         }
     chips:
       - type: template
+        entity: switch.bathroom_heater_puck
+        icon: mdi:radiator
+        icon_color: "{{ 'blue' if is_state(entity, 'on') else 'grey' }}"
         card_mod: &card_mod_chip_style
           style: |
             ha-card {
@@ -63,9 +66,7 @@ cards:
               --chip-background: none;
               --chip-spacing: 0;
               margin-left: -10px;
-        entity: switch.bathroom_heater_puck
-        icon: mdi:radiator
-        icon_color: "{{ 'blue' if is_state(entity, 'on') else 'grey' }}"
+            }
         tap_action:
           action: fire-dom-event
           browser_mod:

@@ -11,17 +11,24 @@ card_mod:
     }
 cards:
   - type: custom:mushroom-template-card
+    entity: light.icehouse_light_bulbs
     primary: IceHouse
     secondary: >-
       {{states('sensor.icehouse_thp_temperature') | round(0,'', 55)}}°C
     icon: mdi:ice-cream
-    #icon_color: disabled
     icon_color: "{{ 'orange' if is_state(entity, 'on') else 'disabled' }}"
-    entity: light.icehouse_light_bulbs
-    tap_action: none
     fill_container: true
     layout: horizontal
     multiline_secondary: false
+    tap_action: none
+    card_mod:
+      style: |
+        :host([dark-mode]) {
+          background: rgba(var(--rgb-primary-background-color), 0.2);
+        } 
+        :host {
+          background: rgba(var(--rgb-primary-text-color), 0.025);
+        }
 
   - type: custom:mushroom-chips-card
     alignment: end
@@ -44,6 +51,7 @@ cards:
               --chip-background: none;
               --chip-spacing: 0;
               margin-left: -10px;
+            }
         tap_action:
           action: toggle
 

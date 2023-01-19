@@ -58,13 +58,14 @@ cards:
       - type: action
         icon_color: yellow
         icon: mdi:thermometer
-        card_mod: &card_mod_chip
+        card_mod: &card_mod_chip_style
           style: |
             ha-card {
               --chip-box-shadow: none;
               --chip-background: none;
               --chip-spacing: 0;
               margin-left: -10px;
+            }
         tap_action:
           action: fire-dom-event
           browser_mod:
@@ -82,7 +83,7 @@ cards:
       - type: action
         icon_color: yellow
         icon: mdi:lightbulb
-        card_mod: *card_mod_chip
+        card_mod: *card_mod_chip_style
         tap_action:
           action: fire-dom-event
           browser_mod:
@@ -103,7 +104,7 @@ cards:
           else
             'disabled'
           }}
-        card_mod: *card_mod_chip
+        card_mod: *card_mod_chip_style
         tap_action:
           action: fire-dom-event
           browser_mod:
@@ -135,7 +136,7 @@ cards:
         entity: cover.livingroom_all_covers
         icon_color: "{{ 'disabled' if is_state(entity, 'open') else 'orange' }}"
         icon: mdi:window-shutter
-        card_mod: *card_mod_chip
+        card_mod: *card_mod_chip_style
         tap_action:
           action: fire-dom-event
           browser_mod:
@@ -154,7 +155,7 @@ cards:
           type: template
           icon_color: disabled
           icon: mdi:motion-sensor
-          card_mod: *card_mod_chip
+          card_mod: *card_mod_chip_style
 
       - type: conditional
         conditions:
@@ -203,7 +204,7 @@ cards:
           type: template
           icon_color: disabled
           icon: mdi:door-open
-          card_mod: *card_mod_chip
+          card_mod: *card_mod_chip_style
 
       - type: conditional
         conditions:
@@ -213,13 +214,13 @@ cards:
           type: template
           icon_color: disabled
           icon: mdi:window-open
-          card_mod: *card_mod_chip
+          card_mod: *card_mod_chip_style
 
       - type: template
         entity: binary_sensor.livingroom_room_status
         icon: mdi:hospital
         icon_color: "{{ 'disabled' if is_state(entity, 'on') else 'red' }}"
-        card_mod: *card_mod_chip
+        card_mod: *card_mod_chip_style
         tap_action:
           action: fire-dom-event
           browser_mod:

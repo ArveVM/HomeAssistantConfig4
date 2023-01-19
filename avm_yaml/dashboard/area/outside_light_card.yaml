@@ -1,0 +1,44 @@
+type: custom:tabbed-card
+options: {}
+styles:
+  "--mdc-theme-primary": orange
+  "--mdc-tab-text-label-color-default": white
+  "--mdc-typography-button-font-size": 10px
+tabs:
+  - attributes:
+      label: light
+      icon: mdi:lightbulb
+    card:
+      type: vertical-stack
+      cards:
+        - type: custom:mushroom-light-card
+          entity: light.outside_light1
+          secondary_info: last-changed
+          tap_action:
+            action: toggle
+
+  - attributes:
+      label: Timer
+      icon: mdi:movie
+    card:
+      type: vertical-stack
+      cards:
+        - type: horizontal-stack
+          cards:
+            - type: custom:mushroom-template-card
+              entity: automation.outsi
+              primary: Dad's favourite
+              secondary: ""
+              icon: mdi:led-strip-variant
+              tap_action:
+                action: call-service
+                service: light.turn_on
+                target:
+                  entity_id: light.livingroom_light_windowstrip
+                data:
+                  transition: 2
+                  brightness: 84
+                  rgb_color:
+                    - 255
+                    - 29
+                    - 11

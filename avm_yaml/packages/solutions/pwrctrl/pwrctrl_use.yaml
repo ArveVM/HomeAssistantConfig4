@@ -154,10 +154,14 @@ sensor:
             power_sensor_id: sensor.hallway_lights_all_power
           - entity_id: sensor.loft_lights_all_power
             power_sensor_id: sensor.loft_lights_all_power
-          - entity_id: sensor.kid_l_lights_all_power
-            power_sensor_id: sensor.kid_l_lights_all_power
-          - entity_id: sensor.kid_l_lights_all_power
-            power_sensor_id: sensor.kid_l_lights_all_power
+          #- entity_id: sensor.kidl
+          #  power_sensor_id: sensor.kidl
+          - entity_id: sensor.kidm_lights_all_power
+            power_sensor_id: sensor.kidm_lights_all_power
+          - entity_id: sensor.ice_house_lights_all_power
+            power_sensor_id: sensor.ice_house_lights_all_power
+          - entity_id: sensor.outside_lights_all_power
+            power_sensor_id: sensor.outside_lights_all_power
 
       - create_group: PwrCtrl Use Appliances
         create_energy_sensor: true

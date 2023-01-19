@@ -18,14 +18,12 @@ card_mod:
     }
 cards:
   - type: custom:mushroom-template-card
+    entity: light.hallway_light_up1
     primary: Hallway
     secondary: >-
       {{states('sensor.hallway_thp_temperature') | round(1,'', 19) }}°C -
       {{states('sensor.hallway_thp_humidity') | round(0,'', 44)}}%
     icon: mdi:stairs
-    entity: light.hallway_light_up1
-    tap_action:
-      action: toggle
     icon_color: "{{ 'orange' if is_state(entity, 'on') else 'disabled' }}"
     fill_container: true
     layout: horizontal
@@ -38,7 +36,9 @@ cards:
         :host {
           background: rgba(var(--rgb-primary-text-color), 0.025);
         }
-
+    tap_action:
+      action: toggle
+    
   - type: custom:mushroom-chips-card
     alignment: end
     card_mod:
@@ -59,6 +59,7 @@ cards:
               --chip-background: none;
               --chip-spacing: 0;
               margin-left: -10px;
+            }
         tap_action:
           action: fire-dom-event
           browser_mod:

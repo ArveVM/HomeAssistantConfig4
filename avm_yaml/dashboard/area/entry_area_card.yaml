@@ -60,6 +60,7 @@ cards:
               --chip-background: none;
               --chip-spacing: 0;
               margin-left: -10px;
+            }
         tap_action:
           action: fire-dom-event
           browser_mod:
