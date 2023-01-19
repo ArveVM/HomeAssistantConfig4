@@ -23,6 +23,8 @@ A bit of a stretch to call std-functionality a solution, but I'm combining Yaml-
 Lovelace - Official documentation:  [Integration - dashboard (lovelace)](https://www.home-assistant.io/dashboards/dashboards/) 
 <br />
 My configuration - [lovelace.yaml](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/integrations/lovelace.yaml)  Enable both GUI and YAML-dashboard, and add menu-item
+<br />
+  
 </details>      
 <details><summary>YAML-guide: Card include, node-anchors, entity-inject   -  (expand for details) </summary>
   YAML-tutorials:
@@ -41,22 +43,21 @@ My configuration - [lovelace.yaml](https://github.com/ArveVM/HomeAssistantConfig
   - (this requires Lovelace_gen,, #thanksThomasLoven)
   HACS;  [Lovelace_gen](https://github.com/thomasloven/hass-lovelace_gen) 
 <br />
-<br />
 </details>      
 <details><summary>Mushroom/popup's: Card-in-card, templating colours, popups, tabbed-card </summary>
   Trying to make one card pr "Solution", so there is one tab for status, one for config and one for histori
   see example on heater_card.yaml
   
-  How I use it
+  How I use it:
   
-  - Including dashboard-files see example [mobile dashboard include view-files](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/dashboard/mob_dashboard.yaml)
-  - node_anchors:
-    - to avoid duplicate code on card-mod 
-    - to declare entities as variables in solution-yaml-files (so it can be referrred to in several automations/climates/sensors
-  - Popup, on most chips in room-cards,, the
+  - area-cards, one card pr area with colored chips for status of most important stuff. 
+    - Then drilldown with popups
+    - status-card pr area, will gather small solutions and preferred status in those (And alert if not OK)
+  - tabbed card, one card pr "Solution"
+  - templating, change colours by entity state (see chips in area-cards)
+  - Popup, on most chips in room-cards,, 
   - (this requires BrowserMod2,, #thanksThomasLoven)
   HACS;  [Browser_mod2](https://github.com/thomasloven/hass-browser_mod) 
-<br />
 <br />
 </details>      
   
