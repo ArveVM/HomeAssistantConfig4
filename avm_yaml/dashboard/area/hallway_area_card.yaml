@@ -20,8 +20,8 @@ cards:
   - type: custom:mushroom-template-card
     primary: Hallway
     secondary: >-
-      {{states('sensor.hallway_thp_temperature') | round(1)}}°C -
-      {{states('sensor.hallway_thp_humidity') | int}}%
+      {{states('sensor.hallway_thp_temperature') | round(1,'', 19) }}°C -
+      {{states('sensor.hallway_thp_humidity') | round(0,'', 44)}}%
     icon: mdi:stairs
     entity: light.hallway_light_up1
     tap_action:
