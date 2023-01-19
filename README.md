@@ -13,12 +13,23 @@ Current concept is moving towards a 'Solution' beeing:
 
 ## Solutions overview:
 
-## 1. Yaml-dashboar/Mushroom:
+## 1. YAML-dashboard/Mushroom:
 A bit of a stretch to call std-functionality a solution, but I'm combining Yaml-dashboard with include and re-use of cards with push-entitites to card. So I'm a bit bold and calling it a Solution:
 <br />
-<details>
-  <summary>Yaml-dashboard; Easy sharing, include one card severan places, entity-inject in cards   -  (expand for details) </summary>
-[Integration - dashboard (lovelace)](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/solutions/todo.md)  create todo-list (and let other solutions poulate with tasks and status)
+<details><summary>YAML-dashboard; Easy sharing, include one card severan places, entity-inject in cards   -  (expand for details) </summary>
+
+Lovelace - Official documentation:  [Integration - dashboard (lovelace)](https://www.home-assistant.io/dashboards/dashboards/) 
+<br />
+My configuration - [lovelace.yaml](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/integrations/lovelace.yaml)  Enable both GUI and YAML-dashboard, and add menu-item
+<br />
+</details>      
+
+<br />
+<details><summary>Yaml-dashboard; Easy sharing, include one card severan places, entity-inject in cards   -  (expand for details) </summary>
+
+Lovelace - Official documentation:  [Integration - dashboard (lovelace)](https://www.home-assistant.io/dashboards/dashboards/) 
+<br />
+My configuration - [lovelace.yaml](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/integrations/lovelace.yaml)  Enable both GUI and YAML-dashboard, and add menu-item
 <br />
 </details>      
   
@@ -85,7 +96,7 @@ A bit of a stretch to call std-functionality a solution, but I'm combining Yaml-
     create action to turn off last group when power get below 80% of security treshold (to use power wanted)
     <br /> 
     </details>    
-    
+  </details>        
   - Eva HAN Instant power usage, estimate full hour 
       
 
