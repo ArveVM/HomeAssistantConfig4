@@ -3,23 +3,28 @@
 This repo contains (part of) the working Home Assistant configuration for our home. 
 Below you find an overview of the devices currently being used, blog/video posts, and other HA enthusists that provided inspiration and configs to help build this config. All of the code is free to use; I only ask that you Star this repo.
 
-
-### Current focus: 
+## Current focus: 
 - Create 'Solutions' where things are of such a standard that it is valuable to share (or I need to share to get input for my improvements,, )
 It is still work in progress, so I will only publish what is actually transformed into this new "principle".
-
-Have focused a lot this summer on home improvements outside the HA-sphere,, but used some time on UI minimalist and browser_mod popup,, to enable more info on/behind small chips/cards.
-
-
-## Solutions: 
 Current concept is moving towards a 'Solution' beeing: 
 1. ReadMe-file to present concept and show screenshots, with references 
 2. YAML-file with config  
 3. One or more yaml-files for dashboard/card/chips
 
-### Solutions overview:
+## Solutions overview:
 
-#### 1. Area-specific solutions:
+## 1. Yaml-dashboar/Mushroom:
+A bit of a stretch to call std-functionality a solution, but I'm combining Yaml-dashboard with include and re-use of cards with push-entitites to card. So I'm a bit bold and calling it a Solution:
+<br />
+<details>
+  <summary>Yaml-dashboard; Easy sharing, include one card severan places, entity-inject in cards   -  (expand for details) </summary>
+[Integration - dashboard (lovelace)](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/solutions/todo.md)  create todo-list (and let other solutions poulate with tasks and status)
+<br />
+</details>      
+  
+
+
+## 1. Area-specific solutions:
 - Kid S:
   - [Kid S - linen](https://github.com/ArveVM/HomeAssistantConfig4/tree/master/avm_yaml/packages/solutions/kids_linen.md): Settings of last changed linen, length until next, length until warning, create and complete todo 
 #### 2. General solutions:
