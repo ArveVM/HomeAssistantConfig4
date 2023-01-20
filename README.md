@@ -379,28 +379,29 @@ Only those with some level of config or interest for myself/others are documente
 - [PowerCalc](https://github.com/bramstroker/homeassistant-powercalc) - Add power-sensors and power-aggregation - my implementation; [powercalc.yaml](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/integrations/powercalc.yaml) 
 
 Huge thanks to the creators of those integrations!! 
+
 <br />
  
 ### HACS-frontend: 
 
 - [Browser_mod2](https://github.com/thomasloven/hass-browser_mod) used primarily for pop-up functionality 
-
+<br />
 
 ### HA-Add-ons:
 
 - GoogleDrive backup
-
+<br />
 
 ### unRaid Docker "Add-ons":
+
 - AdGuard
 - Zigbee2mqtt
 - Mosquitto (mqtt-broker)
 - Ngnix-reverse-proxy
 - Frigate (NVR)
 - VS-code (for unRaid Dockers)
-- 
-
 <br />
+
 OLD LISTING OF INTEGRATIONS/ADDONS (need a bit of a cleanup):
 
 | Type      | Name                                       | Description/purpose |
@@ -416,6 +417,8 @@ OLD LISTING OF INTEGRATIONS/ADDONS (need a bit of a cleanup):
 |HACS-int   | [ OpenPlantbook](https://github.com/Olen/home-assistant-openplantbook) | Let Plant get data from openplantbook, input to thresholds
 |HACS-card  | [ Flower Card](https://github.com/Olen/lovelace-flower-card/) | Present plant in card, showing name, picture, thresholds
 
+<br />
+<br />
 
 ## 5. General info:
 
@@ -423,13 +426,14 @@ OLD LISTING OF INTEGRATIONS/ADDONS (need a bit of a cleanup):
 One last thing. Everything in this configuration is a combination of the things I want out of a home automation system flavored with the inspiration from others using Home Assistant. In some cases I took someone else's idea and made it my own, and in some I just completely stole it. So I would be remiss if I didn't acknowledge those that inpired this journey. If you like what you see here, please checkout their configs as well. I owe them thanks for sharing their work.
 
 To prove this point; I even stole this text from thejeffreystone :)
+<br />
 
 ### If not yet bored,, check out more specs/principles:
  - [Config principles:](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/blablabla/config_principles.md)
  - [Config history:](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/blablabla/config_history.md)
  - [Current setup](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/blablabla/current_setup.md)
  - Fist round of Github-config is archived [HERE](https://github.com/ArveVM/Home-Assistant_config-packages-solutions-1)
-
+<br />
 
 ### First phase Inspirators-extraordinare;
 - the HA-dev-team:  :  https://www.home-assistant.io/docs/configuration/
@@ -442,10 +446,12 @@ To prove this point; I even stole this text from thejeffreystone :)
 - mr ML and mr ØB   :  Home network setup guiding (and huge inspiration -> division shift upwards on how much cash to spend on network equipment :) )
 - mr KISS           :  longlived principle of simplicity of code, inspiration from 'back in the days' -> nolug hhelgesen  :)
 - Norway HA-Q&A-team:  Robert, Kim, Erlend, ThomassH and Kenneth in particular, but lots of guiding and great ideas from everyone!  Yjuge thanks ;) 
+<br />
+
 
 ### Further acknowlegement is added in code wherever appliacable
 ### I've tried to add references to persons or sources whenever I've stolen something ;)
-
+<br />
 
 ### Disclaimer:
 - I consider myself on the bottom part of "list of greatest coder in the HA-community", but I might introduce a "how to see the big picture" approach that newbies like me might benefit from, both on understanding functionality and easy access to working solutions from others.
