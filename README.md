@@ -364,30 +364,32 @@ As from my config-principles; addons and integrations are the enablers of functi
 Only those with some level of config or interest for myself/others are documented.
 
 ### Integrations: 
-<br />
 
 - [HA-documentation; secrets.yaml](https://www.home-assistant.io/docs/configuration/secrets/#using-secretsyaml) - setup to store passwords/area/private-info in file not shared - and use references to it in rest of config
 - [default_config.yaml](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/integrations/default_config.yaml) -  Adding/tweeeking default HA-functionality,, ,se yaml-file for config/comments - [HA-documentation](https://www.home-assistant.io/integrations/default_config/)
 - [lovelace.yaml](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/integrations/lovelace.yaml) - enable both GUI and YAML-dashboard [HA-documentation](https://www.home-assistant.io/dashboards/)
   - Documentation on how to combine GUI and YAML-dashboards: https://www.home-assistant.io/dashboards/dashboards/
-
 - [AdGuard](https://www.home-assistant.io/integrations/adguard/) Integration to AdGuard docker in unRaid - see Adguard-solution for my usage
+<br />
 <br />
 
 ### HACS-integrations: 
-<br />
 
 - [PriceAnalyzer](https://github.com/erlendsellie/priceanalyzer) - Nordpool-spot prices with a bunch of analytical input - including blueprints etc for easy adoptation - [MyDocumentation](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/integrations/priceanalyzer.md)
 - [Lovelace_gen](https://github.com/thomasloven/hass-lovelace_gen) - enable passing of variables to cards (among othther brilliant functionality)
 - [PowerCalc](https://github.com/bramstroker/homeassistant-powercalc) - Add power-sensors and power-aggregation - my implementation; [powercalc.yaml](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/integrations/powercalc.yaml) 
 
 Huge thanks to the creators of those integrations!! 
-
+<br />
+<br />
+ 
 ### HACS-frontend: 
 
 - [Browser_mod2](https://github.com/thomasloven/hass-browser_mod) used primarily for pop-up functionality 
 
-OLD LISTING OF INTEGRATIONS/ADDONS:
+
+<br />
+OLD LISTING OF INTEGRATIONS/ADDONS (need a bit of a cleanup):
 | Type      | Name                                       | Description/purpose |
 | ----------| ------------------------------------------ | ------------------- |
 |Integration| [Bluetooth](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/integrations/bluetooth.md)| Enabler for BT-functionality |
