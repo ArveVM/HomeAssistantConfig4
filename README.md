@@ -13,7 +13,7 @@
 <details><summary>Packages; Core structure</summary>
 <br />
 
-About/why:
+About:
 - I have moved ALL YAML-configuration into packages,, so it is easier to separate the two config-princpiles/types:
   - Functionality; the technical adding to HA's toolbox. So the setup/enabling HA to do stuff
     - more info under Functionality below
@@ -22,12 +22,16 @@ About/why:
     - more info under Functionality below
  
  - This means that the only thing configuration.yaml is actually doing, is loading all YAML-files in packages-folder. 
- - That is where all configuration is structured in files which are named after the actual HA-integration that is configured, or solutions
- - PS: The way the !include is set up is not random,, 
+   - The packages-folder is where all YAML-configuration is structured in files which are named after the actual HA-integration that is configured, or solutions
+ - PS: The way the !include is set up is not random!
    - It is set up so that any configuration put into any of the files in packages-folder is on same format as if it was written directly in configuration.yaml. 
    - So in principle, all code in all files in packages-folder can be cut and pasted into configuration.yaml 
      - Which makes copying from guides and friends that much easier)
      - Also I've created sub-folders for 'functionality' and 'solutions within packages-folder, but that is just to have my own logical structure. They are loaded at startup/refresh whereever they are located inside the packages-folder
+
+Why:
+ - Read my config principles :) 
+   - [My config principles](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/blablabla/config_principles.md)
  
  ---
  Required functionality:
@@ -41,24 +45,25 @@ About/why:
    - [configuration.yaml](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/configuration.yaml)
  ---
 <br />
+<br />
+</details>      
+
+<details><summary>Functionality; Integrations/Add-ons</summary>
+<br /> 
+I'm defining Functionality as:
+- the HA-core (with current config)
+- added Integrations (both GUI and YAML-added
+- HACS-integrations
+- HACS-frontend (cards)
+- Ad-dons inside HA
+- Additional Docker containers (current replacement for Add-ons inside HA, but I guess most of them can run as Add-on)
+MoreInfo: https://github.com/ArveVM/HomeAssistantConfig4/edit/master/README.md#functionality
 
 
 <br />
  
-  
-</details>      
-
-<details><summary>Functionality; Integrations/Add-ons</summary>
-  - Functionality are for me defined as: 
-    - the HA-core (with current config)
-    - added Integrations (both GUI and YAML-added
-    - HACS-integrations
-    - HACS-frontend (cards)
-    - Ad-dons inside HA
-    - Additional Docker containers (current replacement for Add-ons inside HA, but I guess most of them can run as Add-on)
-   MoreInfo: https://github.com/ArveVM/HomeAssistantConfig4/edit/master/README.md#functionality
-
-    - Create 'Solutions' where things are of such a standard that it is valuable to share (or I need to share to get input for my improvements,, ).
+<br />
+ - Create 'Solutions' where things are of such a standard that it is valuable to share (or I need to share to get input for my improvements,, ).
  It is still work in progress, so I will only publish what is actually transformed into this new "principle".
  Current concept is moving towards a 'Solution' beeing: 
       - 1. ReadMe-file to present concept and show screenshots, with references 
