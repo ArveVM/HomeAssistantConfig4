@@ -317,6 +317,7 @@ All listed, but only those with some level of config or interest for myself/othe
 ### Integrations:
 Not all integration are listed here,, just the ones with specific config or other requirement for documentation:
 - [default_config.yaml](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/integrations/default_config.yaml) | Adding default HA-functionality,, ,se yaml-file for config/comments [HA-documentation](https://www.home-assistant.io/integrations/default_config/)
+- [lovelace(dashboards)](https://www.home-assistant.io/dashboards/) 
 
 
 ### HACS-integrations: 
