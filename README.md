@@ -1,34 +1,52 @@
 # Home-Assistant_config #4
 
-This repo contains (part of) the working Home Assistant configuration for our home. 
-Below you find an overview of the devices currently being used, blog/video posts, and other HA enthusists that provided inspiration and configs to help build this config. 
-<br />
-All of the code is free to use; I only ask that you Star this repo.
+- This repo contains (part of) the working Home Assistant configuration for our home. It's clearly under development :)
+- Below you find an overview of the the configuration, and below that devices currently being used, links to blog/video posts, and other HA enthusists that provided inspiration and configs to help build this config. 
+ -All of the code is free to use; I only ask that you Star this repo.
 
 
 
-## Config overview:
+# Config overview:
 
 ## 1. Config; Packages -> Functionality -> Solutions, Compartmentalized Solutions:
 <br />
 <details><summary>Packages; Core structure</summary>
 <br />
-Packages; [Official documentation](https://www.home-assistant.io/docs/configuration/packages/)
+Packages [Official documentation](https://www.home-assistant.io/docs/configuration/packages/)
 
-I have moved ALL configuration into packages,, so it is easier to separate the two config-princpiles/types:
+- I have moved ALL YAML-configuration into packages,, so it is easier to separate the two config-princpiles/types:
+  - Functionality; the technical adding to HA's toolbox. So the setup/enabling HA to do stuff
+    - see more under Functionality below
+  - Solutions; virtual wrapper around an end-user focused solution. Collect Instructions, Dashboard/Cards and Config (inputNubers, sensors created, entities, automations etc) in one "wrapper" so that sharing is easier, and also easier future maintenance
+
+ - This means that the only thing configuration.yaml is actually doing, is loading YAML-files in packages, where all configuration is structured under files named after the actual HA-integration that is configured
+   - my configuration.yaml
+   - HA-integrations
 <br />
-Functionality; which are Integrations/addons
-Solutions; 
+<br />
+ 
+  
+</details>      
 
-- Create 'Solutions' where things are of such a standard that it is valuable to share (or I need to share to get input for my improvements,, )
-It is still work in progress, so I will only publish what is actually transformed into this new "principle".
-Current concept is moving towards a 'Solution' beeing: 
-1. ReadMe-file to present concept and show screenshots, with references 
-2. YAML-file with config  
-3. One or more yaml-files for dashboard/card/chips
+<details><summary>Functionality; Integrations/Add-ons</summary>
+  - Functionality are for me defined as: 
+    - the HA-core (with current config)
+    - added Integrations (both GUI and YAML-added
+    - HACS-integrations
+    - HACS-frontend (cards)
+    - Ad-dons inside HA
+    - Additional Docker containers (current replacement for Add-ons inside HA, but I guess most of them can run as Add-on)
+   MoreInfo: https://github.com/ArveVM/HomeAssistantConfig4/edit/master/README.md#functionality
+
+    - Create 'Solutions' where things are of such a standard that it is valuable to share (or I need to share to get input for my improvements,, ).
+ It is still work in progress, so I will only publish what is actually transformed into this new "principle".
+ Current concept is moving towards a 'Solution' beeing: 
+      - 1. ReadMe-file to present concept and show screenshots, with references 
+      - 2. YAML-file with config  
+      - 3. One or more yaml-files for dashboard/card/chips
 
 <br />
- - [Config principles:](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/blablabla/config_principles.md)
+more info here: [Config principles:](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/blablabla/config_principles.md)
 <br />
   
 </details>      
