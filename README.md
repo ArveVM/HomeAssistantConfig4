@@ -8,7 +8,7 @@
 
 # Config overview:
 
-## 1. Config; Packages -> Functionality -> Solutions -> Compartmentalized Solutions:
+## 1. Config; Packages -> Functionality -> Solutions -> Compartmentalized Solutions -> SHARE:
 
 <details><summary>Packages; Core structure</summary>
 <br />
@@ -78,10 +78,9 @@ For each Solution documented, there should be referenced which functionality is 
  ---
  
 
-
 <br />
+</details>
 
-</details>      
 <details><summary>Solutions: Main</summary> 
 <br />
  
@@ -111,8 +110,8 @@ Why:
  
 <br /> 
 <br /> 
-
 </details>      
+
 <details><summary>Solutions: Compartmentalized Solutions </summary> 
 <br />
  
@@ -122,7 +121,38 @@ Why:
      - one sub-solution for PwrCtrl_limit, which estimates total hourly usage, has settings for max load pr hour and supporting settings/definitions to autmate the shutoff of power-consumers to stay below limit  (and ofcourse a card to support it)
    - Compartmentalized solutions are currently always created with a separate card, so that any config is easy to link back to actual sub-solution-yaml-config
      - preferred visual presentation is tabbed-card, in which one can have status on one tab, settings on one, and history on one (and add more when needed)   (and ofcouse a solution can add the tabbbed card of a sub-solution in it's tabbed card :) )
+<br />
+<br />
+</details>
+
+</details>      
+<details><summary>Configuration: SHARE </summary> 
+<br />
  
+ - Have deliberately gathered YAML-config in one folder,, so it is easy to share (and not share if private or not completed)
+   - Some dockumentation in a blablabla-folder
+   - YAML-files for view/dashboards in one folder
+   - One folder with files added to configuration as 'pacakges' (integrations+solutions)
+
+ ---
+ Required Functionality:
+   - my basics: Packages
+   - File-editor My choice is VS-code
+   - secrets.yaml
+   - GitHub-repo to share to   (it's free, but you have to register an account)
+ 
+ My implementation:
+   - [AVM_yaml-folder](https://github.com/ArveVM/HomeAssistantConfig4/tree/master/avm_yaml)
+   - my own secrets.yaml - and config principle to store personally sensitive information there and refer to it, so that rest of config is sharable
+   - create public GitHub repo
+   - create .gitignore-file to remove private or sensitive stuff (also remove db and other install-like stuff - it is only config that is interresting for others
+   - use VS-code to push your seleced config to GitHub and start spreading the word and get feedback 
+     - and whenever you change code,, vs-code will suggest to update your gitHub-repo
+ 
+ ---
+
+<br />
+<br /> 
 </details>  
 <br />
 
@@ -244,13 +274,19 @@ How I use it:
   
 
 ## 3. Solutions:
-### 1. Area-specific solutions:
-- Kid S:
-  - [Kid S - linen](https://github.com/ArveVM/HomeAssistantConfig4/tree/master/avm_yaml/packages/solutions/kids_linen.md): Settings of last changed linen, length until next, length until warning, create and complete todo 
-#### 2. General solutions:
-  <br />
+
+### 3.1. Area-specific solutions:
+
+- Whole house:
+  - All lights
+  - All heaters 
+- [Kid S - linen](https://github.com/ArveVM/HomeAssistantConfig4/tree/master/avm_yaml/packages/solutions/kids_linen.md): Settings of last changed linen, length until next, length until warning, create and complete todo 
+<br />
+
+### 3.2. General solutions:
+<br />
   <details>
-    <summary>ToDo; SoC, Price-adjusted heating, Salmonella-warning   -     (expand for details)</summary>
+    <summary>ToDo; Create dynamic todo-list on other solutions status-entities</summary>
   - [ToDo](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/solutions/todo.md)  create todo-list (and let other solutions poulate with tasks and status)
   <br />
   </details>      
@@ -306,16 +342,15 @@ How I use it:
     <br /> 
     </details>    
   </details>        
-  - Eva HAN Instant power usage, estimate full hour 
-      
-
-
+- Eva HAN Instant power usage, estimate full hour 
       
 - [Plants](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/solutions/plant.md) Get standard settings for each plant, and report thresholds - and present usefull info in cards 
-- Cameras
+- [Cameras](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/solutions/cameras.md) - Frigate, connection to cameras and card-setup
 - Weather forecast
+<br />
+<br />
 
-#### 9. Backend:
+### 9. Backend:
 - [HA-stats](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/solutions/hastats.md) my HA-instance's stats of sensor-count and yaml-line-count development  
 - [AdGuard](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/solutions/adguard.md) | Enable HA-control of AdGuard |
 - Network - capacity
@@ -328,19 +363,23 @@ How I use it:
 As from my config-principles; addons and integrations are the enablers of functionality.
 Only those with some level of config or interest for myself/others are documented.
 
-### Integrations:
-Not all integration are listed here,, just the ones with specific config or other requirement for documentation:
+### Integrations: 
+<br />
 
+- [HA-documentation; secrets.yaml](https://www.home-assistant.io/docs/configuration/secrets/#using-secretsyaml) - setup to store passwords/area/private-info in file not shared - and use references to it in rest of config
 - [default_config.yaml](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/integrations/default_config.yaml) -  Adding/tweeeking default HA-functionality,, ,se yaml-file for config/comments - [HA-documentation](https://www.home-assistant.io/integrations/default_config/)
 - [lovelace.yaml](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/integrations/lovelace.yaml) - enable both GUI and YAML-dashboard [HA-documentation](https://www.home-assistant.io/dashboards/)
   - Documentation on how to combine GUI and YAML-dashboards: https://www.home-assistant.io/dashboards/dashboards/
 
+- [AdGuard](https://www.home-assistant.io/integrations/adguard/) Integration to AdGuard docker in unRaid - see Adguard-solution for my usage
+<br />
 
 ### HACS-integrations: 
-HACS-intgrations I'm using:
+<br />
 
 - [PriceAnalyzer](https://github.com/erlendsellie/priceanalyzer) - Nordpool-spot prices with a bunch of analytical input - including blueprints etc for easy adoptation - [MyDocumentation](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/integrations/priceanalyzer.md)
 - [Lovelace_gen](https://github.com/thomasloven/hass-lovelace_gen) - enable passing of variables to cards (among othther brilliant functionality)
+- [PowerCalc](https://github.com/bramstroker/homeassistant-powercalc) - Add power-sensors and power-aggregation - my implementation; [powercalc.yaml](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/integrations/powercalc.yaml) 
 
 Huge thanks to the creators of those integrations!! 
 
@@ -348,16 +387,14 @@ Huge thanks to the creators of those integrations!!
 
 - [Browser_mod2](https://github.com/thomasloven/hass-browser_mod) used primarily for pop-up functionality 
 
-
+OLD LISTING OF INTEGRATIONS/ADDONS:
 | Type      | Name                                       | Description/purpose |
 | ----------| ------------------------------------------ | ------------------- |
-|Integration| [AdGuard](https://www.home-assistant.io/integrations/adguard/)| Integration to AdGuard docker in unRaid |
 |Integration| [Bluetooth](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/integrations/bluetooth.md)| Enabler for BT-functionality |
 |Integration| [BTHome](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/integrations/bt_home.md) | BTHome-firmware flashed sensors |
 |Integration| [Inkbird](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/integrations/inkbird.md) | BT-sensors from Inkbird |
 |Integration| [Logitech Harmony Hub](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/integrations/logitech_harmony_hub.md) | Hub for remote-control |
 | Integration | [NUT](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/integrations/nut.md)  | UPS-integration
-|HACS-int   | [PowerCalc](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/integrations/powercalc.yaml) | Add power-sensors and power-aggregation (mostly used on lights) |
 |Integration| [Shelly](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/integrations/shelly.md) | Direct integration to puck's and plugs. Power monitoring, garage-doors etc |
 |Integration| [Uptime](https://www.home-assistant.io/integrations/uptime/) | Show when Home Assistant was last started
 |HACS-int   | [Plant](https://github.com/Olen/homeassistant-plant/) | Create devices of plants, get data from openplantbook, create thresholds, present in card
@@ -387,7 +424,7 @@ To prove this point; I even stole this text from thejeffreystone :)
 - mr RL             :  Hardware provider and solutions guiding
 - mr ML and mr ØB   :  Home network setup guiding (and huge inspiration -> division shift upwards on how much cash to spend on network equipment :) )
 - mr KISS           :  longlived principle of simplicity of code, inspiration from 'back in the days' -> nolug hhelgesen  :)
-- HA-Q&A-team norway:  Robert, Kim, Erlend, ThomassH and Kennet in particular, but lots of guiding and great ideas from everyone!  Yjuge thanks ;) 
+- Norway HA-Q&A-team:  Robert, Kim, Erlend, ThomassH and Kenneth in particular, but lots of guiding and great ideas from everyone!  Yjuge thanks ;) 
 
 ### Further acknowlegement is added in code wherever appliacable
 ### I've tried to add references to persons or sources whenever I've stolen something ;)
