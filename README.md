@@ -284,16 +284,13 @@ How I use it:
 <br />
 
 ### 3.2. General solutions:
-<br />
-  <details>
-    <summary>ToDo; Create dynamic todo-list on other solutions status-entities</summary>
+
+<details><summary>ToDo; Create dynamic todo-list on other solutions status-entities</summary>
   - [ToDo](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/solutions/todo.md)  create todo-list (and let other solutions poulate with tasks and status)
-  <br />
-  </details>      
-  
-  <br />
-  <details>
-    <summary>Hotwater; SoC, Price-adjusted heating, Salmonella-warning   -     (expand for details)</summary>
+<br />
+</details>
+
+<details><summary>Hotwater; SoC, Price-adjusted heating, Salmonella-warning   -     (expand for details)</summary>
   - [Hotwater SoC](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/solutions/hotwater_soc.md) Calculate hotwater-tank SoC, including charge-time and show stats  
   - [Hotwater Temp](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/solutions/hotwater_temp.md) Adjust hotwater-tank HA-thermostat according to price  
   -  salmonella - pending,,,
