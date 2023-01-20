@@ -26,19 +26,9 @@ tabs:
         - type: horizontal-stack
           cards:
             - type: custom:mushroom-template-card
-              entity: automation.outsi
+              entity: automation._outside
               primary: Dad's favourite
               secondary: ""
               icon: mdi:led-strip-variant
               tap_action:
-                action: call-service
-                service: light.turn_on
-                target:
-                  entity_id: light.livingroom_light_windowstrip
-                data:
-                  transition: 2
-                  brightness: 84
-                  rgb_color:
-                    - 255
-                    - 29
-                    - 11
+                action: more-info
