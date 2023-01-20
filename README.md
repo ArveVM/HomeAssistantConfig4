@@ -12,17 +12,37 @@
 <br />
 <details><summary>Packages; Core structure</summary>
 <br />
-Packages [Official documentation](https://www.home-assistant.io/docs/configuration/packages/)
 
+About/why:
 - I have moved ALL YAML-configuration into packages,, so it is easier to separate the two config-princpiles/types:
   - Functionality; the technical adding to HA's toolbox. So the setup/enabling HA to do stuff
-    - see more under Functionality below
-  - Solutions; virtual wrapper around an end-user focused solution. Collect Instructions, Dashboard/Cards and Config (inputNubers, sensors created, entities, automations etc) in one "wrapper" so that sharing is easier, and also easier future maintenance
+    - more info under Functionality below
+  - Solutions; virtual wrapper around an end-user focused solution. 
+    - Collect Instructions, Dashboard/Cards and Config (inputNubers, sensors created, entities, automations etc) in one "wrapper" so that sharing is easier, and also easier future maintenance
+    - more info under Functionality below
+ 
+ - This means that the only thing configuration.yaml is actually doing, is loading all YAML-files in packages-folder. 
+ - That is where all configuration is structured in files which are named after the actual HA-integration that is configured, or solutions
+ - PS: The way the !include is set up is not random,, 
+   - It is set up so that any configuration put into any of the files in packages-folder is on same format as if it was written directly in configuration.yaml. 
+   - So in principle, all code in all files in packages-folder can be cut and pasted into configuration.yaml 
+     - Which makes copying from guides and friends that much easier)
+     - Also I've created sub-folders for 'functionality' and 'solutions within packages-folder, but that is just to have my own logical structure. They are loaded at startup/refresh whereever they are located inside the packages-folder
+ 
+ ---
+ Required functionality:
+   - [HA-intgration; Packages](https://www.home-assistant.io/docs/configuration/packages/)
+   - Some way of editing yaml-files (my choice is vs-code, but FileManager addon and many others will do just fine)
+     - [VS-code-addon](https://community.home-assistant.io/t/home-assistant-community-add-on-visual-studio-code/107863)  
 
- - This means that the only thing configuration.yaml is actually doing, is loading YAML-files in packages, where all configuration is structured under files named after the actual HA-integration that is configured
-   - my configuration.yaml
-   - HA-integrations
+ 
+ My implementation:
+   - [packages-folder](https://github.com/ArveVM/HomeAssistantConfig4/tree/master/avm_yaml/packages)
+   - [configuration.yaml](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/configuration.yaml)
+ ---
 <br />
+
+
 <br />
  
   
