@@ -8,8 +8,8 @@
 
 # Config overview:
 
-## 1. Config; Packages -> Functionality -> Solutions, Compartmentalized Solutions:
-<br />
+## 1. Config; Packages -> Functionality -> Solutions -> Compartmentalized Solutions:
+
 <details><summary>Packages; Core structure</summary>
 <br />
 
@@ -48,23 +48,26 @@ Why:
 <br />
 </details>      
 
-<details><summary>Functionality; Integrations/Add-ons</summary>
+<details><summary>Functionality; Integrations/Add-ons etc.</summary>
 <br /> 
 
 I'm defining Functionality as:
-- the HA-core (with current config)
+- the HA-core ('latest' with 'default config')   (or whatever functionality is included in my [current version](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/.HA_VERSION))
 - added Integrations (both GUI and YAML-added)
 - HACS-integrations
 - HACS-frontend (cards)
 - Ad-dons inside HA
 - Additional Docker containers (current replacement for Add-ons inside HA, but I guess most of them can run as Add-on)
-- 
+<br /> 
+For each Solution documented, there should be referenced which functionality is required, if the functionality is not defined within "default HA"
+<br /> 
+
  ---
  Required Functionality:
    - my basics: Packages
-   - HA-superviced or some docker-host. I'm using both 
-     - HA-OS which enables add-ons inside HA, 
-     - and unRaid which enables equivalent of add-on-functionality as Docker-containers outside HA
+   - HA-superviced or some docker-host. I'm using :
+     - HA-OS which enables add-ons inside HA
+     - [unRaid](https://unraid.net/) (virtualization platform) which enables equivalent of add-on-functionality as Docker-containers outside HA
 
  
  My implementation:
@@ -79,7 +82,7 @@ I'm defining Functionality as:
 <br />
 
 </details>      
-<details><summary>Solutions: Solutions and sub-solutions </summary> 
+<details><summary>Solutions: Main</summary> 
 <br />
  
  - Create 'Solutions' where things are of such a standard that it is valuable to share (or I need to share to get input for my improvements,, ).
@@ -88,36 +91,47 @@ I'm defining Functionality as:
       - 1. ReadMe-file to present concept and show screenshots, with references 
       - 2. YAML-file with config  
       - 3. One or more yaml-files for dashboard/card/chips
+<br />
 
-<br />
-more info here: [Config principles:](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/blablabla/config_principles.md)
-<br />
-  
-</details>      
-<details><summary>YAML-guide: Card include, node-anchors, entity-inject   -  (expand for details) </summary>
-  YAML-tutorials:
-  
-  - Beguinner:	http://thomasloven.com/blog/2018/08/YAML-For-Nonprogrammers/
-  - Normal:	    https://spacelift.io/blog/yaml
-  - Advanced: 	https://yaml.org/spec/1.2.2/
-  
-  How I use it
-  
-  - Including dashboard-files see example [mobile dashboard include view-files](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/dashboard/mob_dashboard.yaml)
-  - node_anchors:
-    - to avoid duplicate code on card-mod 
-    - to declare entities as variables in solution-yaml-files (so it can be referrred to in several automations/climates/sensors
-  - Re-use dashboard-files, see example heater_card.yaml which is used by several room-cards by calling card
-  - (this requires Lovelace_gen,, #thanksThomasLoven)
-  HACS;  [Lovelace_gen](https://github.com/thomasloven/hass-lovelace_gen) 
-<br />
-</details>      
-*******************************************
+Why:
+ - Read my config principles :) 
+   - [My config principles](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/blablabla/config_principles.md) 
+ <br /> 
 
-## 1. YAML-dashboard/Mushroom/popup's:
-A bit of a stretch to call std-functionality a solution, but I'm combining Yaml-dashboard with include and re-use of cards with push-entitites to card. So I'm a bit bold and calling it a Solution:
+ ---
+ Required Functionality:
+   - my basics: Packages
+ 
+ My implementation:
+   - [Solutions-folder](https://github.com/ArveVM/HomeAssistantConfig4/tree/master/avm_yaml/packages/solutions)
+   - List of noteworthy solutions are here: 
+     - https://github.com/ArveVM/HomeAssistantConfig4/edit/master/README.md#solutions
+     - PS: The ones which is self-explainde or thoroughly documented by bloggers&youtubers you'll have to figure out yourself :)
+ ---
+ 
+<br /> 
+<br /> 
+
+</details>      
+<details><summary>Solutions: Compartmentalized Solutions </summary> 
 <br />
-<details><summary>YAML-dashboard; Easy sharing, include one card severan places, entity-inject in cards</summary>
+ 
+ - Create 'Sub-Solutions' where things are of such scale that it is most usefull to split a solution into several parts
+   - Example Power-control:
+     - One sub-solution for PwrCtrl_use, which have a solution-yaml configuring current total usage and summary into grouping of power-consumptions, and a card-file with visualization of that one
+     - one sub-solution for PwrCtrl_limit, which estimates total hourly usage, has settings for max load pr hour and supporting settings/definitions to autmate the shutoff of power-consumers to stay below limit  (and ofcourse a card to support it)
+   - Compartmentalized solutions are currently always created with a separate card, so that any config is easy to link back to actual sub-solution-yaml-config
+     - preferred visual presentation is tabbed-card, in which one can have status on one tab, settings on one, and history on one (and add more when needed)   (and ofcouse a solution can add the tabbbed card of a sub-solution in it's tabbed card :) )
+ 
+ </details>  
+ 
+<br />
+<br />
+
+## 2. Presentation; YAML-dashboard/Mushroom/Popup's:
+I'm combining GUI and YAML-dashboard with include and re-use of cards with push-entitites to card. Also heavily using YAML-node anchors in both solutions and dashboards/card, so some guidance on that is added here:
+<br />
+<details><summary>Both GUI and YAML-dashboard; Easy sharing, include one card several places, entity-inject in cards</summary>
 <br />
 Lovelace - Official documentation:  [Integration - dashboard (lovelace)](https://www.home-assistant.io/dashboards/dashboards/) 
 <br />
@@ -161,8 +175,8 @@ My configuration - [lovelace.yaml](https://github.com/ArveVM/HomeAssistantConfig
 </details>      
   
 
-
-## 1. Area-specific solutions:
+## 3. Solutions:
+### 1. Area-specific solutions:
 - Kid S:
   - [Kid S - linen](https://github.com/ArveVM/HomeAssistantConfig4/tree/master/avm_yaml/packages/solutions/kids_linen.md): Settings of last changed linen, length until next, length until warning, create and complete todo 
 #### 2. General solutions:
