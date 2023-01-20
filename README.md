@@ -176,7 +176,7 @@ How I use it:
  
 </details>      
 
-<details><summary>YAML-guide: Node-anchors, entity-inject   -  (expand for details) </summary>
+<details><summary>YAML-guide: Node-anchors, "entity-inject"</summary>
 <br />
  YAML-tutorials:
   
@@ -189,19 +189,19 @@ How I use it:
   - node_anchors:
     - to avoid duplicate code on card-mod 
     - to declare entities as variables in solution-yaml-files (so it can be referrred to in several automations/climates/sensors
-  - Re-use dashboard-files, see example heater_card.yaml which is used by several room-cards by calling card
-  - (this requires Lovelace_gen,, #thanksThomasLoven)
-  HACS;  [Lovelace_gen](https://github.com/thomasloven/hass-lovelace_gen) 
+  - Re-use dashboard-files, "entity-inject", see example heater_card.yaml which is used by several room-cards by calling heater_card with different entities
+    - [Lovelace_gen; 'passing arguments to included files'](https://github.com/thomasloven/hass-lovelace_gen#passing-arguments-to-included-files)
+      #thanksThomasLoven
 <br />
  
  ---
  Required Functionality:
    - my basics: Packages
-   - [HACS-integration; Lovelace_gen](https://github.com/thomasloven/hass-lovelace_gen) - enable passint of variables to cards 
+   - HACS; Lovelace_gen
  
  My implementation:
    - use "!include" to map/reuse files; [mob_dashboard.yaml](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/dashboard/mob_dashboard.yaml) 
-   - node_anchor to re-use code; 
+   - node_anchor to re-use code
 
  --- 
 <br />
@@ -314,6 +314,19 @@ How I use it:
 As from my config-principles; addons and integrations are the enablers of functionality.
 All listed, but only those with some level of config or interest for myself/others are documented.
 
+### Integrations:
+Not all integration are listed here,, just the ones with specific config or other requirement for documentation:
+- [default_config.yaml](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/integrations/default_config.yaml) | Adding default HA-functionality,, ,se yaml-file for config/comments [HA-documentation](https://www.home-assistant.io/integrations/default_config/)
+
+
+### HACS-integrations: 
+Complete list of all HACS-intgrations I've installed:
+- [Lovelace_gen](https://github.com/thomasloven/hass-lovelace_gen) - enable passing of variables to cards (among othther brilliant functionality)
+
+
+### HACS-frontend: 
+
+
 | Type      | Name                                       | Description/purpose |
 | ----------| ------------------------------------------ | ------------------- |
 |Integration| [AdGuard](https://www.home-assistant.io/integrations/adguard/)| Integration to AdGuard docker in unRaid |
@@ -321,7 +334,6 @@ All listed, but only those with some level of config or interest for myself/othe
 |HACS-int   | [Browser mod](https://github.com/thomasloven/hass-browser_mod) | v2.x - used primarily for pop-up functionality |
 |HACS-int   | [PriceAnalyzer](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/integrations/priceanalyzer.md) | Nordpool-spot prices with a bunch of analytical input - including blueprints etc for easy adoptation |
 |Integration| [BTHome](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/integrations/bt_home.md) | BTHome-firmware flashed sensors |
-|Integration| [Default config](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/integrations/default_config.yaml) | Adding default HA-functionality,, ,se yaml-file for config/comments |
 |Integration| [Inkbird](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/integrations/inkbird.md) | BT-sensors from Inkbird |
 |Integration| [Logitech Harmony Hub](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/integrations/logitech_harmony_hub.md) | Hub for remote-control |
 |Dashboard  | [UI-/YAML-dashboards](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/integrations/lovelace_yaml_dashboards.md) | Enable both UI- and YAML-dashboards |
