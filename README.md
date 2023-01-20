@@ -371,7 +371,6 @@ Only those with some level of config or interest for myself/others are documente
   - Documentation on how to combine GUI and YAML-dashboards: https://www.home-assistant.io/dashboards/dashboards/
 - [AdGuard](https://www.home-assistant.io/integrations/adguard/) Integration to AdGuard docker in unRaid - see Adguard-solution for my usage
 <br />
-<br />
 
 ### HACS-integrations: 
 
@@ -381,15 +380,29 @@ Only those with some level of config or interest for myself/others are documente
 
 Huge thanks to the creators of those integrations!! 
 <br />
-<br />
  
 ### HACS-frontend: 
 
 - [Browser_mod2](https://github.com/thomasloven/hass-browser_mod) used primarily for pop-up functionality 
 
 
+### HA-Add-ons:
+
+- GoogleDrive backup
+
+
+### unRaid Docker "Add-ons":
+- AdGuard
+- Zigbee2mqtt
+- Mosquitto (mqtt-broker)
+- Ngnix-reverse-proxy
+- Frigate (NVR)
+- VS-code (for unRaid Dockers)
+- 
+
 <br />
 OLD LISTING OF INTEGRATIONS/ADDONS (need a bit of a cleanup):
+
 | Type      | Name                                       | Description/purpose |
 | ----------| ------------------------------------------ | ------------------- |
 |Integration| [Bluetooth](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/integrations/bluetooth.md)| Enabler for BT-functionality |
