@@ -143,8 +143,7 @@ By using YAML-dashboard it opens up a few more tools one can use:
  ---
  Required Functionality:
    - my basics: Packages
-   - [HA-Integration; Lovelace(dashboards)](https://www.home-assistant.io/dashboards/) 
-     - Documentation on how to combine GUI and YAML-dashboards: https://www.home-assistant.io/dashboards/dashboards/
+   - HA-integration: Lovelace
  
  My implementation:
    - [Dashboard-folder](https://github.com/ArveVM/HomeAssistantConfig4/tree/master/avm_yaml/dashboard)
@@ -214,17 +213,32 @@ How I use it:
   Trying to make one card pr "Solution", so there is one tab for status, one for config and one for histori
   see example on heater_card.yaml
   
-  How I use it:
   
-  - area-cards, one card pr area with colored chips for status of most important stuff. 
+<br />
+ 
+ 
+ ---
+ Required Functionality:
+   - my basics: Packages
+   - HACS; Mushroom
+   - HACS; Browser_mod (v2)
+   - HACS; stack-in-card
+   - HACS; tabbed-card
+ 
+ My implementation:
+   - use "!include" to map/reuse files; [mob_dashboard.yaml](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/dashboard/mob_dashboard.yaml) 
+   - node_anchor to re-use code
+   - area-cards, one card pr area with colored chips for status of most important stuff. 
     - Then drilldown with popups
     - status-card pr area, will gather small solutions and preferred status in those (And alert if not OK)
   - tabbed card, one card pr "Solution"
   - templating, change colours by entity state (see chips in area-cards)
   - Popup, on most chips in room-cards,, 
   - (this requires BrowserMod2,, #thanksThomasLoven)
-  HACS;  [Browser_mod2](https://github.com/thomasloven/hass-browser_mod) 
-<br />
+  
+
+ --- 
+ 
 </details>      
 <br />
   
@@ -307,37 +321,41 @@ How I use it:
 - Network - capacity
 - Server - load/capacity
 
-
-
+<br /> 
+<br /> 
 
 ## Functionality: 
 As from my config-principles; addons and integrations are the enablers of functionality.
-All listed, but only those with some level of config or interest for myself/others are documented.
+Only those with some level of config or interest for myself/others are documented.
 
 ### Integrations:
 Not all integration are listed here,, just the ones with specific config or other requirement for documentation:
-- [default_config.yaml](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/integrations/default_config.yaml) | Adding default HA-functionality,, ,se yaml-file for config/comments [HA-documentation](https://www.home-assistant.io/integrations/default_config/)
-- [lovelace(dashboards)](https://www.home-assistant.io/dashboards/) 
+
+- [default_config.yaml](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/integrations/default_config.yaml) -  Adding/tweeeking default HA-functionality,, ,se yaml-file for config/comments - [HA-documentation](https://www.home-assistant.io/integrations/default_config/)
+- [lovelace.yaml](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/integrations/lovelace.yaml) - enable both GUI and YAML-dashboard [HA-documentation](https://www.home-assistant.io/dashboards/)
+  - Documentation on how to combine GUI and YAML-dashboards: https://www.home-assistant.io/dashboards/dashboards/
 
 
 ### HACS-integrations: 
-Complete list of all HACS-intgrations I've installed:
+HACS-intgrations I'm using:
+
+- [PriceAnalyzer](https://github.com/erlendsellie/priceanalyzer) - Nordpool-spot prices with a bunch of analytical input - including blueprints etc for easy adoptation - [MyDocumentation](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/integrations/priceanalyzer.md)
 - [Lovelace_gen](https://github.com/thomasloven/hass-lovelace_gen) - enable passing of variables to cards (among othther brilliant functionality)
 
+Huge thanks to the creators of those integrations!! 
 
 ### HACS-frontend: 
+
+- [Browser_mod2](https://github.com/thomasloven/hass-browser_mod) used primarily for pop-up functionality 
 
 
 | Type      | Name                                       | Description/purpose |
 | ----------| ------------------------------------------ | ------------------- |
 |Integration| [AdGuard](https://www.home-assistant.io/integrations/adguard/)| Integration to AdGuard docker in unRaid |
 |Integration| [Bluetooth](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/integrations/bluetooth.md)| Enabler for BT-functionality |
-|HACS-int   | [Browser mod](https://github.com/thomasloven/hass-browser_mod) | v2.x - used primarily for pop-up functionality |
-|HACS-int   | [PriceAnalyzer](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/integrations/priceanalyzer.md) | Nordpool-spot prices with a bunch of analytical input - including blueprints etc for easy adoptation |
 |Integration| [BTHome](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/integrations/bt_home.md) | BTHome-firmware flashed sensors |
 |Integration| [Inkbird](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/integrations/inkbird.md) | BT-sensors from Inkbird |
 |Integration| [Logitech Harmony Hub](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/integrations/logitech_harmony_hub.md) | Hub for remote-control |
-|Dashboard  | [UI-/YAML-dashboards](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/integrations/lovelace_yaml_dashboards.md) | Enable both UI- and YAML-dashboards |
 | Integration | [NUT](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/integrations/nut.md)  | UPS-integration
 |HACS-int   | [PowerCalc](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/integrations/powercalc.yaml) | Add power-sensors and power-aggregation (mostly used on lights) |
 |Integration| [Shelly](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/integrations/shelly.md) | Direct integration to puck's and plugs. Power monitoring, garage-doors etc |
@@ -369,8 +387,9 @@ To prove this point; I even stole this text from thejeffreystone :)
 - mr RL             :  Hardware provider and solutions guiding
 - mr ML and mr ØB   :  Home network setup guiding (and huge inspiration -> division shift upwards on how much cash to spend on network equipment :) )
 - mr KISS           :  longlived principle of simplicity of code, inspiration from 'back in the days' -> nolug hhelgesen  :)
+- HA-Q&A-team norway:  Robert, Kim, Erlend, ThomassH and Kennet in particular, but lots of guiding and great ideas from everyone!  Yjuge thanks ;) 
 
-### Further acknowlegement is added in code,,
+### Further acknowlegement is added in code wherever appliacable
 ### I've tried to add references to persons or sources whenever I've stolen something ;)
 
 
