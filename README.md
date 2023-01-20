@@ -155,8 +155,30 @@ By using YAML-dashboard it opens up a few more tools one can use:
 <br />
  
 </details>      
-<details><summary>YAML-guide: Card include, node-anchors, entity-inject   -  (expand for details) </summary>
-  YAML-tutorials:
+<details><summary>YAML-dashboard-guide: Card include </summary>
+<br />
+How I use it:
+  - Including dashboard-files see to add cards/viwes wherever you want,, se example in "My implementation"
+  - No additional functionality required, using standard [!include functionality](https://www.home-assistant.io/docs/configuration/splitting_configuration/)  
+<br />
+ 
+ ---
+ Required Functionality:
+   - YAML-dashboard enabled (see above)
+ 
+ My implementation:
+   - use "!include" to map/reuse views; [mob_dashboard.yaml](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/dashboard/mob_dashboard.yaml) 
+   - use "!include" to map/reuse cards; [home_mob_view.yaml](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/dashboard/views/home_mob_view.yaml) - adding multiple area-cards in one view 
+
+ --- 
+<br />
+<br />
+ 
+</details>      
+
+<details><summary>YAML-guide: Node-anchors, entity-inject   -  (expand for details) </summary>
+<br />
+ YAML-tutorials:
   
   - Beguinner:	http://thomasloven.com/blog/2018/08/YAML-For-Nonprogrammers/
   - Normal:	    https://spacelift.io/blog/yaml
@@ -164,7 +186,6 @@ By using YAML-dashboard it opens up a few more tools one can use:
   
   How I use it
   
-  - Including dashboard-files see example [mobile dashboard include view-files](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/dashboard/mob_dashboard.yaml)
   - node_anchors:
     - to avoid duplicate code on card-mod 
     - to declare entities as variables in solution-yaml-files (so it can be referrred to in several automations/climates/sensors
@@ -172,7 +193,23 @@ By using YAML-dashboard it opens up a few more tools one can use:
   - (this requires Lovelace_gen,, #thanksThomasLoven)
   HACS;  [Lovelace_gen](https://github.com/thomasloven/hass-lovelace_gen) 
 <br />
+ 
+ ---
+ Required Functionality:
+   - my basics: Packages
+   - [HACS-integration; Lovelace_gen](https://github.com/thomasloven/hass-lovelace_gen) - enable passint of variables to cards 
+ 
+ My implementation:
+   - use "!include" to map/reuse files; [mob_dashboard.yaml](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/dashboard/mob_dashboard.yaml) 
+   - node_anchor to re-use code; 
+
+ --- 
+<br />
+<br />
+ 
 </details>      
+
+
 <details><summary>Mushroom/popup's: Card-in-card, templating colours, popups, tabbed-card </summary>
   Trying to make one card pr "Solution", so there is one tab for status, one for config and one for histori
   see example on heater_card.yaml
