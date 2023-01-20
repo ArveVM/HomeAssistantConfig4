@@ -123,9 +123,7 @@ Why:
    - Compartmentalized solutions are currently always created with a separate card, so that any config is easy to link back to actual sub-solution-yaml-config
      - preferred visual presentation is tabbed-card, in which one can have status on one tab, settings on one, and history on one (and add more when needed)   (and ofcouse a solution can add the tabbbed card of a sub-solution in it's tabbed card :) )
  
- </details>  
- 
-<br />
+</details>  
 <br />
 
 ## 2. Presentation; YAML-dashboard/Mushroom/Popup's:
@@ -133,11 +131,29 @@ I'm combining GUI and YAML-dashboard with include and re-use of cards with push-
 <br />
 <details><summary>Both GUI and YAML-dashboard; Easy sharing, include one card several places, entity-inject in cards</summary>
 <br />
-Lovelace - Official documentation:  [Integration - dashboard (lovelace)](https://www.home-assistant.io/dashboards/dashboards/) 
+ 
+By using YAML-dashboard it opens up a few more tools one can use:
+ - easier copy/share with others (because the card-yaml-file is actually automagically uploadable to GitHub)
+ - Can include one card in several views  ( !include-functionality enabled in YAML-dashboards)
+ - Can use node-anchors easily for reuse of card-mod etc  (also applicable for gui-mode??)
+ - Can re-use same card with mulitiple entities (see description below)
+ 
 <br />
-My configuration - [lovelace.yaml](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/integrations/lovelace.yaml)  Enable both GUI and YAML-dashboard, and add menu-item
+ 
+ ---
+ Required Functionality:
+   - my basics: Packages
+   - [HA-Integration; Lovelace(dashboards)](https://www.home-assistant.io/dashboards/) 
+     - Documentation on how to combine GUI and YAML-dashboards: https://www.home-assistant.io/dashboards/dashboards/
+ 
+ My implementation:
+   - [Dashboard-folder](https://github.com/ArveVM/HomeAssistantConfig4/tree/master/avm_yaml/dashboard)
+   - [lovelace.yaml](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/integrations/lovelace.yaml)
+     - adding YAML-config in addition to GUI to my setup
+
+ ---
 <br />
-  
+ 
 </details>      
 <details><summary>YAML-guide: Card include, node-anchors, entity-inject   -  (expand for details) </summary>
   YAML-tutorials:
@@ -173,6 +189,7 @@ My configuration - [lovelace.yaml](https://github.com/ArveVM/HomeAssistantConfig
   HACS;  [Browser_mod2](https://github.com/thomasloven/hass-browser_mod) 
 <br />
 </details>      
+<br />
   
 
 ## 3. Solutions:
