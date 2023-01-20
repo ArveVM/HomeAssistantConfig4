@@ -34,7 +34,7 @@ Why:
    - [My config principles](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/blablabla/config_principles.md)
  
  ---
- Required functionality:
+ Required Functionality:
    - [HA-intgration; Packages](https://www.home-assistant.io/docs/configuration/packages/)
    - Some way of editing yaml-files (my choice is vs-code, but FileManager addon and many others will do just fine)
      - [VS-code-addon](https://community.home-assistant.io/t/home-assistant-community-add-on-visual-studio-code/107863)  
@@ -50,19 +50,38 @@ Why:
 
 <details><summary>Functionality; Integrations/Add-ons</summary>
 <br /> 
+
 I'm defining Functionality as:
 - the HA-core (with current config)
-- added Integrations (both GUI and YAML-added
+- added Integrations (both GUI and YAML-added)
 - HACS-integrations
 - HACS-frontend (cards)
 - Ad-dons inside HA
 - Additional Docker containers (current replacement for Add-ons inside HA, but I guess most of them can run as Add-on)
-MoreInfo: https://github.com/ArveVM/HomeAssistantConfig4/edit/master/README.md#functionality
+- 
+ ---
+ Required Functionality:
+   - my basics: Packages
+   - HA-superviced or some docker-host. I'm using both 
+     - HA-OS which enables add-ons inside HA, 
+     - and unRaid which enables equivalent of add-on-functionality as Docker-containers outside HA
+
+ 
+ My implementation:
+   - [Integrations-folder](https://github.com/ArveVM/HomeAssistantConfig4/tree/master/avm_yaml/packages/integrations)
+   - List of noteworthy functionality is here: 
+     - https://github.com/ArveVM/HomeAssistantConfig4/edit/master/README.md#functionality
+     - PS: The ones which is self-explainde or thoroughly documented by bloggers&youtubers you'll have to figure out yourself :)
+ ---
+ 
 
 
+<br />
+
+</details>      
+<details><summary>Solutions: Solutions and sub-solutions </summary> 
 <br />
  
-<br />
  - Create 'Solutions' where things are of such a standard that it is valuable to share (or I need to share to get input for my improvements,, ).
  It is still work in progress, so I will only publish what is actually transformed into this new "principle".
  Current concept is moving towards a 'Solution' beeing: 
