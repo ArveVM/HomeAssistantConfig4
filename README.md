@@ -350,7 +350,7 @@ How I use it:
 <br />
 <br />
 
-### 9. Backend:
+### 3.9. Backend:
 - [HA-stats](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/solutions/hastats.md) my HA-instance's stats of sensor-count and yaml-line-count development  
 - [AdGuard](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/solutions/adguard.md) | Enable HA-control of AdGuard |
 - Network - capacity
@@ -359,7 +359,7 @@ How I use it:
 <br /> 
 <br /> 
 
-## Functionality: 
+## 4. Functionality: 
 As from my config-principles; addons and integrations are the enablers of functionality.
 Only those with some level of config or interest for myself/others are documented.
 
@@ -417,6 +417,8 @@ OLD LISTING OF INTEGRATIONS/ADDONS (need a bit of a cleanup):
 |HACS-card  | [ Flower Card](https://github.com/Olen/lovelace-flower-card/) | Present plant in card, showing name, picture, thresholds
 
 
+## 5. General info:
+
 ### Guidance for others:
 One last thing. Everything in this configuration is a combination of the things I want out of a home automation system flavored with the inspiration from others using Home Assistant. In some cases I took someone else's idea and made it my own, and in some I just completely stole it. So I would be remiss if I didn't acknowledge those that inpired this journey. If you like what you see here, please checkout their configs as well. I owe them thanks for sharing their work.
 
@@ -450,4 +452,3 @@ To prove this point; I even stole this text from thejeffreystone :)
 - English is NOT my native language - so if in doubt of what I'm thinking, please ask ;). And in advance; please excuse any verbal abuse or bad language,, I somethimes forget that I don't controll who read what I post online :(
 - Please verify whatever you take away from my configuration compared to others,, there are so many good examples out theere (and a few of them are listed below).
 - "My config principles" might seem obvious to the experienced HA user,, but from my perspective it gives a good overview of some ground-rules that give me structure and ability to add solution-based "packages" or share with others.
-
