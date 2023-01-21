@@ -89,7 +89,7 @@ cards:
       - type: template
         entity: binary_sensor.bathroom2_room_status
         icon: mdi:hospital
-        icon_color: "{{ 'green' if is_state(entity, 'off') else 'red' }}"
+        icon_color: "{{ 'green' if is_state(entity, 'off') else 'red' }}" 
         card_mod: *card_mod_chip_style
         hold_action:
           action: more-info
