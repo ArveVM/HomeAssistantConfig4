@@ -5,26 +5,21 @@
 - All of the code is free to use; I only ask that you Star this repo.
 <br />
 
-# Rable of contents:
-
-[1. Config-"backend"](#1-config-packages---functionality---solutions---compartmentalized-solutions---share)         - about the buildup of my configuration
-<br />
-[2. Presentation](#2-presentation-yaml-dashboardmushroompopups)                  - about my method(s) for Dashboard; include&reuse
-<br />
-[3. Solutions](#3-solutions)                        - about my method(s) for grouping "everything HA" in Solutions
-<br />
-[4. Functionality](#4-functionality)                  - about added functionality required to produce Solutions
-<br />
-[5. General info](#5-general-info)                   - yeah, some blabla
-<br />
-[6. Mentors & Inspirators](#6-mentors--inspirators)   - tribute to a bunch of people!!
-<br />
-[7. Disclaimer](#7-disclaimer)                      - because everyone has one ;)
+## Table of contents:
+|Chapters   |Description/purpose |
+| ----------| ----------------------------- |
+|[1. Config-"backend"](#1-configuration)| About the buildup of my configuration, <br /> Packages -> Functionality -> Solutions -> Compartmentalized-solutions -> share |
+|[2. Presentation](#2-presentation)     | YAML-dashboard, Mushroom and Popup's |
+|[3. Solutions](#3-solutions)   |About my method(s) for grouping "everything HA" in Solutions|
+|[4. Functionality](#4-functionality)|About added functionality required to produce Solutions|
+|[5. General info](#5-general-info)|Yeah, some blabla|
+|[6. Mentors & Inspirators](#6-mentors--inspirators)|Well earned tribute to a bunch of people!!|
+|[7. Disclaimer](#7-disclaimer)|Because everyone has one ;)|
 <br />
 <br />
 <br />
 
-## 1. Config; Packages -> Functionality -> Solutions -> Compartmentalized Solutions -> SHARE:
+## 1. Configuration:
 
 <details><summary>Packages; Core structure</summary>
 <br />
@@ -177,7 +172,8 @@ Why:
 <br />
 <br />
 
-## 2. Presentation; YAML-dashboard/Mushroom/Popup's:
+## 2. Presentation:
+#### YAML-dashboard, Mushroom and Popup's:
 I'm combining GUI and YAML-dashboard with include and re-use of cards with push-entitites to card. Also heavily using YAML-node anchors in both solutions and dashboards/card, so some guidance on that is added here:
 <br />
 <details><summary>Both GUI and YAML-dashboard; Easy sharing, include one card several places, entity-inject in cards</summary>
