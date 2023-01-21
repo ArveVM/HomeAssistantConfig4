@@ -367,6 +367,8 @@ Only those with some level of config or interest for myself/others are documente
 
 - [HA-documentation; secrets.yaml](https://www.home-assistant.io/docs/configuration/secrets/#using-secretsyaml) - setup to store passwords/area/private-info in file not shared - and use references to it in rest of config
 - [default_config.yaml](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/integrations/default_config.yaml) -  Adding/tweeeking default HA-functionality,, ,se yaml-file for config/comments - [HA-documentation](https://www.home-assistant.io/integrations/default_config/)
+- [template](https://www.home-assistant.io/integrations/template/) - Create sensors based upon all sorts of other sensor-data/entities 
+  - [Advanced Templating](https://www.home-assistant.io/integrations/template/) - is also used directly in triggers/states in automations/script/dashboards etc 
 - [lovelace.yaml](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/integrations/lovelace.yaml) - enable both GUI and YAML-dashboard [HA-documentation](https://www.home-assistant.io/dashboards/)
   - Documentation on how to combine GUI and YAML-dashboards: https://www.home-assistant.io/dashboards/dashboards/
 - [AdGuard](https://www.home-assistant.io/integrations/adguard/) Integration to AdGuard docker in unRaid - see Adguard-solution for my usage
@@ -454,7 +456,7 @@ To prove this point; I even stole this text from thejeffreystone :)
 - mr KISS - longlived principle of simplicity of code, inspiration from 'back in the days' -> nolug hhelgesen  :)
 <br />
 
-#### v2 
+#### v2 config:
 - Mentor#1 - mr RR;  HA mentor, triggering splitting configuration and therefore the original spark that has lead to Functionality&Solutions - hjuge thanks ;)
 - Mentor#2 - Norway HA-Q&A-team;  Robert, Kim, Erlend, ThomassH and Kenneth in particular, but lots of guiding and great ideas from everyone!  Yjuge thanks ;) 
 - [the HA-dev-team:](https://www.home-assistant.io/docs/configuration/) - great work both in functionality - documentation and community!
@@ -466,7 +468,7 @@ To prove this point; I even stole this text from thejeffreystone :)
 - mr ML and mr ØB   :  Home network setup guiding (and huge inspiration -> division shift upwards on how much cash to spend on network equipment :) )
 <br />
 
-#### v3 Inspirators-extraordinare;
+#### v3 config:
 - Mentor#1 - mr RR;  HA mentor, triggering splitting configuration and therefore the original spark that has lead to Functionality&Solutions - hjuge thanks ;)
 - Mentor#2 - Norway HA-Q&A-team;  Robert, Kim, Erlend, ThomassH and Kenneth in particular, but lots of guiding and great ideas from everyone!  Yjuge thanks ;) 
 - [the HA-dev-team:](https://www.home-assistant.io/docs/configuration/) - great work both in functionality - documentation and community! Still one of my most important sources
@@ -479,7 +481,7 @@ To prove this point; I even stole this text from thejeffreystone :)
 - [Rypeveien](https://github.com/rypeveien/haConfig) - GitHub-repo of his config - great examples of templating, automations and structure - thanks for sharing ;)
 <br />
 
-#### v4 Inspirators-extraordinare;
+#### v4 config:
 - Mentor#1 - mr RR;  HA mentor, triggering splitting configuration and therefore the original spark that has lead to Functionality&Solutions - hjuge thanks ;)
 - Mentor#2 - Norway HA-Q&A-team;  Robert, Kim, Erlend, ThomassH and Kenneth in particular, but lots of guiding and great ideas from everyone!  Yjuge thanks ;) 
 - [the HA-dev-team:](https://www.home-assistant.io/docs/configuration/) - great work both in functionality - documentation and community! Still one of my most important sources
