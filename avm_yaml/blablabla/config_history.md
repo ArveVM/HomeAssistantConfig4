@@ -83,7 +83,7 @@ January 2022; Upgrade of EVERYTHING, both server/network and HA-configuration
 - new config-structure; 
   - initially inspired by mrRR; started splitting up configuration:
     - https://www.home-assistant.io/docs/configuration/splitting_configuration/
-    - created folder Entities and sub-folders for each type functionality (sensor, template, utilitymeters) with a loooot of help and guiding from Ronny !! 
+    - created folder Entities and sub-folders for each type functionality (sensor, template, utilitymeters) with a loooot of help and guiding from mrRR !! 
     - inspired by Franck Nijhof - started removing all functionality into their respective integration,,, that gave med understanding of functionality,, but I lost overview of the 'solution' i was trying to make work
     - got thoroughly frustrated by the "a bit here and a bit there - where do I see the fulll picture?")
 <br />
