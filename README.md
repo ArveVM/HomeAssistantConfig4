@@ -452,7 +452,8 @@ To prove this point; I even stole this text from thejeffreystone :)
 <br />
 <br />
 
-## 6. Mentors & Inspirators throughout my HA-journey;
+## 6. Mentors & Inspirators
+I feel blessed by the amount of help, guiding and direct one2one support from a lot of peoples and groups, so just trying to acknowledge some of the support and guidance I've got in this section. The HA-journey I've managed would not have been possible without you ;)
 - By Inspirator i mean someone that has inspired/guided in a particular topic. 
 - My Mentor i mean someone that has given a wider perspective and opened up my horizon to new possibilities - and at the same time beeing credible on the actual possibility of myself beeing able to execute (or at least help me on the journey)
 
