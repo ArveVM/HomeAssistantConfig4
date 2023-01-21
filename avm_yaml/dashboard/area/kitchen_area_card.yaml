@@ -84,6 +84,7 @@ cards:
               --chip-background: none;
               --chip-spacing: 0;
               margin-left: -10px;
+            }
         hold_action:
           action: fire-dom-event
           browser_mod:

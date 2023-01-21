@@ -19,16 +19,19 @@ tabs:
 
   - attributes:
       label: Timer
-      icon: mdi:movie
+      icon: mdi:timer-sand
     card:
       type: vertical-stack
       cards:
         - type: horizontal-stack
           cards:
-            - type: custom:mushroom-template-card
-              entity: automation._outside
-              primary: Dad's favourite
-              secondary: ""
-              icon: mdi:led-strip-variant
-              tap_action:
-                action: more-info
+            - type: custom:mushroom-entity-card
+              entity: binary_sensor.outside_lights_schedule_on
+              icon: mdi:home-assistant
+              primary_info: state
+              secondary_info: name
+            - type: custom:mushroom-entity-card
+              entity: automation.outside_lights_auto_on_off
+              icon: mdi:home-assistant
+              primary_info: state
+              secondary_info: name

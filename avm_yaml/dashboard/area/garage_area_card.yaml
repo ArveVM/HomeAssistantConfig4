@@ -4,8 +4,8 @@
 homeassistant:
   customize:
     package.node_anchors:
-      temp1: &temp1 sensor.bathroom2_thp_temperature
-      humidity1: &humidity1 sensor.bathroom2_thp_humidity
+      temp1: &temp1 sensor.garage_thp_temperature
+      humidity1: &humidity1 sensor.garage_thp_humidity
 
 type: custom:stack-in-card
 card_mod:
@@ -24,8 +24,8 @@ cards:
   - type: custom:mushroom-template-card
     primary: Garage
     secondary: >-
-      {{states('sensor.bathroom2_thp_temperature') | round(1,'', 11) }}°C -
-      {{states('sensor.bathroom2_thp_humidity') | round(0,'', 55)}}%
+      {{states('sensor.garage_thp_temperature') | round(1,'', 11) }}°C -
+      {{states('sensor.garage_thp_humidity') | round(0,'', 55)}}%
     icon: mdi:garage
     #entity: light.loft
     tap_action:
@@ -55,10 +55,9 @@ cards:
           --chip-spacing: 0;
         }
     chips:
-      - type: template
-        entity: binary_sensor.bathroom2_room_status
-        icon: mdi:hospital
-        icon_color: "{{ 'green' if is_state(entity, 'off') else 'red' }}"
+      - type: action
+        icon_color: disabled
+        icon: mdi:thermometer
         card_mod: &card_mod_chip_style
           style: |
             ha-card {
@@ -67,6 +66,31 @@ cards:
               --chip-spacing: 0;
               margin-left: -10px;
             }
+        tap_action:
+          action: fire-dom-event
+          browser_mod:
+            service: browser_mod.popup
+            data:
+              content:
+                type: vertical-stack
+                cards:
+                  - !include
+                    - ../solutions/house_temp_comp_card.yaml
+                    - entity: *temp1
+                      entity_compare: sensor.outside_netatmo_temperature
+                  - !include
+                    - ../solutions/house_humidity_comp_card.yaml
+                    - entity: *humidity1
+                      entity_compare: sensor.outside_netatmo_humidity
+                        
+                        
+                        #*humidity1
+
+      - type: template
+        entity: binary_sensor.bathroom2_room_status
+        icon: mdi:hospital
+        icon_color: "{{ 'green' if is_state(entity, 'off') else 'red' }}"
+        card_mod: *card_mod_chip_style
         hold_action:
           action: more-info
         tap_action:
@@ -81,4 +105,3 @@ cards:
                     - loft/loft_status_card.yaml
                     - entity: *temp1
                       humidity_entity: *humidity1
-#        card_mod: *card_mod_chip_style
