@@ -3,7 +3,7 @@
 
 sensor:
   - platform: sql
-    scan_interval: 30000
+    scan_interval: 30001
     queries:
       - name: "HAstats DB size"
         # source: Moonbase59 -  https://community.home-assistant.io/t/calculate-home-assistant-v2-db-size-without-whitelisting-entire-config-dir/195808/2
