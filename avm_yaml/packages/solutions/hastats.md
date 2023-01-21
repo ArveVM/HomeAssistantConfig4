@@ -11,7 +11,7 @@
 ## Table of contents:
 |Config   | Description/purpose                 |View   |
 | --------| ----------------------------------- |-------- |
-|<br /> [HAstats-card](https://github.com/ArveVM/HomeAssistantConfig4/edit/master/avm_yaml/dashboard/solutions/hastats_card.yaml)      |Gather all sub-solutions in one card   <br /> Tabbed card with sub-solutions on each tab|<img width="271" alt="image" src="https://user-images.githubusercontent.com/96014323/213887465-0f3017bd-b416-4d0b-be92-376090cc0039.png">|
+|[HAstats-card](https://github.com/ArveVM/HomeAssistantConfig4/edit/master/avm_yaml/dashboard/solutions/hastats_card.yaml)      |Gather all sub-solutions in one card   <br /> Tabbed card with sub-solutions on each tab|<img width="268" alt="image" src="https://user-images.githubusercontent.com/96014323/213888773-1a695b5d-7955-4c1c-b4b0-12a4e21f83d2.png">|
 |
 |[2. Presentation](#2-presentation)     | YAML-dashboard, Mushroom and Popup's |
 
