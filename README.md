@@ -5,9 +5,13 @@
 - All of the code is free to use; I only ask that you Star this repo.
 <br />
 
-Content:
-[Config overview](/config-overview)
+**Content:
 
+- [1. Config-"backend"](README.md#1-config-packages---functionality---solutions---compartmentalized-solutions---share)
+- [2. Presentation](README.md#2-presentation-yaml-dashboardmushroompopups)
+- [3. Solutions](README.md#3-solutions)
+- [4. Functionality](/README.md#4-functionality)
+- [5. General info](README.md#5-general-info)
 
 # Config overview:
 
