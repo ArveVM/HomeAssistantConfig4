@@ -58,27 +58,7 @@ sensor:
         column: "size"
         unit_of_measurement: "MiB"
 
-template:
-  #  Count number of loaded Integrations
-  - sensor:
-      - name: HAstats integrations count
-        unique_id: hastats_integrations_count
-        state_class:
-          measurement
-          #{{ ns.count }} - {{attr}} {{states.sensor.start_time.attributes [attr] }}
-        state: >
-          {% set ns = namespace(count = 0) %}
-          {% for attr in states.sensor.start_time.attributes %}
-          {%- if not attr=="friendly_name" 
-              and not attr=="unit_of_measurement"     
-              and not attr=="icon" -%}
-          {%- set ns.count = ns.count+1 %}
-          {%- endif %}
-          {%- endfor %}
-          {{ns.count}}
-        attributes:
-          <<: *solution_attribute
-
+template: 
   #  EbD = Enteties by Domain  :)
   - sensor:
       # some groups to get right level reporting:
