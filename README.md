@@ -2,13 +2,24 @@
 
 - This repo contains (part of) the working Home Assistant configuration for our home. It's clearly under development :)
 - Below you find an overview of the the configuration, and below that devices currently being used, links to blog/video posts, and other HA enthusists that provided inspiration and configs to help build this config. 
- -All of the code is free to use; I only ask that you Star this repo.
+- All of the code is free to use; I only ask that you Star this repo.
+<br />
 
+## Table of contents:
+|Chapters   |Description/purpose |
+| ----------| ----------------------------- |
+|[1. Config-"backend"](#1-configuration)| About the buildup of my configuration, <br /> Packages -> Functionality -> Solutions -> Compartmentalized-solutions -> share |
+|[2. Presentation](#2-presentation)     | YAML-dashboard, Mushroom and Popup's |
+|[3. Solutions](#3-solutions)   |About my method(s) for grouping "everything HA" in Solutions|
+|[4. Functionality](#4-functionality)|About added functionality required to produce Solutions|
+|[5. General info](#5-general-info)|Yeah, some blabla|
+|[6. Mentors & Inspirators](#6-mentors--inspirators)|Well earned tribute to a bunch of people!!|
+|[7. Disclaimer](#7-disclaimer)|Because everyone has one ;)|
+<br />
+<br />
+<br />
 
-
-# Config overview:
-
-## 1. Config; Packages -> Functionality -> Solutions -> Compartmentalized Solutions -> SHARE:
+## 1. Configuration:
 
 <details><summary>Packages; Core structure</summary>
 <br />
@@ -56,7 +67,7 @@ I'm defining Functionality as:
 - added Integrations (both GUI and YAML-added)
 - HACS-integrations
 - HACS-frontend (cards)
-- Ad-dons inside HA
+- Add-ons inside HA
 - Additional Docker containers (current replacement for Add-ons inside HA, but I guess most of them can run as Add-on)
 <br /> 
 For each Solution documented, there should be referenced which functionality is required, if the functionality is not defined within "default HA"
@@ -137,7 +148,7 @@ Why:
  ---
  Required Functionality:
    - my basics: Packages
-   - File-editor My choice is VS-code
+   - File-editor My choice is VS-code with the [Home Assistant Configuration Helper extension](https://marketplace.visualstudio.com/items?itemName=keesschollaart.vscode-home-assistant)
    - secrets.yaml
    - GitHub-repo to share to   (it's free, but you have to register an account)
  
@@ -148,15 +159,21 @@ Why:
    - create .gitignore-file to remove private or sensitive stuff (also remove db and other install-like stuff - it is only config that is interresting for others
    - use VS-code to push your seleced config to GitHub and start spreading the word and get feedback 
      - and whenever you change code,, vs-code will suggest to update your gitHub-repo
- 
+  <details><summary>Markdown: tips </summary>
+  - [avoid whitespace removed](https://stackoverflow.com/questions/40023013/tab-space-in-markdown) - Alt+2+5+5 works for me :)
+  <br /> 
+  </details>  
+  
  ---
 
 <br />
 <br /> 
 </details>  
 <br />
+<br />
 
-## 2. Presentation; YAML-dashboard/Mushroom/Popup's:
+## 2. Presentation:
+#### YAML-dashboard, Mushroom and Popup's:
 I'm combining GUI and YAML-dashboard with include and re-use of cards with push-entitites to card. Also heavily using YAML-node anchors in both solutions and dashboards/card, so some guidance on that is added here:
 <br />
 <details><summary>Both GUI and YAML-dashboard; Easy sharing, include one card several places, entity-inject in cards</summary>
@@ -271,20 +288,22 @@ How I use it:
  
 </details>      
 <br />
-  
+<br />
 
 ## 3. Solutions:
 
 ### 3.1. Area-specific solutions:
 
-- Whole house:
-  - All lights
-  - All heaters 
 - [Kid S - linen](https://github.com/ArveVM/HomeAssistantConfig4/tree/master/avm_yaml/packages/solutions/kids_linen.md): Settings of last changed linen, length until next, length until warning, create and complete todo 
 <br />
 
 ### 3.2. General solutions:
 
+- Whole house:
+  - All lights
+  - All heaters 
+  - Temp compare
+  - Temp all house
 <details><summary>ToDo; Create dynamic todo-list on other solutions status-entities</summary>
   - [ToDo](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/solutions/todo.md)  create todo-list (and let other solutions poulate with tasks and status)
 <br />
@@ -355,6 +374,7 @@ How I use it:
 
 <br /> 
 <br /> 
+<br />
 
 ## 4. Functionality: 
 As from my config-principles; addons and integrations are the enablers of functionality.
@@ -364,6 +384,8 @@ Only those with some level of config or interest for myself/others are documente
 
 - [HA-documentation; secrets.yaml](https://www.home-assistant.io/docs/configuration/secrets/#using-secretsyaml) - setup to store passwords/area/private-info in file not shared - and use references to it in rest of config
 - [default_config.yaml](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/integrations/default_config.yaml) -  Adding/tweeeking default HA-functionality,, ,se yaml-file for config/comments - [HA-documentation](https://www.home-assistant.io/integrations/default_config/)
+- [template](https://www.home-assistant.io/integrations/template/) - Create sensors based upon all sorts of other sensor-data/entities 
+  - [Advanced Templating](https://www.home-assistant.io/integrations/template/) - is also used directly in triggers/states in automations/script/dashboards etc 
 - [lovelace.yaml](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/integrations/lovelace.yaml) - enable both GUI and YAML-dashboard [HA-documentation](https://www.home-assistant.io/dashboards/)
   - Documentation on how to combine GUI and YAML-dashboards: https://www.home-assistant.io/dashboards/dashboards/
 - [AdGuard](https://www.home-assistant.io/integrations/adguard/) Integration to AdGuard docker in unRaid - see Adguard-solution for my usage
@@ -383,6 +405,10 @@ Huge thanks to the creators of those integrations!!
 
 - [Browser_mod2](https://github.com/thomasloven/hass-browser_mod) used "everywhere" for pop-up functionality 
 - [stack-in-card](https://github.com/custom-cards/stack-in-card) - add multiple card into one card (see exampes on room/area-cards)
+- [tabbed card](https://github.com/kinghat/tabbed-card) - see example on any area heating card)
+- 
+- mini-graph-card
+- 
 <br />
 
 
@@ -398,7 +424,9 @@ Huge thanks to the creators of those integrations!!
 - Mosquitto (mqtt-broker)
 - Ngnix-reverse-proxy
 - Frigate (NVR)
-- VS-code (for unRaid Dockers)
+- VS-code (for unRaid Dockers) 
+  - with the [Home Assistant Configuration Helper extension](https://marketplace.visualstudio.com/items?itemName=keesschollaart.vscode-home-assistant)
+  - and "sync/sharing" to my public GitHub-repo enabled  (this actal repo) :) 
 <br />
 
 OLD LISTING OF INTEGRATIONS/ADDONS (need a bit of a cleanup):
@@ -418,6 +446,7 @@ OLD LISTING OF INTEGRATIONS/ADDONS (need a bit of a cleanup):
 
 <br />
 <br />
+<br />
 
 ## 5. General info:
 
@@ -433,26 +462,68 @@ To prove this point; I even stole this text from thejeffreystone :)
  - [Current setup](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/blablabla/current_setup.md)
  - Fist round of Github-config is archived [HERE](https://github.com/ArveVM/Home-Assistant_config-packages-solutions-1)
 <br />
-
-### First phase Inspirators-extraordinare;
-- the HA-dev-team:  :  https://www.home-assistant.io/docs/configuration/
-- Jeff @ SlackerLabs:  https://slacker-labs.com/  /  https://github.com/thejeffreystone/home-assistant-configuration
-- Franck Nijhof     :  https://github.com/frenck/home-assistant-config
-- Rob @ TheHookup:  :  https://www.youtube.com/c/TheHookUp / https://www.facebook.com/groups/473812443269387
-- JuanMtech         :  https://www.youtube.com/channel/UCR7Xa7cU9wfkSY9v3yN2Vtw
-- mr RR             :  HA mentor
-- mr RL             :  Hardware provider and solutions guiding
-- mr ML and mr ØB   :  Home network setup guiding (and huge inspiration -> division shift upwards on how much cash to spend on network equipment :) )
-- mr KISS           :  longlived principle of simplicity of code, inspiration from 'back in the days' -> nolug hhelgesen  :)
-- Norway HA-Q&A-team:  Robert, Kim, Erlend, ThomassH and Kenneth in particular, but lots of guiding and great ideas from everyone!  Yjuge thanks ;) 
+<br />
 <br />
 
+## 6. Mentors & Inspirators
+I feel blessed by the amount of help, guiding and direct one2one support from a lot of peoples and groups, so just trying to acknowledge some of the support and guidance I've got in this section. The HA-journey I've managed would not have been possible without you ;)
+- By Inspirator i mean someone that has inspired/guided in a particular topic. 
+- My Mentor i mean someone that has given a wider perspective and opened up my horizon to new possibilities - and at the same time beeing credible on the actual possibility of myself beeing able to execute (or at least help me on the journey)
 
-### Further acknowlegement is added in code wherever appliacable
+#### v1 config;
+- [the HA-dev-team:](https://www.home-assistant.io/docs/configuration/) - great work both in functionality - documentation and community!
+- [Rob @ TheHookup-YT](https://www.youtube.com/c/TheHookUp) - [Rob @ TheHookup-Facebook](https://www.facebook.com/groups/473812443269387) - intro to Shelly and garage-dor control
+- mr RL -  Hardware provider and solutions guiding, trigger of first HA install
+- mr KISS - longlived principle of simplicity of code, inspiration from 'back in the days' -> nolug hhelgesen  :)
+<br />
+
+#### v2 config:
+- Mentor#1 - mr RR;  HA mentor, triggering splitting configuration and therefore the original spark that has lead to Functionality&Solutions - hjuge thanks ;)
+- Mentor#2 - Norway HA-Q&A-team;  Robert, Kim, Erlend, ThomassH and Kenneth in particular, but lots of guiding and great ideas from everyone!  Yjuge thanks ;) 
+- [the HA-dev-team:](https://www.home-assistant.io/docs/configuration/) - great work both in functionality - documentation and community!
+- [Jeff @ SlackerLabs:](https://slacker-labs.com/) - [GitHub-config](https://github.com/thejeffreystone/home-assistant-configuration) - first introduction to packages,,, triggering my "solutions" definition
+- [Franck Nijhof](https://github.com/frenck/home-assistant-config) - super-structured config,, triggering my "Functionality" definition (and moving all config to packages
+- [the HA-dev-team:](https://www.home-assistant.io/docs/configuration/) - great work both in functionality - documentation and community!
+- [JuanMtech](https://www.youtube.com/channel/UCR7Xa7cU9wfkSY9v3yN2Vtw) - setup HA in Proxmox
+- [Rob @ TheHookup-YT](https://www.youtube.com/c/TheHookUp) - [Rob @ TheHookup-Facebook](https://www.facebook.com/groups/473812443269387) - Network setup, vlan/firewall-config
+- mr ML and mr ØB   :  Home network setup guiding (and huge inspiration -> division shift upwards on how much cash to spend on network equipment :) )
+<br />
+
+#### v3 config:
+- Mentor#1 - mr RR;  HA mentor, triggering splitting configuration and therefore the original spark that has lead to Functionality&Solutions - hjuge thanks ;)
+- Mentor#2 - Norway HA-Q&A-team;  Robert, Kim, Erlend, ThomassH and Kenneth in particular, but lots of guiding and great ideas from everyone!  Yjuge thanks ;) 
+- [the HA-dev-team:](https://www.home-assistant.io/docs/configuration/) - great work both in functionality - documentation and community! Still one of my most important sources
+- from Proxmox to unRaid:
+  - mrKim - mentor extraordinare, showing the practical approach with unRaid and pushed me into that rabbithole.
+  - [JuanMtech](https://www.youtube.com/channel/UCR7Xa7cU9wfkSY9v3yN2Vtw) - unRaid setup guides
+  - [DigiblurDIY](https://www.youtube.com/@digiblurDIY) - unRaid setup guides
+- [Everything Smarthome](https://everythingsmarthome.co.uk/) - UI Minimalist setup guide
+- [Erlend Sellie](https://github.com/erlendsellie/HomeAssistantConfig) - GitHub-repo of his config - great examples of templating, automations and structure - thanks for sharing ;)
+- [Rypeveien](https://github.com/rypeveien/haConfig) - GitHub-repo of his config - great examples of templating, automations and structure - thanks for sharing ;)
+<br />
+
+#### v4 config:
+- Mentor#1 - mr RR;  HA mentor, triggering splitting configuration and therefore the original spark that has lead to Functionality&Solutions - hjuge thanks ;)
+- Mentor#2 - Norway HA-Q&A-team;  Robert, Kim, Erlend, ThomassH and Kenneth in particular, but lots of guiding and great ideas from everyone!  Yjuge thanks ;) 
+- [the HA-dev-team:](https://www.home-assistant.io/docs/configuration/) - great work both in functionality - documentation and community! Still one of my most important sources
+- from HA-addons to unRaid-dockers:
+  - mrT - mentor extraordinare, guiding (and handholding) on docker-configs and linux permissions. Also in charge of cleanup when I mess things up - hjuge thanks ;)
+  - mrKim - z2m and mqtt-testing and guiding
+  - [DigiblurDIY](https://www.youtube.com/@digiblurDIY) - unRaid-docker setup guides
+- Mushroom UI:
+  - [HA-community](https://community.home-assistant.io/) 
+  - [Rhys](https://community.home-assistant.io/u/rhysb/summary) - Mushromm-Room-card good enough to replace UI-minimalist, triggering move to Mushroom
+  - [SmartHomeScene](https://smarthomescene.com/) - Mushroom config guides - general guidance and tips
+- [Erlend Sellie](https://github.com/erlendsellie/HomeAssistantConfig) - GitHub-repo of his config - great examples of templating, automations and structure - thanks for sharing ;)
+- [Rypeveien](https://github.com/rypeveien/haConfig) - GitHub-repo of his config - great examples of templating, automations and structure - thanks for sharing ;)
+<br />
+### Further acknowlegement is added in config wherever appliacable
 ### I've tried to add references to persons or sources whenever I've stolen something ;)
 <br />
+<br />
+<br />
 
-### Disclaimer:
+## 7. Disclaimer:
 - I consider myself on the bottom part of "list of greatest coder in the HA-community", but I might introduce a "how to see the big picture" approach that newbies like me might benefit from, both on understanding functionality and easy access to working solutions from others.
 - English is NOT my native language - so if in doubt of what I'm thinking, please ask ;). And in advance; please excuse any verbal abuse or bad language,, I somethimes forget that I don't controll who read what I post online :(
 - Please verify whatever you take away from my configuration compared to others,, there are so many good examples out theere (and a few of them are listed below).
