@@ -3,7 +3,7 @@
 
 ## v4: Creating Solutions-trinity, Solutions GUI-input, Mushroom dashboard, Card-reuse, Node-anchors
 
-Jan ;
+Jan 2023;
 - Remove UI-minimalist, new dashboard using mostly Mushroom and custom "area-card"
 - Adding Frigate-docker and a few cameras (Reolink and D-link)
 - Starting internal code-review,,, aim to publish most of config when cleaned :)
@@ -15,7 +15,7 @@ Jan ;
   - "4. Functionality; Integrations, HACS-integrations, HACS-frontend, Add-ons, Docker-Addons" - section which list all major functionality added in my config 
   - "5. General info"  - which provides guidance, links and most important listing Mentors & Inspirators
 
-Des ;
+Des 2022;
 - Starting re-use of cards, (combining passing variables in lovelace-yaml and include files (cards))
 - Starting with Mushrom (planning to replace UI minimalist
 - Changing from a clear room-focus to area (rooms/outside/garage/backyard), general (power, hotwater, plants, cameras), backend (server/codelinecount/adguard/restore etc)
@@ -25,20 +25,20 @@ Des ;
   - +130 integrations
   - far more plans than ability to execute; HA is great FUN!!
 
-Nov ;
+Nov 2022;
 - Adding ToDo as solution,, presentation of how to collect all other solutions "todo-tasks" in one place.
 - Starting to move out Add-ons to unRaid-dockers; 
   - Adguard, for DNS and adblocking (thanks ThomasH :) )
   - Mosquitto, for mqtt
 - adding Frigate and a couple of cameras, using Coral usb for person detection
 
-Oct ;
+Oct 2022;
 - Adding 'GUI-input' to to 'solutions-concept. Will enable easily adoptation of solutions for new users
 - Hotwater SoC was the conecpt, with settings on tank size, temps etc
 - setup z2m in container outside HA - Sonoff3p as coordinator, start moving devices (renaming and set bindings etc)
 - change remote connection to use Nginx proxy manager (thanks ThomasH :) )
 
-Sept ;
+Sept 2022;
 - Cleanup in 'solutions concept',, starting to re-write code to match concept-trinity of yaml/dashboard/readMe
 - re-posting to new GitHub-repo
 <br />
