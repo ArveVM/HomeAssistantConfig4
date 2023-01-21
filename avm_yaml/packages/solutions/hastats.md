@@ -11,8 +11,9 @@
 ## Table of contents:
 |Config   | Description/purpose                 |View   |
 | --------| ----------------------------------- |-------- |
-|[HAstats-card](https://github.com/ArveVM/HomeAssistantConfig4/edit/master/avm_yaml/dashboard/solutions/hastats_card.yaml)      |Gather all sub-solutions in one card   <br /> Tabbed card with sub-solutions on each tab|<img width="268" alt="image" src="https://user-images.githubusercontent.com/96014323/213888773-1a695b5d-7955-4c1c-b4b0-12a4e21f83d2.png">|
-|
+|[HAstats-card](https://github.com/ArveVM/HomeAssistantConfig4/edit/master/avm_yaml/dashboard/solutions/hastats_card.yaml)      |Gather all sub-solutions in one card   <br /> Tabbed card with sub-solutions on each tab <br /> One tab with reference to this GitHub-repo for documentation-purposes|<img width="268" alt="image" src="https://user-images.githubusercontent.com/96014323/213888773-1a695b5d-7955-4c1c-b4b0-12a4e21f83d2.png">|
+|[HAstats_int_card](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/dashboard/solutions/hastats_integrations_card.yaml)<br /><br />[HAstats_int_conf](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/solutions/hastats_integrations.yaml) |Card for presentation of count of Integrations|<img width="267" alt="image" src="https://user-images.githubusercontent.com/96014323/213888979-3bba5fe0-106a-464c-bb50-c180cac97a0c.png"> <img width="316" alt="image" src="https://user-images.githubusercontent.com/96014323/213888991-09ed22f6-dd4e-4095-8800-51b47aae3da1.png">|
+|[Entities by domain_card](
 |[2. Presentation](#2-presentation)     | YAML-dashboard, Mushroom and Popup's |
 
 
@@ -20,6 +21,8 @@ Requirements (other than standard HA):
 custom:mushroom-entity-card
 custom:history-explorer-card
 Hacs-int; browser_mod
+Hacs-int; start_time
+
 
 ### Requirements/install tips:
 <details>
