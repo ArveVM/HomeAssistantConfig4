@@ -44,7 +44,7 @@ Sept 2022;
 <br />
 <br />
 
-## v3: Going all in on "Functionality & Solutions"
+## v3: unRaid, UI Minimalist, All in on "Functionality & Solutions"
 Aug 2022;
 - Implementing concept of "room status",, certain criterias should be OK in a room - otherwise room should have colorcode for warning
 
