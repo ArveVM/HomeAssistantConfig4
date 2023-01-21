@@ -517,9 +517,7 @@ I feel blessed by the amount of help, guiding and direct one2one support from a 
 - [Erlend Sellie](https://github.com/erlendsellie/HomeAssistantConfig) - GitHub-repo of his config - great examples of templating, automations and structure - thanks for sharing ;)
 - [Rypeveien](https://github.com/rypeveien/haConfig) - GitHub-repo of his config - great examples of templating, automations and structure - thanks for sharing ;)
 <br />
-
-
-### Further acknowlegement is added in code wherever appliacable
+### Further acknowlegement is added in config wherever appliacable
 ### I've tried to add references to persons or sources whenever I've stolen something ;)
 <br />
 <br />
