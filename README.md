@@ -5,6 +5,8 @@
 - All of the code is free to use; I only ask that you Star this repo.
 <br />
 
+Content:
+[Config overview](/config-overview)
 
 
 # Config overview:
@@ -444,8 +446,9 @@ To prove this point; I even stole this text from thejeffreystone :)
  - [Current setup](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/blablabla/current_setup.md)
  - Fist round of Github-config is archived [HERE](https://github.com/ArveVM/Home-Assistant_config-packages-solutions-1)
 <br />
+<br />
 
-### Mentors & Inspirators throughout my HA-journey;
+## 6. Mentors & Inspirators throughout my HA-journey;
 - By Inspirator i mean someone that has inspired/guided in a particular topic. 
 - My Mentor i mean someone that has given a wider perspective and opened up my horizon to new possibilities - and at the same time beeing credible on the actual possibility of myself beeing able to execute (or at least help me on the journey)
 
@@ -502,7 +505,7 @@ To prove this point; I even stole this text from thejeffreystone :)
 ### I've tried to add references to persons or sources whenever I've stolen something ;)
 <br />
 
-### Disclaimer:
+## 7. Disclaimer:
 - I consider myself on the bottom part of "list of greatest coder in the HA-community", but I might introduce a "how to see the big picture" approach that newbies like me might benefit from, both on understanding functionality and easy access to working solutions from others.
 - English is NOT my native language - so if in doubt of what I'm thinking, please ask ;). And in advance; please excuse any verbal abuse or bad language,, I somethimes forget that I don't controll who read what I post online :(
 - Please verify whatever you take away from my configuration compared to others,, there are so many good examples out theere (and a few of them are listed below).
