@@ -1,7 +1,7 @@
 
 ### config history:
 
-## v4: Solutions-trinity, Solutions GUI-input, Mushroom dashboard, Card-reuse, Node-anchors
+## v4: Creating Solutions-trinity, Solutions GUI-input, Mushroom dashboard, Card-reuse, Node-anchors
 
 Jan ;
 - Remove UI-minimalist, new dashboard using mostly Mushroom and custom "area-card"
