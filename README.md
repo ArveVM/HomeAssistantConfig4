@@ -2,7 +2,8 @@
 
 - This repo contains (part of) the working Home Assistant configuration for our home. It's clearly under development :)
 - Below you find an overview of the the configuration, and below that devices currently being used, links to blog/video posts, and other HA enthusists that provided inspiration and configs to help build this config. 
- -All of the code is free to use; I only ask that you Star this repo.
+- All of the code is free to use; I only ask that you Star this repo.
+<br />
 
 
 
@@ -56,7 +57,7 @@ I'm defining Functionality as:
 - added Integrations (both GUI and YAML-added)
 - HACS-integrations
 - HACS-frontend (cards)
-- Ad-dons inside HA
+- Add-ons inside HA
 - Additional Docker containers (current replacement for Add-ons inside HA, but I guess most of them can run as Add-on)
 <br /> 
 For each Solution documented, there should be referenced which functionality is required, if the functionality is not defined within "default HA"
@@ -440,17 +441,20 @@ To prove this point; I even stole this text from thejeffreystone :)
  - Fist round of Github-config is archived [HERE](https://github.com/ArveVM/Home-Assistant_config-packages-solutions-1)
 <br />
 
-### Inspirators-extraordinare throughout my HA-journey;
+### Mentors & Inspirators throughout my HA-journey;
+- By Inspirator i mean someone that has inspired/guided in a particular topic. 
+- My Mentor i mean someone that has given a wider perspective and opened up my horizon to new possibilities - and at the same time beeing credible on the actual possibility of myself beeing able to execute (or at least help me on the journey)
 
-#### v1 Inspirators-extraordinare;
+#### v1 config;
 - [the HA-dev-team:](https://www.home-assistant.io/docs/configuration/) - great work both in functionality - documentation and community!
 - [Rob @ TheHookup-YT](https://www.youtube.com/c/TheHookUp) - [Rob @ TheHookup-Facebook](https://www.facebook.com/groups/473812443269387) - intro to Shelly and garage-dor control
-- mr RL -  Hardware provider and solutions guiding
+- mr RL -  Hardware provider and solutions guiding, trigger of first HA install
 - mr KISS - longlived principle of simplicity of code, inspiration from 'back in the days' -> nolug hhelgesen  :)
 <br />
 
-#### v2 Inspirators-extraordinare;
-- mr RR;  HA mentor, triggering splitting configuration and therefore the original spark that has lead to Functionality&Solutions - hjuge thanks ;)
+#### v2 
+- Mentor#1 - mr RR;  HA mentor, triggering splitting configuration and therefore the original spark that has lead to Functionality&Solutions - hjuge thanks ;)
+- Mentor#2 - Norway HA-Q&A-team;  Robert, Kim, Erlend, ThomassH and Kenneth in particular, but lots of guiding and great ideas from everyone!  Yjuge thanks ;) 
 - [the HA-dev-team:](https://www.home-assistant.io/docs/configuration/) - great work both in functionality - documentation and community!
 - [Jeff @ SlackerLabs:](https://slacker-labs.com/) - [GitHub-config](https://github.com/thejeffreystone/home-assistant-configuration) - first introduction to packages,,, triggering my "solutions" definition
 - [Franck Nijhof](https://github.com/frenck/home-assistant-config) - super-structured config,, triggering my "Functionality" definition (and moving all config to packages
@@ -458,10 +462,11 @@ To prove this point; I even stole this text from thejeffreystone :)
 - [JuanMtech](https://www.youtube.com/channel/UCR7Xa7cU9wfkSY9v3yN2Vtw) - setup HA in Proxmox
 - [Rob @ TheHookup-YT](https://www.youtube.com/c/TheHookUp) - [Rob @ TheHookup-Facebook](https://www.facebook.com/groups/473812443269387) - Network setup, vlan/firewall-config
 - mr ML and mr ØB   :  Home network setup guiding (and huge inspiration -> division shift upwards on how much cash to spend on network equipment :) )
-- Norway HA-Q&A-team:  Robert, Kim, Erlend, ThomassH and Kenneth in particular, but lots of guiding and great ideas from everyone!  Yjuge thanks ;) 
 <br />
 
 #### v3 Inspirators-extraordinare;
+- Mentor#1 - mr RR;  HA mentor, triggering splitting configuration and therefore the original spark that has lead to Functionality&Solutions - hjuge thanks ;)
+- Mentor#2 - Norway HA-Q&A-team;  Robert, Kim, Erlend, ThomassH and Kenneth in particular, but lots of guiding and great ideas from everyone!  Yjuge thanks ;) 
 - [the HA-dev-team:](https://www.home-assistant.io/docs/configuration/) - great work both in functionality - documentation and community! Still one of my most important sources
 - from Proxmox to unRaid:
   - mrKim - mentor extraordinare, showing the practical approach with unRaid and pushed me into that rabbithole.
@@ -470,14 +475,14 @@ To prove this point; I even stole this text from thejeffreystone :)
 - [Everything Smarthome](https://everythingsmarthome.co.uk/) - UI Minimalist setup guide
 - [Erlend Sellie](https://github.com/erlendsellie/HomeAssistantConfig) - GitHub-repo of his config - great examples of templating, automations and structure - thanks for sharing ;)
 - [Rypeveien](https://github.com/rypeveien/haConfig) - GitHub-repo of his config - great examples of templating, automations and structure - thanks for sharing ;)
-- mr RR;  HA mentor, triggering splitting configuration and therefore the original spark that has lead to Functionality&Solutions - hjuge thanks ;)
-- Norway HA-Q&A-team:  Robert, Kim, Erlend, ThomassH and Kenneth in particular, but lots of guiding and great ideas from everyone!  hjuge thanks ;) 
 <br />
 
 #### v4 Inspirators-extraordinare;
+- Mentor#1 - mr RR;  HA mentor, triggering splitting configuration and therefore the original spark that has lead to Functionality&Solutions - hjuge thanks ;)
+- Mentor#2 - Norway HA-Q&A-team;  Robert, Kim, Erlend, ThomassH and Kenneth in particular, but lots of guiding and great ideas from everyone!  Yjuge thanks ;) 
 - [the HA-dev-team:](https://www.home-assistant.io/docs/configuration/) - great work both in functionality - documentation and community! Still one of my most important sources
 - from HA-addons to unRaid-dockers:
-  - mrT - mentor extraordinare, guiding (and handholding) on docker-configs and linux permissions. Also cleanup when I mess things up - hjuge thanks ;)
+  - mrT - mentor extraordinare, guiding (and handholding) on docker-configs and linux permissions. Also in charge of cleanup when I mess things up - hjuge thanks ;)
   - mrKim - z2m and mqtt-testing and guiding
   - [DigiblurDIY](https://www.youtube.com/@digiblurDIY) - unRaid-docker setup guides
 - Mushroom UI:
@@ -486,8 +491,6 @@ To prove this point; I even stole this text from thejeffreystone :)
   - [SmartHomeScene](https://smarthomescene.com/) - Mushroom config guides - general guidance and tips
 - [Erlend Sellie](https://github.com/erlendsellie/HomeAssistantConfig) - GitHub-repo of his config - great examples of templating, automations and structure - thanks for sharing ;)
 - [Rypeveien](https://github.com/rypeveien/haConfig) - GitHub-repo of his config - great examples of templating, automations and structure - thanks for sharing ;)
-- mr RR;  HA mentor, triggering splitting configuration and therefore the original spark that has lead to Functionality&Solutions - hjuge thanks ;)
-- Norway HA-Q&A-team:  Robert, Kim, Erlend, ThomassH and Kenneth in particular, but lots of guiding and great ideas from everyone!  hjuge thanks ;) 
 <br />
 
 
