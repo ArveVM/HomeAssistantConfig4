@@ -7,9 +7,9 @@
 
 # Config overview:
 
-[1. Config-"backend"](README.md#1-config-packages---functionality---solutions---compartmentalized-solutions---share) - about the buildup of my configuration
+[1. Config-"backend"](README.md#1-config-packages---functionality---solutions---compartmentalized-solutions---share)    - about the buildup of my configuration
 <br />
-[2. Presentation](README.md#2-presentation-yaml-dashboardmushroompopups) - about my method(s) for Dashboard; include&reuse
+[2. Presentation](README.md#2-presentation-yaml-dashboardmushroompopups)                  - about my method(s) for Dashboard; include&reuse
 <br />
 [3. Solutions](README.md#3-solutions) - about my method(s) for grouping "everything HA" in Solutions
 <br />
@@ -164,7 +164,11 @@ Why:
    - create .gitignore-file to remove private or sensitive stuff (also remove db and other install-like stuff - it is only config that is interresting for others
    - use VS-code to push your seleced config to GitHub and start spreading the word and get feedback 
      - and whenever you change code,, vs-code will suggest to update your gitHub-repo
- 
+  <details><summary>Markdown: tips </summary> 
+ - [avoid whitespace removed](https://stackoverflow.com/questions/40023013/tab-space-in-markdown) - Alt+2+5+5 works for me :)
+<br /> 
+</details>  
+  
  ---
 
 <br />
