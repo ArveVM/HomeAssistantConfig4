@@ -6,15 +6,20 @@
 ## Intro:
 ### Why Home Assistant Statistics??  
 - I'm actually rather fond of numbers and looking at development through history of a journey from an number perspective
-- So I googled a bit, and found something I found useful, and created a 'solution' for hastats.
+- So I googled a bit, and found something I found useful, and created a 'solution' for hastats. And then split it into a few sub-solutions just for structure.
 
-Focus so far have been on 
-- development in entities (by domain),, simple overview with pop-up for stats/details
-- and # of YAML-lines in my code
+## Table of contents:
+|Config   | Description/purpose                 |View   |
+| --------| ----------------------------------- |-------- |
+|[HAstats-card](https://github.com/ArveVM/HomeAssistantConfig4/edit/master/avm_yaml/dashboard/solutions/hastats_card.yaml)      |Gather all sub-solutions in one card   <br /> Tabbed card with sub-solutions on each tab|<img width="268" alt="image" src="https://user-images.githubusercontent.com/96014323/213888773-1a695b5d-7955-4c1c-b4b0-12a4e21f83d2.png">|
+|
+|[2. Presentation](#2-presentation)     | YAML-dashboard, Mushroom and Popup's |
 
-### Credits/inspiration:
-- https://community.home-assistant.io/t/lazy-mans-entity-count-something-screwy/174886
-- Erlend Sellie's notions of "+10' lines config" - trigger "how big is mine?" - and if I end up with +400 automations - I can look back and see when it happened ;)
+
+Requirements (other than standard HA):
+custom:mushroom-entity-card
+custom:history-explorer-card
+Hacs-int; browser_mod
 
 ### Requirements/install tips:
 <details>
@@ -107,6 +112,10 @@ _click on 'tab: YAML', and you will get the next stats-area
 
 <br />
 <br />
+
+### Credits/inspiration:
+- https://community.home-assistant.io/t/lazy-mans-entity-count-something-screwy/174886
+- Erlend Sellie's notions of "+10' lines config" - trigger "how big is mine?" - and if I end up with +400 automations - I can look back and see when it happened ;)
 
 
 ## improvements planned/project queue:

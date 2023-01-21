@@ -4,6 +4,8 @@ type: vertical-stack
 cards:
   - type: custom:mushroom-title-card
     title: "Solution - HAstats;"
+  - # ArveVM;  https://github.com/ArveVM/HomeAssistantConfig4/edit/master/avm_yaml/packages/solutions/hastats.md
+
   - type: custom:tabbed-card
     options:
       defaultTabIndex: 1
