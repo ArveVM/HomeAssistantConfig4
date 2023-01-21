@@ -381,8 +381,10 @@ Huge thanks to the creators of those integrations!!
  
 ### HACS-frontend: 
 
-- [Browser_mod2](https://github.com/thomasloven/hass-browser_mod) used primarily for pop-up functionality 
+- [Browser_mod2](https://github.com/thomasloven/hass-browser_mod) used "everywhere" for pop-up functionality 
+- [stack-in-card](https://github.com/custom-cards/stack-in-card) - add multiple card into one card (see exampes on room/area-cards)
 <br />
+
 
 ### HA-Add-ons:
 
