@@ -138,7 +138,7 @@ Why:
  ---
  Required Functionality:
    - my basics: Packages
-   - File-editor My choice is VS-code
+   - File-editor My choice is VS-code with the [Home Assistant Configuration Helper extension](https://marketplace.visualstudio.com/items?itemName=keesschollaart.vscode-home-assistant)
    - secrets.yaml
    - GitHub-repo to share to   (it's free, but you have to register an account)
  
@@ -405,7 +405,9 @@ Huge thanks to the creators of those integrations!!
 - Mosquitto (mqtt-broker)
 - Ngnix-reverse-proxy
 - Frigate (NVR)
-- VS-code (for unRaid Dockers)
+- VS-code (for unRaid Dockers) 
+  - with the [Home Assistant Configuration Helper extension](https://marketplace.visualstudio.com/items?itemName=keesschollaart.vscode-home-assistant)
+  - and "sync/sharing" to my public GitHub-repo enabled  (this actal repo) :) 
 <br />
 
 OLD LISTING OF INTEGRATIONS/ADDONS (need a bit of a cleanup):
