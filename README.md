@@ -7,16 +7,22 @@
 
 # Config overview:
 
-- [1. Config-"backend"](README.md#1-config-packages---functionality---solutions---compartmentalized-solutions---share)
-- [2. Presentation](README.md#2-presentation-yaml-dashboardmushroompopups)
-- [3. Solutions](README.md#3-solutions)
-- [4. Functionality](/README.md#4-functionality)
-- [5. General info](README.md#5-general-info)
-- [6. Mentors & Inspirators](/README.md#6-mentors--inspirators)
-- [7. Disclaimer](/README.md#7-disclaimer)
+[1. Config-"backend"](README.md#1-config-packages---functionality---solutions---compartmentalized-solutions---share) - about the buildup of my configuration
+<br />
+[2. Presentation](README.md#2-presentation-yaml-dashboardmushroompopups) - about my method(s) for Dashboard; include&reuse
+<br />
+[3. Solutions](README.md#3-solutions) - about my method(s) for grouping "everything HA" in Solutions
+<br />
+[4. Functionality](/README.md#4-functionality) - about added functionality required to produce Solutions
+<br />
+[5. General info](README.md#5-general-info) - yeah, some blabla
+<br />
+[6. Mentors & Inspirators](/README.md#6-mentors--inspirators) - tribute to a bunch of people!!
+<br />
+[7. Disclaimer](/README.md#7-disclaimer) - because everyone has one ;)
 <br />
 <br />
-
+<br />
 
 ## 1. Config; Packages -> Functionality -> Solutions -> Compartmentalized Solutions -> SHARE:
 
@@ -165,6 +171,7 @@ Why:
 <br /> 
 </details>  
 <br />
+<br />
 
 ## 2. Presentation; YAML-dashboard/Mushroom/Popup's:
 I'm combining GUI and YAML-dashboard with include and re-use of cards with push-entitites to card. Also heavily using YAML-node anchors in both solutions and dashboards/card, so some guidance on that is added here:
@@ -281,7 +288,7 @@ How I use it:
  
 </details>      
 <br />
-  
+<br />
 
 ## 3. Solutions:
 
@@ -367,6 +374,7 @@ How I use it:
 
 <br /> 
 <br /> 
+<br />
 
 ## 4. Functionality: 
 As from my config-principles; addons and integrations are the enablers of functionality.
@@ -438,6 +446,7 @@ OLD LISTING OF INTEGRATIONS/ADDONS (need a bit of a cleanup):
 
 <br />
 <br />
+<br />
 
 ## 5. General info:
 
@@ -452,6 +461,7 @@ To prove this point; I even stole this text from thejeffreystone :)
  - [Config history:](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/blablabla/config_history.md)
  - [Current setup](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/blablabla/current_setup.md)
  - Fist round of Github-config is archived [HERE](https://github.com/ArveVM/Home-Assistant_config-packages-solutions-1)
+<br />
 <br />
 <br />
 
@@ -511,6 +521,8 @@ I feel blessed by the amount of help, guiding and direct one2one support from a 
 
 ### Further acknowlegement is added in code wherever appliacable
 ### I've tried to add references to persons or sources whenever I've stolen something ;)
+<br />
+<br />
 <br />
 
 ## 7. Disclaimer:
