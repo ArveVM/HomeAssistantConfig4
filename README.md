@@ -280,6 +280,8 @@ How I use it:
 - Whole house:
   - All lights
   - All heaters 
+  - Temp compare
+  - Temp all house
 - [Kid S - linen](https://github.com/ArveVM/HomeAssistantConfig4/tree/master/avm_yaml/packages/solutions/kids_linen.md): Settings of last changed linen, length until next, length until warning, create and complete todo 
 <br />
 
@@ -383,6 +385,10 @@ Huge thanks to the creators of those integrations!!
 
 - [Browser_mod2](https://github.com/thomasloven/hass-browser_mod) used "everywhere" for pop-up functionality 
 - [stack-in-card](https://github.com/custom-cards/stack-in-card) - add multiple card into one card (see exampes on room/area-cards)
+- [tabbed card](https://github.com/kinghat/tabbed-card) - see example on any area heating card)
+- 
+- mini-graph-card
+- 
 <br />
 
 
