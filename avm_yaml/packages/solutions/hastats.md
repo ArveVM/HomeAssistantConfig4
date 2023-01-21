@@ -11,15 +11,57 @@
 ## Table of contents:
 |Config   | Description/purpose                 |View   |
 | --------| ----------------------------------- |-------- |
-|[HAstats-card](https://github.com/ArveVM/HomeAssistantConfig4/edit/master/avm_yaml/dashboard/solutions/hastats_card.yaml)      |Gather all sub-solutions in one card   <br /> Tabbed card with sub-solutions on each tab|<img width="268" alt="image" src="https://user-images.githubusercontent.com/96014323/213888773-1a695b5d-7955-4c1c-b4b0-12a4e21f83d2.png">|
-|
+|[HAstats-main](#hastats-main)      |Gather all sub-solutions in one card   <br /> Tabbed card with sub-solutions on each tab <br /> One tab with reference to this GitHub-repo for documentation-purposes|
+|[HAstats-Integrations](#hastats-integrations)      |Counter of integrations loaded  <br /> Graphed long term history <br /> PopUp with list of all current integrations, with load-times at startup/reload|
+
+
+
+|<br /><br />[HAstats_int_conf](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/solutions/hastats_integrations.yaml) |Card for presentation of count of Integrations|<img width="267" alt="image" src="https://user-images.githubusercontent.com/96014323/213888979-3bba5fe0-106a-464c-bb50-c180cac97a0c.png"> <img width="316" alt="image" src="https://user-images.githubusercontent.com/96014323/213888991-09ed22f6-dd4e-4095-8800-51b47aae3da1.png">|
+|[Entities by domain_card](
 |[2. Presentation](#2-presentation)     | YAML-dashboard, Mushroom and Popup's |
+<br />
+<br />
+<br />
+
+## HAstats-main
+|Config   | Card | Card preview |
+| --------| ------------ |----- |
+|n/a      |[HAstats-card](https://github.com/ArveVM/HomeAssistantConfig4/edit/master/avm_yaml/dashboard/solutions/hastats_card.yaml) | <img width="268" alt="image" src="https://user-images.githubusercontent.com/96014323/213888773-1a695b5d-7955-4c1c-b4b0-12a4e21f83d2.png">|
+
+|Input   | Created | 
+| --------| ------------ |
+|n/a      |n/a|
+
+One tabbed card to gather sub-solutions in one view. Added one tab for documentation
+<br />
+<br />
+<br />
+
+
+## HAstats-Integrations
+|Config   | Card | Card preview |
+| --------| ------------ |----- |
+|n/a      |[HAstats_int_card](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/dashboard/solutions/hastats_integrations_card.yaml) | <img width="268" alt="image" src="https://user-images.githubusercontent.com/96014323/213888773-1a695b5d-7955-4c1c-b4b0-12a4e21f83d2.png">|
+
+|Input   | Created | 
+| --------| ------------ |
+|n/a      |n/a|
+
+One tabbed card to gather sub-solutions in one view. Added one tab for documentation
+
+
+
+
+
+
 
 
 Requirements (other than standard HA):
 custom:mushroom-entity-card
 custom:history-explorer-card
 Hacs-int; browser_mod
+Hacs-int; start_time
+
 
 ### Requirements/install tips:
 <details>
