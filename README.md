@@ -5,21 +5,21 @@
 - All of the code is free to use; I only ask that you Star this repo.
 <br />
 
-# Config overview:
+# Rable of contents:
 
-[1. Config-"backend"](README.md#1-config-packages---functionality---solutions---compartmentalized-solutions---share)          - about the buildup of my configuration
+[1. Config-"backend"](#1-config-packages---functionality---solutions---compartmentalized-solutions---share)         - about the buildup of my configuration
 <br />
-[2. Presentation](README.md#2-presentation-yaml-dashboardmushroompopups)                  - about my method(s) for Dashboard; include&reuse
+[2. Presentation](#2-presentation-yaml-dashboardmushroompopups)                  - about my method(s) for Dashboard; include&reuse
 <br />
-[3. Solutions](README.md#3-solutions)                        - about my method(s) for grouping "everything HA" in Solutions
+[3. Solutions](#3-solutions)                        - about my method(s) for grouping "everything HA" in Solutions
 <br />
-[4. Functionality](/README.md#4-functionality)                  - about added functionality required to produce Solutions
+[4. Functionality](#4-functionality)                  - about added functionality required to produce Solutions
 <br />
-[5. General info](README.md#5-general-info)                  - yeah, some blabla
+[5. General info](#5-general-info)                   - yeah, some blabla
 <br />
-[6. Mentors & Inspirators](/README.md#6-mentors--inspirators)  - tribute to a bunch of people!!
+[6. Mentors & Inspirators](#6-mentors--inspirators)   - tribute to a bunch of people!!
 <br />
-[7. Disclaimer](/README.md#7-disclaimer)                   - because everyone has one ;)
+[7. Disclaimer](#7-disclaimer)                      - because everyone has one ;)
 <br />
 <br />
 <br />
