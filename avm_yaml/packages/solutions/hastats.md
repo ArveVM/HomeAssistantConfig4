@@ -158,6 +158,7 @@ Stats of how many entities pr domain are in my HA-instance, by ArveVM
 <br />
 <br />
 
+
 ## Credits/inspiration:
 - https://community.home-assistant.io/t/lazy-mans-entity-count-something-screwy/174886
 - Erlend Sellie's notions of "+10' lines config" - trigger "how big is mine?" - and if I end up with +400 automations - I can look back and see when it happened ;)
