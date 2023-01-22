@@ -1,11 +1,60 @@
                                                   ArveVM, December.2022
 # Camearas
+### Why Cameras?  
+- Need a way for record when people come visit (warnings), recording in case of theft and general surveilamce
+- Record no audio
+- Record only when movement
+<br />
+
+### Table of contents:
+|Chapter   | Description/purpose                |
+| --------| ----------------------------------- |
+|[HAstats-main](#hastats-main)      |Gather all sub-solutions in one card   <br /> Tabbed card with sub-solutions on each tab <br /> One tab with reference to this GitHub-repo for documentation-purposes|
+|[HAstats-Integrations](#hastats-integrations)      |Counter of integrations loaded  <br /> Graphed long term history <br /> PopUp with list of all current integrations, with load-times at startup/reload|
+
+## How it works (for me):
+- created chip/popup to view tabbed card with cameras from Frigate, birseye, cameras, frigate entities etc
+
+
+<br />
+<br />
+
+### Solution-Yaml:
+n/a
+
+<br />
+<br />
+
+### Solution-Dashboard(s):
+[Camera card](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/dashboard/cards/camera_card.yaml)
+
+First tab (no action/triggers,, but they will show up):
+
+![image](https://user-images.githubusercontent.com/96014323/205927784-703bac11-cab7-4fca-b54c-d06f74fd28b2.png)
+
 
 <br />
 
-## Intro:
-### Why Cameras?  
-Need a way for record when people come visit (warnings), recording in case of theft and general surveilamce
+Second tab:
+
+![image](https://user-images.githubusercontent.com/96014323/205928128-76472a75-c081-41ec-bfa8-bf2198b1fd57.png)
+
+<br />
+
+Third tab:
+
+![image](https://user-images.githubusercontent.com/96014323/205928299-1e5a1a95-8f80-4479-b779-5c9603584df4.png)
+
+<br />
+
+Last tab (collection of old camera(s) as picture glance:
+
+![image](https://user-images.githubusercontent.com/96014323/205928498-4146efd8-2054-423f-8092-bcf8a8a08c3f.png)
+
+
+<br />
+
+
 
 ### Credits/inspiration:
 - Kenneth M, partial Frigate config ;)
@@ -54,47 +103,6 @@ Need a way for record when people come visit (warnings), recording in case of th
 <br />
 <br />
 
-## How it works (for me):
-- created chip/popup to view tabbed card with cameras from Frigate, birseye, cameras, frigate entities etc
-
-
-<br />
-<br />
-
-### Solution-Yaml:
-n/a
-
-<br />
-<br />
-
-### Solution-Dashboard(s):
-[Camera card](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/dashboard/cards/camera_card.yaml)
-
-First tab (no action/triggers,, but they will show up):
-
-![image](https://user-images.githubusercontent.com/96014323/205927784-703bac11-cab7-4fca-b54c-d06f74fd28b2.png)
-
-
-<br />
-
-Second tab:
-
-![image](https://user-images.githubusercontent.com/96014323/205928128-76472a75-c081-41ec-bfa8-bf2198b1fd57.png)
-
-<br />
-
-Third tab:
-
-![image](https://user-images.githubusercontent.com/96014323/205928299-1e5a1a95-8f80-4479-b779-5c9603584df4.png)
-
-<br />
-
-Last tab (collection of old camera(s) as picture glance:
-
-![image](https://user-images.githubusercontent.com/96014323/205928498-4146efd8-2054-423f-8092-bcf8a8a08c3f.png)
-
-
-<br />
 
 
 ## improvements planned/project queue:
