@@ -58,7 +58,7 @@ n/a
 <br />
  
   #### To install you should:
-  - Install Frigate docker
+  - Install Frigate docker   -  (optional HA-Addon; Frigate)
   - add config to Frigate-docker (config-file need to be created, verify in Frigate web-ui that you have connection to camera(s)) 
   - Installed HA frigate-integration (ensure you get in the frigate-cameras)
 
