@@ -10,7 +10,7 @@
 |Chapter   | Description/purpose                |
 | --------| ----------------------------------- |
 |[How it works](#how-it-works-for-me)      |High level view - how it works|
-|[Camera](#camera)      |Camera-card|
+|[Camera](#view-cameras)      |Camera-card|
 |[Requirements/install tipstroubleshooting](#requirementsinstall-tipstroubleshooting)|Some guidance on what is required and how to install (not at all my biggest priority to keep this up to date, but at least I have tried somehow ;)|
 |[Credits and inspiration](#creditsinspiration)|Listing the particular support, ideas, resources that I have to thank especially for this Solution|
 <br />
@@ -25,14 +25,13 @@
 <br />
 <br />
 
-## Camera:
-n/a
+## View cameras:
 |Card preview    |Card |Config|
 | --------| ------------ |----- |
 |![image](https://user-images.githubusercontent.com/96014323/205927784-703bac11-cab7-4fca-b54c-d06f74fd28b2.png)|[Camera card](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/dashboard/solutions/camera_card.yaml)|n/a <br /> - Frigate integration configured in GUI <br /> - Frigate Docker configured on unRaid|
 |![image](https://user-images.githubusercontent.com/96014323/205928128-76472a75-c081-41ec-bfa8-bf2198b1fd57.png)|second tab |- click left/right for other cameras <br /> - frigate-bird gives menu of recordings/snapshots/timeline etc|
 |![image](https://user-images.githubusercontent.com/96014323/205928299-1e5a1a95-8f80-4479-b779-5c9603584df4.png)|third tab ||
-|![image](https://user-images.githubusercontent.com/96014323/205928498-4146efd8-2054-423f-8092-bcf8a8a08c3f.png)|last tab||Added picture-glance of an old camera without onvif (added as generic-camera in GUI)
+|![image](https://user-images.githubusercontent.com/96014323/205928498-4146efd8-2054-423f-8092-bcf8a8a08c3f.png)|last tab|Added picture-glance of an old camera without onvif (added as generic-camera in GUI)|
 
 <br />
 <br />
