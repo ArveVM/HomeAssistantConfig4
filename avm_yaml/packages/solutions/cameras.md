@@ -12,54 +12,32 @@
 |[HAstats-main](#hastats-main)      |Gather all sub-solutions in one card   <br /> Tabbed card with sub-solutions on each tab <br /> One tab with reference to this GitHub-repo for documentation-purposes|
 |[HAstats-Integrations](#hastats-integrations)      |Counter of integrations loaded  <br /> Graphed long term history <br /> PopUp with list of all current integrations, with load-times at startup/reload|
 
+|[Requirements/install tipstroubleshooting](#requirementsinstall-tipstroubleshooting)|Some guidance on what is required and how to install (not at all my biggest priority to keep this up to date, but at least I have tried somehow ;)|
+|[Credits and inspiration](#creditsinspiration)|Listing the particular support, ideas, resources that I have to thank especially for this Solution|
+
 ## How it works (for me):
-- created chip/popup to view tabbed card with cameras from Frigate, birseye, cameras, frigate entities etc
-
-
+- Buy cameras that work with ONVIF. 
+- Try camera-stream in VLC-media-palyer to ensure you have right stream
+- Add camera-stream with right arguments to Frigate-config (see Frigate instructions for guidance
+- Add camera-entity to Frigate-card
 <br />
 <br />
 
-### Solution-Yaml:
+## Camera:
 n/a
+|Card preview    |Card |Config|
+| --------| ------------ |----- |
+|![image](https://user-images.githubusercontent.com/96014323/205927784-703bac11-cab7-4fca-b54c-d06f74fd28b2.png)|[Camera card](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/dashboard/solutions/camera_card.yaml)|n/a <br /> - Frigate integration configured in GUI <br /> - Frigate Docker configured on unRaid|
+|![image](https://user-images.githubusercontent.com/96014323/205928128-76472a75-c081-41ec-bfa8-bf2198b1fd57.png)|second tab ||
+|![image](https://user-images.githubusercontent.com/96014323/205928299-1e5a1a95-8f80-4479-b779-5c9603584df4.png)|third tab ||
+|![image](https://user-images.githubusercontent.com/96014323/205928498-4146efd8-2054-423f-8092-bcf8a8a08c3f.png)|last tab||
 
 <br />
 <br />
-
-### Solution-Dashboard(s):
-[Camera card](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/dashboard/cards/camera_card.yaml)
-
-First tab (no action/triggers,, but they will show up):
-
-![image](https://user-images.githubusercontent.com/96014323/205927784-703bac11-cab7-4fca-b54c-d06f74fd28b2.png)
-
-
-<br />
-
-Second tab:
-
-![image](https://user-images.githubusercontent.com/96014323/205928128-76472a75-c081-41ec-bfa8-bf2198b1fd57.png)
-
-<br />
-
-Third tab:
-
-![image](https://user-images.githubusercontent.com/96014323/205928299-1e5a1a95-8f80-4479-b779-5c9603584df4.png)
-
-<br />
-
-Last tab (collection of old camera(s) as picture glance:
-
-![image](https://user-images.githubusercontent.com/96014323/205928498-4146efd8-2054-423f-8092-bcf8a8a08c3f.png)
-
-
 <br />
 
 
-
-### Credits/inspiration:
-- Kenneth M, partial Frigate config ;)
-
-### Requirements/install tips/troubleshooting:
+## Requirements/install tips/troubleshooting:
 <details>
   <summary> Click to unfold list of booring requirements, tips etc </summary>
   
@@ -99,11 +77,15 @@ Last tab (collection of old camera(s) as picture glance:
   
   
 </details>
-
 <br />
 <br />
+<br />
 
-
+## Credits/inspiration:
+- Kenneth M, partial Frigate config ;)
+<br />
+<br />
+<br />
 
 ## improvements planned/project queue:
 - Better documentation of server/docker setup
