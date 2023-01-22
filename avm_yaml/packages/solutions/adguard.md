@@ -28,16 +28,7 @@
 ### AdGuard in HA:
 |Card preview    |Card |Config|
 | --------| ------------ |----- |
-|<img width="199" alt="image" src="https://user-images.githubusercontent.com/96014323/213938301-1ce241f7-a418-4ed5-af3f-6f45afe2a957.png">
-|[AdGuard card](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/dashboard/solutions/camera_card.yaml)|n/a <br /> - Frigate integration configured in GUI <br /> - Frigate Docker configured on unRaid|
-
-
-n/a
-
-[Chip AdGuard](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/dashboard/cards/chip_adguard.yaml)
-
-<img width="52" alt="image" src="https://user-images.githubusercontent.com/96014323/202316060-4355f8e4-2415-4e9a-bd31-b2625bf7e1d2.png">
-click - and you will get pop-up with more details:
+|<img width="199" alt="image" src="https://user-images.githubusercontent.com/96014323/213938301-1ce241f7-a418-4ed5-af3f-6f45afe2a957.png">|[AdGuard card](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/dashboard/solutions/camera_card.yaml)|- n/a <br /> - Adguard-integration configured in GUI <br /> - AdGuard Docker configured on unRaid|
 
 <br />
 
