@@ -298,6 +298,7 @@ How I use it:
 <br />
 
 ### 3.2. General solutions:
+- [Cameras](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/solutions/cameras.md) - Frigate, connection to cameras and card-setup
 
 - Whole house:
   - All lights
@@ -361,7 +362,6 @@ How I use it:
 - Eva HAN Instant power usage, estimate full hour 
       
 - [Plants](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/solutions/plant.md) Get standard settings for each plant, and report thresholds - and present usefull info in cards 
-- [Cameras](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/solutions/cameras.md) - Frigate, connection to cameras and card-setup
 - Weather forecast
 <br />
 <br />
