@@ -9,9 +9,8 @@
 ### Table of contents:
 |Chapter   | Description/purpose                |
 | --------| ----------------------------------- |
-|[HAstats-main](#hastats-main)      |Gather all sub-solutions in one card   <br /> Tabbed card with sub-solutions on each tab <br /> One tab with reference to this GitHub-repo for documentation-purposes|
-|[HAstats-Integrations](#hastats-integrations)      |Counter of integrations loaded  <br /> Graphed long term history <br /> PopUp with list of all current integrations, with load-times at startup/reload|
-
+|[How it works](#how-it-works-for-me)      |High level view - how it works|
+|[Camera](#camera)      |Camera-card|
 |[Requirements/install tipstroubleshooting](#requirementsinstall-tipstroubleshooting)|Some guidance on what is required and how to install (not at all my biggest priority to keep this up to date, but at least I have tried somehow ;)|
 |[Credits and inspiration](#creditsinspiration)|Listing the particular support, ideas, resources that I have to thank especially for this Solution|
 
@@ -42,16 +41,18 @@ n/a
   <summary> Click to unfold list of booring requirements, tips etc </summary>
   
   #### Functionality required (other than what is builtin in my version of HA):
-  - Frigate (unRaid Docker)
-  - HACS: frigate-integration
-  - HACS: custom:frigate-card
-  - HACS: custom:tabbed-card
-  - HACS: custom:auto-entities
+  - unRaid Docker: Frigate
+  - HACS-integration: Frigate
+  - HACS-frontend: rigate-card
+  - HACS-frontend: tabbed-card
+  - HACS-frontend: auto-entities
   Optional
   - Dashboard:
     * yaml-dashboard (but you can copy dashboard-code to UI-dashboard/card 
 
-  <br />
+<br />
+<br />
+<br />
  
   #### To install you should:
   - Install Frigate docker
