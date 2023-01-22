@@ -1,4 +1,3 @@
-
 title: "Home"
 path: "Home_mobile"
 homeassistant:
@@ -44,7 +43,7 @@ cards:
               content:
                 type: vertical-stack
                 cards:
-                  - !include ../cards/camera_card.yaml
+                  - !include ../solutions/camera_card.yaml
 
       - type: entity
         entity: sensor.hotwater_soc

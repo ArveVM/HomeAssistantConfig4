@@ -1,8 +1,4 @@
-# ArveVM: chip to show count of tasks to do, and on-click popup a list of the tasks
-
 # https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/solutions/adguard.md
-
-# Each todo-task should be created in respective solutions packages  ;)
 
 type: vertical-stack
 cards:
