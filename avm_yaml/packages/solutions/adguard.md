@@ -29,13 +29,7 @@
 |Card preview    |Card |Config|
 | --------| ------------ |----- |
 |<img width="199" alt="image" src="https://user-images.githubusercontent.com/96014323/213938301-1ce241f7-a418-4ed5-af3f-6f45afe2a957.png">|[AdGuard card](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/dashboard/solutions/camera_card.yaml)|- n/a <br /> - Adguard-integration configured in GUI <br /> - AdGuard Docker configured on unRaid|
-
 <br />
-
-with all lines expanded:
-
-<img width="320" alt="image" src="https://user-images.githubusercontent.com/96014323/202316452-2ee10fb4-5bd9-46b1-aeb9-6b6dba271877.png">
-
 <br />
 <br />
 
