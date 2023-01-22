@@ -394,17 +394,25 @@ Only those with some level of config or interest for myself/others are documente
 ### HACS-integrations: 
 
 - [PriceAnalyzer](https://github.com/erlendsellie/priceanalyzer) - Nordpool-spot prices with a bunch of analytical input - including blueprints etc for easy adoptation - [MyDocumentation](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/integrations/priceanalyzer.md)
+- [EnergyScore](https://github.com/knudsvik/EnergyScore) - Some wodo-calculation of how well we manage to utilize cheapest hours - [PwrCtrl_EnergyScore.yaml](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/solutions/pwrctrl/pwrctrl_energyscore.yaml)
 - [Lovelace_gen](https://github.com/thomasloven/hass-lovelace_gen) - enable passing of variables to cards (among othther brilliant functionality)
+- [Browser_mod2](https://github.com/thomasloven/hass-browser_mod) used "everywhere" for pop-up functionality 
 - [PowerCalc](https://github.com/bramstroker/homeassistant-powercalc) - Add power-sensors and power-aggregation - my implementation; [powercalc.yaml](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/integrations/powercalc.yaml) 
+- [Frigate](https://github.com/blakeblackshear/frigate-hass-integration)
+- [Easee EV Charger](https://github.com/fondberg/easee_hass)
+- [Volkswagenn We Connect ID](https://github.com/mitch-dc/volkswagen_we_connect_id)
+- [Monitor Docker](https://github.com/ualex73/monitor_docker)
 - [start_time](https://github.com/AlexxIT/StartTime) - used in HAstats-integrations (to count number of integrations loaded, and present their startup-times
-
+- [OpenPlantbook](https://github.com/Olen/home-assistant-openplantbook)
+- [Home Assistant Plant](https://github.com/Olen/homeassistant-plant)
+- [Team Tracker](https://github.com/vasqued2/ha-teamtracker)
+- [Norwegian Tide](https://github.com/tmjo/ha-norwegiantide)
 Huge thanks to the creators of those integrations!! 
-
 <br />
  
 ### HACS-frontend: 
-
-- [Browser_mod2](https://github.com/thomasloven/hass-browser_mod) used "everywhere" for pop-up functionality 
+- [ApexCharts-card](https://github.com/RomRider/apexcharts-card)
+- [Auto-entities](https://github.com/thomasloven/lovelace-auto-entities)
 - [stack-in-card](https://github.com/custom-cards/stack-in-card) - add multiple card into one card (see exampes on room/area-cards)
 - [tabbed card](https://github.com/kinghat/tabbed-card) - see example on any area heating card)
 - 
