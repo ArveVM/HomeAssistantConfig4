@@ -31,7 +31,7 @@ About:
   - Solutions; virtual wrapper around an end-user focused solution. 
     - Collect Instructions, Dashboard/Cards and Config (inputNubers, sensors created, entities, automations etc) in one "wrapper" so that sharing is easier, and also easier future maintenance
     - more info under Functionality below
- 
+ - This will enable easy sharing of any Solutions, and easy copying parts of them (particular sensors etc) to your configuration.yaml (or packages/!include-structure) 
  - This means that the only thing configuration.yaml is actually doing, is loading all YAML-files in packages-folder. 
    - The packages-folder is where all YAML-configuration is structured in files which are named after the actual HA-integration that is configured, or solutions
  - PS: The way the !include is set up is not random!
