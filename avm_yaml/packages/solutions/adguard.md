@@ -1,16 +1,40 @@
                                                   ArveVM, November.2022
 # AdGuard
 
+## Why AdGuard?  
+- Need a way for the wife to control AdGuard (read; disable ad-blocking), so integrated it to HA and made a chip/popup from which she can control.
 <br />
 
-## Intro:
-### Why AdGuard?  
-Need a way for the wife to control AdGuard (read; disable ad-blocking), so integrated it to HA and made a chip/popup from which she can control
+### Table of contents:
+|Chapter   | Description/purpose                |
+| --------| ----------------------------------- |
+|[How it works](#how-it-works-for-me)      |High level view - how it works|
+|[Adguard in HA](#adguard-in-HA)      |card|
+|[Requirements/install tipstroubleshooting](#requirementsinstall-tipstroubleshooting)|Some guidance on what is required and how to install (not at all my biggest priority to keep this up to date, but at least I have tried somehow ;)|
+|[Credits and inspiration](#creditsinspiration)|Listing the particular support, ideas, resources that I have to thank especially for this Solution|
+<br />
+<br />
 
-### Credits/inspiration:
-- lots of assistance and guiding from ThomasH: so hjuge thanks ;)
+## How it works (for me):
+- Add Adguard docker in unRaid. 
+- Add Adguard integration in HA (point to docker ip/port)
+- Add Adguard card (see below)
+  - use card to toggle on/off as needed  
+<br />
+<br />
+<br />
 
-### Requirements/install tips/troubleshooting:
+
+### AdGuard in HA:
+|Card preview    |Card |Config|
+| --------| ------------ |----- |
+|<img width="199" alt="image" src="https://user-images.githubusercontent.com/96014323/213938301-1ce241f7-a418-4ed5-af3f-6f45afe2a957.png">|[AdGuard card](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/dashboard/solutions/camera_card.yaml)|- n/a <br /> - Adguard-integration configured in GUI <br /> - AdGuard Docker configured on unRaid|
+<br />
+<br />
+<br />
+
+
+## Requirements/install tips/troubleshooting:
 <details>
   <summary> Click to unfold list of booring requirements, tips etc </summary>
   
@@ -49,36 +73,15 @@ Need a way for the wife to control AdGuard (read; disable ad-blocking), so integ
 
 <br />
 <br />
-
-## How it works (for me):
-- created chip/popup to view status from AdGuard-integration getting data from Adguard-docker
-
-
-<br />
 <br />
 
-### Solution-Yaml:
-n/a
-
+## Credits/inspiration:
+- lots of assistance and guiding from ThomasH: so hjuge thanks ;)
 <br />
 <br />
-
-### Solution-Dashboard(s):
-[Chip AdGuard](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/dashboard/cards/chip_adguard.yaml)
-
-<img width="52" alt="image" src="https://user-images.githubusercontent.com/96014323/202316060-4355f8e4-2415-4e9a-bd31-b2625bf7e1d2.png">
-click - and you will get pop-up with more details:
-
 <br />
-
-with all lines expanded:
-
-<img width="320" alt="image" src="https://user-images.githubusercontent.com/96014323/202316452-2ee10fb4-5bd9-46b1-aeb9-6b6dba271877.png">
-
-<br />
-<br />
-
 
 ## improvements planned/project queue:
 - Better documentation of server/docker setup
 - might do something with history/graphs  etc?
+- slight adjustment towards new layout (this is not good at all :( )

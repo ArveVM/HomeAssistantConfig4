@@ -16,16 +16,20 @@
 |[Credits and inspiration](#creditsinspiration)|Listing the particular support, ideas, resources that I have to thank especially for this Solution|
 <br />
 <br />
+
+## How it works (for me):
+- Created sensors to count different KPI's of my HA-installations "growth". Added sensors as long term statistics - so we can see (and graph) long term trends
+- Adding sub-solutions for each type of stats, so that it is easier to grasp concept of each "kpi-group"
+  - Adding card for each sub-solution
+- Adding tabbed card to combine all sub-solutions in one card.
+<br />
 <br />
 
 ## HAstats-main
-|Config   | Card | Card preview |
+|Card preview | Card |Config  |
 | --------| ------------ |----- |
-|n/a      |[HAstats-card](https://github.com/ArveVM/HomeAssistantConfig4/edit/master/avm_yaml/dashboard/solutions/hastats_card.yaml) |<img width="336" alt="image" src="https://user-images.githubusercontent.com/96014323/213890190-2dc63605-e8f2-4f1f-b031-0ab61f47931e.png">  |
+|<img width="336" alt="image" src="https://user-images.githubusercontent.com/96014323/213890190-2dc63605-e8f2-4f1f-b031-0ab61f47931e.png"> |[HAstats-card](https://github.com/ArveVM/HomeAssistantConfig4/edit/master/avm_yaml/dashboard/solutions/hastats_card.yaml) |- n/a |
 
-|Input   | Created | 
-| --------| ------------ |
-|n/a      |n/a|
 
 One tabbed card to gather sub-solutions in one view. Added one tab for documentation
 <br />
@@ -34,10 +38,11 @@ One tabbed card to gather sub-solutions in one view. Added one tab for documenta
 
 
 ## HAstats-Integrations
-|Config   | Card | Card preview |
+(sub-solution)
+|Card preview | Card |Config  |
 | --------| ------------ |----- |
-|[n/a](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/solutions/hastats_integrations.yaml) |[HAstats_int_card](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/dashboard/solutions/hastats_integrations_card.yaml) | <img width="268" alt="image" src="https://user-images.githubusercontent.com/96014323/213888773-1a695b5d-7955-4c1c-b4b0-12a4e21f83d2.png">|
-||Popup "Integrations by startup-time"|<img width="316" alt="image" src="https://user-images.githubusercontent.com/96014323/213888991-09ed22f6-dd4e-4095-8800-51b47aae3da1.png">|
+|<img width="268" alt="image" src="https://user-images.githubusercontent.com/96014323/213888773-1a695b5d-7955-4c1c-b4b0-12a4e21f83d2.png"> |[HAstats_int_card](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/dashboard/solutions/hastats_integrations_card.yaml)|[HAstats_integrations.yaml](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/solutions/hastats_integrations.yaml) |
+|<img width="316" alt="image" src="https://user-images.githubusercontent.com/96014323/213888991-09ed22f6-dd4e-4095-8800-51b47aae3da1.png">|Popup "Integrations by startup-time"||
 
 |Input    | Created      | 
 | --------| ------------ |
@@ -49,12 +54,12 @@ Using history-explorer-graph with long-term statistics enabled, so the configure
 <br />
 
 ## HAstats-Entities By Domain (ebd)
-|Config   | Card | Card preview |
+|Card preview | Card |Config  |
 | --------| ------------ |----- |
-|[hastats_ebd.yaml](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/solutions/hastats_ebd.yaml) |[HAstats_ebd_card](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/dashboard/solutions/hastats_entities_by_domain_card.yaml) |<img width="261" alt="image" src="https://user-images.githubusercontent.com/96014323/213890691-5e39a084-b6c3-403b-a264-cbd3fb7a9aeb.png">|
-||Popup "Total"|<img width="301" alt="image" src="https://user-images.githubusercontent.com/96014323/213891309-5a815a73-2ceb-4997-a2c6-904856c35446.png">|
-||Popup "Sensors"|<img width="301" alt="image" src="https://user-images.githubusercontent.com/96014323/213891466-fa4ceb80-8916-4471-9b60-ac3b88dd609f.png">|
-||Popup "Automations"|<img width="297" alt="image" src="https://user-images.githubusercontent.com/96014323/213891537-2f5b7a3b-3efd-4c7f-89aa-e55dd60b0765.png">|
+|<img width="261" alt="image" src="https://user-images.githubusercontent.com/96014323/213890691-5e39a084-b6c3-403b-a264-cbd3fb7a9aeb.png"> |[HAstats_ebd_card](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/dashboard/solutions/hastats_entities_by_domain_card.yaml) |[hastats_ebd.yaml](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/solutions/hastats_ebd.yaml)|
+|<img width="301" alt="image" src="https://user-images.githubusercontent.com/96014323/213891309-5a815a73-2ceb-4997-a2c6-904856c35446.png">|Popup "Total"||
+|<img width="301" alt="image" src="https://user-images.githubusercontent.com/96014323/213891466-fa4ceb80-8916-4471-9b60-ac3b88dd609f.png">|Popup "Sensors"||
+|<img width="297" alt="image" src="https://user-images.githubusercontent.com/96014323/213891537-2f5b7a3b-3efd-4c7f-89aa-e55dd60b0765.png">|Popup "Automations"||
 ||etc on scripts and lights||
 
 
@@ -69,9 +74,9 @@ Using history-explorer-graph with long-term statistics enabled, so the configure
 <br />
 
 ## HAstats-YAML line count
-|Config   | Card | Card preview |
+|Card preview | Card |Config  |
 | --------| ------------ |----- |
-|[hastats_yaml_lines.yaml](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/solutions/hastats_yaml_lines.yaml) |[HAstats_yaml_lines_card](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/dashboard/solutions/hastats_yaml_lines_card.yaml) |<img width="267" alt="image" src="https://user-images.githubusercontent.com/96014323/213894001-746ff150-d97b-44ce-b7d4-06a3b5f9f83e.png">|
+|<img width="267" alt="image" src="https://user-images.githubusercontent.com/96014323/213894001-746ff150-d97b-44ce-b7d4-06a3b5f9f83e.png"> |[HAstats_yaml_lines_card](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/dashboard/solutions/hastats_yaml_lines_card.yaml) |
 
 
 |Input    | Created      | 
@@ -86,10 +91,10 @@ Using history-explorer-graph with long-term statistics enabled, so the configure
 <br />
 
 ## HAstats-DB
-|Config   | Card | Card preview |
+|Card preview | Card |Config  |
 | --------| ------------ |----- |
-|[hastats_db.yaml](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/solutions/hastats_db.yaml) |[HAstats_db_card](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/dashboard/solutions/hastats_db_card.yaml) |<img width="271" alt="image" src="https://user-images.githubusercontent.com/96014323/213894282-bc827093-113c-4884-a75d-47bc3b38f1ff.png">
-|
+|<img width="271" alt="image" src="https://user-images.githubusercontent.com/96014323/213894282-bc827093-113c-4884-a75d-47bc3b38f1ff.png"> |[HAstats_db_card](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/dashboard/solutions/hastats_db_card.yaml) |
+|[hastats_db.yaml](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/solutions/hastats_db.yaml)|
 
 
 |Input    | Created      | 
