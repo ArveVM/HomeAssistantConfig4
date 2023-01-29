@@ -206,7 +206,8 @@ Why:
 <br />
  
 </details>      
-<details><summary>"Advanced" YAML-guide: Templating</summary>
+  
+  <details><summary>"Advanced" YAML-guide: Templating</summary>
 <br />
   
  
