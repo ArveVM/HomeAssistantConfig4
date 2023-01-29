@@ -136,7 +136,7 @@ Why:
 <br />
 </details>
 
-</details>      
+
 <details><summary>Configuration: SHARE </summary> 
 <br />
  
@@ -159,56 +159,52 @@ Why:
    - create .gitignore-file to remove private or sensitive stuff (also remove db and other install-like stuff - it is only config that is interresting for others
    - use VS-code to push your seleced config to GitHub and start spreading the word and get feedback 
      - and whenever you change code,, vs-code will suggest to update your gitHub-repo
-  <details><summary>Markdown: tips </summary>
-  - [avoid whitespace removed](https://stackoverflow.com/questions/40023013/tab-space-in-markdown) - Alt+2+5+5 works for me :)
+
   <br /> 
-  </details>  
-  
- ---
+---
 
 <br />
 <br /> 
 </details>  
 
-<details><summary>"Advanced" YAML-guide</summary>
+<details><summary>**"Advanced" YAML-guide**</summary> -->
 <br />
 
-  Not sure if this is valid as a guide, and if it is indeed "advanced",, 
-  
-  but I put it in here so I can reference the methods that I use (and keep as mental notes to my self as well :) )
+- Not sure if this is valid as a guide, and if it is indeed "advanced",,   
+- but I put it in here so I can reference the methods that I use (and keep as mental notes to my self as well :) )
 <br />
 
-<details><summary>"Advanced" YAML-guide: General YAML-guides & Node-anchors</summary>
-<br />  
- YAML-tutorials:
-  
-  - Beguinner:	http://thomasloven.com/blog/2018/08/YAML-For-Nonprogrammers/
-  - Normal:	    https://spacelift.io/blog/yaml
-  - Advanced: 	https://yaml.org/spec/1.2.2/
-  
-  How I use it
-  
-  - understand what is a dictionary and what is a list ;)
-  - node_anchors:
-    - to avoid duplicate code on card-mod 
-    - to declare entities as variables in solution-yaml-files (so it can be referrred to in several automations/climates/sensors
-<br />
- 
- ---
- Required Functionality:
-   - my basics: Packages
- 
- My implementation:
-   - node_anchor to re-use code
+  <details><summary>"Advanced" YAML-guide: General YAML-guides & Node-anchors</summary>
+  <br />  
+   YAML-tutorials:
 
- --- 
-<br />
-<br />
+    - Beguinner:	http://thomasloven.com/blog/2018/08/YAML-For-Nonprogrammers/
+    - Normal:	    https://spacelift.io/blog/yaml
+    - Advanced: 	https://yaml.org/spec/1.2.2/
+
+    How I use it
+
+    - understand what is a dictionary and what is a list ;)
+    - node_anchors:
+      - to avoid duplicate code on card-mod 
+      - to declare entities as variables in solution-yaml-files (so it can be referrred to in several automations/climates/sensors
+  <br />
+
+   ---
+   Required Functionality:
+     - my basics: Packages
+
+   My implementation:
+     - node_anchor to re-use code
+
+   --- 
+  <br />
+  <br />
  
-</details>      
+  </details>      
   
   <details><summary>"Advanced" YAML-guide: Templating</summary>
-<br />
+  <br />
   
  
   What is templating:
@@ -227,23 +223,27 @@ Why:
   - to combine expressions and logic in YAML. Used in Automations and Template-sensors everywhere in my config
 
   <br />
- 
- ---
- Required Functionality:
-   - my basics: Packages
- 
- My implementation:
-   - all over
 
- --- 
-<br />
-<br />
- 
-</details>      
-    
+   ---
+   Required Functionality:
+     - my basics: Packages
+
+   My implementation:
+     - all over
+
+   --- 
+  <br />
+  <br />
+  </details>
   
-</details>      
+  <details><summary>Markdown: tips </summary>
+  - [avoid whitespace removed](https://stackoverflow.com/questions/40023013/tab-space-in-markdown) - Alt+2+5+5 works for me :) 
+  
+  </details>      
 
+<br />
+<br />
+</details>      
 
 <br />
 <br />
