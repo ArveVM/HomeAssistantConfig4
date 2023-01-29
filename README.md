@@ -167,12 +167,13 @@ Why:
 <br /> 
 </details>  
 
-<details><summary>"Advanced" YAML-guide</summary> -->
+<details><summary>"Advanced" YAML-guide</summary>
 <br />
 
 - Not sure if this is valid as a guide, and if it is indeed "advanced",,   
-- but I put it in here so I can reference the methods that I use (and keep as mental notes to my self as well :) )
-<br />
+- But I put it in here so I can reference the methods that I use (and keep as mental notes to my self as well :) )
+- And I will preserve the right to call this "my documentation" - and all config is based upon theese "tricks" 
+- so read them if you don't understant my config. I will call you out on "Read The F%¤#%&/ Mwmo" (RTFM) - if I've bothered to document some tricks here and you have not read them  ;) 
 
   <details><summary>"Advanced" YAML-guide: General YAML-guides & Node-anchors</summary>
   <br />  
@@ -234,10 +235,10 @@ Why:
    --- 
   <br />
   <br />
-    
-  </details>
+ 
+  </details>      
   
-  <details><summary>Markdown: tips </summary>
+  <details><summary>Markdown: tips </summary>
   - [avoid whitespace removed](https://stackoverflow.com/questions/40023013/tab-space-in-markdown) - Alt+2+5+5 works for me :) 
   
   </details>      
