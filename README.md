@@ -1,4 +1,4 @@
-# Home-Assistant_config #4
+# Home Assistant config
 
 - This repo contains (part of) the working Home Assistant configuration for our home. It's clearly under development :)
 - Below you find an overview of the the configuration, and below that devices currently being used, links to blog/video posts, and other HA enthusists that provided inspiration and configs to help build this config. 
@@ -169,6 +169,81 @@ Why:
 <br />
 <br /> 
 </details>  
+
+<details><summary>"Advanced" YAML-guide</summary>
+<br />
+
+  Not sure if this is valid as a guide, and if it is indeed "advanced",, 
+  
+  but I put it in here so I can reference the methods that I use (and keep as mental notes to my self as well :) )
+<br />
+
+<details><summary>"Advanced" YAML-guide: General YAML-guides & Node-anchors</summary>
+<br />  
+ YAML-tutorials:
+  
+  - Beguinner:	http://thomasloven.com/blog/2018/08/YAML-For-Nonprogrammers/
+  - Normal:	    https://spacelift.io/blog/yaml
+  - Advanced: 	https://yaml.org/spec/1.2.2/
+  
+  How I use it
+  
+  - understand what is a dictionary and what is a list ;)
+  - node_anchors:
+    - to avoid duplicate code on card-mod 
+    - to declare entities as variables in solution-yaml-files (so it can be referrred to in several automations/climates/sensors
+<br />
+ 
+ ---
+ Required Functionality:
+   - my basics: Packages
+ 
+ My implementation:
+   - node_anchor to re-use code
+
+ --- 
+<br />
+<br />
+ 
+</details>      
+<details><summary>"Advanced" YAML-guide: Templating</summary>
+<br />
+  
+ 
+  What is templating:
+  https://www.home-assistant.io/docs/configuration/templating/
+  - dev-tools-template . to check validity
+  - in VScode; mark template , then CTRL+SHIFT+p "Home Assistant: render template" and it will give you a window with the template outcome  ;)
+    #thankserlend
+  
+  my star guides
+  - erlend
+  - rypeveien
+  - thejeffreystones
+  
+  How I use it
+  
+  - to combine expressions and logic in YAML. Used in Automations and Template-sensors everywhere in my config
+
+  <br />
+ 
+ ---
+ Required Functionality:
+   - my basics: Packages
+ 
+ My implementation:
+   - all over
+
+ --- 
+<br />
+<br />
+ 
+</details>      
+    
+  
+</details>      
+
+
 <br />
 <br />
 
@@ -249,36 +324,6 @@ How I use it:
 <br />
  
 </details>      
-
-
-<details><summary>Advanced YAML-dashboard-guide: Node-anchors"</summary>
-<br />
- YAML-tutorials:
-  
-  - Beguinner:	http://thomasloven.com/blog/2018/08/YAML-For-Nonprogrammers/
-  - Normal:	    https://spacelift.io/blog/yaml
-  - Advanced: 	https://yaml.org/spec/1.2.2/
-  
-  How I use it
-  
-  - node_anchors:
-    - to avoid duplicate code on card-mod 
-    - to declare entities as variables in solution-yaml-files (so it can be referrred to in several automations/climates/sensors
-<br />
- 
- ---
- Required Functionality:
-   - my basics: Packages
- 
- My implementation:
-   - node_anchor to re-use code
-
- --- 
-<br />
-<br />
- 
-</details>      
-
 
 <details><summary>Mushroom/popup's: Card-in-card, templating colours, popups, tabbed-card </summary>
   Trying to make one card pr "Solution", so there is one tab for status, one for config and one for histori
