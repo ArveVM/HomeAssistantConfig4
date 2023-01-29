@@ -66,54 +66,11 @@ homeassistant:
       customize: &customize
         package: 'Min Renovasjon - INTEGRATION'
     
-    # tag package specific entities with package name
-    ## first the ones created by the integration itself;
-    sensor.restavfall:
-      <<: *customize
-    sensor.papp_papir_plast:
-      <<: *customize
-    sensor.matavfall:
-      <<: *customize
-      device_class: date
-    sensor.glas_metallemballasje:
-      <<: *customize
-    sensor.renovasjon_i_morgen_counter:
-      <<: *customize
-    sensor.renovasjon_i_dag_counter:
-      <<: *customize
-    sensor.min_renovasjon_next_restavfall:
-      <<: *customize     
-    sensor.restavfall_alert:
-      <<: *customize
-    sensor.min_renovasjon_next_papir:
-      <<: *customize
-    sensor.min_renovasjon_next_mat:
-      <<: *customize
-    sensor.matavfall_alert:
-      <<: *customize
-    sensor.min_renovasjon_next_glass_metall:
-      <<: *customize
+
 
 # Then some sensors to calculate how many days until next pickup for each type garbage
 template:
   - sensor:
- 
-      - name: "renovasjon i morgen Counter"
-        unique_id: renovasjon_morgen_counter
-        icon: mdi:list-status
-        state: >-
-          {{ states.sensor | select('search', 'min_renovasjon_next_') 
-          | selectattr('state', 'eq', 'I morgen') | list | count 
-          }}
-
-      - name: "renovasjon i dag Counter"
-        unique_id: renovasjon_i_dag_counter
-        icon: mdi:list-status
-        state: >-
-          {{ states.sensor | select('search', 'min_renovasjon_next_') 
-          | selectattr('state', 'eq', 'I dag') | list | count }}
-#          {{ states.sensor | select('search', 'min_renovasjon_next_') 
-#          | selectattr('state', 'eq', '0') | list | count }}
 
       - name: min_renovasjon_next_restavfall
         unique_id: min_renovasjon_next_restavfall
@@ -128,52 +85,3 @@ template:
           Om {{(seconds / 86400)|round() }} dager
           {% endif %}
 
-      - name: restavfall_alert
-        unique_id: restavfall_alert
-#        icon: mdi:trash-can
-        state: >
-          {% set seconds = as_timestamp(strptime(states('sensor.restavfall'),'%d.%m.%Y')) - as_timestamp(now().replace(hour=0, minute=0, second=0)) %}
-          {{(seconds / 86400)|round() <2 }}
-
-      - name: min_renovasjon_next_papir
-        icon: mdi:trash-can
-        state: >
-          {% set seconds = as_timestamp(strptime(states('sensor.papp_papir_plast'),'%d.%m.%Y')) - as_timestamp(now().replace(hour=0, minute=0, second=0)) %}
-          {% if (seconds/86400) | round() == 1 %}
-          I morgen
-          {% elif (seconds/86400) | round() == 0 %}
-          I dag
-          {% else %}
-          Om {{(seconds / 86400)|round() }} dager
-          {% endif %}
-
-      - name: min_renovasjon_next_mat
-        icon: mdi:trash-can
-        state: >
-          {% set seconds = as_timestamp(strptime(states('sensor.matavfall'),'%d.%m.%Y')) - as_timestamp(now().replace(hour=0, minute=0, second=0)) %}
-          {% if (seconds/86400) | round() == 1 %}
-          I morgen
-          {% elif (seconds/86400) | round() == 0 %}
-          I dag
-          {% else %}
-          Om {{(seconds / 86400)|round() }} dager
-          {% endif %}
-      - name: matavfall_alert
-#        icon: mdi:trash-can
-        state: >
-          {% set seconds = as_timestamp(strptime(states('sensor.matavfall'),'%d.%m.%Y')) - as_timestamp(now().replace(hour=0, minute=0, second=0)) %}
-          {{(seconds / 86400)|round() <2 }}
-
-      - name: min_renovasjon_next_glass_metall
-        icon: mdi:trash-can
-        state: >
-          {% set seconds = as_timestamp(strptime(states('sensor.glas_metallemballasje'),'%d.%m.%Y')) - as_timestamp(now().replace(hour=0, minute=0, second=0)) %}
-          {% if (seconds/86400) | round() == 1 %}
-          I morgen
-          {% elif (seconds/86400) | round() == 0 %}
-          I dag
-          {% else %}
-          Om {{(seconds / 86400)|round() }} dager
-          {% endif %}
-
-#the end

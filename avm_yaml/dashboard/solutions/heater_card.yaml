@@ -1,5 +1,32 @@
 # lovelace_gen
 
+# ArveM: a bit of instructions:
+  # this card is supposed to be called with different entities from different areas:
+  # sample code for popup with office-heater data from the Office area card:
+        # tap_action:
+        #   action: fire-dom-event
+        #   browser_mod:
+        #     service: browser_mod.popup
+        #     data:
+        #       content: !include
+        #         - ../solutions/heater_card.yaml
+        #         - entity: input_boolean.office_heater_powerboost
+        #           powerauto: input_boolean.office_heater_powerauto
+        #           powerboost: input_boolean.office_heater_powerboost
+        #           powersave: input_boolean.office_heater_powersave
+        #           powerhoursave: input_boolean.office_heater_powerhoursave
+        #           powerswitch: switch.office_heater_plug
+        #           power: sensor.office_heater_plug_power
+        #           area_temp: *temp1
+        #           area_temp_compare: sensor.house_average_temperature
+        #           area_humidity: *humidity1
+        #           area_humidity_compare: sensor.house_average_temperature
+        #           longterm_target: input_number.office_heater_longterm_target
+        #           thermostat_target: sensor.office_heater_thermostat_target
+        #           thermostat_output: input_boolean.office_heater_thermostat_output
+
+
+
 type: custom:tabbed-card
 options: {}
 styles:
@@ -22,13 +49,13 @@ tabs:
             - entity: "{{ power }}"
               name: Heating
         - !include
-          - temperature_compare_card.yaml
-          - entity: "{{ room_temp }}"
-            room_temp_compare: "{{ room_temp_compare }}"
+          - house_temp_comp_card.yaml
+          - entity: "{{ area_temp }}"
+            area_temp_compare: "{{ area_temp_compare }}"
         - !include
-          - humidity_compare_card.yaml
-          - entity: "{{ room_humidity }}"
-            humidity_entity: "{{ room_humidity }}"
+          - house_humidity_comp_card.yaml
+          - entity: "{{ area_humidity }}"
+            area_humidity_compare: "{{ area_humidity_compare }}"
 
   - attributes:
       label: Settings
@@ -38,11 +65,11 @@ tabs:
       cards:
         - type: entities
           entities:
-            - entity: "{{ room_temp }}"
+            - entity: "{{ area_temp }}"
               type: custom:multiple-entity-row
               name: "Local input:"
               toggle: false
-              state_header: Room temp
+              state_header: Area temp
             - type: divider
             - entity: "{{ powerauto }}"
             - entity: "{{ thermostat_target }}"
@@ -96,8 +123,8 @@ tabs:
           graphs:
             - type: line
               entities:
-                - entity: "{{ room_temp }}"
-                  name: Room temp
+                - entity: "{{ area_temp }}"
+                  name: Area temp
                   color: red
                   fill: rgba(151,187,205,0.15)
                   lineMode: curves
@@ -111,7 +138,7 @@ tabs:
                   suffix: °C
                   color: green
                   lineMode: stepped
-                - entity: "{{ room_temp_compare }}"
+                - entity: "{{ area_temp_compare }}"
                   name: ComparableAverage
                   suffix: °C
                   color: orange

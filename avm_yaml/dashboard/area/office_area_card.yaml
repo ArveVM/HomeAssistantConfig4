@@ -6,14 +6,6 @@ homeassistant:
     package.node_anchors:
       temp1: &temp1 sensor.office_thp_temperature
       humidity1: &humidity1 sensor.office_thp_humidity
-      card_mod_chip: &card_mod_chip
-        card_mod:
-          style: |
-            ha-card {
-              --chip-box-shadow: none;
-              --chip-background: none;
-              --chip-spacing: 0;
-              margin-left: -10px;
 
 type: custom:stack-in-card
 card_mod:
@@ -63,17 +55,24 @@ cards:
         }
     chips:
       - type: template
-        <<: *card_mod_chip
         entity: switch.office_heater_plug
         icon: mdi:radiator
         icon_color: "{{ 'blue' if is_state(entity, 'on') else 'grey' }}"
+        card_mod_chip: &card_mod_chip_style
+          card_mod:
+            style: |
+              ha-card {
+                --chip-box-shadow: none;
+                --chip-background: none;
+                --chip-spacing: 0;
+                margin-left: -10px;
         tap_action:
           action: fire-dom-event
           browser_mod:
             service: browser_mod.popup
             data:
               content: !include
-                - ../cards/heater_card.yaml
+                - ../solutions/heater_card.yaml
                 - entity: input_boolean.office_heater_powerboost
                   powerauto: input_boolean.office_heater_powerauto
                   powerboost: input_boolean.office_heater_powerboost
@@ -81,18 +80,26 @@ cards:
                   powerhoursave: input_boolean.office_heater_powerhoursave
                   powerswitch: switch.office_heater_plug
                   power: sensor.office_heater_plug_power
-                  room_temp: *temp1
-                  room_temp_compare: sensor.house_average_temperature
-                  room_humidity: *humidity1
+                  area_temp: *temp1
+                  area_temp_compare: sensor.house_average_temperature
+                  area_humidity: *humidity1
+                  area_humidity_compare: sensor.house_average_temperature
                   longterm_target: input_number.office_heater_longterm_target
                   thermostat_target: sensor.office_heater_thermostat_target
                   thermostat_output: input_boolean.office_heater_thermostat_output
 
+      - type: action
+        icon: mdi:devices
+        card_mod: *card_mod_chip_style
+        tap_action:
+          action: navigate
+          navigation_path: /config/areas/area/kitchen
+
       - type: template
-        <<: *card_mod_chip
         entity: binary_sensor.loft_room_status
         icon: mdi:hospital
         icon_color: "{{ 'green' if is_state(entity, 'off') else 'red' }}"
+        card_mod: *card_mod_chip_style
         hold_action:
           action: more-info
         tap_action:
@@ -104,6 +111,6 @@ cards:
                 type: vertical-stack
                 cards:
                   - !include
-                    - ../area/loft/loft_status_card.yaml
+                    - loft_status_card.yaml
                     - entity: *temp1
                       humidity_entity: *humidity1

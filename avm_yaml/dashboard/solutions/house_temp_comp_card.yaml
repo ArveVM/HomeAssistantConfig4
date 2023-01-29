@@ -7,7 +7,7 @@
 #      - !include
 #        - ../../solutions/house_temp_comp_card.yaml
 #        - entity: *temp1
-#          entity_compare: sensor.house_average_temperature       #change to whatever you want to compare with
+#          area_temp_compare: sensor.house_average_temperature       #change to whatever you want to compare with
 
 type: custom:stack-in-card
 cards:
@@ -22,7 +22,7 @@ cards:
         name: Temp this area
         icon_color: green
       - type: custom:mushroom-entity-card
-        entity: "{{ entity_compare }}"
+        entity: "{{ area_temp_compare }}"
         primary_info: state
         secondary_info: name
         name: Average temp
@@ -33,7 +33,7 @@ cards:
       - entity: "{{ entity }}"
         name: Temp this area
         color: "#00bb33"
-      - entity: "{{ entity_compare }}"
+      - entity: "{{ area_temp_compare }}"
         name: Compare
         color: orange
       - color: yellow

@@ -80,8 +80,8 @@ template:
         attributes:
           <<: *solution_attribute
         state: >-
-          {%set bottom = states('sensor.hotwater_puck_bottom_temperature.state') | float%}
-          {%set top = states('sensor.hotwater_temp_mixscrew_filtererd_temperature') | float%}
+          {%set bottom = states('sensor.hotwater_puck_bottom_temperature.state') | float(default=45) %}
+          {%set top = states('sensor.hotwater_temp_mixscrew_filtererd_temperature') | float(default=55) %}
           {{bottom - top}}
       #- name: "Hotwater Temp Power"
       #  unique_id: hotwater_temp_power
@@ -101,8 +101,8 @@ template:
         attributes:
           <<: *solution_attribute
         state: >-
-          {%set bottom = states.sensor.hotwater_puck_bottom_temperature.state | float%}
-          {%set top = states.sensor.hotwater_puck_mixscrew_temperature.state | float%}
+          {%set bottom = states.sensor.hotwater_puck_bottom_temperature.state | float(default=45) %}
+          {%set top = states.sensor.hotwater_puck_mixscrew_temperature.state | float(default=55) %}
           {{(bottom + top)/2}}
 
 

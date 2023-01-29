@@ -73,7 +73,7 @@ cards:
             service: browser_mod.popup
             data:
               content: !include
-                - ../cards/heater_card.yaml
+                - ../solutions/heater_card.yaml
                 - entity: input_boolean.bathroom_heater_powerboost
                   powerauto: input_boolean.bathroom_heater_powerauto
                   powerboost: input_boolean.bathroom_heater_powerboost
@@ -81,9 +81,10 @@ cards:
                   powerhoursave: input_boolean.bathroom_heater_powerhoursave
                   powerswitch: switch.bathroom_heater_puck
                   power: sensor.bathroom_heater_puck_power
-                  room_temp: *temp1
-                  room_temp_compare: sensor.house_average_temperature
-                  room_humidity: *humidity1
+                  area_temp: *temp1
+                  area_temp_compare: sensor.house_average_temperature
+                  area_humidity: *humidity1
+                  area_humidity_compare: sensor.house_average_temperature
                   longterm_target: input_number.bathroom_heater_longterm_target
                   thermostat_target: sensor.bathroom_heater_thermostat_target
                   thermostat_output: input_boolean.bathroom_heater_thermostat_output
@@ -104,6 +105,6 @@ cards:
                 type: vertical-stack
                 cards:
                   - !include
-                    - loft/loft_status_card.yaml
+                    - loft_status_card.yaml
                     - entity: *temp1
                       humidity_entity: *humidity1

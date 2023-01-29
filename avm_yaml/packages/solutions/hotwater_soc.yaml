@@ -146,7 +146,7 @@ template:
           {% set k = 4.186 %}
           {% set kt = 3600 %}
           {% set kx = states('input_number.hotwater_soc_min_temp') | float %}
-          {{ 100-(((kwhs-kwha)*100))*10/100 | round(2) }}
+          {{ 100-(((kwhs-kwha)*100))*10/100 | round(1) }}
         attributes:
           <<: *solution_attribute
 

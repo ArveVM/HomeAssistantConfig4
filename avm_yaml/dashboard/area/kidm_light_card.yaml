@@ -19,6 +19,18 @@ tabs:
           show_brightness_control: true
           show_color_control: true
           show_color_temp_control: true
+          collapsible_controls: false
+          tap_action:
+            action: toggle
+          
+        - type: custom:mushroom-light-card
+          entity: light.livingroom_light_windowstrip
+          primary_info: name
+          icon_type: icon
+          use_light_color: true
+          show_brightness_control: true
+          show_color_control: true
+          show_color_temp_control: true
           collapsible_controls: true
           tap_action:
             action: toggle

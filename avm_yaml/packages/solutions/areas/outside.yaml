@@ -11,7 +11,10 @@
 # and anyone with example of how to ensure power-on-behaviour  (currently set in z2m, reconfigure i Solution, or just document here?)
 # select.outdoor_light_power_on_behavior = on
 
-
+light:
+  - platform: switch
+    name: Outside light1
+    entity_id: switch.outside_light1
 
 #: AVM; define my 'time-zones' for outdoor ligths
 binary_sensor:

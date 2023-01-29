@@ -67,7 +67,7 @@ cards:
             service: browser_mod.popup
             data:
               content: !include
-                - ../cards/heater_card.yaml
+                - ../solutions/heater_card.yaml
                 - entity: input_boolean.entry_heater_powerboost
                   powerauto: input_boolean.entry_heater_powerauto
                   powerboost: input_boolean.entry_heater_powerboost
@@ -75,10 +75,10 @@ cards:
                   powerhoursave: input_boolean.entry_heater_powerhoursave
                   powerswitch: switch.entry_heater_plug
                   power: sensor.entry_heater_puck_power
-                  room_temp: sensor.entry_thp_temperature
-                  room_temp_compare: sensor.house_average_temperature
-                  room_humidity: sensor.entry_thp_humidity
-                  room_humidity_compare: sensor.house_average_humidity
+                  area_temp: *temp1
+                  area_temp_compare: sensor.house_average_temperature
+                  area_humidity: *humidity1
+                  area_humidity_compare: sensor.house_average_temperature
                   longterm_target: input_number.entry_heater_longterm_target
                   thermostat_target: sensor.entry_heater_thermostat_target
                   thermostat_output: input_boolean.entry_heater_thermostat_output

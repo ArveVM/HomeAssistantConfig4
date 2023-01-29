@@ -77,19 +77,50 @@ cards:
                   - !include
                     - ../solutions/house_temp_comp_card.yaml
                     - entity: *temp1
-                      entity_compare: sensor.outside_netatmo_temperature
+                      area_temp_compare: sensor.outside_netatmo_temperature
                   - !include
                     - ../solutions/house_humidity_comp_card.yaml
                     - entity: *humidity1
-                      entity_compare: sensor.outside_netatmo_humidity
-                        
-                        
-                        #*humidity1
+                      area_humidity_compare: sensor.outside_netatmo_humidity
+        hold_action: none
+
+      - type: template
+        entity: binary_sensor.garage_dad_closed
+        icon: "{{ 'mdi:garage' if is_state(entity, 'on') else 'mdi:garage-open' }}"
+        icon_color: "{{ 'disabled' if is_state(entity, 'on') else 'red' }}"
+        card_mod: *card_mod_chip_style
+        tap_action:
+              action: call-service
+              service: switch.toggle
+              service_data:
+                entity_id: switch.garage_dad       
+        hold_action:
+          action: more-info
+
+      - type: template
+        entity: binary_sensor.garage_t_closed
+        icon: "{{ 'mdi:garage' if is_state(entity, 'on') else 'mdi:garage-open' }}"
+        icon_color: "{{ 'orange' if is_state(entity, 'on') else 'yellow' }}"
+        card_mod: *card_mod_chip_style
+        tap_action:
+              action: call-service
+              service: switch.toggle
+              service_data:
+                entity_id: switch.garage_t    
+        hold_action:
+          action: more-info
+
+      - type: action
+        card_mod: *card_mod_chip_style
+        icon: mdi:devices
+        tap_action:
+          action: navigate
+          navigation_path: /config/areas/area/garage
 
       - type: template
         entity: binary_sensor.bathroom2_room_status
         icon: mdi:hospital
-        icon_color: "{{ 'green' if is_state(entity, 'off') else 'red' }}" 
+        icon_color: "{{ 'green' if is_state(entity, 'off') else 'red' }}"
         card_mod: *card_mod_chip_style
         hold_action:
           action: more-info
@@ -102,6 +133,6 @@ cards:
                 type: vertical-stack
                 cards:
                   - !include
-                    - loft/loft_status_card.yaml
+                    - loft_status_card.yaml
                     - entity: *temp1
                       humidity_entity: *humidity1

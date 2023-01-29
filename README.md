@@ -304,6 +304,11 @@ How I use it:
   - All heaters 
   - Temp compare
   - Temp all house
+- Heating
+  - how to control heating
+    - With local thermostat (with input to HA)
+    - Without local thermostat
+    - "smart-heaters"
 <details><summary>ToDo; Create dynamic todo-list on other solutions status-entities</summary>
   - [ToDo](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/packages/solutions/todo.md)  create todo-list (and let other solutions poulate with tasks and status)
 <br />

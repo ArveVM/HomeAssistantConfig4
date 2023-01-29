@@ -6,7 +6,7 @@ homeassistant:
     package.node_anchors:
       temp1: &temp1 sensor.loft_thp_temperature
       humidity1: &humidity1 sensor.loft_thp_humidity
-        
+
 type: custom:stack-in-card
 card_mod:
   style: |
@@ -71,7 +71,7 @@ cards:
                 #cards:
                 #  - !include
                 !include
-                - ../../cards/heater_card.yaml
+                - ../solutions/heater_card.yaml
                 - entity: input_boolean.loft_heater_powerboost
                   powerauto: input_boolean.loft_heater_powerauto
                   powerboost: input_boolean.loft_heater_powerboost
@@ -79,10 +79,10 @@ cards:
                   powerhoursave: input_boolean.loft_heater_powerhoursave
                   powerswitch: switch.loft_heater_plug
                   power: sensor.loft_heater_plug_power
-                  room_temp: sensor.loft_thp_temperature
-                  room_temp_compare: sensor.house_average_temperature
-                  room_humidity: sensor.loft_thp_humidity
-                  room_humidity_compare: sensor.house_average_humidity
+                  area_temp: *temp1
+                  area_temp_compare: sensor.house_average_temperature
+                  area_humidity: *humidity1
+                  area_humidity_compare: sensor.house_average_temperature
                   longterm_target: input_number.loft_heater_longterm_target
                   thermostat_target: sensor.loft_heater_thermostat_target
                   thermostat_output: input_boolean.loft_heater_thermostat_output
@@ -147,26 +147,44 @@ cards:
                             - volume_mute
                             - volume_set
 
-      - type: template
-        entity: light.loft
-        card_mod: *card_mod_chip_style
-        #icon_color: yellow
-        icon: mdi:lightbulb
-        icon_color: "{{ 'yellow' if is_state(entity, 'on') else 'grey' }}"
-        tap_action:
-          action: call-service
-          service: light.toggle
-          data: {}
-          target:
-            entity_id: light.loft
+      # - type: template
+      #   entity: light.loft
+      #   card_mod: *card_mod_chip_style
+      #   #icon_color: yellow
+      #   icon: mdi:lightbulb
+      #   icon_color: "{{ 'yellow' if is_state(entity, 'on') else 'grey' }}"
+      #   tap_action:
+      #     action: call-service
+      #     service: light.toggle
+      #     data: {}
+      #     target:
+      #       entity_id: light.loft
+
+      # - type: template
+      #   card_mod: *card_mod_chip_style
+      #   entity: binary_sensor.loft_room_status
+      #   icon: mdi:hospital
+      #   icon_color: "{{ 'green' if is_state(entity, 'off') else 'red' }}"
+      #   hold_action:
+      #     action: more-info
+      #   tap_action:
+      #     action: fire-dom-event
+      #     browser_mod:
+      #       service: browser_mod.popup
+      #       data:
+      #         content:
+      #           type: vertical-stack
+      #           cards:
+      #             - !include
+      #               - loft_status_card.yaml
+      #               - entity: *temp1
+      #                 humidity_entity: *humidity1
 
       - type: template
+        entity: binary_sensor.loft_area_status
+        icon: mdi:check-circle
+        icon_color: "{{ 'red' if is_state(entity, 'on') else 'disabled' }}"
         card_mod: *card_mod_chip_style
-        entity: binary_sensor.loft_room_status
-        icon: mdi:hospital
-        icon_color: "{{ 'green' if is_state(entity, 'off') else 'red' }}"
-        hold_action:
-          action: more-info
         tap_action:
           action: fire-dom-event
           browser_mod:
@@ -175,7 +193,4 @@ cards:
               content:
                 type: vertical-stack
                 cards:
-                  - !include
-                    - ../../area/loft/loft_status_card.yaml
-                    - entity: *temp1
-                      humidity_entity: *humidity1
+                  - !include loft_status_card.yaml

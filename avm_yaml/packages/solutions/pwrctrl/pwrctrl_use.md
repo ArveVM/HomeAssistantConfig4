@@ -3,6 +3,10 @@
 
 
 
+input: sensor.evahan_power (from HAN-port)
+
+
+
 
 
 

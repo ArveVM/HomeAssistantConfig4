@@ -38,8 +38,8 @@ homeassistant:
       <<: *package_attribute
     sensor.evahan_filtered_power:
       <<: *package_attribute
-    sensor.evahan_energy_hourly_estimate:
-      <<: *package_attribute
+    # sensor.evahan_energy_hourly_estimate:
+    #   <<: *package_attribute
     utility_meter.evahan_energy_hourly:
       <<: *package_attribute
     utility_meter.evahan_energy_daily:
@@ -126,60 +126,60 @@ template:
         # PS; the middle part is code from mrKim, and I just wrapped the
         #     'PI-idea' around it to avoid peaks above 5kwh
 
-      - name: EvaHAN Energy hourly estimate pi
-        unique_id: evahan_energy_hourly_estimate_pi
-        icon: mdi:strategy
-        unit_of_measurement: "kWh"
-        state: >
-          {% if now().minute < 10 %}
-            3.14
-          {% else %} 
-            {% set usage = states('sensor.evahan_energy_hourly') | float %}
-            {% set minutes = now().minute %}
-            {% set seconds = now().second %}
-            {%if minutes%}
-              {%set percentOfHour = (minutes / 60) + ((seconds / 60) /60) %}
-              {{(usage / percentOfHour) | round (2) }}
-            {%endif%}
-          {% endif %}
+      # - name: EvaHAN Energy hourly estimate pi
+      #   unique_id: evahan_energy_hourly_estimate_pi
+      #   icon: mdi:strategy
+      #   unit_of_measurement: "kWh"
+      #   state: >
+      #     {% if now().minute < 10 %}
+      #       3.14
+      #     {% else %} 
+      #       {% set usage = states('sensor.evahan_energy_hourly') | float %}
+      #       {% set minutes = now().minute %}
+      #       {% set seconds = now().second %}
+      #       {%if minutes%}
+      #         {%set percentOfHour = (minutes / 60) + ((seconds / 60) /60) %}
+      #         {{(usage / percentOfHour) | round (2) }}
+      #       {%endif%}
+      #     {% endif %}
         # ArveVM; setting 3,14 before 5 minutes; if not you might see a
         # peak that triggers unwanted actions before pattern is established
         # PS; the middle part is code from mrKim, and I just wrapped the
         #     PI-idea around it to avoid peaks above 5kwh
 
-      - name: EvaHAN Energy hourly estimate pi2
-        unique_id: evahan_energy_hourly_estimate_pi2
-        icon: mdi:strategy
-        unit_of_measurement: "kWh"
-        state: >
-          {% if now().minute < 5 %}
-            {{state_attr('sensor.evahan_energy_hourly', 'last_period')}}
-          {% else %} 
-            {% set usage = states('sensor.evahan_energy_hourly') | float %}
-            {% set minutes = now().minute %}
-            {% set seconds = now().second %}
-            {%if minutes%}
-              {%set percentOfHour = (minutes / 60) + ((seconds / 60) /60) %}
-              {{(usage / percentOfHour) | round (2) }}
-            {%endif%}
-          {% endif %}
+      # - name: EvaHAN Energy hourly estimate pi2
+      #   unique_id: evahan_energy_hourly_estimate_pi2
+      #   icon: mdi:strategy
+      #   unit_of_measurement: "kWh"
+      #   state: >
+      #     {% if now().minute < 5 %}
+      #       {{state_attr('sensor.evahan_energy_hourly', 'last_period')}}
+      #     {% else %} 
+      #       {% set usage = states('sensor.evahan_energy_hourly') | float %}
+      #       {% set minutes = now().minute %}
+      #       {% set seconds = now().second %}
+      #       {%if minutes%}
+      #         {%set percentOfHour = (minutes / 60) + ((seconds / 60) /60) %}
+      #         {{(usage / percentOfHour) | round (2) }}
+      #       {%endif%}
+      #     {% endif %}
 
-      - name: EvaHAN Energy hourly estimate pi3
-        unique_id: evahan_energy_hourly_estimate_pi3
-        icon: mdi:strategy
-        unit_of_measurement: "kWh"
-        state: >
-          {% if now().minute > 0 and now().minute < 5 %}
-            {{state_attr('sensor.evahan_energy_hourly', 'last_period')}}
-          {% else %} 
-            {% set usage = states('sensor.evahan_energy_hourly') | float %}
-            {% set minutes = now().minute %}
-            {% set seconds = now().second %}
-            {%if minutes%}
-              {%set percentOfHour = (minutes / 60) + ((seconds / 60) /60) %}
-              {{(usage / percentOfHour) | round (2) }}
-            {%endif%}
-          {% endif %}
+      # - name: EvaHAN Energy hourly estimate pi3
+      #   unique_id: evahan_energy_hourly_estimate_pi3
+      #   icon: mdi:strategy
+      #   unit_of_measurement: "kWh"
+      #   state: >
+      #     {% if now().minute > 0 and now().minute < 5 %}
+      #       {{state_attr('sensor.evahan_energy_hourly', 'last_period')}}
+      #     {% else %} 
+      #       {% set usage = states('sensor.evahan_energy_hourly') | float %}
+      #       {% set minutes = now().minute %}
+      #       {% set seconds = now().second %}
+      #       {%if minutes%}
+      #         {%set percentOfHour = (minutes / 60) + ((seconds / 60) /60) %}
+      #         {{(usage / percentOfHour) | round (2) }}
+      #       {%endif%}
+      #     {% endif %}
 
 utility_meter:
   # log usage in periods

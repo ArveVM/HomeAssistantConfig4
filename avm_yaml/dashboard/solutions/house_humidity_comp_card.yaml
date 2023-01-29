@@ -4,10 +4,10 @@
 
 # and the brilliant ThomasLoven for lovelace_gen
 # use the following code to trigger card with whatever variables you would like (for me; for each area)
-#      - !include
-#        - ../../solutions/house_humidity_comp_card.yaml
-#        - entity: *temp1
-#          entity_compare: sensor.house_average_humidity
+        # - !include
+        #   - house_humidity_comp_card.yaml
+        #   - entity: "{{ area_humidity }}"
+        #     area_humidity_compare: "{{ area_humidity_compare }}"
 
 type: custom:stack-in-card
 cards:
@@ -23,7 +23,7 @@ cards:
         name: Humidity this area
         icon_color: blue
       - type: custom:mushroom-entity-card
-        entity: "{{ entity_compare }}"
+        entity: "{{ area_humidity_compare }}"
         primary_info: state
         secondary_info: name
         name: Average humidity
@@ -34,7 +34,7 @@ cards:
       - entity: "{{ entity }}"
         name: This room
         color: "#2196f3"
-      - entity: "{{ entity_compare }}"
+      - entity: "{{ area_humidity_compare }}"
         name: Compare
         color: orange
       - color: yellow

@@ -59,8 +59,8 @@ cards:
               --chip-spacing: 0;
               margin-left: -10px;
             }
-        icon_color: yellow
         icon: mdi:thermometer
+        icon_color: yellow
         tap_action:
           action: fire-dom-event
           browser_mod:
@@ -70,12 +70,14 @@ cards:
                 type: vertical-stack
                 cards:
                   - !include
-                    - ../cards/temperature_compare_card.yaml
+                    - ../solutions/house_temp_comp_card.yaml
                     - entity: *temp1
-                      room_temp_compare: sensor.house_average_temperature
+                      area_temp_compare: sensor.house_average_temperature
                   - !include
-                    - ../cards/humidity_compare_card.yaml
+                    - ../solutions/house_humidity_comp_card.yaml
                     - entity: *humidity1
+                      area_humidity_compare: sensor.house_average_humidity
+        hold_action: none
 
       - type: template
         icon: mdi:watch
@@ -198,6 +200,6 @@ cards:
                 type: vertical-stack
                 cards:
                   - !include
-                    - ../area/loft/loft_status_card.yaml
+                    - loft_status_card.yaml
                     - entity: *temp1
                       humidity_entity: *humidity1

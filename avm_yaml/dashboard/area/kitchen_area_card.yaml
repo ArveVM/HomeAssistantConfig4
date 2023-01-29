@@ -25,10 +25,10 @@ cards:
       {{states('sensor.kitchen_thp_humidity') | round(0,'', 44)}}%
     icon: mdi:knife
     entity: light.kitchen_light1_z2m
-    hold_action:
+    tap_action:
       action: toggle
 
-    tap_action:
+    hold_action:
       action: fire-dom-event
       browser_mod:
         service: browser_mod.popup
@@ -65,6 +65,14 @@ cards:
       - type: action
         icon_color: disabled
         icon: mdi:thermometer
+        card_mod: &card_mod_chip_style
+          style: |
+            ha-card {
+              --chip-box-shadow: none;
+              --chip-background: none;
+              --chip-spacing: 0;
+              margin-left: -10px;
+            }
         tap_action:
           action: fire-dom-event
           browser_mod:
@@ -74,26 +82,14 @@ cards:
                 type: vertical-stack
                 cards:
                   - !include
-                    - ../cards/temp_humidity_card3.yaml
+                    - ../solutions/house_temp_comp_card.yaml
                     - entity: *temp1
-                      humidity_entity: *humidity1
-        card_mod: &card_mod_chip_style
-          style: |
-            ha-card {
-              --chip-box-shadow: none;
-              --chip-background: none;
-              --chip-spacing: 0;
-              margin-left: -10px;
-            }
-        hold_action:
-          action: fire-dom-event
-          browser_mod:
-            service: browser_mod.popup
-            data:
-              content:
-                type: vertical-stack
-                cards:
-                  - !include kitchen_light_card.yaml
+                      area_temp_compare: sensor.house_average_temperature
+                  - !include
+                    - ../solutions/house_humidity_comp_card.yaml
+                    - entity: *humidity1
+                      area_humidity_compare: sensor.house_average_humidity
+        hold_action: none
 
       - type: template
         entity: sensor.dishwasher_status
@@ -148,12 +144,12 @@ cards:
                   - temperature
                   - dli
 
-      #- type: action
-      #  <<: *card_mod_chip
-      #  icon: mdi:devices
-      #  tap_action:
-      #    action: navigate
-      #    navigation_path: /config/areas/area/kitchen
+      - type: action
+        card_mod: *card_mod_chip_style
+        icon: mdi:devices
+        tap_action:
+          action: navigate
+          navigation_path: /config/areas/area/kitchen
 
       - type: template
         entity: binary_sensor.kitchen_room_status

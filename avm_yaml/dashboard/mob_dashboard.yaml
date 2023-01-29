@@ -14,4 +14,4 @@ views:
   - !include views/server_view.yaml
 
   # then some to be decommisioned - in due time
-  - !include view_garage.yaml
+  # - !include view_garage.yaml

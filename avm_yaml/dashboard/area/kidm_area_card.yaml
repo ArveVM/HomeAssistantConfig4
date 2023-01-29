@@ -19,18 +19,27 @@ card_mod:
 cards:
   # First the main-card:
   - type: custom:mushroom-template-card
+    entity: light.kidm_lightbulb
     primary: KidM
     secondary: >-
       {{states('sensor.hallway_thp_temperature') | round(1,'', 19)}}°C -
       {{states('sensor.hallway_thp_humidity') | round(0,'', 44)}}%
+    multiline_secondary: false
     icon: mdi:soccer
-    entity: light.kidm_lightbulb
-    tap_action:
-      action: toggle
     icon_color: "{{ 'orange' if is_state(entity, 'on') else 'disabled' }}"
     fill_container: true
     layout: horizontal
-    multiline_secondary: false
+    tap_action:
+      action: toggle
+    hold_action:
+      action: fire-dom-event
+      browser_mod:
+        service: browser_mod.popup
+        data:
+          content:
+            type: vertical-stack
+            cards:
+              - !include kidm_light_card.yaml
     card_mod:
       style: |
         :host([dark-mode]) {
@@ -39,6 +48,7 @@ cards:
         :host {
           background: rgba(var(--rgb-primary-text-color), 0.025);
         }
+
   # Then the row of chips below. Align chips with alignment and adjust spacing on each chip (margin-left)
   - type: custom:mushroom-chips-card
     alignment: end
@@ -51,8 +61,8 @@ cards:
         }
     chips:
       - type: action
-        icon_color: yellow
         icon: mdi:thermometer
+        icon_color: disabled
         card_mod: &card_mod_chip_style
           style: |
             ha-card {
@@ -60,6 +70,7 @@ cards:
               --chip-background: none;
               --chip-spacing: 0;
               margin-left: -10px;
+            }
         tap_action:
           action: fire-dom-event
           browser_mod:
@@ -69,12 +80,14 @@ cards:
                 type: vertical-stack
                 cards:
                   - !include
-                    - ../cards/temperature_compare_card.yaml
+                    - ../solutions/house_temp_comp_card.yaml
                     - entity: *temp1
-                      room_temp_compare: sensor.house_average_temperature
+                      area_temp_compare: sensor.house_average_temperature
                   - !include
-                    - ../cards/humidity_compare_card.yaml
+                    - ../solutions/house_humidity_comp_card.yaml
                     - entity: *humidity1
+                      area_humidity_compare: sensor.house_average_humidity
+        hold_action: none
 
       - entity: media_player.smartclock_kid_m
         type: template
@@ -134,20 +147,20 @@ cards:
                             - volume_mute
                             - volume_set
 
-      - entity: light.kidm_lightbulb
-        type: template
-        icon: mdi:lightbulb
-        icon_color: "{{ 'yellow' if is_state(entity, 'on') else 'grey' }}"
-        card_mod: *card_mod_chip_style
-        tap_action:
-          action: fire-dom-event
-          browser_mod:
-            service: browser_mod.popup
-            data:
-              content:
-                type: vertical-stack
-                cards:
-                  - !include kidm_light_card.yaml
+      # - entity: light.kidm_lightbulb
+      #   type: template
+      #   icon: mdi:lightbulb
+      #   icon_color: "{{ 'yellow' if is_state(entity, 'on') else 'grey' }}"
+      #   card_mod: *card_mod_chip_style
+      #   tap_action:
+      #     action: fire-dom-event
+      #     browser_mod:
+      #       service: browser_mod.popup
+      #       data:
+      #         content:
+      #           type: vertical-stack
+      #           cards:
+      #             - !include kidm_light_card.yaml
 
       - type: template
         entity: binary_sensor.loft_room_status
@@ -165,6 +178,6 @@ cards:
                 type: vertical-stack
                 cards:
                   - !include
-                    - ../area/loft/loft_status_card.yaml
+                    - loft_status_card.yaml
                     - entity: *temp1
                       humidity_entity: *humidity1

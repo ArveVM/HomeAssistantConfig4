@@ -57,31 +57,31 @@ details:
       text: dyn_charger_limit
       service: easee.set_charger_dynamic_limit
       service_data:
-        charger_id: !secret easee1_serial
+        charger_id: !secret easee1_charger_id
         current: "#SERVICEVAL#"
     - entity_id: sensor.easee1_dynamic_circuit_limit
       text: dyn_circuit_limit
       service: easee.set_charger_circuit_dynamic_limit
       service_data:
-        charger_id: !secret easee1_serial
+        charger_id: !secret easee1_charger_id
         currentP1: "#SERVICEVAL#"
     - entity_id: sensor.easee1_max_charger_limit
       text: max_charger_limit
       service: easee.set_charger_max_limit
       service_data:
-        charger_id: !secret easee1_serial
+        charger_id: !secret easee1_charger_id
         current: "#SERVICEVAL#"
     - entity_id: sensor.easee1_max_circuit_limit
       text: max_circuit_limit
       service: easee.set_circuit_max_limit
       service_data:
-        charger_id: !secret easee1_serial
+        charger_id: !secret easee1_charger_id
         currentP1: "#SERVICEVAL#"
     - entity_id: sensor.easee1_offline_circuit_limit
       text: offline_circuit_limit
       service: easee.set_charger_circuit_offline_limit
       service_data:
-        charger_id: !secret easee1_serial
+        charger_id: !secret easee1_charger_id
         currentP1: "#SERVICEVAL#"
   group2:
     - entity_id: binary_sensor.easee1_online
@@ -236,56 +236,56 @@ details:
     awaiting_start:
       - service: easee.stop
         service_data:
-          charger_id: !secret easee1_serial
+          charger_id: !secret easee1_charger_id
         text: stop
         icon: hass:stop
       - service: easee.resume
         service_data:
-          charger_id: !secret easee1_serial
+          charger_id: !secret easee1_charger_id
         text: resume
         icon: hass:play
       - service: easee.override_schedule
         service_data:
-          charger_id: !secret easee1_serial
+          charger_id: !secret easee1_charger_id
         text: override
         icon: hass:motion-play
     charging:
       - service: easee.stop
         service_data:
-          charger_id: !secret easee1_serial
+          charger_id: !secret easee1_charger_id
         text: stop
         icon: hass:stop
       - service: easee.pause
         service_data:
-          charger_id: !secret easee1_serial
+          charger_id: !secret easee1_charger_id
         text: pause
         icon: hass:pause
     completed:
       - service: easee.stop
         service_data:
-          charger_id: !secret easee1_serial
+          charger_id: !secret easee1_charger_id
         text: stop
         icon: hass:stop
       - service: easee.override_schedule
         service_data:
-          charger_id: !secret easee1_serial
+          charger_id: !secret easee1_charger_id
         text: override
         icon: hass:motion-play
     error:
       - service: easee.reboot
         service_data:
-          charger_id: !secret easee1_serial
+          charger_id: !secret easee1_charger_id
         text: reboot
         icon: hass:restart
     ready_to_charge:
       - service: easee.stop
         service_data:
-          charger_id: !secret easee1_serial
+          charger_id: !secret easee1_charger_id
         text: stop
         icon: hass:stop
       - service: easee.override_schedule
         service_data:
-          charger_id: !secret easee1_serial
+          charger_id: !secret easee1_charger_id
         text: override
         icon: hass:motion-play
   toolbar_right:
@@ -300,7 +300,7 @@ details:
     disconnected:
       - service: easee.update_firmware
         service_data:
-          charger_id: !secret easee1_serial
+          charger_id: !secret easee1_charger_id
         text: update
         icon: mdi:file-download
         conditional_entity: binary_sensor.easee1_update_available

@@ -68,18 +68,15 @@ cards:
               content:
                 type: vertical-stack
                 cards:
-                  #- ../../cards/temp_humidity_card3.yaml
                   - !include
-                    - ../cards/temp_humidity_minigraph_card.yaml
+                    - ../solutions/house_temp_comp_card.yaml
                     - entity: *temp1
-                      humidity_entity: *humidity1
-
+                      area_temp_compare: sensor.house_average_temperature
                   - !include
-                    - ../cards/temperature_compare_card.yaml
-                    - entity: *temp1
-                  - !include
-                    - ../cards/humidity_compare_card.yaml
+                    - ../solutions/house_humidity_comp_card.yaml
                     - entity: *humidity1
+                      area_humidity_compare: sensor.house_average_humidity
+        hold_action: none
 
       - entity: media_player.googlehub_hallway
         type: template
@@ -192,6 +189,6 @@ cards:
                 type: vertical-stack
                 cards:
                   - !include
-                    - ../area/loft/loft_status_card.yaml
+                    - loft_status_card.yaml
                     - entity: *temp1
                       humidity_entity: *humidity1

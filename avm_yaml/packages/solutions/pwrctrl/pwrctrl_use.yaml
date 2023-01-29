@@ -85,7 +85,35 @@ template:
           - states('sensor.power_usage_appliances') | int(default=0) 
           )}}
 
+utility_meter:
+  pwrctrl_use_inst_energy_hourly:
+    source: sensor.pwrctrl_use_inst_energy
+    name: PwrCtrl Use inst energy hourly
+    cycle: hourly
+
 sensor:
+  - platform: integration
+    unique_id: 7b7d263b-3b20-44bd-8f57-4112aa889ad0
+    name: PwrCtrl Use inst energy
+    source: sensor.evahan_power
+    method: left
+    unit_prefix: k
+    round: 2
+
+  # eksempel fra Erlend Sellie på HA-norge-FB - brukt i en av lovelace-cards for nordpool vs current usage-grafs,,,
+  - platform: filter
+    unique_id: 9cba3cf7-eaf3-4ce0-a63d-af799cd49e69
+    name: PwrCtrl Use total filtered power"
+    entity_id: sensor.evahan_power
+    filters:
+      - filter: throttle
+        window_size: 4
+      - filter: outlier
+        window_size: 4
+        radius: 2.0
+      - filter: lowpass
+        time_constant: 10
+
   - platform: powercalc
     unique_id: a58bdabb-7e8c-4242-ba80-287d7c7b9e48
     entity_id: sensor.pwrctrl_use_total
@@ -97,6 +125,8 @@ sensor:
   - platform: powercalc
     create_group: PwrCtrl Use Grouped
     unique_id: pwrctrl_use_grouped
+    #unavailable_power
+    ignore_unavailable_state: true
     create_energy_sensor: true
     create_utility_meters: true
     entities:
@@ -127,6 +157,7 @@ sensor:
           - entity_id: switch.kitchen_heater
             power_sensor_id: sensor.kitchen_heater_power
           - entity_id: switch.kitchen_heatpump
+            ignore_unavailable_state: true
             power_sensor_id: sensor.kitchen_heatpump_power
           - entity_id: switch.evaplug #livingroom
             power_sensor_id: sensor.evaplug_power
@@ -140,6 +171,9 @@ sensor:
             power_sensor_id: sensor.kidl_floor_heater_power
           - entity_id: switch.entry_heater_puck
             power_sensor_id: sensor.entry_heater_puck_power
+          - entity_id: switch.icehouse_heater         # heater on Ikea-plug
+            fixed:
+              power: 2000
 
       - create_group: PwrCtrl Use Lights
         create_energy_sensor: true
@@ -186,10 +220,11 @@ sensor:
         create_utility_meters: true
         entities:
           - entity_id: switch.server_rack_plug
+            ignore_unavailable_state: true
             power_sensor_id: sensor.server_rack_plug_power
           - create_group: PwrCtrl Use mmTest1
             entities:
-              - entity_id: media_player.googlemini_kitchen
+              - entity_id: media_player.kitchen_googlemini
                 ignore_unavailable_state: true
                 manufacturer: Google
                 model: Google Home Mini

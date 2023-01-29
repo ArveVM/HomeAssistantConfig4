@@ -20,21 +20,27 @@ card_mod:
 cards:
   # Top-part:
   - type: custom:mushroom-template-card
+    entity: light.livingroom_lights_z2m
     primary: Livingroom
     secondary: >-
       {{states('sensor.livingroom_netatmo_temperature')}}°C -
       {{states('sensor.livingroom_netatmo_humidity') | int}}%
+    multiline_secondary: false
     icon: mdi:sofa
-    entity: light.livingroom_lights_z2m
-    tap_action:
-      action: navigate
-      navigation_path: Livingroom
-    hold_action:
-      action: toggle
     icon_color: "{{ 'orange' if is_state(entity, 'on') else 'disabled' }}"
     fill_container: true
     layout: horizontal
-    multiline_secondary: false
+    tap_action:
+      action: toggle
+    hold_action:
+      action: fire-dom-event
+      browser_mod:
+        service: browser_mod.popup
+        data:
+          content:
+            type: vertical-stack
+            cards:
+              - !include livingroom_light_card.yaml
     card_mod:
       style: |
         :host([dark-mode]) {
@@ -56,7 +62,7 @@ cards:
         }
     chips:
       - type: action
-        icon_color: yellow
+        icon_color: disabled
         icon: mdi:thermometer
         card_mod: &card_mod_chip_style
           style: |
@@ -74,25 +80,29 @@ cards:
               content:
                 type: vertical-stack
                 cards:
-                  #- !include livingroom_light_card.yaml
                   - !include
-                    - ../../cards/temp_humidity_minigraph_card.yaml
+                    - ../solutions/house_temp_comp_card.yaml
                     - entity: *temp1
-                      humidity_entity: *humidity1
+                      area_temp_compare: sensor.house_average_temperature
+                  - !include
+                    - ../solutions/house_humidity_comp_card.yaml
+                    - entity: *humidity1
+                      area_humidity_compare: sensor.house_average_humidity
+        hold_action: none
 
-      - type: action
-        icon_color: yellow
-        icon: mdi:lightbulb
-        card_mod: *card_mod_chip_style
-        tap_action:
-          action: fire-dom-event
-          browser_mod:
-            service: browser_mod.popup
-            data:
-              content:
-                type: vertical-stack
-                cards:
-                  - !include livingroom_light_card.yaml
+      # - type: action
+      #   icon_color: yellow
+      #   icon: mdi:lightbulb
+      #   card_mod: *card_mod_chip_style
+      #   tap_action:
+      #     action: fire-dom-event
+      #     browser_mod:
+      #       service: browser_mod.popup
+      #       data:
+      #         content:
+      #           type: vertical-stack
+      #           cards:
+      #             - !include livingroom_light_card.yaml
 
       - type: template
         entity: plant.avocado
@@ -216,10 +226,17 @@ cards:
           icon: mdi:window-open
           card_mod: *card_mod_chip_style
 
+      # - type: action
+      #   card_mod: *card_mod_chip_style
+      #   icon: mdi:devices
+      #   tap_action:
+      #     action: navigate
+      #     navigation_path: /config/areas/area/livingroom
+
       - type: template
-        entity: binary_sensor.livingroom_room_status
-        icon: mdi:hospital
-        icon_color: "{{ 'disabled' if is_state(entity, 'on') else 'red' }}"
+        entity: binary_sensor.livingroom_area_status
+        icon: mdi:check-circle
+        icon_color: "{{ 'red' if is_state(entity, 'on') else 'disabled' }}"
         card_mod: *card_mod_chip_style
         tap_action:
           action: fire-dom-event
@@ -229,8 +246,4 @@ cards:
               content:
                 type: vertical-stack
                 cards:
-                  #                    - ../../area/loft/loft_status_card.yaml
-                  - !include
-                    - ../../area/livingroom/livingroom_status_card.yaml
-                    - entity: *temp1
-                      humidity_entity: *humidity1
+                  - !include livingroom_status_card.yaml

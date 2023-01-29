@@ -21,7 +21,6 @@ entities:
       - type: custom:fold-entity-row
         head: sensor.pwrctrl_use_heating_power
         entities:
-          - !include laundry_heater_card.yaml
           - type: custom:auto-entities
             card:
               type: entities
@@ -32,6 +31,8 @@ entities:
               method: state
               reverse: true
               numeric: true
+
+          - !include laundry_heater_card.yaml
 
       - type: custom:fold-entity-row
         head: sensor.pwrctrl_use_lights_power
