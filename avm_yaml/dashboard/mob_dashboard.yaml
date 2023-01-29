@@ -13,5 +13,3 @@ views:
   - !include view_energy_usage.yaml
   - !include views/server_view.yaml
 
-  # then some to be decommisioned - in due time
-  # - !include view_garage.yaml
