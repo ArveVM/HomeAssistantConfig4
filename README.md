@@ -201,7 +201,7 @@ By using YAML-dashboard it opens up a few more tools one can use:
 <br />
  
 </details>      
-<details><summary>YAML-dashboard-guide: Card include </summary>
+<details><summary>Advanced YAML-dashboard-guide: Card include </summary>
 <br />
 How I use it:
   - Including dashboard-files see to add cards/viwes wherever you want,, se example in "My implementation"
@@ -222,7 +222,36 @@ How I use it:
  
 </details>      
 
-<details><summary>YAML-guide: Node-anchors, "entity-inject"</summary>
+
+<details><summary>Advanced YAML-dashboard-guide: "entity-inject"</summary>
+<br />  
+  How I use it
+  
+  - Re-use dashboard-files, "entity-inject", see example heater_card.yaml which is used by several room-cards by calling heater_card with different entities
+    - [Important first -step](https://github.com/thomasloven/hass-lovelace_gen#second-of-all)
+    - [Lovelace_gen; 'passing arguments to included files' (or "entity-inject" as I call it ;)](https://github.com/thomasloven/hass-lovelace_gen#passing-arguments-to-included-files)
+      
+      #thanksThomasLoven
+  - NB; 
+<br />
+ 
+ ---
+ Required Functionality:
+   - my basics: Packages
+   - HACS; Lovelace_gen  , [Important first -step](https://github.com/thomasloven/hass-lovelace_gen#second-of-all)  - ["entity-inject"](https://github.com/thomasloven/hass-lovelace_gen#passing-arguments-to-included-files)
+ 
+ My implementation:
+   - use "!include" to map/reuse files; [mob_dashboard.yaml](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/dashboard/mob_dashboard.yaml) 
+   - node_anchor to re-use code
+
+ --- 
+<br />
+<br />
+ 
+</details>      
+
+
+<details><summary>Advanced YAML-dashboard-guide: Node-anchors"</summary>
 <br />
  YAML-tutorials:
   
@@ -235,18 +264,13 @@ How I use it:
   - node_anchors:
     - to avoid duplicate code on card-mod 
     - to declare entities as variables in solution-yaml-files (so it can be referrred to in several automations/climates/sensors
-  - Re-use dashboard-files, "entity-inject", see example heater_card.yaml which is used by several room-cards by calling heater_card with different entities
-    - [Lovelace_gen; 'passing arguments to included files'](https://github.com/thomasloven/hass-lovelace_gen#passing-arguments-to-included-files)
-      #thanksThomasLoven
 <br />
  
  ---
  Required Functionality:
    - my basics: Packages
-   - HACS; Lovelace_gen
  
  My implementation:
-   - use "!include" to map/reuse files; [mob_dashboard.yaml](https://github.com/ArveVM/HomeAssistantConfig4/blob/master/avm_yaml/dashboard/mob_dashboard.yaml) 
    - node_anchor to re-use code
 
  --- 
