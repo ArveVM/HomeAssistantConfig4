@@ -167,7 +167,7 @@ Why:
 <br /> 
 </details>  
 
-<details><summary>**"Advanced" YAML-guide**</summary> -->
+<details><summary>"Advanced" YAML-guide</summary> -->
 <br />
 
 - Not sure if this is valid as a guide, and if it is indeed "advanced",,   
@@ -234,6 +234,7 @@ Why:
    --- 
   <br />
   <br />
+    
   </details>
   
   <details><summary>Markdown: tips </summary>
