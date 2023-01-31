@@ -5,7 +5,7 @@ HA-hardware:
 - ConbeeII zigbee-stick - HA-addon
 - Sonoff3p  - unRaid-docker
 
-Devices:
+User-Devices:
 - Various Android Devices (phones, android-tablets)
 - Windows laptops
  
