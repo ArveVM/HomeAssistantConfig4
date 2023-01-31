@@ -50,6 +50,7 @@ frontend:
 #input_select:
 #input_text:
 #logbook:
+#logger:  #->  see config in logger.yaml in /integrations
 #map:
 #media_source:
 #mobile_app:
