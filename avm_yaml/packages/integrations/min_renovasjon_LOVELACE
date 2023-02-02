@@ -2,6 +2,7 @@
 # open Lovelace and add card (any card), click "show code editor"
 # and then replace all yaml-code with code below
 #
+#
 # Please note that the HACS-frontend 'auto-entities' is required!
 
 
