@@ -1,14 +1,18 @@
 # Home Assistant config
 
+
 - This repo contains (part of) the working Home Assistant configuration for our home. It's clearly under development :)
 - Below you find an overview of the the configuration, and below that devices currently being used, links to blog/video posts, and other HA enthusists that provided inspiration and configs to help build this config. 
 - All of the code is free to use; I only ask that you Star this repo.
 <br />
+##I'm now moving documentation to the github-wiki, but are trying to get a top-down stucture which is about like this;
 
 ## Table of contents:
 |Chapters   |Description/purpose |
 | ----------| ----------------------------- |
-|[1. Config-"backend"](#1-configuration)| About the buildup of my configuration, <br /> Packages -> Functionality -> Solutions -> Compartmentalized-solutions -> share |
+|[Wiki-home](https://github.com/ArveVM/HomeAssistantConfig4/wiki/Home)| Startpage for documentation|
+|[Mentors and Inspirators](https://github.com/ArveVM/HomeAssistantConfig4/wiki/Mentors-and-Inspirators)|Listing a lot of gratitudes and thanks !! |
+|[1. Config-"backend"](https://github.com/ArveVM/HomeAssistantConfig4/wiki/1-Configuration)| About the buildup of my configuration, <br /> Packages -> Functionality -> Solutions -> Compartmentalized-solutions -> share |
 |[2. Presentation](#2-presentation)     | YAML-dashboard, Mushroom and Popup's |
 |[3. Solutions](#3-solutions)   |About my method(s) for grouping "everything HA" in Solutions|
 |[4. Functionality](#4-functionality)|About added functionality required to produce Solutions|
