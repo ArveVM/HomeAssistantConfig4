@@ -3,6 +3,8 @@
 [Official HA-documentation](https://www.home-assistant.io/integrations/shelly/)
 
 
+DOCUMENTATION MOVED TO WIKI,, SEE MY GitHub-WIKI FOR UPDATED DOCUMENTATION!!
+
 
 ## How I use Shelly-integration:  
 - Add Shelly-devices, how to configure network etc
