@@ -93,7 +93,7 @@ cards:
         card_mod: *card_mod_chip_style
         tap_action:
           action: navigate
-          navigation_path: /config/areas/area/kitchen
+          navigation_path: /config/areas/area/office
 
       - type: template
         entity: binary_sensor.loft_room_status

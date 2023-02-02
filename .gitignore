@@ -53,7 +53,7 @@ dashboard_mob*
 
 
 /node-red
-/themes
+#/themes
 /tts/
 /ui_lovelace_minimalist
 /www/
