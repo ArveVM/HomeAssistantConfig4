@@ -5,7 +5,9 @@
 - Below you find an overview of the the configuration, and below that devices currently being used, links to blog/video posts, and other HA enthusists that provided inspiration and configs to help build this config. 
 - All of the code is free to use; I only ask that you Star this repo.
 <br />
-##I'm now moving documentation to the github-wiki, but are trying to get a top-down stucture which is about like this;
+
+**I'm now moving documentation to the github-wiki, but are trying to get a top-down stucture which is about like this;**
+
 
 ## Table of contents:
 |Chapters   |Description/purpose |
