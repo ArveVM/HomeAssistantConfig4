@@ -14,7 +14,7 @@ cards:
     entity: light.icehouse_light_bulbs
     primary: IceHouse
     secondary: >-
-      {{states('sensor.icehouse_thp_temperature') | round(0,'', 55)}}°C
+      {{states('sensor.icehouse_thp_temperature') | round(0,'', 11)}}°C
     icon: mdi:ice-cream
     icon_color: "{{ 'orange' if is_state(entity, 'on') else 'disabled' }}"
     fill_container: true
